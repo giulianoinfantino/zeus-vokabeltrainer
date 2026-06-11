@@ -205,7 +205,7 @@
           "griechisch": "οἱ γονεῖς, τῶν γονέων",
           "umschrift": "goneîs",
           "deutsch": "Eltern",
-          "sprich": "goneîs",
+          "sprich": "gonehs",
           "audio": "data/audio/gwm_01_07.m4a"
         },
         {
@@ -275,7 +275,7 @@
           "griechisch": "ἡ παιδεία, τῆς παιδείας",
           "umschrift": "paideía",
           "deutsch": "Erziehung, Bildung",
-          "sprich": "paideia",
+          "sprich": "paideha",
           "audio": "data/audio/gwm_01_17.m4a"
         },
         {
@@ -365,7 +365,7 @@
           "griechisch": "ἡ χείρ, τῆς χειρός",
           "umschrift": "cheír",
           "deutsch": "Hand, Arm",
-          "sprich": "keir",
+          "sprich": "kehr",
           "audio": "data/audio/gwm_02_09.m4a"
         },
         {
@@ -517,7 +517,7 @@
           "griechisch": "ἡ ὑγίεια, τῆς ὑγιείας",
           "umschrift": "hygíeia",
           "deutsch": "Gesundheit",
-          "sprich": "hügíeia",
+          "sprich": "hügíeha",
           "audio": "data/audio/gwm_03_10.m4a"
         },
         {
@@ -607,7 +607,7 @@
           "griechisch": "τὸ δεῖπνον, τοῦ δείπνου",
           "umschrift": "deîpnon",
           "deutsch": "Mahlzeit, Hauptmahlzeit",
-          "sprich": "deîpnon",
+          "sprich": "dehpnon",
           "audio": "data/audio/gwm_04_02.m4a"
         },
         {
@@ -752,7 +752,7 @@
           "griechisch": "τὸ τεῖχος, τοῦ τείχους",
           "umschrift": "teîchos",
           "deutsch": "Mauer, Stadtmauer",
-          "sprich": "teîchos",
+          "sprich": "tehchos",
           "audio": "data/audio/gwm_05_02.m4a"
         },
         {
@@ -1051,7 +1051,7 @@
           "griechisch": "ἡ ἀνδρεία, τῆς ἀνδρείας",
           "umschrift": "andreía",
           "deutsch": "Tapferkeit, Mannhaftigkeit",
-          "sprich": "andreia",
+          "sprich": "andreha",
           "audio": "data/audio/gwm_07_03.m4a"
         },
         {

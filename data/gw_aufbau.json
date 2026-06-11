@@ -89,7 +89,7 @@
           "griechisch": "ἡ χρεία, τῆς χρείας",
           "umschrift": "chreía",
           "deutsch": "Bedürfnis, Gebrauch, Nutzen",
-          "sprich": "kreia",
+          "sprich": "kreha",
           "audio": "data/audio/gwx_00_11.m4a"
         },
         {
@@ -131,7 +131,7 @@
           "griechisch": "τὸ ἐπιχείρημα, τοῦ ἐπιχειρήματος",
           "umschrift": "epicheírēma",
           "deutsch": "Unternehmen; Argument",
-          "sprich": "epicheirehma",
+          "sprich": "epichehrehma",
           "audio": "data/audio/gwx_00_17.m4a"
         },
         {
@@ -222,7 +222,7 @@
           "griechisch": "ἡ ἑρμηνεία, τῆς ἑρμηνείας",
           "umschrift": "hermēneía",
           "deutsch": "Auslegung, Ausdruck",
-          "sprich": "hermehneia",
+          "sprich": "hermehneha",
           "audio": "data/audio/gwx_01_09.m4a"
         },
         {
@@ -381,14 +381,14 @@
           "umschrift": "eû échei",
           "deutsch": "es steht gut",
           "erklaerung": "ἔχω + Adverb = εἰμί + Adjektiv",
-          "sprich": "eû échei",
+          "sprich": "eû écheh",
           "audio": "data/audio/gwx_02_10.m4a"
         },
         {
           "griechisch": "καλῶς ἔχει",
           "umschrift": "kalôs échei",
           "deutsch": "es ist in Ordnung, es ist recht",
-          "sprich": "kalôs échei",
+          "sprich": "kalôs écheh",
           "audio": "data/audio/gwx_02_11.m4a"
         },
         {
@@ -724,7 +724,7 @@
           "griechisch": "εἰσφέρω",
           "umschrift": "eisphérō",
           "deutsch": "hineintragen, beitragen, beantragen",
-          "sprich": "eisféroh",
+          "sprich": "ehsféroh",
           "audio": "data/audio/gwx_04_16.m4a"
         },
         {
@@ -1038,7 +1038,7 @@
           "umschrift": "epitḗdeios",
           "deutsch": "geeignet, nützlich; befreundet",
           "erklaerung": "τὰ ἐπιτήδεια: Lebensmittel, Bedarf",
-          "sprich": "epitḗdeios",
+          "sprich": "epitḗdehos",
           "audio": "data/audio/gwx_06_18.m4a"
         },
         {
@@ -1295,7 +1295,7 @@
           "griechisch": "κλείω",
           "umschrift": "kleíō",
           "deutsch": "schließen, verschließen",
-          "sprich": "kleioh",
+          "sprich": "klehoh",
           "audio": "data/audio/gwx_08_12.m4a"
         },
         {
@@ -1568,7 +1568,7 @@
           "umschrift": "basileía",
           "deutsch": "Königsherrschaft, Königreich",
           "erklaerung": "ἡ βασιλεία τοῦ θεοῦ: das Reich Gottes",
-          "sprich": "basileia",
+          "sprich": "basileha",
           "audio": "data/audio/gwx_10_09.m4a"
         },
         {
@@ -1859,7 +1859,7 @@
           "griechisch": "καλῶς λέγεις",
           "umschrift": "kalôs légeis",
           "deutsch": "da hast du recht, gut gesagt",
-          "sprich": "kalôs légeis",
+          "sprich": "kalôs légehs",
           "audio": "data/audio/gwx_12_07.m4a"
         },
         {
@@ -1974,7 +1974,7 @@
           "umschrift": "eíōtha",
           "deutsch": "gewohnt sein, pflegen",
           "erklaerung": "Perfekt mit Präsensbedeutung",
-          "sprich": "eiohta",
+          "sprich": "ehohta",
           "audio": "data/audio/gwx_13_02.m4a"
         },
         {
@@ -2028,7 +2028,7 @@
           "griechisch": "φθείρω",
           "umschrift": "phtheírō",
           "deutsch": "verderben, zugrunde richten",
-          "sprich": "fteiroh",
+          "sprich": "ftehroh",
           "audio": "data/audio/gwx_13_09.m4a"
         },
         {
@@ -2072,7 +2072,7 @@
           "griechisch": "μείγνυμι",
           "umschrift": "meígnymi",
           "deutsch": "mischen, vermischen, vereinigen",
-          "sprich": "meignümi",
+          "sprich": "mehgnümi",
           "audio": "data/audio/gwx_13_15.m4a"
         },
         {
@@ -2122,7 +2122,7 @@
           "griechisch": "ἡ πρεσβεία, τῆς πρεσβείας",
           "umschrift": "presbeía",
           "deutsch": "Gesandtschaft",
-          "sprich": "presbeia",
+          "sprich": "presbeha",
           "audio": "data/audio/gwx_14_01.m4a"
         },
         {
@@ -2291,7 +2291,7 @@
           "griechisch": "ὁ πόλεμος — ἡ εἰρήνη",
           "umschrift": "pólemos — eirḗnē",
           "deutsch": "Krieg — Frieden",
-          "sprich": "pólemos — eirḗneh",
+          "sprich": "pólemos — ehrḗneh",
           "audio": "data/audio/gwx_15_04.m4a"
         },
         {
@@ -2319,7 +2319,7 @@
           "griechisch": "ἡ ἀλήθεια — τὸ ψεῦδος",
           "umschrift": "alḗtheia — pseûdos",
           "deutsch": "Wahrheit — Lüge",
-          "sprich": "alḗteia — pseûdos",
+          "sprich": "alḗteha — pseûdos",
           "audio": "data/audio/gwx_15_08.m4a"
         },
         {
@@ -2377,7 +2377,7 @@
           "griechisch": "ἐνθάδε — ἐκεῖ",
           "umschrift": "entháde — ekeî",
           "deutsch": "hier — dort",
-          "sprich": "entáde — ekeî",
+          "sprich": "entáde — ekeh",
           "audio": "data/audio/gwx_15_16.m4a"
         },
         {

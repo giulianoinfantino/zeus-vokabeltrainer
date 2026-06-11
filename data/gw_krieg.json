@@ -38,7 +38,7 @@
           "griechisch": "ἡ εἰσβολή, τῆς εἰσβολῆς",
           "umschrift": "eisbolḗ",
           "deutsch": "Einfall, Invasion; Pass",
-          "sprich": "eisbolḗ",
+          "sprich": "ehsbolḗ",
           "audio": "data/audio/gwk_00_04.m4a"
         },
         {
@@ -88,7 +88,7 @@
           "griechisch": "ἡ λεία, τῆς λείας",
           "umschrift": "leía",
           "deutsch": "Beute",
-          "sprich": "leia",
+          "sprich": "leha",
           "audio": "data/audio/gwk_00_11.m4a"
         },
         {
@@ -130,7 +130,7 @@
           "griechisch": "ἡ ἀσφάλεια, τῆς ἀσφαλείας",
           "umschrift": "aspháleia",
           "deutsch": "Sicherheit",
-          "sprich": "asfáleia",
+          "sprich": "asfáleha",
           "audio": "data/audio/gwk_00_17.m4a"
         },
         {
@@ -277,7 +277,7 @@
           "griechisch": "ἡ πορεία, τῆς πορείας",
           "umschrift": "poreía",
           "deutsch": "Marsch, Reise",
-          "sprich": "poreia",
+          "sprich": "poreha",
           "audio": "data/audio/gwk_01_17.m4a"
         },
         {
@@ -424,7 +424,7 @@
           "griechisch": "τὸ σημεῖον, τοῦ σημείου",
           "umschrift": "sēmeîon",
           "deutsch": "Feldzeichen, Signal",
-          "sprich": "sehmeîon",
+          "sprich": "sehmehon",
           "audio": "data/audio/gwk_02_17.m4a"
         },
         {
@@ -551,7 +551,7 @@
           "griechisch": "ὁ χειμών, τοῦ χειμῶνος",
           "umschrift": "cheimṓn",
           "deutsch": "Sturm; Winter",
-          "sprich": "keimṓn",
+          "sprich": "kehmṓn",
           "audio": "data/audio/gwk_03_14.m4a"
         },
         {
@@ -661,21 +661,21 @@
           "griechisch": "ἡ δειλία, τῆς δειλίας",
           "umschrift": "deilía",
           "deutsch": "Feigheit",
-          "sprich": "deilía",
+          "sprich": "dehlía",
           "audio": "data/audio/gwk_04_09.m4a"
         },
         {
           "griechisch": "ὁ δειλός, τοῦ δειλοῦ",
           "umschrift": "deilós",
           "deutsch": "der Feige, der Feigling",
-          "sprich": "deilós",
+          "sprich": "dehlós",
           "audio": "data/audio/gwk_04_10.m4a"
         },
         {
           "griechisch": "ἡ ἀπειλή, τῆς ἀπειλῆς",
           "umschrift": "apeilḗ",
           "deutsch": "Drohung",
-          "sprich": "apeilḗ",
+          "sprich": "apehlḗ",
           "audio": "data/audio/gwk_04_11.m4a"
         },
         {
@@ -683,7 +683,7 @@
           "umschrift": "apeiléō",
           "deutsch": "drohen",
           "erklaerung": "Mit Dativ",
-          "sprich": "apeiléoh",
+          "sprich": "apehléoh",
           "audio": "data/audio/gwk_04_12.m4a"
         },
         {

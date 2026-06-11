@@ -93,14 +93,14 @@
           "griechisch": "ἀνδρεῖος, -α, -ον",
           "umschrift": "andreîos",
           "deutsch": "tapfer, mannhaft",
-          "sprich": "andreîos",
+          "sprich": "andrehos",
           "audio": "data/audio/gwa_00_12.m4a"
         },
         {
           "griechisch": "δειλός, -ή, -όν",
           "umschrift": "deilós",
           "deutsch": "feige, elend",
-          "sprich": "deilós",
+          "sprich": "dehlós",
           "audio": "data/audio/gwa_00_13.m4a"
         },
         {
@@ -372,7 +372,7 @@
           "umschrift": "deinós",
           "deutsch": "furchtbar, gewaltig; tüchtig",
           "erklaerung": "δεινὸς λέγειν: gewandt im Reden",
-          "sprich": "deinós",
+          "sprich": "dehnós",
           "audio": "data/audio/gwa_02_09.m4a"
         },
         {
@@ -574,7 +574,7 @@
           "griechisch": "σκοτεινός, -ή, -όν",
           "umschrift": "skoteinós",
           "deutsch": "dunkel, finster",
-          "sprich": "skoteinós",
+          "sprich": "skotehnós",
           "audio": "data/audio/gwa_03_17.m4a"
         },
         {
@@ -729,7 +729,7 @@
           "griechisch": "οἰκεῖος, -α, -ον",
           "umschrift": "oikeîos",
           "deutsch": "zum Haus gehörig, verwandt, vertraut",
-          "sprich": "oikeîos",
+          "sprich": "oikehos",
           "audio": "data/audio/gwa_04_18.m4a"
         },
         {
@@ -898,7 +898,7 @@
           "umschrift": "heîs",
           "deutsch": "eins",
           "erklaerung": "Genitiv: ἑνός, μιᾶς, ἑνός",
-          "sprich": "heîs",
+          "sprich": "hehs",
           "audio": "data/audio/gwa_06_00.m4a"
         },
         {
@@ -912,7 +912,7 @@
           "griechisch": "τρεῖς, τρία",
           "umschrift": "treîs",
           "deutsch": "drei",
-          "sprich": "treîs",
+          "sprich": "trehs",
           "audio": "data/audio/gwa_06_02.m4a"
         },
         {
@@ -968,7 +968,7 @@
           "griechisch": "εἴκοσι(ν)",
           "umschrift": "eíkosi(n)",
           "deutsch": "zwanzig",
-          "sprich": "eikosi(n)",
+          "sprich": "ehkosi(n)",
           "audio": "data/audio/gwa_06_10.m4a"
         },
         {

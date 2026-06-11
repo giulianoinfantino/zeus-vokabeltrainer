@@ -208,7 +208,7 @@
           "umschrift": "peíthō",
           "deutsch": "überreden, überzeugen",
           "erklaerung": "Medium: gehorchen, vertrauen (mit Dativ)",
-          "sprich": "peitoh",
+          "sprich": "pehtoh",
           "audio": "data/audio/gwv2_01_06.m4a"
         },
         {
@@ -216,14 +216,14 @@
           "umschrift": "peíthomai",
           "deutsch": "gehorchen, sich überzeugen lassen",
           "erklaerung": "Mit Dativ",
-          "sprich": "peitomai",
+          "sprich": "pehtomai",
           "audio": "data/audio/gwv2_01_07.m4a"
         },
         {
           "griechisch": "ἀπειθέω",
           "umschrift": "apeithéō",
           "deutsch": "ungehorsam sein",
-          "sprich": "apeitéoh",
+          "sprich": "apehtéoh",
           "audio": "data/audio/gwv2_01_08.m4a"
         },
         {
@@ -304,7 +304,7 @@
           "griechisch": "ὀνειδίζω",
           "umschrift": "oneidízō",
           "deutsch": "schmähen, vorwerfen",
-          "sprich": "oneidízoh",
+          "sprich": "onehdízoh",
           "audio": "data/audio/gwv2_01_19.m4a"
         }
       ]
@@ -433,7 +433,7 @@
           "umschrift": "opheílō",
           "deutsch": "schulden, verpflichtet sein",
           "erklaerung": "ὤφελον + Inf.: unerfüllbarer Wunsch",
-          "sprich": "ofeiloh",
+          "sprich": "ofehloh",
           "audio": "data/audio/gwv2_02_16.m4a"
         },
         {
@@ -455,7 +455,7 @@
           "griechisch": "εἵργω",
           "umschrift": "heírgō",
           "deutsch": "einschließen, ausschließen, hindern",
-          "sprich": "heirgoh",
+          "sprich": "hehrgoh",
           "audio": "data/audio/gwv2_02_19.m4a"
         }
       ]
@@ -548,7 +548,7 @@
           "umschrift": "daneízō",
           "deutsch": "Geld verleihen",
           "erklaerung": "Medium: borgen",
-          "sprich": "daneizoh",
+          "sprich": "danehzoh",
           "audio": "data/audio/gwv2_03_11.m4a"
         },
         {
@@ -750,7 +750,7 @@
           "umschrift": "epideíknymi",
           "deutsch": "vorzeigen, vorführen",
           "erklaerung": "Medium: prunken, sich zeigen",
-          "sprich": "epideiknümi",
+          "sprich": "epidehknümi",
           "audio": "data/audio/gwv2_04_18.m4a"
         },
         {
@@ -1049,7 +1049,7 @@
           "umschrift": "symbaínei",
           "deutsch": "es ereignet sich, es trifft sich",
           "erklaerung": "Unpersönlich mit AcI",
-          "sprich": "sümbainei",
+          "sprich": "sümbaineh",
           "audio": "data/audio/gwv2_06_17.m4a"
         },
         {
@@ -1133,7 +1133,7 @@
           "griechisch": "πειράω",
           "umschrift": "peiráō",
           "deutsch": "versuchen, auf die Probe stellen",
-          "sprich": "peiráoh",
+          "sprich": "pehráoh",
           "audio": "data/audio/gwv2_07_08.m4a"
         },
         {
@@ -1154,7 +1154,7 @@
           "griechisch": "εἰκάζω",
           "umschrift": "eikázō",
           "deutsch": "vermuten, vergleichen",
-          "sprich": "eikázoh",
+          "sprich": "ehkázoh",
           "audio": "data/audio/gwv2_07_11.m4a"
         },
         {
@@ -1318,7 +1318,7 @@
           "umschrift": "eisbállō",
           "deutsch": "einfallen, eindringen",
           "erklaerung": "εἰς + Akkusativ",
-          "sprich": "eisbálloh",
+          "sprich": "ehsbálloh",
           "audio": "data/audio/gwv2_08_13.m4a"
         },
         {
@@ -1440,7 +1440,7 @@
           "umschrift": "prosḗkei",
           "deutsch": "es gehört sich, es kommt zu",
           "erklaerung": "Unpersönlich mit Dativ",
-          "sprich": "prosḗkei",
+          "sprich": "prosḗkeh",
           "audio": "data/audio/gwv2_09_09.m4a"
         },
         {
@@ -1448,7 +1448,7 @@
           "umschrift": "prépei",
           "deutsch": "es ziemt sich",
           "erklaerung": "Unpersönlich mit Dativ",
-          "sprich": "prépei",
+          "sprich": "prépeh",
           "audio": "data/audio/gwv2_09_10.m4a"
         },
         {
@@ -1456,14 +1456,14 @@
           "umschrift": "symphérei",
           "deutsch": "es nützt, es ist zuträglich",
           "erklaerung": "τὸ συμφέρον: der Nutzen",
-          "sprich": "sümférei",
+          "sprich": "sümféreh",
           "audio": "data/audio/gwv2_09_11.m4a"
         },
         {
           "griechisch": "λυσιτελεῖ",
           "umschrift": "lysiteleî",
           "deutsch": "es lohnt sich, es nützt",
-          "sprich": "lüsiteleî",
+          "sprich": "lüsiteleh",
           "audio": "data/audio/gwv2_09_12.m4a"
         },
         {
@@ -1491,7 +1491,7 @@
           "griechisch": "ἐλλείπω",
           "umschrift": "elleípō",
           "deutsch": "zurücklassen, ermangeln, fehlen",
-          "sprich": "elleipoh",
+          "sprich": "ellehpoh",
           "audio": "data/audio/gwv2_09_16.m4a"
         },
         {

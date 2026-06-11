@@ -240,7 +240,7 @@
           "griechisch": "ἡ πολιτεία, τῆς πολιτείας",
           "umschrift": "politeía",
           "deutsch": "Verfassung, Bürgerrecht, Staat",
-          "sprich": "politeia",
+          "sprich": "politeha",
           "audio": "data/audio/gwp_01_12.m4a"
         },
         {
@@ -283,7 +283,7 @@
           "griechisch": "ἡ εἰρήνη, τῆς εἰρήνης",
           "umschrift": "eirḗnē",
           "deutsch": "Friede",
-          "sprich": "eirḗneh",
+          "sprich": "ehrḗneh",
           "audio": "data/audio/gwp_01_18.m4a"
         },
         {
@@ -636,7 +636,7 @@
           "griechisch": "τὸ ὄνειδος, τοῦ ὀνείδους",
           "umschrift": "óneidos",
           "deutsch": "Schimpf, Vorwurf",
-          "sprich": "óneidos",
+          "sprich": "ónehdos",
           "audio": "data/audio/gwp_04_06.m4a"
         },
         {
@@ -713,7 +713,7 @@
           "griechisch": "τὸ παράδειγμα, τοῦ παραδείγματος",
           "umschrift": "parádeigma",
           "deutsch": "Beispiel, Vorbild, Muster",
-          "sprich": "parádeigma",
+          "sprich": "parádehgma",
           "audio": "data/audio/gwp_04_17.m4a"
         },
         {
@@ -727,7 +727,7 @@
           "griechisch": "τὸ μνημεῖον, τοῦ μνημείου",
           "umschrift": "mnēmeîon",
           "deutsch": "Denkmal, Erinnerungszeichen",
-          "sprich": "mnehmeîon",
+          "sprich": "mnehmehon",
           "audio": "data/audio/gwp_04_19.m4a"
         }
       ]
@@ -838,7 +838,7 @@
           "griechisch": "τὸ σημεῖον, τοῦ σημείου",
           "umschrift": "sēmeîon",
           "deutsch": "Zeichen, Kennzeichen, Signal",
-          "sprich": "sehmeîon",
+          "sprich": "sehmehon",
           "audio": "data/audio/gwp_05_14.m4a"
         },
         {
@@ -992,7 +992,7 @@
           "griechisch": "ὁ γείτων, τοῦ γείτονος",
           "umschrift": "geítōn",
           "deutsch": "Nachbar",
-          "sprich": "geitohn",
+          "sprich": "gehtohn",
           "audio": "data/audio/gwp_06_15.m4a"
         },
         {
@@ -1054,7 +1054,7 @@
           "griechisch": "ἡ ἐμπειρία, τῆς ἐμπειρίας",
           "umschrift": "empeiría",
           "deutsch": "Erfahrung",
-          "sprich": "empeiría",
+          "sprich": "empehría",
           "audio": "data/audio/gwp_07_03.m4a"
         },
         {
@@ -1118,7 +1118,7 @@
           "griechisch": "ἡ εἰκών, τῆς εἰκόνος",
           "umschrift": "eikṓn",
           "deutsch": "Bild, Abbild, Statue",
-          "sprich": "eikṓn",
+          "sprich": "ehkṓn",
           "audio": "data/audio/gwp_07_12.m4a"
         },
         {

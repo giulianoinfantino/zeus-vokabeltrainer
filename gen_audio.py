@@ -35,7 +35,8 @@ SAY_RATE = 160
 ERSETZUNGEN = [
     ("ou", "u"), ("oú", "ú"), ("oû", "uh"),   # ου = langes u
     # Akzente auf Diphthongen zerbrechen die TTS-Aussprache (verifiziert):
-    ("aí", "ai"), ("eí", "ei"), ("oí", "oi"), ("aú", "au"), ("eú", "eu"),
+    ("aí", "ai"), ("eí", "ei"), ("eî", "ei"), ("oí", "oi"), ("aú", "au"), ("eú", "eu"),
+    ("ei", "eh"),                               # ει = [eː] (strenge Rekonstruktion, Nutzerwunsch)
     ("rh", "r"),
     ("th", "t"),                                # θ = t (Schulaussprache)
     ("ph", "f"),                                # φ = f
@@ -49,7 +50,7 @@ ERSETZUNGEN = [
 # missdeutet. Bei οὔ und τί deckt sich die neugriechische Aussprache mit
 # der erasmischen — diese werden daher griechisch generiert.
 UEBERSCHREIBUNGEN = {
-    "eimí": "eimii",          # Endbetonung erzwingen (Standard wäre EI-mi)
+    "eimí": "ehmii",          # ει=[eː] + Endbetonung erzwingen
     "chaíre": "kaire",
     "naí": "nai",
     "allá": "allah",

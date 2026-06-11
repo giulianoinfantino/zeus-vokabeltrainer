@@ -10,7 +10,7 @@
           "umschrift": "eimí",
           "deutsch": "sein, existieren",
           "erklaerung": "Unregelmäßig: ἔσομαι (Fut.). Enklitisch im Präsens.",
-          "sprich": "eimii",
+          "sprich": "ehmii",
           "audio": "data/audio/gwv1_00_00.m4a"
         },
         {
@@ -40,14 +40,14 @@
           "griechisch": "πάρειμι",
           "umschrift": "páreimi",
           "deutsch": "anwesend sein, dabei sein",
-          "sprich": "páreimi",
+          "sprich": "párehmi",
           "audio": "data/audio/gwv1_00_04.m4a"
         },
         {
           "griechisch": "ἄπειμι",
           "umschrift": "ápeimi",
           "deutsch": "abwesend sein, fort sein",
-          "sprich": "ápeimi",
+          "sprich": "ápehmi",
           "audio": "data/audio/gwv1_00_05.m4a"
         },
         {
@@ -63,7 +63,7 @@
           "umschrift": "deî",
           "deutsch": "es ist nötig, man muss",
           "erklaerung": "Unpersönlich mit Akkusativ und Infinitiv",
-          "sprich": "deî",
+          "sprich": "deh",
           "audio": "data/audio/gwv1_00_07.m4a"
         },
         {
@@ -101,7 +101,7 @@
           "griechisch": "κεῖμαι",
           "umschrift": "keîmai",
           "deutsch": "liegen, daliegen, festgesetzt sein",
-          "sprich": "keîmai",
+          "sprich": "kehmai",
           "audio": "data/audio/gwv1_00_12.m4a"
         },
         {
@@ -174,7 +174,7 @@
           "umschrift": "eîmi",
           "deutsch": "gehen (werde gehen)",
           "erklaerung": "Dient als Futur zu ἔρχομαι",
-          "sprich": "eîmi",
+          "sprich": "ehmi",
           "audio": "data/audio/gwv1_01_01.m4a"
         },
         {
@@ -218,7 +218,7 @@
           "griechisch": "εἰσέρχομαι",
           "umschrift": "eisérchomai",
           "deutsch": "hineingehen",
-          "sprich": "eisérchomai",
+          "sprich": "ehsérchomai",
           "audio": "data/audio/gwv1_01_07.m4a"
         },
         {
@@ -307,7 +307,7 @@
           "griechisch": "καταλείπω",
           "umschrift": "kataleípō",
           "deutsch": "zurücklassen, verlassen",
-          "sprich": "kataleipoh",
+          "sprich": "katalehpoh",
           "audio": "data/audio/gwv1_01_19.m4a"
         }
       ]
@@ -336,7 +336,7 @@
           "umschrift": "eîpon",
           "deutsch": "ich sagte (Aorist)",
           "erklaerung": "Aorist zu λέγω/φημί",
-          "sprich": "eîpon",
+          "sprich": "ehpon",
           "audio": "data/audio/gwv1_02_02.m4a"
         },
         {
@@ -481,7 +481,7 @@
           "umschrift": "eîdon",
           "deutsch": "ich sah (Aorist)",
           "erklaerung": "Aorist zu ὁράω; Imperativ ἰδέ",
-          "sprich": "eîdon",
+          "sprich": "ehdon",
           "audio": "data/audio/gwv1_03_01.m4a"
         },
         {
@@ -532,7 +532,7 @@
           "umschrift": "deíknymi",
           "deutsch": "zeigen",
           "erklaerung": "Stammformen: δείξω, ἔδειξα, δέδειχα",
-          "sprich": "deiknümi",
+          "sprich": "dehknümi",
           "audio": "data/audio/gwv1_03_08.m4a"
         },
         {
@@ -765,7 +765,7 @@
           "umschrift": "mélei",
           "deutsch": "es liegt am Herzen, es kümmert",
           "erklaerung": "Unpersönlich: μέλει μοί τινος",
-          "sprich": "mélei",
+          "sprich": "méleh",
           "audio": "data/audio/gwv1_04_18.m4a"
         },
         {
@@ -831,7 +831,7 @@
           "umschrift": "peiráomai",
           "deutsch": "versuchen, erproben",
           "erklaerung": "Mit Genitiv oder Infinitiv",
-          "sprich": "peiráomai",
+          "sprich": "pehráomai",
           "audio": "data/audio/gwv1_05_06.m4a"
         },
         {
@@ -839,7 +839,7 @@
           "umschrift": "epicheiréō",
           "deutsch": "in Angriff nehmen, versuchen",
           "erklaerung": "Mit Dativ",
-          "sprich": "epicheiréoh",
+          "sprich": "epichehréoh",
           "audio": "data/audio/gwv1_05_07.m4a"
         },
         {
@@ -1143,7 +1143,7 @@
           "umschrift": "hoîós t' eimí",
           "deutsch": "imstande sein, können",
           "erklaerung": "Wendung mit Infinitiv",
-          "sprich": "hoîós t' eimí",
+          "sprich": "hoîós t' ehmí",
           "audio": "data/audio/gwv1_07_06.m4a"
         },
         {
@@ -1304,7 +1304,7 @@
           "umschrift": "apokteínō",
           "deutsch": "töten",
           "erklaerung": "Stammformen: ἀποκτενῶ, ἀπέκτεινα",
-          "sprich": "apokteinoh",
+          "sprich": "apoktehnoh",
           "audio": "data/audio/gwv1_08_07.m4a"
         },
         {
@@ -1357,7 +1357,7 @@
           "griechisch": "διαφθείρω",
           "umschrift": "diaphtheírō",
           "deutsch": "zerstören, verderben, bestechen",
-          "sprich": "diafteiroh",
+          "sprich": "diaftehroh",
           "audio": "data/audio/gwv1_08_14.m4a"
         },
         {
@@ -1428,7 +1428,7 @@
           "griechisch": "ἐγείρω",
           "umschrift": "egeírō",
           "deutsch": "aufwecken; (Med.) erwachen",
-          "sprich": "egeiroh",
+          "sprich": "egehroh",
           "audio": "data/audio/gwv1_09_03.m4a"
         },
         {

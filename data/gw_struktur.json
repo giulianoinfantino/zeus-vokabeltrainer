@@ -23,14 +23,14 @@
           "griechisch": "ἡμεῖς, ἡμῶν",
           "umschrift": "hēmeîs",
           "deutsch": "wir",
-          "sprich": "hehmeîs",
+          "sprich": "hehmehs",
           "audio": "data/audio/gws_00_02.m4a"
         },
         {
           "griechisch": "ὑμεῖς, ὑμῶν",
           "umschrift": "hymeîs",
           "deutsch": "ihr",
-          "sprich": "hümeîs",
+          "sprich": "hümehs",
           "audio": "data/audio/gws_00_03.m4a"
         },
         {
@@ -61,7 +61,7 @@
           "griechisch": "ἐκεῖνος, -η, -ο",
           "umschrift": "ekeînos",
           "deutsch": "jener",
-          "sprich": "ekeînos",
+          "sprich": "ekehnos",
           "audio": "data/audio/gws_00_07.m4a"
         },
         {
@@ -98,14 +98,14 @@
           "griechisch": "οὐδείς, οὐδεμία, οὐδέν",
           "umschrift": "oudeís",
           "deutsch": "keiner, niemand, nichts",
-          "sprich": "udeis",
+          "sprich": "udehs",
           "audio": "data/audio/gws_00_12.m4a"
         },
         {
           "griechisch": "μηδείς, μηδεμία, μηδέν",
           "umschrift": "mēdeís",
           "deutsch": "keiner, niemand (mit μή)",
-          "sprich": "mehdeis",
+          "sprich": "mehdehs",
           "audio": "data/audio/gws_00_13.m4a"
         },
         {
@@ -169,7 +169,7 @@
           "umschrift": "eis",
           "deutsch": "in, nach (wohin?)",
           "erklaerung": "Mit Akkusativ",
-          "sprich": "eis",
+          "sprich": "ehs",
           "audio": "data/audio/gws_01_01.m4a"
         },
         {
@@ -407,7 +407,7 @@
           "griechisch": "εἰ",
           "umschrift": "ei",
           "deutsch": "wenn, falls; ob",
-          "sprich": "ei",
+          "sprich": "eh",
           "audio": "data/audio/gws_02_11.m4a"
         },
         {
@@ -445,14 +445,14 @@
           "griechisch": "ἐπεί",
           "umschrift": "epeí",
           "deutsch": "als, nachdem; da, weil",
-          "sprich": "epei",
+          "sprich": "epeh",
           "audio": "data/audio/gws_02_16.m4a"
         },
         {
           "griechisch": "ἐπειδή",
           "umschrift": "epeidḗ",
           "deutsch": "nachdem, da ja",
-          "sprich": "epeidḗ",
+          "sprich": "epehdḗ",
           "audio": "data/audio/gws_02_17.m4a"
         },
         {
@@ -555,7 +555,7 @@
           "griechisch": "εἴτε ... εἴτε",
           "umschrift": "eíte ... eíte",
           "deutsch": "sei es dass ... oder dass",
-          "sprich": "eite ... eite",
+          "sprich": "ehte ... ehte",
           "audio": "data/audio/gws_03_10.m4a"
         },
         {
@@ -579,7 +579,7 @@
           "umschrift": "eíthe",
           "deutsch": "wenn doch! (Wunschpartikel)",
           "erklaerung": "Mit Optativ",
-          "sprich": "eite",
+          "sprich": "ehte",
           "audio": "data/audio/gws_03_13.m4a"
         },
         {
@@ -790,7 +790,7 @@
           "griechisch": "ὡς ἔπος εἰπεῖν",
           "umschrift": "hōs épos eipeîn",
           "deutsch": "sozusagen",
-          "sprich": "hohs épos eipeîn",
+          "sprich": "hohs épos ehpehn",
           "audio": "data/audio/gws_05_01.m4a"
         },
         {
@@ -903,7 +903,7 @@
           "griechisch": "χάριν ἔχειν",
           "umschrift": "chárin échein",
           "deutsch": "Dank wissen, dankbar sein",
-          "sprich": "kárin échein",
+          "sprich": "kárin échehn",
           "audio": "data/audio/gws_05_17.m4a"
         },
         {

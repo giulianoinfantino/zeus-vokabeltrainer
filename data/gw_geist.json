@@ -60,14 +60,14 @@
           "griechisch": "ἡ εὐσέβεια, τῆς εὐσεβείας",
           "umschrift": "eusébeia",
           "deutsch": "Frömmigkeit",
-          "sprich": "eusébeia",
+          "sprich": "eusébeha",
           "audio": "data/audio/gwg_00_07.m4a"
         },
         {
           "griechisch": "ἡ ἀσέβεια, τῆς ἀσεβείας",
           "umschrift": "asébeia",
           "deutsch": "Gottlosigkeit, Frevel",
-          "sprich": "asébeia",
+          "sprich": "asébeha",
           "audio": "data/audio/gwg_00_08.m4a"
         },
         {
@@ -81,7 +81,7 @@
           "griechisch": "τὸ ἱερεῖον, τοῦ ἱερείου",
           "umschrift": "hiereîon",
           "deutsch": "Opfertier",
-          "sprich": "hiereîon",
+          "sprich": "hierehon",
           "audio": "data/audio/gwg_00_10.m4a"
         },
         {
@@ -102,7 +102,7 @@
           "griechisch": "τὸ μαντεῖον, τοῦ μαντείου",
           "umschrift": "manteîon",
           "deutsch": "Orakel, Orakelstätte",
-          "sprich": "manteîon",
+          "sprich": "mantehon",
           "audio": "data/audio/gwg_00_13.m4a"
         },
         {
@@ -171,7 +171,7 @@
           "griechisch": "ὁ Ποσειδῶν, τοῦ Ποσειδῶνος",
           "umschrift": "Poseidôn",
           "deutsch": "Poseidon",
-          "sprich": "Poseidôn",
+          "sprich": "Posehdôn",
           "audio": "data/audio/gwg_01_02.m4a"
         },
         {
@@ -340,7 +340,7 @@
           "griechisch": "ἡ μνεία, τῆς μνείας",
           "umschrift": "mneía",
           "deutsch": "Erwähnung, Gedenken",
-          "sprich": "mneia",
+          "sprich": "mneha",
           "audio": "data/audio/gwg_02_05.m4a"
         },
         {
@@ -404,7 +404,7 @@
           "umschrift": "eîdos",
           "deutsch": "Aussehen, Gestalt; Art, Form",
           "erklaerung": "Bei Platon: Idee",
-          "sprich": "eîdos",
+          "sprich": "ehdos",
           "audio": "data/audio/gwg_02_14.m4a"
         },
         {
@@ -418,7 +418,7 @@
           "griechisch": "ἡ ἀλήθεια, τῆς ἀληθείας",
           "umschrift": "alḗtheia",
           "deutsch": "Wahrheit",
-          "sprich": "alḗteia",
+          "sprich": "alḗteha",
           "audio": "data/audio/gwg_02_16.m4a"
         },
         {
@@ -542,7 +542,7 @@
           "griechisch": "ἡ μεταμέλεια, τῆς μεταμελείας",
           "umschrift": "metaméleia",
           "deutsch": "Reue",
-          "sprich": "metaméleia",
+          "sprich": "metaméleha",
           "audio": "data/audio/gwg_03_13.m4a"
         },
         {
@@ -550,7 +550,7 @@
           "umschrift": "metamélei moi",
           "deutsch": "ich bereue",
           "erklaerung": "Unpersönlich mit Dativ",
-          "sprich": "metamélei moi",
+          "sprich": "metaméleh moi",
           "audio": "data/audio/gwg_03_14.m4a"
         },
         {
@@ -699,7 +699,7 @@
           "griechisch": "τὸ στοιχεῖον, τοῦ στοιχείου",
           "umschrift": "stoicheîon",
           "deutsch": "Element, Grundstoff; Buchstabe",
-          "sprich": "ßtoicheîon",
+          "sprich": "ßtoichehon",
           "audio": "data/audio/gwg_04_14.m4a"
         },
         {
@@ -713,7 +713,7 @@
           "griechisch": "ἡ ἀπόδειξις, τῆς ἀποδείξεως",
           "umschrift": "apódeixis",
           "deutsch": "Beweis, Darlegung",
-          "sprich": "apódeixis",
+          "sprich": "apódehxis",
           "audio": "data/audio/gwg_04_16.m4a"
         },
         {
