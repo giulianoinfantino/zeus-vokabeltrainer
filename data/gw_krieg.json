@@ -24,28 +24,28 @@
           "griechisch": "ἡ μάχη, τῆς μάχης",
           "umschrift": "máchē",
           "deutsch": "Schlacht, Kampf",
-          "sprich": "mácheh",
+          "sprich": "mákä",
           "audio": "data/audio/gwk_00_02.m4a"
         },
         {
           "griechisch": "ἡ ναυμαχία, τῆς ναυμαχίας",
           "umschrift": "naumachía",
           "deutsch": "Seeschlacht",
-          "sprich": "naumachía",
+          "sprich": "naumakía",
           "audio": "data/audio/gwk_00_03.m4a"
         },
         {
           "griechisch": "ἡ εἰσβολή, τῆς εἰσβολῆς",
           "umschrift": "eisbolḗ",
           "deutsch": "Einfall, Invasion; Pass",
-          "sprich": "ehsbolḗ",
+          "sprich": "ehsbolä",
           "audio": "data/audio/gwk_00_04.m4a"
         },
         {
           "griechisch": "ἡ προσβολή, τῆς προσβολῆς",
           "umschrift": "prosbolḗ",
           "deutsch": "Angriff, Sturmangriff",
-          "sprich": "prosbolḗ",
+          "sprich": "prosbolä",
           "audio": "data/audio/gwk_00_05.m4a"
         },
         {
@@ -67,21 +67,21 @@
           "umschrift": "tropḗ",
           "deutsch": "Wende, Flucht (der Feinde)",
           "erklaerung": "τρόπαιον: Siegesdenkmal",
-          "sprich": "tropḗ",
+          "sprich": "tropä",
           "audio": "data/audio/gwk_00_08.m4a"
         },
         {
           "griechisch": "ἡ σφαγή, τῆς σφαγῆς",
           "umschrift": "sphagḗ",
           "deutsch": "Schlachten, Blutbad",
-          "sprich": "sfagḗ",
+          "sprich": "ßpagä",
           "audio": "data/audio/gwk_00_09.m4a"
         },
         {
           "griechisch": "ὁ φόνος, τοῦ φόνου",
           "umschrift": "phónos",
           "deutsch": "Mord, Totschlag",
-          "sprich": "fónos",
+          "sprich": "pónos",
           "audio": "data/audio/gwk_00_10.m4a"
         },
         {
@@ -95,28 +95,28 @@
           "griechisch": "τὰ λάφυρα, τῶν λαφύρων",
           "umschrift": "láphyra",
           "deutsch": "Kriegsbeute",
-          "sprich": "láfüra",
+          "sprich": "lápüra",
           "audio": "data/audio/gwk_00_12.m4a"
         },
         {
           "griechisch": "ὁ αἰχμάλωτος, τοῦ αἰχμαλώτου",
           "umschrift": "aichmálōtos",
           "deutsch": "Kriegsgefangener",
-          "sprich": "aichmálohtos",
+          "sprich": "aikmálohtos",
           "audio": "data/audio/gwk_00_13.m4a"
         },
         {
           "griechisch": "ὁ ὅμηρος, τοῦ ὁμήρου",
           "umschrift": "hómēros",
           "deutsch": "Geisel",
-          "sprich": "hómehros",
+          "sprich": "hómähros",
           "audio": "data/audio/gwk_00_14.m4a"
         },
         {
           "griechisch": "ἡ ἀνακωχή, τῆς ἀνακωχῆς",
           "umschrift": "anakōchḗ",
           "deutsch": "Waffenruhe",
-          "sprich": "anakohchḗ",
+          "sprich": "anakohkä",
           "audio": "data/audio/gwk_00_15.m4a"
         },
         {
@@ -130,14 +130,14 @@
           "griechisch": "ἡ ἀσφάλεια, τῆς ἀσφαλείας",
           "umschrift": "aspháleia",
           "deutsch": "Sicherheit",
-          "sprich": "asfáleha",
+          "sprich": "aspáleha",
           "audio": "data/audio/gwk_00_17.m4a"
         },
         {
           "griechisch": "ἡ ῥώμη, τῆς ῥώμης",
           "umschrift": "rhṓmē",
           "deutsch": "Kraft, Stärke",
-          "sprich": "rṓmeh",
+          "sprich": "rṓmä",
           "audio": "data/audio/gwk_00_18.m4a"
         },
         {
@@ -171,21 +171,21 @@
           "griechisch": "τὸ στράτευμα, τοῦ στρατεύματος",
           "umschrift": "stráteuma",
           "deutsch": "Heer, Streitmacht",
-          "sprich": "ßtráteuma",
+          "sprich": "ßtrátehuma",
           "audio": "data/audio/gwk_01_02.m4a"
         },
         {
           "griechisch": "ὁ στρατιώτης, τοῦ στρατιώτου",
           "umschrift": "stratiṓtēs",
           "deutsch": "Soldat",
-          "sprich": "ßtratiṓtehs",
+          "sprich": "ßtratiṓtähs",
           "audio": "data/audio/gwk_01_03.m4a"
         },
         {
           "griechisch": "ὁ ὁπλίτης, τοῦ ὁπλίτου",
           "umschrift": "hoplítēs",
           "deutsch": "Schwerbewaffneter, Hoplit",
-          "sprich": "hoplítehs",
+          "sprich": "hoplítähs",
           "audio": "data/audio/gwk_01_04.m4a"
         },
         {
@@ -193,56 +193,56 @@
           "umschrift": "hippeús",
           "deutsch": "Reiter",
           "erklaerung": "Plural: Reiterei, Ritterstand",
-          "sprich": "hippeus",
+          "sprich": "hippehus",
           "audio": "data/audio/gwk_01_05.m4a"
         },
         {
           "griechisch": "ὁ τοξότης, τοῦ τοξότου",
           "umschrift": "toxótēs",
           "deutsch": "Bogenschütze",
-          "sprich": "toxótehs",
+          "sprich": "toxótähs",
           "audio": "data/audio/gwk_01_06.m4a"
         },
         {
           "griechisch": "ὁ πελταστής, τοῦ πελταστοῦ",
           "umschrift": "peltastḗs",
           "deutsch": "Leichtbewaffneter, Peltast",
-          "sprich": "peltastḗs",
+          "sprich": "peltastähs",
           "audio": "data/audio/gwk_01_07.m4a"
         },
         {
           "griechisch": "ὁ μισθοφόρος, τοῦ μισθοφόρου",
           "umschrift": "misthophóros",
           "deutsch": "Söldner",
-          "sprich": "mistofóros",
+          "sprich": "mistopóros",
           "audio": "data/audio/gwk_01_08.m4a"
         },
         {
           "griechisch": "ὁ φρουρός, τοῦ φρουροῦ",
           "umschrift": "phrourós",
           "deutsch": "Wächter, Besatzungssoldat",
-          "sprich": "frurós",
+          "sprich": "prurós",
           "audio": "data/audio/gwk_01_09.m4a"
         },
         {
           "griechisch": "ἡ φρουρά, τῆς φρουρᾶς",
           "umschrift": "phrourá",
           "deutsch": "Wache, Besatzung",
-          "sprich": "frurá",
+          "sprich": "prurá",
           "audio": "data/audio/gwk_01_10.m4a"
         },
         {
           "griechisch": "ἡ φυλακή, τῆς φυλακῆς",
           "umschrift": "phylakḗ",
           "deutsch": "Wache, Bewachung, Schutz",
-          "sprich": "fülakḗ",
+          "sprich": "pülakä",
           "audio": "data/audio/gwk_01_11.m4a"
         },
         {
           "griechisch": "ὁ λόχος, τοῦ λόχου",
           "umschrift": "lóchos",
           "deutsch": "Hinterhalt; Kompanie",
-          "sprich": "lóchos",
+          "sprich": "lókos",
           "audio": "data/audio/gwk_01_12.m4a"
         },
         {
@@ -256,7 +256,7 @@
           "griechisch": "ἡ φάλαγξ, τῆς φάλαγγος",
           "umschrift": "phálanx",
           "deutsch": "Schlachtreihe, Phalanx",
-          "sprich": "fálanx",
+          "sprich": "pálanx",
           "audio": "data/audio/gwk_01_14.m4a"
         },
         {
@@ -270,7 +270,7 @@
           "griechisch": "ἡ σκηνή, τῆς σκηνῆς",
           "umschrift": "skēnḗ",
           "deutsch": "Zelt; Bühne",
-          "sprich": "skehnḗ",
+          "sprich": "skähnä",
           "audio": "data/audio/gwk_01_16.m4a"
         },
         {
@@ -284,7 +284,7 @@
           "griechisch": "ἡ ἀναχώρησις, τῆς ἀναχωρήσεως",
           "umschrift": "anachṓrēsis",
           "deutsch": "Rückzug",
-          "sprich": "anachṓrehsis",
+          "sprich": "anakṓrähsis",
           "audio": "data/audio/gwk_01_18.m4a"
         },
         {
@@ -310,14 +310,14 @@
           "griechisch": "τὸ ξίφος, τοῦ ξίφους",
           "umschrift": "xíphos",
           "deutsch": "Schwert",
-          "sprich": "xífos",
+          "sprich": "xípos",
           "audio": "data/audio/gwk_02_01.m4a"
         },
         {
           "griechisch": "ἡ μάχαιρα, τῆς μαχαίρας",
           "umschrift": "máchaira",
           "deutsch": "Messer, Dolch, Säbel",
-          "sprich": "máchaira",
+          "sprich": "mákaira",
           "audio": "data/audio/gwk_02_02.m4a"
         },
         {
@@ -331,7 +331,7 @@
           "griechisch": "ἡ αἰχμή, τῆς αἰχμῆς",
           "umschrift": "aichmḗ",
           "deutsch": "Lanzenspitze, Lanze",
-          "sprich": "aichmḗ",
+          "sprich": "aikmä",
           "audio": "data/audio/gwk_02_04.m4a"
         },
         {
@@ -367,7 +367,7 @@
           "griechisch": "ἡ σφενδόνη, τῆς σφενδόνης",
           "umschrift": "sphendónē",
           "deutsch": "Schleuder",
-          "sprich": "sfendóneh",
+          "sprich": "ßpendónä",
           "audio": "data/audio/gwk_02_09.m4a"
         },
         {
@@ -395,7 +395,7 @@
           "griechisch": "αἱ κνημῖδες, τῶν κνημίδων",
           "umschrift": "knēmîdes",
           "deutsch": "Beinschienen",
-          "sprich": "knehmîdes",
+          "sprich": "knähmîdes",
           "audio": "data/audio/gwk_02_13.m4a"
         },
         {
@@ -424,21 +424,21 @@
           "griechisch": "τὸ σημεῖον, τοῦ σημείου",
           "umschrift": "sēmeîon",
           "deutsch": "Feldzeichen, Signal",
-          "sprich": "sehmehon",
+          "sprich": "sähmehon",
           "audio": "data/audio/gwk_02_17.m4a"
         },
         {
           "griechisch": "ἡ παρασκευή, τῆς παρασκευῆς",
           "umschrift": "paraskeuḗ",
           "deutsch": "Vorbereitung, Ausrüstung",
-          "sprich": "paraskeuḗ",
+          "sprich": "paraskehuä",
           "audio": "data/audio/gwk_02_18.m4a"
         },
         {
           "griechisch": "ἡ ῥώμη στρατιωτική",
           "umschrift": "rhṓmē stratiōtikḗ",
           "deutsch": "militärische Stärke",
-          "sprich": "rṓmeh ßtratiohtikḗ",
+          "sprich": "rṓmä ßtratiohtikä",
           "audio": "data/audio/gwk_02_19.m4a"
         }
       ]
@@ -458,14 +458,14 @@
           "griechisch": "τὸ πλοῖον, τοῦ πλοίου",
           "umschrift": "ploîon",
           "deutsch": "Schiff, Fahrzeug",
-          "sprich": "ploîon",
+          "sprich": "plohion",
           "audio": "data/audio/gwk_03_01.m4a"
         },
         {
           "griechisch": "ἡ τριήρης, τῆς τριήρους",
           "umschrift": "triḗrēs",
           "deutsch": "Triere, Dreiruderer",
-          "sprich": "triḗrehs",
+          "sprich": "triährähs",
           "audio": "data/audio/gwk_03_02.m4a"
         },
         {
@@ -516,7 +516,7 @@
           "griechisch": "ἡ ἀκτή, τῆς ἀκτῆς",
           "umschrift": "aktḗ",
           "deutsch": "Küste, Vorgebirge",
-          "sprich": "aktḗ",
+          "sprich": "aktä",
           "audio": "data/audio/gwk_03_09.m4a"
         },
         {
@@ -558,28 +558,28 @@
           "griechisch": "ἡ γαλήνη, τῆς γαλήνης",
           "umschrift": "galḗnē",
           "deutsch": "Meeresstille, Windstille",
-          "sprich": "galḗneh",
+          "sprich": "galähnä",
           "audio": "data/audio/gwk_03_15.m4a"
         },
         {
           "griechisch": "ὁ ναύκληρος, τοῦ ναυκλήρου",
           "umschrift": "naúklēros",
           "deutsch": "Schiffsherr, Reeder",
-          "sprich": "nauklehros",
+          "sprich": "nauklähros",
           "audio": "data/audio/gwk_03_16.m4a"
         },
         {
           "griechisch": "ἡ κώπη, τῆς κώπης",
           "umschrift": "kṓpē",
           "deutsch": "Ruder",
-          "sprich": "kṓpeh",
+          "sprich": "kṓpä",
           "audio": "data/audio/gwk_03_17.m4a"
         },
         {
           "griechisch": "τὸ πηδάλιον, τοῦ πηδαλίου",
           "umschrift": "pēdálion",
           "deutsch": "Steuerruder",
-          "sprich": "pehdálion",
+          "sprich": "pähdálion",
           "audio": "data/audio/gwk_03_18.m4a"
         },
         {
@@ -605,21 +605,21 @@
           "griechisch": "ἡ στρατηγία, τῆς στρατηγίας",
           "umschrift": "stratēgía",
           "deutsch": "Feldherrnamt, Kriegskunst",
-          "sprich": "ßtratehgía",
+          "sprich": "ßtratähgía",
           "audio": "data/audio/gwk_04_01.m4a"
         },
         {
           "griechisch": "τὸ στρατήγημα, τοῦ στρατηγήματος",
           "umschrift": "stratḗgēma",
           "deutsch": "Kriegslist",
-          "sprich": "ßtratḗgehma",
+          "sprich": "ßtratähgähma",
           "audio": "data/audio/gwk_04_02.m4a"
         },
         {
           "griechisch": "ἡ ἐπιβουλή, τῆς ἐπιβουλῆς",
           "umschrift": "epiboulḗ",
           "deutsch": "Anschlag, Nachstellung",
-          "sprich": "epibulḗ",
+          "sprich": "epibulä",
           "audio": "data/audio/gwk_04_03.m4a"
         },
         {
@@ -647,7 +647,7 @@
           "griechisch": "ὁ προδότης, τοῦ προδότου",
           "umschrift": "prodótēs",
           "deutsch": "Verräter",
-          "sprich": "prodótehs",
+          "sprich": "prodótähs",
           "audio": "data/audio/gwk_04_07.m4a"
         },
         {
@@ -675,7 +675,7 @@
           "griechisch": "ἡ ἀπειλή, τῆς ἀπειλῆς",
           "umschrift": "apeilḗ",
           "deutsch": "Drohung",
-          "sprich": "apehlḗ",
+          "sprich": "apehlä",
           "audio": "data/audio/gwk_04_11.m4a"
         },
         {
@@ -690,7 +690,7 @@
           "griechisch": "ἡ ὁμόνοια, τῆς ὁμονοίας",
           "umschrift": "homónoia",
           "deutsch": "Eintracht",
-          "sprich": "homónoia",
+          "sprich": "homónohia",
           "audio": "data/audio/gwk_04_13.m4a"
         },
         {
@@ -704,7 +704,7 @@
           "griechisch": "ἡ ταραχή, τῆς ταραχῆς",
           "umschrift": "tarachḗ",
           "deutsch": "Verwirrung, Unruhe",
-          "sprich": "tarachḗ",
+          "sprich": "tarakä",
           "audio": "data/audio/gwk_04_15.m4a"
         },
         {
@@ -719,14 +719,14 @@
           "umschrift": "hēsychía",
           "deutsch": "Ruhe, Stille",
           "erklaerung": "ἡσυχίαν ἄγειν: sich ruhig verhalten",
-          "sprich": "hehsüchía",
+          "sprich": "hähsükía",
           "audio": "data/audio/gwk_04_17.m4a"
         },
         {
           "griechisch": "ἡ σωτηρία, τῆς σωτηρίας",
           "umschrift": "sōtēría",
           "deutsch": "Rettung, Erhaltung",
-          "sprich": "sohtehría",
+          "sprich": "sohtähría",
           "audio": "data/audio/gwk_04_18.m4a"
         },
         {

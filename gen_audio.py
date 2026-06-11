@@ -32,15 +32,23 @@ SAY_RATE = 160
 
 # Erasmische Schulaussprache, in deutscher Orthographie ausgedrückt.
 # Reihenfolge wichtig: Digraphen vor Einzelzeichen.
+# Strenge Rekonstruktion (Nutzerwunsch, alles verifiziert per STT/Spektrum):
+# ει=[eː], η=[ɛː], ευ=[eu], οι=[oi], θ/φ/χ=[tʰ pʰ kʰ] (deutsche t/p/k sind
+# von Natur behaucht). Bekannte Approximation: ζ=[ts] statt [zd] — [zd] ist
+# mit deutscher TTS nicht produzierbar (kollabiert zu „st").
 ERSETZUNGEN = [
     ("ou", "u"), ("oú", "ú"), ("oû", "uh"),   # ου = langes u
     # Akzente auf Diphthongen zerbrechen die TTS-Aussprache (verifiziert):
-    ("aí", "ai"), ("eí", "ei"), ("eî", "ei"), ("oí", "oi"), ("aú", "au"), ("eú", "eu"),
-    ("ei", "eh"),                               # ει = [eː] (strenge Rekonstruktion, Nutzerwunsch)
+    ("aí", "ai"), ("eí", "ei"), ("eî", "ei"), ("oí", "oi"), ("oî", "oi"), ("aú", "au"), ("eú", "eu"), ("eû", "eu"),
+    ("ei", "eh"),                               # ει = [eː]
+    ("eu", "ehu"),                              # ευ = [eu]
+    ("oi", "ohi"),                              # οι = [oi]
     ("rh", "r"),
-    ("th", "t"),                                # θ = t (Schulaussprache)
-    ("ph", "f"),                                # φ = f
-    ("ō", "oh"), ("ē", "eh"), ("ī", "ih"),     # Längen ausschreiben
+    ("th", "t"),                                # θ = [tʰ]
+    ("ph", "p"),                                # φ = [pʰ]
+    ("ch", "k"),                                # χ = [kʰ]
+    ("ō", "oh"), ("ī", "ih"),                  # Längen ausschreiben
+    ("ē", "äh"), ("ḗ", "äh"),                  # η = [ɛː]
     ("y", "ü"), ("ý", "ü"),                    # υ = ü (Akzent stört die TTS)
 ]
 
@@ -55,7 +63,7 @@ UEBERSCHREIBUNGEN = {
     "naí": "nai",
     "allá": "allah",
     "oú": ("ου.", "el"),
-    "eû ge": "eu geh",
+    "eû ge": "ehu geh",
     "tí?": ("τι", "el"),
 }
 
@@ -67,11 +75,10 @@ def sprechtext(umschrift: str) -> tuple[str, str]:
     t = umschrift
     for alt, neu in ERSETZUNGEN:
         t = t.replace(alt, neu)
-    # Anlautendes ch wird von deutscher TTS als „sch" gesprochen → k
-    # (Erasmus-Kompromiss, verifiziert: „cheir" → „Scheier", „kaire" ✓)
-    t = re.sub(r"(^|(?<= ))ch", "k", t)
     # Anlautendes st/sp: ß erzwingt messbar sauberes [s] statt „scht/schp"
     t = re.sub(r"(^|(?<= ))s(?=[tp])", "ß", t)
+    # Auslautendes „äh" wird verschluckt → schlichtes „ä" (verifiziert)
+    t = re.sub(r"äh($|(?= ))", "ä", t)
     return re.sub(r"[?;·]", "", t).strip(), "de"
 
 

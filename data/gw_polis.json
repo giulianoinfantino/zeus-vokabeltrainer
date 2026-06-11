@@ -23,7 +23,7 @@
           "griechisch": "ἡ κώμη, τῆς κώμης",
           "umschrift": "kṓmē",
           "deutsch": "Dorf",
-          "sprich": "kṓmeh",
+          "sprich": "kṓmä",
           "audio": "data/audio/gwp_00_02.m4a"
         },
         {
@@ -65,7 +65,7 @@
           "griechisch": "ὁ λιμήν, τοῦ λιμένος",
           "umschrift": "limḗn",
           "deutsch": "Hafen",
-          "sprich": "limḗn",
+          "sprich": "limähn",
           "audio": "data/audio/gwp_00_08.m4a"
         },
         {
@@ -80,14 +80,14 @@
           "umschrift": "pýlē",
           "deutsch": "Tor",
           "erklaerung": "Plural: Stadttor, Engpass",
-          "sprich": "püleh",
+          "sprich": "pülä",
           "audio": "data/audio/gwp_00_10.m4a"
         },
         {
           "griechisch": "ἡ κρήνη, τῆς κρήνης",
           "umschrift": "krḗnē",
           "deutsch": "Quelle, Brunnen",
-          "sprich": "krḗneh",
+          "sprich": "krähnä",
           "audio": "data/audio/gwp_00_11.m4a"
         },
         {
@@ -115,21 +115,21 @@
           "griechisch": "τὸ δικαστήριον, τοῦ δικαστηρίου",
           "umschrift": "dikastḗrion",
           "deutsch": "Gerichtshof",
-          "sprich": "dikastḗrion",
+          "sprich": "dikastährion",
           "audio": "data/audio/gwp_00_15.m4a"
         },
         {
           "griechisch": "τὸ βουλευτήριον, τοῦ βουλευτηρίου",
           "umschrift": "bouleutḗrion",
           "deutsch": "Ratsgebäude",
-          "sprich": "buleutḗrion",
+          "sprich": "bulehutährion",
           "audio": "data/audio/gwp_00_16.m4a"
         },
         {
           "griechisch": "ἡ ἐκκλησία, τῆς ἐκκλησίας",
           "umschrift": "ekklēsía",
           "deutsch": "Volksversammlung",
-          "sprich": "ekklehsía",
+          "sprich": "ekklähsía",
           "audio": "data/audio/gwp_00_17.m4a"
         },
         {
@@ -143,7 +143,7 @@
           "griechisch": "ἡ ἀποικία, τῆς ἀποικίας",
           "umschrift": "apoikía",
           "deutsch": "Kolonie, Pflanzstadt",
-          "sprich": "apoikía",
+          "sprich": "apohikía",
           "audio": "data/audio/gwp_00_19.m4a"
         }
       ]
@@ -156,7 +156,7 @@
           "umschrift": "basileús",
           "deutsch": "König",
           "erklaerung": "Ohne Artikel oft: der Perserkönig",
-          "sprich": "basileus",
+          "sprich": "basilehus",
           "audio": "data/audio/gwp_01_00.m4a"
         },
         {
@@ -170,28 +170,28 @@
           "griechisch": "ἡ ἀρχή, τῆς ἀρχῆς",
           "umschrift": "archḗ",
           "deutsch": "Anfang; Herrschaft, Amt, Reich",
-          "sprich": "archḗ",
+          "sprich": "arkä",
           "audio": "data/audio/gwp_01_02.m4a"
         },
         {
           "griechisch": "ὁ ἄρχων, τοῦ ἄρχοντος",
           "umschrift": "árchōn",
           "deutsch": "Herrscher, Beamter, Archont",
-          "sprich": "árchohn",
+          "sprich": "árkohn",
           "audio": "data/audio/gwp_01_03.m4a"
         },
         {
           "griechisch": "ἡ δημοκρατία, τῆς δημοκρατίας",
           "umschrift": "dēmokratía",
           "deutsch": "Volksherrschaft, Demokratie",
-          "sprich": "dehmokratía",
+          "sprich": "dähmokratía",
           "audio": "data/audio/gwp_01_04.m4a"
         },
         {
           "griechisch": "ἡ ὀλιγαρχία, τῆς ὀλιγαρχίας",
           "umschrift": "oligarchía",
           "deutsch": "Oligarchie, Herrschaft weniger",
-          "sprich": "oligarchía",
+          "sprich": "oligarkía",
           "audio": "data/audio/gwp_01_05.m4a"
         },
         {
@@ -212,21 +212,21 @@
           "griechisch": "ἡ βουλή, τῆς βουλῆς",
           "umschrift": "boulḗ",
           "deutsch": "Rat, Ratsversammlung; Plan",
-          "sprich": "bulḗ",
+          "sprich": "bulä",
           "audio": "data/audio/gwp_01_08.m4a"
         },
         {
           "griechisch": "τὸ ψήφισμα, τοῦ ψηφίσματος",
           "umschrift": "psḗphisma",
           "deutsch": "Volksbeschluss",
-          "sprich": "psḗfisma",
+          "sprich": "psähpisma",
           "audio": "data/audio/gwp_01_09.m4a"
         },
         {
           "griechisch": "ἡ ψῆφος, τῆς ψήφου",
           "umschrift": "psêphos",
           "deutsch": "Stimmstein, Abstimmung",
-          "sprich": "psêfos",
+          "sprich": "psêpos",
           "audio": "data/audio/gwp_01_10.m4a"
         },
         {
@@ -247,28 +247,28 @@
           "griechisch": "ὁ ῥήτωρ, τοῦ ῥήτορος",
           "umschrift": "rhḗtōr",
           "deutsch": "Redner, Politiker",
-          "sprich": "rḗtohr",
+          "sprich": "rähtohr",
           "audio": "data/audio/gwp_01_13.m4a"
         },
         {
           "griechisch": "ὁ προστάτης, τοῦ προστάτου",
           "umschrift": "prostátēs",
           "deutsch": "Vorsteher, Führer, Beschützer",
-          "sprich": "prostátehs",
+          "sprich": "prostátähs",
           "audio": "data/audio/gwp_01_14.m4a"
         },
         {
           "griechisch": "ὁ σύμμαχος, τοῦ συμμάχου",
           "umschrift": "sýmmachos",
           "deutsch": "Bundesgenosse, Verbündeter",
-          "sprich": "sümmachos",
+          "sprich": "sümmakos",
           "audio": "data/audio/gwp_01_15.m4a"
         },
         {
           "griechisch": "ἡ συμμαχία, τῆς συμμαχίας",
           "umschrift": "symmachía",
           "deutsch": "Bündnis",
-          "sprich": "sümmachía",
+          "sprich": "sümmakía",
           "audio": "data/audio/gwp_01_16.m4a"
         },
         {
@@ -283,14 +283,14 @@
           "griechisch": "ἡ εἰρήνη, τῆς εἰρήνης",
           "umschrift": "eirḗnē",
           "deutsch": "Friede",
-          "sprich": "ehrḗneh",
+          "sprich": "ehrähnä",
           "audio": "data/audio/gwp_01_18.m4a"
         },
         {
           "griechisch": "ἡ ἐλευθερία, τῆς ἐλευθερίας",
           "umschrift": "eleuthería",
           "deutsch": "Freiheit",
-          "sprich": "eleutería",
+          "sprich": "elehutería",
           "audio": "data/audio/gwp_01_19.m4a"
         }
       ]
@@ -303,7 +303,7 @@
           "umschrift": "díkē",
           "deutsch": "Recht, Prozess, Strafe",
           "erklaerung": "δίκην διδόναι: bestraft werden",
-          "sprich": "díkeh",
+          "sprich": "díkä",
           "audio": "data/audio/gwp_02_00.m4a"
         },
         {
@@ -317,14 +317,14 @@
           "griechisch": "ἡ γραφή, τῆς γραφῆς",
           "umschrift": "graphḗ",
           "deutsch": "Schrift; öffentliche Klage",
-          "sprich": "grafḗ",
+          "sprich": "grapä",
           "audio": "data/audio/gwp_02_02.m4a"
         },
         {
           "griechisch": "ὁ δικαστής, τοῦ δικαστοῦ",
           "umschrift": "dikastḗs",
           "deutsch": "Richter",
-          "sprich": "dikastḗs",
+          "sprich": "dikastähs",
           "audio": "data/audio/gwp_02_03.m4a"
         },
         {
@@ -345,14 +345,14 @@
           "griechisch": "ὁ κατήγορος, τοῦ κατηγόρου",
           "umschrift": "katḗgoros",
           "deutsch": "Ankläger",
-          "sprich": "katḗgoros",
+          "sprich": "katähgoros",
           "audio": "data/audio/gwp_02_06.m4a"
         },
         {
           "griechisch": "ἡ κατηγορία, τῆς κατηγορίας",
           "umschrift": "katēgoría",
           "deutsch": "Anklage",
-          "sprich": "katehgoría",
+          "sprich": "katähgoría",
           "audio": "data/audio/gwp_02_07.m4a"
         },
         {
@@ -381,14 +381,14 @@
           "griechisch": "τὸ ἀδίκημα, τοῦ ἀδικήματος",
           "umschrift": "adíkēma",
           "deutsch": "Unrecht, Vergehen",
-          "sprich": "adíkehma",
+          "sprich": "adíkähma",
           "audio": "data/audio/gwp_02_11.m4a"
         },
         {
           "griechisch": "ἡ ζημία, τῆς ζημίας",
           "umschrift": "zēmía",
           "deutsch": "Strafe, Schaden, Verlust",
-          "sprich": "zehmía",
+          "sprich": "zähmía",
           "audio": "data/audio/gwp_02_12.m4a"
         },
         {
@@ -409,28 +409,28 @@
           "griechisch": "ἡ μαρτυρία ψευδής",
           "umschrift": "martyría pseudḗs",
           "deutsch": "falsches Zeugnis",
-          "sprich": "martüría pseudḗs",
+          "sprich": "martüría psehudähs",
           "audio": "data/audio/gwp_02_15.m4a"
         },
         {
           "griechisch": "ὁ φυγάς, τοῦ φυγάδος",
           "umschrift": "phygás",
           "deutsch": "Flüchtling, Verbannter",
-          "sprich": "fügás",
+          "sprich": "pügás",
           "audio": "data/audio/gwp_02_16.m4a"
         },
         {
           "griechisch": "ἡ φυγή, τῆς φυγῆς",
           "umschrift": "phygḗ",
           "deutsch": "Flucht; Verbannung",
-          "sprich": "fügḗ",
+          "sprich": "pügä",
           "audio": "data/audio/gwp_02_17.m4a"
         },
         {
           "griechisch": "τὸ δεσμωτήριον, τοῦ δεσμωτηρίου",
           "umschrift": "desmōtḗrion",
           "deutsch": "Gefängnis",
-          "sprich": "desmohtḗrion",
+          "sprich": "desmohtährion",
           "audio": "data/audio/gwp_02_18.m4a"
         },
         {
@@ -449,7 +449,7 @@
           "griechisch": "τὰ χρήματα, τῶν χρημάτων",
           "umschrift": "chrḗmata",
           "deutsch": "Geld, Vermögen, Güter",
-          "sprich": "krḗmata",
+          "sprich": "krähmata",
           "audio": "data/audio/gwp_03_00.m4a"
         },
         {
@@ -484,14 +484,14 @@
           "griechisch": "ὁ σίδηρος, τοῦ σιδήρου",
           "umschrift": "sídēros",
           "deutsch": "Eisen",
-          "sprich": "sídehros",
+          "sprich": "sídähros",
           "audio": "data/audio/gwp_03_05.m4a"
         },
         {
           "griechisch": "ἡ δραχμή, τῆς δραχμῆς",
           "umschrift": "drachmḗ",
           "deutsch": "Drachme (Münze)",
-          "sprich": "drachmḗ",
+          "sprich": "drakmä",
           "audio": "data/audio/gwp_03_06.m4a"
         },
         {
@@ -554,7 +554,7 @@
           "griechisch": "ὁ φόρος, τοῦ φόρου",
           "umschrift": "phóros",
           "deutsch": "Tribut, Abgabe",
-          "sprich": "fóros",
+          "sprich": "póros",
           "audio": "data/audio/gwp_03_15.m4a"
         },
         {
@@ -568,7 +568,7 @@
           "griechisch": "ἡ δαπάνη, τῆς δαπάνης",
           "umschrift": "dapánē",
           "deutsch": "Aufwand, Kosten",
-          "sprich": "dapáneh",
+          "sprich": "dapánä",
           "audio": "data/audio/gwp_03_17.m4a"
         },
         {
@@ -594,7 +594,7 @@
           "griechisch": "ἡ τιμή, τῆς τιμῆς",
           "umschrift": "timḗ",
           "deutsch": "Ehre, Wert, Preis",
-          "sprich": "timḗ",
+          "sprich": "timä",
           "audio": "data/audio/gwp_04_00.m4a"
         },
         {
@@ -615,14 +615,14 @@
           "griechisch": "ἡ φήμη, τῆς φήμης",
           "umschrift": "phḗmē",
           "deutsch": "Gerücht, Ruf, Kunde",
-          "sprich": "fḗmeh",
+          "sprich": "pähmä",
           "audio": "data/audio/gwp_04_03.m4a"
         },
         {
           "griechisch": "ἡ εὐδοξία, τῆς εὐδοξίας",
           "umschrift": "eudoxía",
           "deutsch": "guter Ruf",
-          "sprich": "eudoxía",
+          "sprich": "ehudoxía",
           "audio": "data/audio/gwp_04_04.m4a"
         },
         {
@@ -643,7 +643,7 @@
           "griechisch": "ἡ αἰσχύνη, τῆς αἰσχύνης",
           "umschrift": "aischýnē",
           "deutsch": "Schande, Scham",
-          "sprich": "aischüneh",
+          "sprich": "aiskünä",
           "audio": "data/audio/gwp_04_07.m4a"
         },
         {
@@ -671,14 +671,14 @@
           "griechisch": "ἡ νίκη, τῆς νίκης",
           "umschrift": "níkē",
           "deutsch": "Sieg",
-          "sprich": "níkeh",
+          "sprich": "níkä",
           "audio": "data/audio/gwp_04_11.m4a"
         },
         {
           "griechisch": "ὁ νικητής, τοῦ νικητοῦ",
           "umschrift": "nikētḗs",
           "deutsch": "Sieger",
-          "sprich": "nikehtḗs",
+          "sprich": "nikähtähs",
           "audio": "data/audio/gwp_04_12.m4a"
         },
         {
@@ -720,14 +720,14 @@
           "griechisch": "ἡ μνήμη, τῆς μνήμης",
           "umschrift": "mnḗmē",
           "deutsch": "Gedächtnis, Erinnerung",
-          "sprich": "mnḗmeh",
+          "sprich": "mnähmä",
           "audio": "data/audio/gwp_04_18.m4a"
         },
         {
           "griechisch": "τὸ μνημεῖον, τοῦ μνημείου",
           "umschrift": "mnēmeîon",
           "deutsch": "Denkmal, Erinnerungszeichen",
-          "sprich": "mnehmehon",
+          "sprich": "mnähmehon",
           "audio": "data/audio/gwp_04_19.m4a"
         }
       ]
@@ -761,28 +761,28 @@
           "griechisch": "ἡ φωνή, τῆς φωνῆς",
           "umschrift": "phōnḗ",
           "deutsch": "Stimme, Laut, Sprache",
-          "sprich": "fohnḗ",
+          "sprich": "pohnä",
           "audio": "data/audio/gwp_05_03.m4a"
         },
         {
           "griechisch": "ἡ βοή, τῆς βοῆς",
           "umschrift": "boḗ",
           "deutsch": "Ruf, Geschrei",
-          "sprich": "boḗ",
+          "sprich": "boä",
           "audio": "data/audio/gwp_05_04.m4a"
         },
         {
           "griechisch": "ἡ σιγή, τῆς σιγῆς",
           "umschrift": "sigḗ",
           "deutsch": "Schweigen, Stille",
-          "sprich": "sigḗ",
+          "sprich": "sigä",
           "audio": "data/audio/gwp_05_05.m4a"
         },
         {
           "griechisch": "τὸ ἐρώτημα, τοῦ ἐρωτήματος",
           "umschrift": "erṓtēma",
           "deutsch": "Frage",
-          "sprich": "erṓtehma",
+          "sprich": "erṓtähma",
           "audio": "data/audio/gwp_05_06.m4a"
         },
         {
@@ -796,14 +796,14 @@
           "griechisch": "ἡ συμβουλή, τῆς συμβουλῆς",
           "umschrift": "symboulḗ",
           "deutsch": "Rat, Ratschlag",
-          "sprich": "sümbulḗ",
+          "sprich": "sümbulä",
           "audio": "data/audio/gwp_05_08.m4a"
         },
         {
           "griechisch": "ἡ γνώμη, τῆς γνώμης",
           "umschrift": "gnṓmē",
           "deutsch": "Meinung, Einsicht, Absicht",
-          "sprich": "gnṓmeh",
+          "sprich": "gnṓmä",
           "audio": "data/audio/gwp_05_09.m4a"
         },
         {
@@ -817,28 +817,28 @@
           "griechisch": "ἡ διαβολή, τῆς διαβολῆς",
           "umschrift": "diabolḗ",
           "deutsch": "Verleumdung",
-          "sprich": "diabolḗ",
+          "sprich": "diabolä",
           "audio": "data/audio/gwp_05_11.m4a"
         },
         {
           "griechisch": "ὁ ἔλεγχος, τοῦ ἐλέγχου",
           "umschrift": "élenchos",
           "deutsch": "Prüfung, Widerlegung, Beweis",
-          "sprich": "élenchos",
+          "sprich": "élenkos",
           "audio": "data/audio/gwp_05_12.m4a"
         },
         {
           "griechisch": "τὸ τεκμήριον, τοῦ τεκμηρίου",
           "umschrift": "tekmḗrion",
           "deutsch": "Beweis, Kennzeichen",
-          "sprich": "tekmḗrion",
+          "sprich": "tekmährion",
           "audio": "data/audio/gwp_05_13.m4a"
         },
         {
           "griechisch": "τὸ σημεῖον, τοῦ σημείου",
           "umschrift": "sēmeîon",
           "deutsch": "Zeichen, Kennzeichen, Signal",
-          "sprich": "sehmehon",
+          "sprich": "sähmehon",
           "audio": "data/audio/gwp_05_14.m4a"
         },
         {
@@ -852,7 +852,7 @@
           "griechisch": "ἡ ὑπόσχεσις, τῆς ὑποσχέσεως",
           "umschrift": "hypóschesis",
           "deutsch": "Versprechen",
-          "sprich": "hüpóschesis",
+          "sprich": "hüpóskesis",
           "audio": "data/audio/gwp_05_16.m4a"
         },
         {
@@ -873,7 +873,7 @@
           "griechisch": "ἡ παροιμία, τῆς παροιμίας",
           "umschrift": "paroimía",
           "deutsch": "Sprichwort",
-          "sprich": "paroimía",
+          "sprich": "parohimía",
           "audio": "data/audio/gwp_05_19.m4a"
         }
       ]
@@ -886,21 +886,21 @@
           "umschrift": "hoi polloí",
           "deutsch": "die Menge, die meisten",
           "erklaerung": "Wendung mit Artikel",
-          "sprich": "hoi polloi",
+          "sprich": "hohi pollohi",
           "audio": "data/audio/gwp_06_00.m4a"
         },
         {
           "griechisch": "οἱ ὀλίγοι, τῶν ὀλίγων",
           "umschrift": "hoi olígoi",
           "deutsch": "die Wenigen, die Oligarchen",
-          "sprich": "hoi olígoi",
+          "sprich": "hohi olígohi",
           "audio": "data/audio/gwp_06_01.m4a"
         },
         {
           "griechisch": "οἱ ἄριστοι, τῶν ἀρίστων",
           "umschrift": "hoi áristoi",
           "deutsch": "die Besten, der Adel",
-          "sprich": "hoi áristoi",
+          "sprich": "hohi áristohi",
           "audio": "data/audio/gwp_06_02.m4a"
         },
         {
@@ -914,21 +914,21 @@
           "griechisch": "ὁ πένης, τοῦ πένητος",
           "umschrift": "pénēs",
           "deutsch": "der Arme",
-          "sprich": "pénehs",
+          "sprich": "pénähs",
           "audio": "data/audio/gwp_06_04.m4a"
         },
         {
           "griechisch": "ὁ πτωχός, τοῦ πτωχοῦ",
           "umschrift": "ptōchós",
           "deutsch": "Bettler",
-          "sprich": "ptohchós",
+          "sprich": "ptohkós",
           "audio": "data/audio/gwp_06_05.m4a"
         },
         {
           "griechisch": "ὁ μέτοικος, τοῦ μετοίκου",
           "umschrift": "métoikos",
           "deutsch": "Metöke, ansässiger Fremder",
-          "sprich": "métoikos",
+          "sprich": "métohikos",
           "audio": "data/audio/gwp_06_06.m4a"
         },
         {
@@ -942,7 +942,7 @@
           "griechisch": "ὁ Ἕλλην, τοῦ Ἕλληνος",
           "umschrift": "Héllēn",
           "deutsch": "Grieche, Hellene",
-          "sprich": "Héllehn",
+          "sprich": "Héllähn",
           "audio": "data/audio/gwp_06_08.m4a"
         },
         {
@@ -963,7 +963,7 @@
           "griechisch": "ἡ φυλή, τῆς φυλῆς",
           "umschrift": "phylḗ",
           "deutsch": "Stamm, Phyle",
-          "sprich": "fülḗ",
+          "sprich": "pülä",
           "audio": "data/audio/gwp_06_11.m4a"
         },
         {
@@ -971,7 +971,7 @@
           "umschrift": "koinón",
           "deutsch": "Gemeinwesen, Bund",
           "erklaerung": "κοινός: gemeinsam",
-          "sprich": "koinón",
+          "sprich": "kohinón",
           "audio": "data/audio/gwp_06_12.m4a"
         },
         {
@@ -985,7 +985,7 @@
           "griechisch": "ὁ δημότης, τοῦ δημότου",
           "umschrift": "dēmótēs",
           "deutsch": "Gemeindemitglied, Demenangehöriger",
-          "sprich": "dehmótehs",
+          "sprich": "dähmótähs",
           "audio": "data/audio/gwp_06_14.m4a"
         },
         {
@@ -999,7 +999,7 @@
           "griechisch": "ὁ ἱκέτης, τοῦ ἱκέτου",
           "umschrift": "hikétēs",
           "deutsch": "Schutzflehender",
-          "sprich": "hikétehs",
+          "sprich": "hikétähs",
           "audio": "data/audio/gwp_06_16.m4a"
         },
         {
@@ -1013,14 +1013,14 @@
           "griechisch": "ὁ εὐεργέτης, τοῦ εὐεργέτου",
           "umschrift": "euergétēs",
           "deutsch": "Wohltäter",
-          "sprich": "euergétehs",
+          "sprich": "ehuergétähs",
           "audio": "data/audio/gwp_06_18.m4a"
         },
         {
           "griechisch": "ἡ εὐεργεσία, τῆς εὐεργεσίας",
           "umschrift": "euergesía",
           "deutsch": "Wohltat",
-          "sprich": "euergesía",
+          "sprich": "ehuergesía",
           "audio": "data/audio/gwp_06_19.m4a"
         }
       ]
@@ -1040,14 +1040,14 @@
           "griechisch": "ἡ τέχνη, τῆς τέχνης",
           "umschrift": "téchnē",
           "deutsch": "Kunst, Handwerk, Geschick",
-          "sprich": "téchneh",
+          "sprich": "téknä",
           "audio": "data/audio/gwp_07_01.m4a"
         },
         {
           "griechisch": "ἡ ἐπιστήμη, τῆς ἐπιστήμης",
           "umschrift": "epistḗmē",
           "deutsch": "Wissen, Wissenschaft, Können",
-          "sprich": "epistḗmeh",
+          "sprich": "epistähmä",
           "audio": "data/audio/gwp_07_02.m4a"
         },
         {
@@ -1068,7 +1068,7 @@
           "griechisch": "ἡ μηχανή, τῆς μηχανῆς",
           "umschrift": "mēchanḗ",
           "deutsch": "Werkzeug, Kunstgriff, List",
-          "sprich": "mehchanḗ",
+          "sprich": "mähkanä",
           "audio": "data/audio/gwp_07_05.m4a"
         },
         {
@@ -1104,7 +1104,7 @@
           "griechisch": "ἡ ἐπιστολή, τῆς ἐπιστολῆς",
           "umschrift": "epistolḗ",
           "deutsch": "Brief, Auftrag",
-          "sprich": "epistolḗ",
+          "sprich": "epistolä",
           "audio": "data/audio/gwp_07_10.m4a"
         },
         {
@@ -1167,7 +1167,7 @@
           "griechisch": "ὁ τροχός, τοῦ τροχοῦ",
           "umschrift": "trochós",
           "deutsch": "Rad",
-          "sprich": "trochós",
+          "sprich": "trokós",
           "audio": "data/audio/gwp_07_19.m4a"
         }
       ]

@@ -26,14 +26,14 @@
           "umschrift": "échō",
           "deutsch": "haben, halten",
           "erklaerung": "Stammformen: ἕξω/σχήσω, ἔσχον, ἔσχηκα",
-          "sprich": "échoh",
+          "sprich": "ékoh",
           "audio": "data/audio/gwv1_00_02.m4a"
         },
         {
           "griechisch": "ὑπάρχω",
           "umschrift": "hypárchō",
           "deutsch": "vorhanden sein, zur Verfügung stehen",
-          "sprich": "hüpárchoh",
+          "sprich": "hüpárkoh",
           "audio": "data/audio/gwv1_00_03.m4a"
         },
         {
@@ -70,7 +70,7 @@
           "griechisch": "χρή",
           "umschrift": "chrḗ",
           "deutsch": "man muss, man soll",
-          "sprich": "krḗ",
+          "sprich": "krä",
           "audio": "data/audio/gwv1_00_08.m4a"
         },
         {
@@ -86,7 +86,7 @@
           "umschrift": "tynchánō",
           "deutsch": "zufällig sein, erlangen, treffen",
           "erklaerung": "τυγχάνω + Partizip: gerade etwas tun",
-          "sprich": "tünchánoh",
+          "sprich": "tünkánoh",
           "audio": "data/audio/gwv1_00_10.m4a"
         },
         {
@@ -94,7 +94,7 @@
           "umschrift": "phýō",
           "deutsch": "hervorbringen; (Perf.) von Natur sein",
           "erklaerung": "πέφυκα: von Natur aus beschaffen sein",
-          "sprich": "füoh",
+          "sprich": "püoh",
           "audio": "data/audio/gwv1_00_11.m4a"
         },
         {
@@ -116,14 +116,14 @@
           "griechisch": "κάθημαι",
           "umschrift": "káthēmai",
           "deutsch": "sitzen",
-          "sprich": "kátehmai",
+          "sprich": "kátähmai",
           "audio": "data/audio/gwv1_00_14.m4a"
         },
         {
           "griechisch": "οἰκέω",
           "umschrift": "oikéō",
           "deutsch": "wohnen, bewohnen, verwalten",
-          "sprich": "oikéoh",
+          "sprich": "ohikéoh",
           "audio": "data/audio/gwv1_00_15.m4a"
         },
         {
@@ -146,14 +146,14 @@
           "umschrift": "apothnḗiskō",
           "deutsch": "sterben",
           "erklaerung": "Stammformen: ἀποθανοῦμαι, ἀπέθανον, τέθνηκα",
-          "sprich": "apotnḗiskoh",
+          "sprich": "apotnähiskoh",
           "audio": "data/audio/gwv1_00_18.m4a"
         },
         {
           "griechisch": "τελευτάω",
           "umschrift": "teleutáō",
           "deutsch": "beenden; sterben",
-          "sprich": "teleutáoh",
+          "sprich": "telehutáoh",
           "audio": "data/audio/gwv1_00_19.m4a"
         }
       ]
@@ -166,7 +166,7 @@
           "umschrift": "érchomai",
           "deutsch": "gehen, kommen",
           "erklaerung": "Stammformen: εἶμι/ἐλεύσομαι, ἦλθον, ἐλήλυθα",
-          "sprich": "érchomai",
+          "sprich": "érkomai",
           "audio": "data/audio/gwv1_01_00.m4a"
         },
         {
@@ -181,7 +181,7 @@
           "griechisch": "ἥκω",
           "umschrift": "hḗkō",
           "deutsch": "gekommen sein, da sein",
-          "sprich": "hḗkoh",
+          "sprich": "hähkoh",
           "audio": "data/audio/gwv1_01_02.m4a"
         },
         {
@@ -197,42 +197,42 @@
           "umschrift": "aphiknéomai",
           "deutsch": "ankommen, gelangen",
           "erklaerung": "Stammformen: ἀφίξομαι, ἀφικόμην, ἀφῖγμαι",
-          "sprich": "afiknéomai",
+          "sprich": "apiknéomai",
           "audio": "data/audio/gwv1_01_04.m4a"
         },
         {
           "griechisch": "πορεύομαι",
           "umschrift": "poreúomai",
           "deutsch": "reisen, marschieren, gehen",
-          "sprich": "poreuomai",
+          "sprich": "porehuomai",
           "audio": "data/audio/gwv1_01_05.m4a"
         },
         {
           "griechisch": "ἀπέρχομαι",
           "umschrift": "apérchomai",
           "deutsch": "weggehen",
-          "sprich": "apérchomai",
+          "sprich": "apérkomai",
           "audio": "data/audio/gwv1_01_06.m4a"
         },
         {
           "griechisch": "εἰσέρχομαι",
           "umschrift": "eisérchomai",
           "deutsch": "hineingehen",
-          "sprich": "ehsérchomai",
+          "sprich": "ehsérkomai",
           "audio": "data/audio/gwv1_01_07.m4a"
         },
         {
           "griechisch": "ἐξέρχομαι",
           "umschrift": "exérchomai",
           "deutsch": "herausgehen",
-          "sprich": "exérchomai",
+          "sprich": "exérkomai",
           "audio": "data/audio/gwv1_01_08.m4a"
         },
         {
           "griechisch": "προσέρχομαι",
           "umschrift": "prosérchomai",
           "deutsch": "herankommen, sich nähern",
-          "sprich": "prosérchomai",
+          "sprich": "prosérkomai",
           "audio": "data/audio/gwv1_01_09.m4a"
         },
         {
@@ -240,7 +240,7 @@
           "umschrift": "pheúgō",
           "deutsch": "fliehen; angeklagt sein",
           "erklaerung": "Stammformen: φεύξομαι, ἔφυγον, πέφευγα",
-          "sprich": "feugoh",
+          "sprich": "pehugoh",
           "audio": "data/audio/gwv1_01_10.m4a"
         },
         {
@@ -255,14 +255,14 @@
           "umschrift": "tréchō",
           "deutsch": "laufen, rennen",
           "erklaerung": "Stammformen: δραμοῦμαι, ἔδραμον",
-          "sprich": "tréchoh",
+          "sprich": "trékoh",
           "audio": "data/audio/gwv1_01_12.m4a"
         },
         {
           "griechisch": "σπεύδω",
           "umschrift": "speúdō",
           "deutsch": "eilen, sich beeilen; betreiben",
-          "sprich": "ßpeudoh",
+          "sprich": "ßpehudoh",
           "audio": "data/audio/gwv1_01_13.m4a"
         },
         {
@@ -286,7 +286,7 @@
           "umschrift": "hēgéomai",
           "deutsch": "führen; glauben, meinen",
           "erklaerung": "Mit Dativ: anführen; mit AcI: meinen",
-          "sprich": "hehgéomai",
+          "sprich": "hähgéomai",
           "audio": "data/audio/gwv1_01_16.m4a"
         },
         {
@@ -300,7 +300,7 @@
           "griechisch": "ἀναχωρέω",
           "umschrift": "anachōréō",
           "deutsch": "sich zurückziehen",
-          "sprich": "anachohréoh",
+          "sprich": "anakohréoh",
           "audio": "data/audio/gwv1_01_18.m4a"
         },
         {
@@ -328,7 +328,7 @@
           "umschrift": "phēmí",
           "deutsch": "sagen, behaupten",
           "erklaerung": "οὔ φημι: verneinen, sagen dass nicht",
-          "sprich": "fehmí",
+          "sprich": "pähmí",
           "audio": "data/audio/gwv1_02_01.m4a"
         },
         {
@@ -343,14 +343,14 @@
           "griechisch": "ἀγορεύω",
           "umschrift": "agoreúō",
           "deutsch": "öffentlich reden, verkünden",
-          "sprich": "agoreuoh",
+          "sprich": "agorehuoh",
           "audio": "data/audio/gwv1_02_03.m4a"
         },
         {
           "griechisch": "φράζω",
           "umschrift": "phrázō",
           "deutsch": "anzeigen, erklären, sagen",
-          "sprich": "frázoh",
+          "sprich": "prázoh",
           "audio": "data/audio/gwv1_02_04.m4a"
         },
         {
@@ -372,7 +372,7 @@
           "griechisch": "κελεύω",
           "umschrift": "keleúō",
           "deutsch": "befehlen, auffordern",
-          "sprich": "keleuoh",
+          "sprich": "kelehuoh",
           "audio": "data/audio/gwv1_02_07.m4a"
         },
         {
@@ -424,7 +424,7 @@
           "griechisch": "εὔχομαι",
           "umschrift": "eúchomai",
           "deutsch": "beten, geloben, sich rühmen",
-          "sprich": "euchomai",
+          "sprich": "ehukomai",
           "audio": "data/audio/gwv1_02_14.m4a"
         },
         {
@@ -432,7 +432,7 @@
           "umschrift": "hypischnéomai",
           "deutsch": "versprechen",
           "erklaerung": "Stammformen: ὑποσχήσομαι, ὑπεσχόμην",
-          "sprich": "hüpischnéomai",
+          "sprich": "hüpisknéomai",
           "audio": "data/audio/gwv1_02_15.m4a"
         },
         {
@@ -460,7 +460,7 @@
           "griechisch": "ψεύδομαι",
           "umschrift": "pseúdomai",
           "deutsch": "lügen, täuschen",
-          "sprich": "pseudomai",
+          "sprich": "psehudomai",
           "audio": "data/audio/gwv1_02_19.m4a"
         }
       ]
@@ -517,14 +517,14 @@
           "umschrift": "phaínomai",
           "deutsch": "erscheinen, sich zeigen",
           "erklaerung": "Mit Partizip: offenbar; mit Inf.: scheinbar",
-          "sprich": "fainomai",
+          "sprich": "painomai",
           "audio": "data/audio/gwv1_03_06.m4a"
         },
         {
           "griechisch": "φαίνω",
           "umschrift": "phaínō",
           "deutsch": "zeigen, ans Licht bringen",
-          "sprich": "fainoh",
+          "sprich": "painoh",
           "audio": "data/audio/gwv1_03_07.m4a"
         },
         {
@@ -564,14 +564,14 @@
           "umschrift": "heurískō",
           "deutsch": "finden, entdecken",
           "erklaerung": "Stammformen: εὑρήσω, ηὗρον, ηὕρηκα",
-          "sprich": "heurískoh",
+          "sprich": "hehurískoh",
           "audio": "data/audio/gwv1_03_12.m4a"
         },
         {
           "griechisch": "ζητέω",
           "umschrift": "zētéō",
           "deutsch": "suchen, untersuchen",
-          "sprich": "zehtéoh",
+          "sprich": "zähtéoh",
           "audio": "data/audio/gwv1_03_13.m4a"
         },
         {
@@ -595,7 +595,7 @@
           "umschrift": "mimnḗiskomai",
           "deutsch": "sich erinnern",
           "erklaerung": "Perfekt μέμνημαι: ich erinnere mich",
-          "sprich": "mimnḗiskomai",
+          "sprich": "mimnähiskomai",
           "audio": "data/audio/gwv1_03_16.m4a"
         },
         {
@@ -617,7 +617,7 @@
           "griechisch": "σημαίνω",
           "umschrift": "sēmaínō",
           "deutsch": "bezeichnen, ein Zeichen geben",
-          "sprich": "sehmainoh",
+          "sprich": "sähmainoh",
           "audio": "data/audio/gwv1_03_19.m4a"
         }
       ]
@@ -638,7 +638,7 @@
           "umschrift": "oîda",
           "deutsch": "wissen",
           "erklaerung": "Perfekt mit Präsensbedeutung; ᾔδη: ich wusste",
-          "sprich": "oîda",
+          "sprich": "ohida",
           "audio": "data/audio/gwv1_04_01.m4a"
         },
         {
@@ -676,7 +676,7 @@
           "umschrift": "oíomai",
           "deutsch": "glauben, meinen",
           "erklaerung": "Auch οἶμαι; ᾠήθην (Aor.)",
-          "sprich": "oiomai",
+          "sprich": "ohiomai",
           "audio": "data/audio/gwv1_04_06.m4a"
         },
         {
@@ -684,7 +684,7 @@
           "umschrift": "phronéō",
           "deutsch": "denken, gesinnt sein",
           "erklaerung": "μέγα φρονεῖν: stolz sein",
-          "sprich": "fronéoh",
+          "sprich": "pronéoh",
           "audio": "data/audio/gwv1_04_07.m4a"
         },
         {
@@ -699,7 +699,7 @@
           "umschrift": "bouleúō",
           "deutsch": "beraten, beschließen",
           "erklaerung": "Medium: sich beraten, überlegen",
-          "sprich": "buleuoh",
+          "sprich": "bulehuoh",
           "audio": "data/audio/gwv1_04_09.m4a"
         },
         {
@@ -736,7 +736,7 @@
           "umschrift": "pisteúō",
           "deutsch": "vertrauen, glauben",
           "erklaerung": "Mit Dativ",
-          "sprich": "pisteuoh",
+          "sprich": "pistehuoh",
           "audio": "data/audio/gwv1_04_14.m4a"
         },
         {
@@ -773,7 +773,7 @@
           "umschrift": "phrontízō",
           "deutsch": "sich kümmern, bedenken",
           "erklaerung": "Mit Genitiv",
-          "sprich": "frontízoh",
+          "sprich": "prontízoh",
           "audio": "data/audio/gwv1_04_19.m4a"
         }
       ]
@@ -786,7 +786,7 @@
           "umschrift": "poiéō",
           "deutsch": "machen, tun, dichten",
           "erklaerung": "εὖ ποιεῖν: Gutes tun, wohltun",
-          "sprich": "poiéoh",
+          "sprich": "pohiéoh",
           "audio": "data/audio/gwv1_05_00.m4a"
         },
         {
@@ -816,14 +816,14 @@
           "umschrift": "paraskeuázō",
           "deutsch": "bereiten, ausrüsten",
           "erklaerung": "Medium: sich rüsten, sich vorbereiten",
-          "sprich": "paraskeuázoh",
+          "sprich": "paraskehuázoh",
           "audio": "data/audio/gwv1_05_04.m4a"
         },
         {
           "griechisch": "ἑτοιμάζω",
           "umschrift": "hetoimázō",
           "deutsch": "bereit machen",
-          "sprich": "hetoimázoh",
+          "sprich": "hetohimázoh",
           "audio": "data/audio/gwv1_05_05.m4a"
         },
         {
@@ -839,7 +839,7 @@
           "umschrift": "epicheiréō",
           "deutsch": "in Angriff nehmen, versuchen",
           "erklaerung": "Mit Dativ",
-          "sprich": "epichehréoh",
+          "sprich": "epikehréoh",
           "audio": "data/audio/gwv1_05_07.m4a"
         },
         {
@@ -862,14 +862,14 @@
           "umschrift": "árchō",
           "deutsch": "anfangen; herrschen",
           "erklaerung": "Mit Genitiv; Medium: beginnen",
-          "sprich": "árchoh",
+          "sprich": "árkoh",
           "audio": "data/audio/gwv1_05_10.m4a"
         },
         {
           "griechisch": "κατασκευάζω",
           "umschrift": "kataskeuázō",
           "deutsch": "einrichten, erbauen",
-          "sprich": "kataskeuázoh",
+          "sprich": "kataskehuázoh",
           "audio": "data/audio/gwv1_05_11.m4a"
         },
         {
@@ -877,7 +877,7 @@
           "umschrift": "poiéomai",
           "deutsch": "sich machen; halten für",
           "erklaerung": "περὶ πολλοῦ ποιεῖσθαι: hochschätzen",
-          "sprich": "poiéomai",
+          "sprich": "pohiéomai",
           "audio": "data/audio/gwv1_05_12.m4a"
         },
         {
@@ -892,7 +892,7 @@
           "griechisch": "ὠφελέω",
           "umschrift": "ōpheléō",
           "deutsch": "nützen, helfen",
-          "sprich": "ohfeléoh",
+          "sprich": "ohpeléoh",
           "audio": "data/audio/gwv1_05_14.m4a"
         },
         {
@@ -929,7 +929,7 @@
           "umschrift": "boēthéō",
           "deutsch": "zu Hilfe kommen, helfen",
           "erklaerung": "Mit Dativ",
-          "sprich": "boehtéoh",
+          "sprich": "boähtéoh",
           "audio": "data/audio/gwv1_05_19.m4a"
         }
       ]
@@ -1001,7 +1001,7 @@
           "griechisch": "δέχομαι",
           "umschrift": "déchomai",
           "deutsch": "annehmen, empfangen",
-          "sprich": "déchomai",
+          "sprich": "dékomai",
           "audio": "data/audio/gwv1_06_08.m4a"
         },
         {
@@ -1009,7 +1009,7 @@
           "umschrift": "phérō",
           "deutsch": "tragen, bringen, ertragen",
           "erklaerung": "Stammformen: οἴσω, ἤνεγκον, ἐνήνοχα",
-          "sprich": "féroh",
+          "sprich": "péroh",
           "audio": "data/audio/gwv1_06_09.m4a"
         },
         {
@@ -1038,7 +1038,7 @@
           "umschrift": "dídōmi díkēn",
           "deutsch": "Strafe leiden, büßen",
           "erklaerung": "Wendung: δίκην διδόναι",
-          "sprich": "dídohmi díkehn",
+          "sprich": "dídohmi díkähn",
           "audio": "data/audio/gwv1_06_13.m4a"
         },
         {
@@ -1046,14 +1046,14 @@
           "umschrift": "títhēmi",
           "deutsch": "setzen, stellen, legen",
           "erklaerung": "Stammformen: θήσω, ἔθηκα, τέθηκα",
-          "sprich": "títehmi",
+          "sprich": "títähmi",
           "audio": "data/audio/gwv1_06_14.m4a"
         },
         {
           "griechisch": "κατατίθημι",
           "umschrift": "katatíthēmi",
           "deutsch": "niederlegen; (Med.) beilegen",
-          "sprich": "katatítehmi",
+          "sprich": "katatítähmi",
           "audio": "data/audio/gwv1_06_15.m4a"
         },
         {
@@ -1061,14 +1061,14 @@
           "umschrift": "híēmi",
           "deutsch": "schicken, werfen, loslassen",
           "erklaerung": "Stammformen: ἥσω, ἧκα, εἷκα",
-          "sprich": "híehmi",
+          "sprich": "híähmi",
           "audio": "data/audio/gwv1_06_16.m4a"
         },
         {
           "griechisch": "ἀφίημι",
           "umschrift": "aphíēmi",
           "deutsch": "loslassen, freilassen, aufgeben",
-          "sprich": "afíehmi",
+          "sprich": "apíähmi",
           "audio": "data/audio/gwv1_06_17.m4a"
         },
         {
@@ -1083,7 +1083,7 @@
           "griechisch": "ἀφαιρέομαι",
           "umschrift": "aphairéomai",
           "deutsch": "wegnehmen, entreißen",
-          "sprich": "afairéomai",
+          "sprich": "apairéomai",
           "audio": "data/audio/gwv1_06_19.m4a"
         }
       ]
@@ -1127,7 +1127,7 @@
           "griechisch": "ζηλόω",
           "umschrift": "zēlóō",
           "deutsch": "nacheifern, beneiden, preisen",
-          "sprich": "zehlóoh",
+          "sprich": "zählóoh",
           "audio": "data/audio/gwv1_07_04.m4a"
         },
         {
@@ -1143,14 +1143,14 @@
           "umschrift": "hoîós t' eimí",
           "deutsch": "imstande sein, können",
           "erklaerung": "Wendung mit Infinitiv",
-          "sprich": "hoîós t' ehmí",
+          "sprich": "hohiós t' ehmí",
           "audio": "data/audio/gwv1_07_06.m4a"
         },
         {
           "griechisch": "ἰσχύω",
           "umschrift": "ischýō",
           "deutsch": "stark sein, vermögen",
-          "sprich": "ischüoh",
+          "sprich": "isküoh",
           "audio": "data/audio/gwv1_07_07.m4a"
         },
         {
@@ -1172,7 +1172,7 @@
           "griechisch": "ἡττάομαι",
           "umschrift": "hēttáomai",
           "deutsch": "unterliegen, besiegt werden",
-          "sprich": "hehttáomai",
+          "sprich": "hähttáomai",
           "audio": "data/audio/gwv1_07_10.m4a"
         },
         {
@@ -1187,7 +1187,7 @@
           "umschrift": "kindyneúō",
           "deutsch": "Gefahr laufen, riskieren",
           "erklaerung": "Auch: wahrscheinlich sein",
-          "sprich": "kindüneuoh",
+          "sprich": "kindünehuoh",
           "audio": "data/audio/gwv1_07_12.m4a"
         },
         {
@@ -1251,7 +1251,7 @@
           "umschrift": "máchomai",
           "deutsch": "kämpfen",
           "erklaerung": "Mit Dativ; μαχοῦμαι, ἐμαχεσάμην",
-          "sprich": "máchomai",
+          "sprich": "mákomai",
           "audio": "data/audio/gwv1_08_00.m4a"
         },
         {
@@ -1266,7 +1266,7 @@
           "umschrift": "strateúō",
           "deutsch": "zu Felde ziehen",
           "erklaerung": "Auch Medium στρατεύομαι",
-          "sprich": "ßtrateuoh",
+          "sprich": "ßtratehuoh",
           "audio": "data/audio/gwv1_08_02.m4a"
         },
         {
@@ -1281,7 +1281,7 @@
           "griechisch": "τοξεύω",
           "umschrift": "toxeúō",
           "deutsch": "mit dem Bogen schießen",
-          "sprich": "toxeuoh",
+          "sprich": "toxehuoh",
           "audio": "data/audio/gwv1_08_04.m4a"
         },
         {
@@ -1296,7 +1296,7 @@
           "umschrift": "plḗttō",
           "deutsch": "schlagen, treffen",
           "erklaerung": "Passiv oft ἐπλήγην",
-          "sprich": "plḗttoh",
+          "sprich": "plähttoh",
           "audio": "data/audio/gwv1_08_06.m4a"
         },
         {
@@ -1334,7 +1334,7 @@
           "umschrift": "phyláttō",
           "deutsch": "bewachen, beschützen",
           "erklaerung": "Medium: sich hüten vor",
-          "sprich": "füláttoh",
+          "sprich": "püláttoh",
           "audio": "data/audio/gwv1_08_11.m4a"
         },
         {
@@ -1357,7 +1357,7 @@
           "griechisch": "διαφθείρω",
           "umschrift": "diaphtheírō",
           "deutsch": "zerstören, verderben, bestechen",
-          "sprich": "diaftehroh",
+          "sprich": "diaptehroh",
           "audio": "data/audio/gwv1_08_14.m4a"
         },
         {
@@ -1393,7 +1393,7 @@
           "griechisch": "ἐλευθερόω",
           "umschrift": "eleutheróō",
           "deutsch": "befreien",
-          "sprich": "eleuteróoh",
+          "sprich": "elehuteróoh",
           "audio": "data/audio/gwv1_08_19.m4a"
         }
       ]
@@ -1421,7 +1421,7 @@
           "griechisch": "καθεύδω",
           "umschrift": "katheúdō",
           "deutsch": "schlafen",
-          "sprich": "kateudoh",
+          "sprich": "katehudoh",
           "audio": "data/audio/gwv1_09_02.m4a"
         },
         {
@@ -1466,7 +1466,7 @@
           "umschrift": "tréphō",
           "deutsch": "ernähren, aufziehen",
           "erklaerung": "Stammformen: θρέψω, ἔθρεψα",
-          "sprich": "tréfoh",
+          "sprich": "trépoh",
           "audio": "data/audio/gwv1_09_08.m4a"
         },
         {
@@ -1510,7 +1510,7 @@
           "griechisch": "στρέφω",
           "umschrift": "stréphō",
           "deutsch": "drehen, wenden",
-          "sprich": "ßtréfoh",
+          "sprich": "ßtrépoh",
           "audio": "data/audio/gwv1_09_14.m4a"
         },
         {
@@ -1546,7 +1546,7 @@
           "griechisch": "οἰκοδομέω",
           "umschrift": "oikodoméō",
           "deutsch": "ein Haus bauen, errichten",
-          "sprich": "oikodoméoh",
+          "sprich": "ohikodoméoh",
           "audio": "data/audio/gwv1_09_19.m4a"
         }
       ]

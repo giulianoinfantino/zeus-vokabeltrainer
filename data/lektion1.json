@@ -31,7 +31,7 @@
       "deutsch": "Gut so! / Bravo!",
       "erklaerung": "Ausruf der Anerkennung. Εὖ = gut, γε = Betonungspartikel.",
       "audio": "data/audio/l1_03.m4a",
-      "sprich": "eu geh"
+      "sprich": "ehu geh"
     },
     {
       "griechisch": "τί;",
@@ -87,7 +87,7 @@
       "deutsch": "Haus / Haushalt",
       "erklaerung": "Bezeichnete das gesamte Hauswesen inkl. Familie und Besitz. Wurzel: Ökonomie.",
       "audio": "data/audio/l1_10.m4a",
-      "sprich": "oîkos"
+      "sprich": "ohikos"
     },
     {
       "griechisch": "φίλος",
@@ -95,7 +95,7 @@
       "deutsch": "Freund / lieb",
       "erklaerung": "Als Adjektiv: geliebt, teuer. Als Substantiv: Freund. Wurzel: Philosophie.",
       "audio": "data/audio/l1_11.m4a",
-      "sprich": "fílos"
+      "sprich": "pílos"
     }
   ]
 }
