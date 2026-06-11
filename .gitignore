@@ -1,0 +1,4 @@
+__pycache__/
+.venv-tts/
+*.log
+.DS_Store

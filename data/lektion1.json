@@ -1,0 +1,101 @@
+{
+  "titel": "Lektion 1 — Grüßen & Grundworte",
+  "vokabeln": [
+    {
+      "griechisch": "χαῖρε",
+      "umschrift": "chaíre",
+      "deutsch": "Hallo / Sei gegrüßt",
+      "erklaerung": "Wörtlich: freue dich! — klassischer Gruß an eine Person. Plural: χαίρετε.",
+      "audio": "data/audio/l1_00.m4a",
+      "sprich": "kaire"
+    },
+    {
+      "griechisch": "ναί",
+      "umschrift": "naí",
+      "deutsch": "Ja",
+      "erklaerung": "Kurzes, einfaches Ja. Bereits in Homer belegt.",
+      "audio": "data/audio/l1_01.m4a",
+      "sprich": "nai"
+    },
+    {
+      "griechisch": "οὔ",
+      "umschrift": "oú",
+      "deutsch": "Nein",
+      "erklaerung": "Verneinung für Aussagen. Vor Vokalen: οὐκ, vor aspiriertem Vokal: οὐχ.",
+      "audio": "data/audio/l1_02.m4a",
+      "sprich": "ου."
+    },
+    {
+      "griechisch": "εὖ γε",
+      "umschrift": "eû ge",
+      "deutsch": "Gut so! / Bravo!",
+      "erklaerung": "Ausruf der Anerkennung. Εὖ = gut, γε = Betonungspartikel.",
+      "audio": "data/audio/l1_03.m4a",
+      "sprich": "eu geh"
+    },
+    {
+      "griechisch": "τί;",
+      "umschrift": "tí?",
+      "deutsch": "Was? / Warum?",
+      "erklaerung": "Fragepronomen mit Akzent — unterscheidet sich von τι (enklitisch: etwas).",
+      "audio": "data/audio/l1_04.m4a",
+      "sprich": "τι"
+    },
+    {
+      "griechisch": "ἀλλά",
+      "umschrift": "allá",
+      "deutsch": "Aber / Sondern",
+      "erklaerung": "Wichtige Adversativkonjunktion — tritt oft am Satzanfang auf.",
+      "audio": "data/audio/l1_05.m4a",
+      "sprich": "allah"
+    },
+    {
+      "griechisch": "καλός",
+      "umschrift": "kalós",
+      "deutsch": "Schön / Gut",
+      "erklaerung": "Zentrales griechisches Wertewort. Femininum: καλή, Neutrum: καλόν.",
+      "audio": "data/audio/l1_06.m4a",
+      "sprich": "kalós"
+    },
+    {
+      "griechisch": "λόγος",
+      "umschrift": "lógos",
+      "deutsch": "Wort / Vernunft",
+      "erklaerung": "Eines der bedeutendsten Wörter der griechischen Philosophie.",
+      "audio": "data/audio/l1_07.m4a",
+      "sprich": "lógos"
+    },
+    {
+      "griechisch": "ἄνθρωπος",
+      "umschrift": "ánthrōpos",
+      "deutsch": "Mensch",
+      "erklaerung": "Aristoteles: Der Mensch ist ein Lebewesen, das Vernunft besitzt.",
+      "audio": "data/audio/l1_08.m4a",
+      "sprich": "ántrohpos"
+    },
+    {
+      "griechisch": "θεός",
+      "umschrift": "theós",
+      "deutsch": "Gott",
+      "erklaerung": "Kann Gott oder Göttin bedeuten. Wurzel: Theologie.",
+      "audio": "data/audio/l1_09.m4a",
+      "sprich": "teós"
+    },
+    {
+      "griechisch": "οἶκος",
+      "umschrift": "oîkos",
+      "deutsch": "Haus / Haushalt",
+      "erklaerung": "Bezeichnete das gesamte Hauswesen inkl. Familie und Besitz. Wurzel: Ökonomie.",
+      "audio": "data/audio/l1_10.m4a",
+      "sprich": "oîkos"
+    },
+    {
+      "griechisch": "φίλος",
+      "umschrift": "phílos",
+      "deutsch": "Freund / lieb",
+      "erklaerung": "Als Adjektiv: geliebt, teuer. Als Substantiv: Freund. Wurzel: Philosophie.",
+      "audio": "data/audio/l1_11.m4a",
+      "sprich": "fílos"
+    }
+  ]
+}

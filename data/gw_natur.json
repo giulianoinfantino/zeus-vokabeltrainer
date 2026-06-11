@@ -1,0 +1,883 @@
+{
+  "id": "gwn",
+  "gruppe": "Natur, Welt & Zeit",
+  "lektionen": [
+    {
+      "titel": "Erde & Himmel",
+      "vokabeln": [
+        {
+          "griechisch": "ἡ γῆ, τῆς γῆς",
+          "umschrift": "gê",
+          "deutsch": "Erde, Land",
+          "sprich": "gê",
+          "audio": "data/audio/gwn_00_00.m4a"
+        },
+        {
+          "griechisch": "ἡ χώρα, τῆς χώρας",
+          "umschrift": "chṓra",
+          "deutsch": "Land, Gegend, Platz",
+          "sprich": "chṓra",
+          "audio": "data/audio/gwn_00_01.m4a"
+        },
+        {
+          "griechisch": "τὸ χωρίον, τοῦ χωρίου",
+          "umschrift": "chōríon",
+          "deutsch": "Ort, Platz, Landgut",
+          "sprich": "chohríon",
+          "audio": "data/audio/gwn_00_02.m4a"
+        },
+        {
+          "griechisch": "ὁ τόπος, τοῦ τόπου",
+          "umschrift": "tópos",
+          "deutsch": "Ort, Stelle, Gegend",
+          "sprich": "tópos",
+          "audio": "data/audio/gwn_00_03.m4a"
+        },
+        {
+          "griechisch": "ὁ οὐρανός, τοῦ οὐρανοῦ",
+          "umschrift": "ouranós",
+          "deutsch": "Himmel",
+          "sprich": "uranós",
+          "audio": "data/audio/gwn_00_04.m4a"
+        },
+        {
+          "griechisch": "ὁ ἥλιος, τοῦ ἡλίου",
+          "umschrift": "hḗlios",
+          "deutsch": "Sonne",
+          "sprich": "hḗlios",
+          "audio": "data/audio/gwn_00_05.m4a"
+        },
+        {
+          "griechisch": "ἡ σελήνη, τῆς σελήνης",
+          "umschrift": "selḗnē",
+          "deutsch": "Mond",
+          "sprich": "selḗneh",
+          "audio": "data/audio/gwn_00_06.m4a"
+        },
+        {
+          "griechisch": "ὁ ἀστήρ, τοῦ ἀστέρος",
+          "umschrift": "astḗr",
+          "deutsch": "Stern",
+          "sprich": "astḗr",
+          "audio": "data/audio/gwn_00_07.m4a"
+        },
+        {
+          "griechisch": "τὸ ἄστρον, τοῦ ἄστρου",
+          "umschrift": "ástron",
+          "deutsch": "Gestirn, Sternbild",
+          "sprich": "ástron",
+          "audio": "data/audio/gwn_00_08.m4a"
+        },
+        {
+          "griechisch": "ὁ ἀήρ, τοῦ ἀέρος",
+          "umschrift": "aḗr",
+          "deutsch": "Luft",
+          "sprich": "aḗr",
+          "audio": "data/audio/gwn_00_09.m4a"
+        },
+        {
+          "griechisch": "ὁ αἰθήρ, τοῦ αἰθέρος",
+          "umschrift": "aithḗr",
+          "deutsch": "Äther, Himmelsluft",
+          "sprich": "aitḗr",
+          "audio": "data/audio/gwn_00_10.m4a"
+        },
+        {
+          "griechisch": "ὁ ἄνεμος, τοῦ ἀνέμου",
+          "umschrift": "ánemos",
+          "deutsch": "Wind",
+          "sprich": "ánemos",
+          "audio": "data/audio/gwn_00_11.m4a"
+        },
+        {
+          "griechisch": "τὸ πνεῦμα, τοῦ πνεύματος",
+          "umschrift": "pneûma",
+          "deutsch": "Hauch, Wind, Atem; Geist",
+          "sprich": "pneûma",
+          "audio": "data/audio/gwn_00_12.m4a"
+        },
+        {
+          "griechisch": "ἡ νεφέλη, τῆς νεφέλης",
+          "umschrift": "nephélē",
+          "deutsch": "Wolke",
+          "sprich": "neféleh",
+          "audio": "data/audio/gwn_00_13.m4a"
+        },
+        {
+          "griechisch": "ἡ βροντή, τῆς βροντῆς",
+          "umschrift": "brontḗ",
+          "deutsch": "Donner",
+          "sprich": "brontḗ",
+          "audio": "data/audio/gwn_00_14.m4a"
+        },
+        {
+          "griechisch": "ἡ ἀστραπή, τῆς ἀστραπῆς",
+          "umschrift": "astrapḗ",
+          "deutsch": "Blitz",
+          "sprich": "astrapḗ",
+          "audio": "data/audio/gwn_00_15.m4a"
+        },
+        {
+          "griechisch": "ὁ κεραυνός, τοῦ κεραυνοῦ",
+          "umschrift": "keraunós",
+          "deutsch": "Blitzstrahl, Donnerkeil",
+          "erklaerung": "Waffe des Zeus",
+          "sprich": "keraunós",
+          "audio": "data/audio/gwn_00_16.m4a"
+        },
+        {
+          "griechisch": "ὁ ὑετός, τοῦ ὑετοῦ",
+          "umschrift": "hyetós",
+          "deutsch": "Regen",
+          "sprich": "hüetós",
+          "audio": "data/audio/gwn_00_17.m4a"
+        },
+        {
+          "griechisch": "ἡ χιών, τῆς χιόνος",
+          "umschrift": "chiṓn",
+          "deutsch": "Schnee",
+          "sprich": "chiṓn",
+          "audio": "data/audio/gwn_00_18.m4a"
+        },
+        {
+          "griechisch": "ὁ κόσμος, τοῦ κόσμου",
+          "umschrift": "kósmos",
+          "deutsch": "Ordnung, Schmuck; Weltall",
+          "sprich": "kósmos",
+          "audio": "data/audio/gwn_00_19.m4a"
+        }
+      ]
+    },
+    {
+      "titel": "Landschaft & Gewässer",
+      "vokabeln": [
+        {
+          "griechisch": "τὸ ὄρος, τοῦ ὄρους",
+          "umschrift": "óros",
+          "deutsch": "Berg, Gebirge",
+          "sprich": "óros",
+          "audio": "data/audio/gwn_01_00.m4a"
+        },
+        {
+          "griechisch": "ὁ λόφος, τοῦ λόφου",
+          "umschrift": "lóphos",
+          "deutsch": "Hügel; Helmbusch",
+          "sprich": "lófos",
+          "audio": "data/audio/gwn_01_01.m4a"
+        },
+        {
+          "griechisch": "ἡ πέτρα, τῆς πέτρας",
+          "umschrift": "pétra",
+          "deutsch": "Fels",
+          "sprich": "pétra",
+          "audio": "data/audio/gwn_01_02.m4a"
+        },
+        {
+          "griechisch": "τὸ πεδίον, τοῦ πεδίου",
+          "umschrift": "pedíon",
+          "deutsch": "Ebene, Feld",
+          "sprich": "pedíon",
+          "audio": "data/audio/gwn_01_03.m4a"
+        },
+        {
+          "griechisch": "ἡ νάπη, τῆς νάπης",
+          "umschrift": "nápē",
+          "deutsch": "Waldtal, Schlucht",
+          "sprich": "nápeh",
+          "audio": "data/audio/gwn_01_04.m4a"
+        },
+        {
+          "griechisch": "ἡ ὕλη, τῆς ὕλης",
+          "umschrift": "hýlē",
+          "deutsch": "Wald; Stoff, Materie",
+          "sprich": "hǘleh",
+          "audio": "data/audio/gwn_01_05.m4a"
+        },
+        {
+          "griechisch": "ὁ ποταμός, τοῦ ποταμοῦ",
+          "umschrift": "potamós",
+          "deutsch": "Fluss",
+          "sprich": "potamós",
+          "audio": "data/audio/gwn_01_06.m4a"
+        },
+        {
+          "griechisch": "ἡ πηγή, τῆς πηγῆς",
+          "umschrift": "pēgḗ",
+          "deutsch": "Quelle",
+          "sprich": "pehgḗ",
+          "audio": "data/audio/gwn_01_07.m4a"
+        },
+        {
+          "griechisch": "ἡ λίμνη, τῆς λίμνης",
+          "umschrift": "límnē",
+          "deutsch": "See, Teich, Sumpf",
+          "sprich": "límneh",
+          "audio": "data/audio/gwn_01_08.m4a"
+        },
+        {
+          "griechisch": "ἡ ἤπειρος, τῆς ἠπείρου",
+          "umschrift": "ḗpeiros",
+          "deutsch": "Festland, Kontinent",
+          "sprich": "ḗpeiros",
+          "audio": "data/audio/gwn_01_09.m4a"
+        },
+        {
+          "griechisch": "ἡ ἐρημία, τῆς ἐρημίας",
+          "umschrift": "erēmía",
+          "deutsch": "Einöde, Einsamkeit",
+          "sprich": "erehmía",
+          "audio": "data/audio/gwn_01_10.m4a"
+        },
+        {
+          "griechisch": "τὸ ἄντρον, τοῦ ἄντρου",
+          "umschrift": "ántron",
+          "deutsch": "Höhle, Grotte",
+          "sprich": "ántron",
+          "audio": "data/audio/gwn_01_11.m4a"
+        },
+        {
+          "griechisch": "τὸ σπήλαιον, τοῦ σπηλαίου",
+          "umschrift": "spḗlaion",
+          "deutsch": "Höhle",
+          "sprich": "spḗlaion",
+          "audio": "data/audio/gwn_01_12.m4a"
+        },
+        {
+          "griechisch": "ἡ ὄχθη, τῆς ὄχθης",
+          "umschrift": "óchthē",
+          "deutsch": "Ufer, Anhöhe",
+          "sprich": "óchteh",
+          "audio": "data/audio/gwn_01_13.m4a"
+        },
+        {
+          "griechisch": "ἡ γέφυρα, τῆς γεφύρας",
+          "umschrift": "géphyra",
+          "deutsch": "Brücke",
+          "sprich": "géfüra",
+          "audio": "data/audio/gwn_01_14.m4a"
+        },
+        {
+          "griechisch": "τὸ ὅριον, τοῦ ὁρίου",
+          "umschrift": "hórion",
+          "deutsch": "Grenze",
+          "erklaerung": "Meist Plural: τὰ ὅρια",
+          "sprich": "hórion",
+          "audio": "data/audio/gwn_01_15.m4a"
+        },
+        {
+          "griechisch": "ὁ ὅρος, τοῦ ὅρου",
+          "umschrift": "hóros",
+          "deutsch": "Grenze, Grenzstein; Definition",
+          "sprich": "hóros",
+          "audio": "data/audio/gwn_01_16.m4a"
+        },
+        {
+          "griechisch": "ἡ ἄμμος, τῆς ἄμμου",
+          "umschrift": "ámmos",
+          "deutsch": "Sand",
+          "sprich": "ámmos",
+          "audio": "data/audio/gwn_01_17.m4a"
+        },
+        {
+          "griechisch": "ὁ πηλός, τοῦ πηλοῦ",
+          "umschrift": "pēlós",
+          "deutsch": "Lehm, Schlamm",
+          "sprich": "pehlós",
+          "audio": "data/audio/gwn_01_18.m4a"
+        },
+        {
+          "griechisch": "ἡ σκιά, τῆς σκιᾶς",
+          "umschrift": "skiá",
+          "deutsch": "Schatten",
+          "sprich": "skiá",
+          "audio": "data/audio/gwn_01_19.m4a"
+        }
+      ]
+    },
+    {
+      "titel": "Pflanzen & Tiere",
+      "vokabeln": [
+        {
+          "griechisch": "τὸ δένδρον, τοῦ δένδρου",
+          "umschrift": "déndron",
+          "deutsch": "Baum",
+          "sprich": "déndron",
+          "audio": "data/audio/gwn_02_00.m4a"
+        },
+        {
+          "griechisch": "ἡ ἐλαία, τῆς ἐλαίας",
+          "umschrift": "elaía",
+          "deutsch": "Olivenbaum, Olive",
+          "sprich": "elaía",
+          "audio": "data/audio/gwn_02_01.m4a"
+        },
+        {
+          "griechisch": "ἡ ἄμπελος, τῆς ἀμπέλου",
+          "umschrift": "ámpelos",
+          "deutsch": "Weinstock",
+          "sprich": "ámpelos",
+          "audio": "data/audio/gwn_02_02.m4a"
+        },
+        {
+          "griechisch": "ἡ συκῆ, τῆς συκῆς",
+          "umschrift": "sykê",
+          "deutsch": "Feigenbaum",
+          "sprich": "sükê",
+          "audio": "data/audio/gwn_02_03.m4a"
+        },
+        {
+          "griechisch": "ὁ καρπός, τοῦ καρποῦ",
+          "umschrift": "karpós",
+          "deutsch": "Frucht, Ertrag",
+          "sprich": "karpós",
+          "audio": "data/audio/gwn_02_04.m4a"
+        },
+        {
+          "griechisch": "τὸ ἄνθος, τοῦ ἄνθους",
+          "umschrift": "ánthos",
+          "deutsch": "Blume, Blüte",
+          "sprich": "ántos",
+          "audio": "data/audio/gwn_02_05.m4a"
+        },
+        {
+          "griechisch": "ἡ ῥίζα, τῆς ῥίζης",
+          "umschrift": "rhíza",
+          "deutsch": "Wurzel",
+          "sprich": "ríza",
+          "audio": "data/audio/gwn_02_06.m4a"
+        },
+        {
+          "griechisch": "τὸ φύλλον, τοῦ φύλλου",
+          "umschrift": "phýllon",
+          "deutsch": "Blatt",
+          "sprich": "fǘllon",
+          "audio": "data/audio/gwn_02_07.m4a"
+        },
+        {
+          "griechisch": "ἡ πόα, τῆς πόας",
+          "umschrift": "póa",
+          "deutsch": "Gras, Wiese",
+          "sprich": "póa",
+          "audio": "data/audio/gwn_02_08.m4a"
+        },
+        {
+          "griechisch": "τὸ ζῷον, τοῦ ζῴου",
+          "umschrift": "zôion",
+          "deutsch": "Lebewesen, Tier",
+          "sprich": "zôion",
+          "audio": "data/audio/gwn_02_09.m4a"
+        },
+        {
+          "griechisch": "τὸ θηρίον, τοῦ θηρίου",
+          "umschrift": "thēríon",
+          "deutsch": "wildes Tier, Bestie",
+          "sprich": "tehríon",
+          "audio": "data/audio/gwn_02_10.m4a"
+        },
+        {
+          "griechisch": "ὁ λέων, τοῦ λέοντος",
+          "umschrift": "léōn",
+          "deutsch": "Löwe",
+          "sprich": "léohn",
+          "audio": "data/audio/gwn_02_11.m4a"
+        },
+        {
+          "griechisch": "ὁ λύκος, τοῦ λύκου",
+          "umschrift": "lýkos",
+          "deutsch": "Wolf",
+          "sprich": "lǘkos",
+          "audio": "data/audio/gwn_02_12.m4a"
+        },
+        {
+          "griechisch": "ἡ ἄρκτος, τῆς ἄρκτου",
+          "umschrift": "árktos",
+          "deutsch": "Bär; Sternbild des Bären, Norden",
+          "sprich": "árktos",
+          "audio": "data/audio/gwn_02_13.m4a"
+        },
+        {
+          "griechisch": "ὁ ὄρνις, τοῦ ὄρνιθος",
+          "umschrift": "órnis",
+          "deutsch": "Vogel; Vorzeichen",
+          "sprich": "órnis",
+          "audio": "data/audio/gwn_02_14.m4a"
+        },
+        {
+          "griechisch": "ὁ ἀετός, τοῦ ἀετοῦ",
+          "umschrift": "aetós",
+          "deutsch": "Adler",
+          "sprich": "aetós",
+          "audio": "data/audio/gwn_02_15.m4a"
+        },
+        {
+          "griechisch": "ὁ ὄφις, τοῦ ὄφεως",
+          "umschrift": "óphis",
+          "deutsch": "Schlange",
+          "sprich": "ófis",
+          "audio": "data/audio/gwn_02_16.m4a"
+        },
+        {
+          "griechisch": "ὁ δράκων, τοῦ δράκοντος",
+          "umschrift": "drákōn",
+          "deutsch": "Drache, große Schlange",
+          "sprich": "drákohn",
+          "audio": "data/audio/gwn_02_17.m4a"
+        },
+        {
+          "griechisch": "ἡ μέλιττα, τῆς μελίττης",
+          "umschrift": "mélitta",
+          "deutsch": "Biene",
+          "sprich": "mélitta",
+          "audio": "data/audio/gwn_02_18.m4a"
+        },
+        {
+          "griechisch": "ὁ ὄνος, τοῦ ὄνου",
+          "umschrift": "ónos",
+          "deutsch": "Esel",
+          "sprich": "ónos",
+          "audio": "data/audio/gwn_02_19.m4a"
+        }
+      ]
+    },
+    {
+      "titel": "Zeit I — Tag & Jahr",
+      "vokabeln": [
+        {
+          "griechisch": "ὁ χρόνος, τοῦ χρόνου",
+          "umschrift": "chrónos",
+          "deutsch": "Zeit",
+          "sprich": "chrónos",
+          "audio": "data/audio/gwn_03_00.m4a"
+        },
+        {
+          "griechisch": "ὁ καιρός, τοῦ καιροῦ",
+          "umschrift": "kairós",
+          "deutsch": "rechter Zeitpunkt, Gelegenheit",
+          "sprich": "kairós",
+          "audio": "data/audio/gwn_03_01.m4a"
+        },
+        {
+          "griechisch": "ἡ ἡμέρα, τῆς ἡμέρας",
+          "umschrift": "hēméra",
+          "deutsch": "Tag",
+          "sprich": "hehméra",
+          "audio": "data/audio/gwn_03_02.m4a"
+        },
+        {
+          "griechisch": "ἡ νύξ, τῆς νυκτός",
+          "umschrift": "nýx",
+          "deutsch": "Nacht",
+          "sprich": "nǘx",
+          "audio": "data/audio/gwn_03_03.m4a"
+        },
+        {
+          "griechisch": "ἡ ἕως, τῆς ἕω",
+          "umschrift": "héōs",
+          "deutsch": "Morgenröte, Morgen",
+          "sprich": "héohs",
+          "audio": "data/audio/gwn_03_04.m4a"
+        },
+        {
+          "griechisch": "ἡ ἑσπέρα, τῆς ἑσπέρας",
+          "umschrift": "hespéra",
+          "deutsch": "Abend; Westen",
+          "sprich": "hespéra",
+          "audio": "data/audio/gwn_03_05.m4a"
+        },
+        {
+          "griechisch": "ἡ μεσημβρία, τῆς μεσημβρίας",
+          "umschrift": "mesēmbría",
+          "deutsch": "Mittag; Süden",
+          "sprich": "mesehmbría",
+          "audio": "data/audio/gwn_03_06.m4a"
+        },
+        {
+          "griechisch": "τὸ ἔτος, τοῦ ἔτους",
+          "umschrift": "étos",
+          "deutsch": "Jahr",
+          "sprich": "étos",
+          "audio": "data/audio/gwn_03_07.m4a"
+        },
+        {
+          "griechisch": "ὁ ἐνιαυτός, τοῦ ἐνιαυτοῦ",
+          "umschrift": "eniautós",
+          "deutsch": "Jahr, Jahreskreis",
+          "sprich": "eniautós",
+          "audio": "data/audio/gwn_03_08.m4a"
+        },
+        {
+          "griechisch": "ὁ μήν, τοῦ μηνός",
+          "umschrift": "mḗn",
+          "deutsch": "Monat",
+          "sprich": "mḗn",
+          "audio": "data/audio/gwn_03_09.m4a"
+        },
+        {
+          "griechisch": "ἡ ὥρα, τῆς ὥρας",
+          "umschrift": "hṓra",
+          "deutsch": "Jahreszeit, Stunde, rechte Zeit",
+          "sprich": "hṓra",
+          "audio": "data/audio/gwn_03_10.m4a"
+        },
+        {
+          "griechisch": "τὸ ἔαρ, τοῦ ἦρος",
+          "umschrift": "éar",
+          "deutsch": "Frühling",
+          "sprich": "éar",
+          "audio": "data/audio/gwn_03_11.m4a"
+        },
+        {
+          "griechisch": "τὸ θέρος, τοῦ θέρους",
+          "umschrift": "théros",
+          "deutsch": "Sommer; Ernte",
+          "sprich": "téros",
+          "audio": "data/audio/gwn_03_12.m4a"
+        },
+        {
+          "griechisch": "τὸ φθινόπωρον, τοῦ φθινοπώρου",
+          "umschrift": "phthinópōron",
+          "deutsch": "Herbst",
+          "sprich": "ftinópohron",
+          "audio": "data/audio/gwn_03_13.m4a"
+        },
+        {
+          "griechisch": "ὁ βίος μακρός",
+          "umschrift": "bíos makrós",
+          "deutsch": "ein langes Leben",
+          "sprich": "bíos makrós",
+          "audio": "data/audio/gwn_03_14.m4a"
+        },
+        {
+          "griechisch": "ἡ ἀρχή, τῆς ἀρχῆς",
+          "umschrift": "archḗ",
+          "deutsch": "Anfang, Beginn",
+          "erklaerung": "ἐξ ἀρχῆς: von Anfang an",
+          "sprich": "archḗ",
+          "audio": "data/audio/gwn_03_15.m4a"
+        },
+        {
+          "griechisch": "τὸ τέλος, τοῦ τέλους",
+          "umschrift": "télos",
+          "deutsch": "Ende, Ziel, Vollendung",
+          "erklaerung": "τέλος (Adv.): schließlich",
+          "sprich": "télos",
+          "audio": "data/audio/gwn_03_16.m4a"
+        },
+        {
+          "griechisch": "ἡ τελευτή, τῆς τελευτῆς",
+          "umschrift": "teleutḗ",
+          "deutsch": "Ende; Lebensende, Tod",
+          "sprich": "teleutḗ",
+          "audio": "data/audio/gwn_03_17.m4a"
+        },
+        {
+          "griechisch": "ὁ αἰών, τοῦ αἰῶνος",
+          "umschrift": "aiṓn",
+          "deutsch": "Lebenszeit, Zeitalter, Ewigkeit",
+          "sprich": "aiṓn",
+          "audio": "data/audio/gwn_03_18.m4a"
+        },
+        {
+          "griechisch": "τὸ παρόν, τοῦ παρόντος",
+          "umschrift": "parón",
+          "deutsch": "die Gegenwart",
+          "erklaerung": "ἐν τῷ παρόντι: gegenwärtig",
+          "sprich": "parón",
+          "audio": "data/audio/gwn_03_19.m4a"
+        }
+      ]
+    },
+    {
+      "titel": "Zeit II — Adverbien der Zeit",
+      "vokabeln": [
+        {
+          "griechisch": "νῦν",
+          "umschrift": "nŷn",
+          "deutsch": "jetzt, nun",
+          "sprich": "nŷn",
+          "audio": "data/audio/gwn_04_00.m4a"
+        },
+        {
+          "griechisch": "τότε",
+          "umschrift": "tóte",
+          "deutsch": "damals, dann",
+          "sprich": "tóte",
+          "audio": "data/audio/gwn_04_01.m4a"
+        },
+        {
+          "griechisch": "πάλαι",
+          "umschrift": "pálai",
+          "deutsch": "einst, vor langer Zeit, längst",
+          "sprich": "pálai",
+          "audio": "data/audio/gwn_04_02.m4a"
+        },
+        {
+          "griechisch": "ἤδη",
+          "umschrift": "ḗdē",
+          "deutsch": "schon, bereits",
+          "sprich": "ḗdeh",
+          "audio": "data/audio/gwn_04_03.m4a"
+        },
+        {
+          "griechisch": "οὔπω",
+          "umschrift": "oúpō",
+          "deutsch": "noch nicht",
+          "sprich": "úpoh",
+          "audio": "data/audio/gwn_04_04.m4a"
+        },
+        {
+          "griechisch": "ἔτι",
+          "umschrift": "éti",
+          "deutsch": "noch, außerdem",
+          "sprich": "éti",
+          "audio": "data/audio/gwn_04_05.m4a"
+        },
+        {
+          "griechisch": "οὐκέτι",
+          "umschrift": "oukéti",
+          "deutsch": "nicht mehr",
+          "sprich": "ukéti",
+          "audio": "data/audio/gwn_04_06.m4a"
+        },
+        {
+          "griechisch": "αὖθις",
+          "umschrift": "aûthis",
+          "deutsch": "wieder, von neuem",
+          "sprich": "aûtis",
+          "audio": "data/audio/gwn_04_07.m4a"
+        },
+        {
+          "griechisch": "πάλιν",
+          "umschrift": "pálin",
+          "deutsch": "wieder, zurück",
+          "sprich": "pálin",
+          "audio": "data/audio/gwn_04_08.m4a"
+        },
+        {
+          "griechisch": "πολλάκις",
+          "umschrift": "pollákis",
+          "deutsch": "oft, häufig",
+          "sprich": "pollákis",
+          "audio": "data/audio/gwn_04_09.m4a"
+        },
+        {
+          "griechisch": "ἀεί",
+          "umschrift": "aeí",
+          "deutsch": "immer, jeweils",
+          "sprich": "aeí",
+          "audio": "data/audio/gwn_04_10.m4a"
+        },
+        {
+          "griechisch": "οὔποτε",
+          "umschrift": "oúpote",
+          "deutsch": "niemals",
+          "sprich": "úpote",
+          "audio": "data/audio/gwn_04_11.m4a"
+        },
+        {
+          "griechisch": "ἐνίοτε",
+          "umschrift": "eníote",
+          "deutsch": "manchmal, bisweilen",
+          "sprich": "eníote",
+          "audio": "data/audio/gwn_04_12.m4a"
+        },
+        {
+          "griechisch": "εὐθύς",
+          "umschrift": "euthýs",
+          "deutsch": "sofort, sogleich",
+          "sprich": "eutǘs",
+          "audio": "data/audio/gwn_04_13.m4a"
+        },
+        {
+          "griechisch": "ἐξαίφνης",
+          "umschrift": "exaíphnēs",
+          "deutsch": "plötzlich",
+          "sprich": "exaífnehs",
+          "audio": "data/audio/gwn_04_14.m4a"
+        },
+        {
+          "griechisch": "τήμερον",
+          "umschrift": "tḗmeron",
+          "deutsch": "heute",
+          "erklaerung": "Auch σήμερον",
+          "sprich": "tḗmeron",
+          "audio": "data/audio/gwn_04_15.m4a"
+        },
+        {
+          "griechisch": "αὔριον",
+          "umschrift": "aúrion",
+          "deutsch": "morgen",
+          "sprich": "aúrion",
+          "audio": "data/audio/gwn_04_16.m4a"
+        },
+        {
+          "griechisch": "χθές",
+          "umschrift": "chthés",
+          "deutsch": "gestern",
+          "sprich": "chtés",
+          "audio": "data/audio/gwn_04_17.m4a"
+        },
+        {
+          "griechisch": "πρῴ",
+          "umschrift": "prṓi",
+          "deutsch": "früh, frühmorgens",
+          "sprich": "prṓi",
+          "audio": "data/audio/gwn_04_18.m4a"
+        },
+        {
+          "griechisch": "ὀψέ",
+          "umschrift": "opsé",
+          "deutsch": "spät, abends",
+          "sprich": "opsé",
+          "audio": "data/audio/gwn_04_19.m4a"
+        }
+      ]
+    },
+    {
+      "titel": "Glück, Schicksal & Zufall",
+      "vokabeln": [
+        {
+          "griechisch": "ἡ τύχη, τῆς τύχης",
+          "umschrift": "týchē",
+          "deutsch": "Zufall, Schicksal, Glück",
+          "sprich": "tǘcheh",
+          "audio": "data/audio/gwn_05_00.m4a"
+        },
+        {
+          "griechisch": "ἡ μοῖρα, τῆς μοίρας",
+          "umschrift": "moîra",
+          "deutsch": "Anteil, Los, Schicksal",
+          "sprich": "moîra",
+          "audio": "data/audio/gwn_05_01.m4a"
+        },
+        {
+          "griechisch": "τὸ πεπρωμένον, τοῦ πεπρωμένου",
+          "umschrift": "peprōménon",
+          "deutsch": "das Verhängte, Schicksal",
+          "sprich": "peprohménon",
+          "audio": "data/audio/gwn_05_02.m4a"
+        },
+        {
+          "griechisch": "ἡ ἀνάγκη, τῆς ἀνάγκης",
+          "umschrift": "anánkē",
+          "deutsch": "Notwendigkeit, Zwang, Not",
+          "erklaerung": "ἀνάγκη ἐστί: es ist notwendig",
+          "sprich": "anánkeh",
+          "audio": "data/audio/gwn_05_03.m4a"
+        },
+        {
+          "griechisch": "ἡ εὐτυχία, τῆς εὐτυχίας",
+          "umschrift": "eutychía",
+          "deutsch": "Glück, Erfolg",
+          "sprich": "eutüchía",
+          "audio": "data/audio/gwn_05_04.m4a"
+        },
+        {
+          "griechisch": "ἡ δυστυχία, τῆς δυστυχίας",
+          "umschrift": "dystychía",
+          "deutsch": "Unglück",
+          "sprich": "düstüchía",
+          "audio": "data/audio/gwn_05_05.m4a"
+        },
+        {
+          "griechisch": "ἡ συμφορά, τῆς συμφορᾶς",
+          "umschrift": "symphorá",
+          "deutsch": "Ereignis; Unglück, Missgeschick",
+          "sprich": "sümforá",
+          "audio": "data/audio/gwn_05_06.m4a"
+        },
+        {
+          "griechisch": "ἡ εὐδαιμονία, τῆς εὐδαιμονίας",
+          "umschrift": "eudaimonía",
+          "deutsch": "Glückseligkeit, Wohlergehen",
+          "sprich": "eudaimonía",
+          "audio": "data/audio/gwn_05_07.m4a"
+        },
+        {
+          "griechisch": "ὁ ὄλβος, τοῦ ὄλβου",
+          "umschrift": "ólbos",
+          "deutsch": "Glück, Segen, Wohlstand (poet.)",
+          "sprich": "ólbos",
+          "audio": "data/audio/gwn_05_08.m4a"
+        },
+        {
+          "griechisch": "ἡ ἐλπίς, τῆς ἐλπίδος",
+          "umschrift": "elpís",
+          "deutsch": "Hoffnung, Erwartung",
+          "sprich": "elpís",
+          "audio": "data/audio/gwn_05_09.m4a"
+        },
+        {
+          "griechisch": "ὁ φόβος, τοῦ φόβου",
+          "umschrift": "phóbos",
+          "deutsch": "Furcht, Schrecken",
+          "sprich": "fóbos",
+          "audio": "data/audio/gwn_05_10.m4a"
+        },
+        {
+          "griechisch": "τὸ δέος, τοῦ δέους",
+          "umschrift": "déos",
+          "deutsch": "Furcht, Scheu",
+          "sprich": "déos",
+          "audio": "data/audio/gwn_05_11.m4a"
+        },
+        {
+          "griechisch": "ὁ κίνδυνος ἔσχατος",
+          "umschrift": "kíndynos éschatos",
+          "deutsch": "äußerste Gefahr",
+          "sprich": "kíndünos éschatos",
+          "audio": "data/audio/gwn_05_12.m4a"
+        },
+        {
+          "griechisch": "ἡ ἀπορία, τῆς ἀπορίας",
+          "umschrift": "aporía",
+          "deutsch": "Ratlosigkeit, Mangel, Schwierigkeit",
+          "sprich": "aporía",
+          "audio": "data/audio/gwn_05_13.m4a"
+        },
+        {
+          "griechisch": "ἡ εὐπορία, τῆς εὐπορίας",
+          "umschrift": "euporía",
+          "deutsch": "Mittel, Wohlstand, Leichtigkeit",
+          "sprich": "euporía",
+          "audio": "data/audio/gwn_05_14.m4a"
+        },
+        {
+          "griechisch": "ἡ ὠφέλεια, τῆς ὠφελείας",
+          "umschrift": "ōphéleia",
+          "deutsch": "Nutzen, Vorteil, Hilfe",
+          "sprich": "ohféleia",
+          "audio": "data/audio/gwn_05_15.m4a"
+        },
+        {
+          "griechisch": "ἡ βλάβη, τῆς βλάβης",
+          "umschrift": "blábē",
+          "deutsch": "Schaden",
+          "sprich": "blábeh",
+          "audio": "data/audio/gwn_05_16.m4a"
+        },
+        {
+          "griechisch": "τὸ ἀγαθόν, τοῦ ἀγαθοῦ",
+          "umschrift": "agathón",
+          "deutsch": "das Gute, das Gut",
+          "sprich": "agatón",
+          "audio": "data/audio/gwn_05_17.m4a"
+        },
+        {
+          "griechisch": "τὸ κακόν, τοῦ κακοῦ",
+          "umschrift": "kakón",
+          "deutsch": "das Übel, das Unglück",
+          "sprich": "kakón",
+          "audio": "data/audio/gwn_05_18.m4a"
+        },
+        {
+          "griechisch": "τὸ ἆθλον τῆς τύχης",
+          "umschrift": "âthlon tês týchēs",
+          "deutsch": "Geschenk des Schicksals",
+          "sprich": "âtlon tês tǘchehs",
+          "audio": "data/audio/gwn_05_19.m4a"
+        }
+      ]
+    }
+  ]
+}
