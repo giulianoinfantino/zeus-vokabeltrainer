@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zeus – Umfrage-Auswertung</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg:#0a0d15; --surface:#141a2a; --surface2:#1a2236; --border:#242e47;
+  --gold:#e3b64f; --gold2:#f0cf85; --text:#edf0f7; --muted:#8b94ab; --faint:#5a6379;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background: radial-gradient(1100px 460px at 50% -8%, #141c33 0%, transparent 60%), var(--bg);
+  color:var(--text); font-family:'Inter',sans-serif; min-height:100vh; padding:28px 18px 80px;
+}
+.shell { max-width:760px; margin:0 auto; }
+h1 { font-size:20px; font-weight:800; margin-bottom:4px; }
+.sub { font-size:12.5px; color:var(--muted); margin-bottom:22px; }
+.kennzahlen { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:22px; }
+.kz { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px; }
+.kz .n { font-size:22px; font-weight:800; color:var(--gold2); }
+.kz .l { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; font-weight:700; margin-top:3px; }
+.verteilung { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:22px; }
+.verteilung h2 { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:10px; }
+.balken { display:flex; align-items:center; gap:10px; font-size:12.5px; padding:4px 0; }
+.balken .lab { width:220px; color:var(--muted); flex-shrink:0; }
+.balken .bar { height:9px; background:linear-gradient(90deg,var(--gold),#c2922f); border-radius:5px; }
+.balken .anz { color:var(--faint); }
+.eintrag { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:12px; }
+.e-kopf { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+.e-sterne { color:var(--gold); font-size:14px; letter-spacing:2px; }
+.e-datum { font-size:11.5px; color:var(--faint); }
+.e-zeile { font-size:13px; margin:4px 0; line-height:1.5; }
+.e-zeile b { color:var(--muted); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; margin-right:6px; }
+.tag { display:inline-block; background:var(--surface2); border:1px solid var(--border); border-radius:100px; padding:2px 9px; font-size:11.5px; margin:2px 3px 2px 0; }
+.knopf {
+  background:linear-gradient(135deg,var(--gold),#c2922f); color:#131008; border:none;
+  border-radius:11px; padding:10px 16px; font-size:13px; font-weight:800; cursor:pointer; font-family:inherit;
+}
+.kopfzeile { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+#status { font-size:13px; color:var(--muted); padding:30px 0; text-align:center; }
+a { color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="kopfzeile">
+    <div>
+      <h1>Umfrage-Auswertung</h1>
+      <div class="sub">Demo-Feedback · <a href="/app/">zurück zur App</a></div>
+    </div>
+    <button class="knopf" id="csv-btn" onclick="csvLaden()" style="display:none">CSV herunterladen</button>
+  </div>
+
+  <div id="status">Lade Antworten…</div>
+  <div id="inhalt" style="display:none">
+    <div class="kennzahlen" id="kennzahlen"></div>
+    <div class="verteilung" id="zahlung"></div>
+    <div class="verteilung" id="kontext"></div>
+    <div id="liste"></div>
+  </div>
+</div>
+
+<script>
+let eintraege = [];
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+}
+
+function verteilungZeichnen(elId, titel, werte) {
+  const zaehler = {};
+  werte.filter(Boolean).forEach(w => zaehler[w] = (zaehler[w] || 0) + 1);
+  const paare = Object.entries(zaehler).sort((a, b) => b[1] - a[1]);
+  const max = paare[0]?.[1] || 1;
+  document.getElementById(elId).innerHTML = '<h2>' + titel + '</h2>' +
+    (paare.length ? paare.map(([k, n]) =>
+      `<div class="balken"><span class="lab">${esc(k)}</span>` +
+      `<span class="bar" style="width:${Math.round(n / max * 240)}px"></span>` +
+      `<span class="anz">${n}</span></div>`).join('')
+    : '<div class="balken"><span class="lab">noch keine Angaben</span></div>');
+}
+
+function rendern() {
+  const n = eintraege.length;
+  const schnitt = n ? (eintraege.reduce((a, e) => a + (e.sterne || 0), 0) / n).toFixed(1) : '–';
+  const mitText = eintraege.filter(e => e.verbessern).length;
+  const mitMail = eintraege.filter(e => e.email).length;
+  document.getElementById('kennzahlen').innerHTML =
+    `<div class="kz"><div class="n">${n}</div><div class="l">Antworten</div></div>` +
+    `<div class="kz"><div class="n">${schnitt} ★</div><div class="l">Ø Bewertung</div></div>` +
+    `<div class="kz"><div class="n">${mitText}</div><div class="l">mit Freitext</div></div>` +
+    `<div class="kz"><div class="n">${mitMail}</div><div class="l">E-Mail hinterlassen</div></div>`;
+
+  verteilungZeichnen('zahlung', 'Zahlungsbereitschaft', eintraege.map(e => e.zahlung));
+  verteilungZeichnen('kontext', 'Lern-Kontext', eintraege.map(e => e.kontext));
+
+  document.getElementById('liste').innerHTML = eintraege.map(e => `
+    <div class="eintrag">
+      <div class="e-kopf">
+        <span class="e-sterne">${'★'.repeat(e.sterne || 0)}${'☆'.repeat(5 - (e.sterne || 0))}</span>
+        <span class="e-datum">${esc((e.eingegangen || '').replace('T', ' ').slice(0, 16))} · gelernt: ${e.gelernt ?? '?'} · Lv ${e.level ?? '?'}</span>
+      </div>
+      ${(e.gefallen || []).length ? '<div class="e-zeile">' + e.gefallen.map(g => '<span class="tag">' + esc(g) + '</span>').join('') + '</div>' : ''}
+      ${e.verbessern ? '<div class="e-zeile"><b>Verbessern</b>' + esc(e.verbessern) + '</div>' : ''}
+      ${e.kontext ? '<div class="e-zeile"><b>Kontext</b>' + esc(e.kontext) + '</div>' : ''}
+      ${e.zahlung ? '<div class="e-zeile"><b>Zahlung</b>' + esc(e.zahlung) + '</div>' : ''}
+      ${e.email ? '<div class="e-zeile"><b>E-Mail</b>' + esc(e.email) + '</div>' : ''}
+    </div>`).join('');
+
+  document.getElementById('status').style.display = 'none';
+  document.getElementById('inhalt').style.display = 'block';
+  document.getElementById('csv-btn').style.display = n ? 'inline-block' : 'none';
+}
+
+function csvLaden() {
+  const spalten = ['eingegangen', 'sterne', 'gefallen', 'verbessern', 'kontext', 'zahlung', 'email', 'gelernt', 'streak', 'level', 'ua'];
+  const zelle = v => '"' + String(Array.isArray(v) ? v.join('; ') : v ?? '').replace(/"/g, '""') + '"';
+  const csv = [spalten.join(',')]
+    .concat(eintraege.map(e => spalten.map(s => zelle(e[s])).join(',')))
+    .join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'zeus-umfragen-' + new Date().toISOString().slice(0, 10) + '.csv';
+  a.click();
+}
+
+(async () => {
+  try {
+    const r = await fetch('/api/umfrage-liste');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    eintraege = (await r.json()).eintraege || [];
+    rendern();
+  } catch (e) {
+    document.getElementById('status').textContent = 'Fehler beim Laden: ' + e.message;
+  }
+})();
+</script>
+</body>
+</html>

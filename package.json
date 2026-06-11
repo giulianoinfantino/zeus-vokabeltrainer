@@ -1,0 +1,9 @@
+{
+  "name": "zeus-vokabeltrainer",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "@vercel/blob": "^1.1.1"
+  }
+}
