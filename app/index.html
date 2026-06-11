@@ -543,6 +543,50 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   background: linear-gradient(135deg, var(--gold), #c2922f);
   color: #131008; font-size: 14px; font-weight: 800;
 }
+
+/* Foto → Vokabeln: Scan-Feedback */
+.imp-thumbs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.imp-thumb {
+  position: relative; width: 62px; height: 82px; border-radius: 10px; overflow: hidden;
+  border: 1.5px solid var(--border2); opacity: .5; flex-shrink: 0;
+  transition: opacity .3s, border-color .3s;
+}
+.imp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.imp-thumb.scan { opacity: 1; border-color: var(--gold); animation: thumbPuls 1.6s ease-in-out infinite; }
+.imp-thumb.scan::after {
+  content: ''; position: absolute; left: 0; right: 0; top: -30%; height: 30%;
+  background: linear-gradient(to bottom, transparent, rgba(227,182,79,.7), transparent);
+  animation: scanStrahl 1.3s cubic-bezier(.4,0,.6,1) infinite;
+}
+@keyframes scanStrahl { to { top: 100%; } }
+@keyframes thumbPuls { 50% { box-shadow: 0 0 16px rgba(227,182,79,.5); } }
+.imp-thumb.ok, .imp-thumb.err { opacity: 1; }
+.imp-thumb.ok { border-color: var(--s5); }
+.imp-thumb.err { border-color: var(--s1); }
+.thumb-badge {
+  position: absolute; right: 3px; bottom: 3px;
+  background: rgba(10,13,21,.88); border-radius: 100px; padding: 2px 7px;
+  font-size: 10px; font-weight: 800; color: var(--s5);
+  animation: badgePop .35s cubic-bezier(.2,1.4,.4,1);
+}
+.imp-thumb.err .thumb-badge { color: var(--s1); }
+@keyframes badgePop { from { transform: scale(0); } }
+.imp-row.neu { animation: zeileRein .45s cubic-bezier(.22,1,.36,1) both; }
+@keyframes zeileRein {
+  from { opacity: 0; transform: translateY(-10px) scale(.97); }
+  to   { opacity: 1; transform: none; }
+}
+.imp-row.neu input { animation: feldGlimm 1.1s ease-out both; animation-delay: inherit; }
+@keyframes feldGlimm {
+  0%, 35% { border-color: rgba(227,182,79,.75); }
+  100%    { border-color: var(--border); }
+}
+.imp-zaehler {
+  float: right; background: rgba(227,182,79,.12); border: 1px solid var(--gold);
+  color: var(--gold-2); border-radius: 100px; padding: 2px 10px;
+  font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: none;
+}
+.imp-step.rein { animation: viewIn .4s cubic-bezier(.22,1,.36,1); }
 .toast {
   position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px);
   background: var(--surface2); border: 1px solid var(--s5);
@@ -1090,12 +1134,13 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
   <div class="view" id="view-import">
     <div class="imp-step">
       <div class="imp-step-n">Schritt 1 — Foto</div>
-      <div class="imp-desc">Fotografiere eine Vokabelseite deines Lehrbuchs oder lade ein Bild hoch. Die Erkennung läuft über die Claude-Vision-API (präzise polytone Erkennung inkl. Umschrift). Ohne API-Schlüssel springt die lokale Browser-Texterkennung ein.</div>
+      <div class="imp-desc">Fotografiere eine oder mehrere Vokabelseiten deines Lehrbuchs oder lade Bilder hoch — auch mehrere auf einmal. Die Erkennung läuft über die Claude-Vision-API (präzise polytone Erkennung inkl. Umschrift). Ohne API-Schlüssel springt die lokale Browser-Texterkennung ein.</div>
       <div class="drop" id="drop" onclick="document.getElementById('imp-file').click()">
         <span class="d-ico">📷</span>
-        Foto aufnehmen oder Bild hierher ziehen
+        Fotos aufnehmen oder Bilder hierher ziehen — mehrere möglich
       </div>
-      <input type="file" id="imp-file" accept="image/*" capture="environment" style="display:none" />
+      <input type="file" id="imp-file" accept="image/*" multiple style="display:none" />
+      <div class="imp-thumbs" id="imp-thumbs"></div>
       <div id="imp-status"></div>
     </div>
 
@@ -1108,7 +1153,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
     </div>
 
     <div class="imp-step" id="imp-step3" style="display:none">
-      <div class="imp-step-n">Schritt 3 — Vokabeln bearbeiten</div>
+      <div class="imp-step-n">Schritt 3 — Vokabeln bearbeiten<span class="imp-zaehler" id="imp-zaehler" data-n="0" style="display:none">0</span></div>
       <div class="imp-desc">Einträge prüfen, korrigieren oder ergänzen.</div>
       <div id="imp-rows"></div>
       <button class="imp-add" onclick="impZeile('', '')">+ Vokabel hinzufügen</button>
@@ -1930,10 +1975,12 @@ function ordnerElement(g) {
   kopf.className = 'ordner-kopf';
   const alleAn = g.leks.length && g.leks.every(l => aktive.includes(l.id));
   kopf.innerHTML = `<span>📁 ${g.name}</span><span class="o-zahl">${g.leks.length}</span>` +
+    (!g.fest ? `<span class="l-btn o-foto" title="Fotos in diesen Ordner importieren">📷</span>` : '') +
     (g.leks.length ? `<span class="l-btn o-alle${alleAn ? ' an' : ''}">${alleAn ? 'Alle ✓' : 'Alle'}</span>` : '') +
     (!g.fest && !g.leks.length ? `<span class="o-zahl del-ordner" style="color:var(--s1)">✕</span>` : '') +
     `<span class="o-pfeil">▼</span>`;
   kopf.onclick = (ev) => {
+    if (ev.target.classList.contains('o-foto')) { importZuOrdner(g.id); return; }
     if (ev.target.classList.contains('del-ordner')) { ordnerLoeschen(g.id); return; }
     if (ev.target.classList.contains('o-alle')) {
       const ids = g.leks.map(l => l.id);
@@ -1979,6 +2026,14 @@ function ordnerElement(g) {
   }
   box.appendChild(inhalt);
   return box;
+}
+
+// Aus der Bibliothek heraus: Import öffnen mit vorgewähltem Ziel-Ordner
+function importZuOrdner(ordnerId) {
+  importOrdnerFuellen();
+  document.getElementById('imp-ordner').value = ordnerId || '';
+  zeigeView('import');
+  toast(`📷 Neue Lektionen landen in „${ordnerName(ordnerId)}“`);
 }
 
 function ordnerAnlegen(sammlungId, inp) {
@@ -2582,42 +2637,168 @@ function wortschatzAufbauen() {
 const GR_RE = /[Ͱ-Ͽἀ-῿]+/g;
 
 document.getElementById('imp-file').addEventListener('change', e => {
-  if (e.target.files[0]) fotoVerarbeiten(e.target.files[0]);
+  if (e.target.files.length) fotosVerarbeiten([...e.target.files]);
+  e.target.value = '';
 });
 const drop = document.getElementById('drop');
 drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); });
 drop.addEventListener('dragleave', () => drop.classList.remove('over'));
 drop.addEventListener('drop', e => {
   e.preventDefault(); drop.classList.remove('over');
-  if (e.dataTransfer.files[0]) fotoVerarbeiten(e.dataTransfer.files[0]);
+  const bilder = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+  if (bilder.length) fotosVerarbeiten(bilder);
 });
 
-async function fotoVerarbeiten(file) {
+// Thematische Wartemeldungen, rotieren während das Orakel arbeitet
+const ORAKEL_SPRUECHE = [
+  '🦉 Die Eule der Athene trägt dein Foto zum Orakel…',
+  '⚡ Hermes eilt mit der Schriftrolle nach Delphi…',
+  '🏛️ Das Orakel entziffert die polytonen Zeichen…',
+  '📜 Spiritus und Akzente werden gedeutet…',
+  '🖋️ Die Musen ordnen die Vokabeln…',
+];
+let orakelTimer = null;
+function orakelStart(prefix) {
   const status = document.getElementById('imp-status');
-  status.textContent = 'Sende Foto an Claude Vision…';
+  let i = 0;
+  const tick = () => { status.textContent = prefix + ORAKEL_SPRUECHE[i++ % ORAKEL_SPRUECHE.length]; };
+  clearInterval(orakelTimer);
+  tick();
+  orakelTimer = setInterval(tick, 2800);
+}
+function orakelStopp(msg) {
+  clearInterval(orakelTimer);
+  orakelTimer = null;
+  if (msg !== undefined) document.getElementById('imp-status').textContent = msg;
+}
+
+// Thumbnail-Leiste: zeigt jedes Foto sofort, markiert Scan-Fortschritt und Ergebnis
+function thumbsAnlegen(files) {
+  const leiste = document.getElementById('imp-thumbs');
+  leiste.querySelectorAll('img').forEach(i => URL.revokeObjectURL(i.src));
+  leiste.innerHTML = '';
+  return files.map(f => {
+    const d = document.createElement('div');
+    d.className = 'imp-thumb';
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(f);
+    d.appendChild(img);
+    leiste.appendChild(d);
+    return d;
+  });
+}
+function thumbFertig(thumb, klasse, text) {
+  thumb.classList.remove('scan');
+  thumb.classList.add(klasse);
+  const b = document.createElement('span');
+  b.className = 'thumb-badge';
+  b.textContent = text;
+  thumb.appendChild(b);
+}
+
+// Schritt 3 einblenden, sobald die ersten Vokabeln da sind (nicht erst am Ende)
+function schritt3Zeigen() {
+  const s3 = document.getElementById('imp-step3');
+  if (s3.style.display === 'block') return;
+  s3.style.display = 'block';
+  s3.classList.add('rein');
+  setTimeout(() => s3.classList.remove('rein'), 450);
+  s3.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Zähler tickt im Takt der einfliegenden Zeilen hoch (kumulativ über mehrere Fotos)
+let zaehlerTimer = null, zaehlerZiel = 0;
+function zaehlerAuf(plus) {
+  const el = document.getElementById('imp-zaehler');
+  el.style.display = 'inline-block';
+  zaehlerZiel += plus;
+  clearInterval(zaehlerTimer);
+  zaehlerTimer = setInterval(() => {
+    let ist = parseInt(el.dataset.n || '0', 10);
+    if (ist >= zaehlerZiel) { clearInterval(zaehlerTimer); return; }
+    el.dataset.n = ++ist;
+    el.textContent = ist + (ist === 1 ? ' Vokabel' : ' Vokabeln');
+  }, 70);
+}
+function zaehlerReset() {
+  clearInterval(zaehlerTimer);
+  zaehlerZiel = 0;
+  const el = document.getElementById('imp-zaehler');
+  el.style.display = 'none'; el.dataset.n = '0'; el.textContent = '0';
+}
+
+async function fotosVerarbeiten(files) {
+  const status = document.getElementById('imp-status');
+  const thumbs = thumbsAnlegen(files);
+  let gesamt = 0, fehler = 0, titel = '';
+
+  for (let n = 0; n < files.length; n++) {
+    const prefix = files.length > 1 ? `Foto ${n + 1} von ${files.length} — ` : '';
+    thumbs[n].classList.add('scan');
+    orakelStart(prefix);
+    try {
+      const bild = await bildVorbereiten(files[n]);
+      const r = await fetch('/api/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: bild.data, media_type: bild.mediaType })
+      });
+      const json = await r.json();
+      if (!r.ok) throw new Error(json.error || ('HTTP ' + r.status));
+
+      thumbFertig(thumbs[n], 'ok', '✓ ' + json.vokabeln.length);
+      document.getElementById('imp-step2').style.display = 'none';
+      schritt3Zeigen();
+      json.vokabeln.forEach((v, i) => impZeile(v.griechisch, v.umschrift, v.deutsch, v.erklaerung, i * 70));
+      gesamt += json.vokabeln.length;
+      zaehlerAuf(json.vokabeln.length);
+      HAPTIK.tick();
+      if (json.titel && !titel) titel = json.titel;
+      orakelStopp(prefix + `✓ ${json.vokabeln.length} Vokabeln geborgen`);
+    } catch (e) {
+      fehler++;
+      thumbFertig(thumbs[n], 'err', '✕');
+      orakelStopp();
+      if (files.length === 1) {
+        status.textContent = '🏺 Das Orakel schweigt (' + e.message + ') — die lokale Schreibstube übernimmt…';
+        ocrFallback(files[0], thumbs[0]);
+        return;
+      }
+      status.textContent = prefix + '⚠️ ' + e.message;
+    }
+  }
+
+  if (!gesamt) {
+    status.textContent = `⚠️ Keines der ${files.length} Fotos konnte gelesen werden.`;
+    return;
+  }
+  if (titel && !document.getElementById('imp-titel').value)
+    document.getElementById('imp-titel').value = titel;
+
+  status.textContent = `⚡ Erfolgreich gescannt — ${gesamt} Vokabeln` +
+    (titel ? ` aus „${titel}“` : '') +
+    (files.length > 1 ? ` von ${files.length - fehler} Seiten` : '') +
+    ' geborgen. Unten prüfen!';
+  toast(`📜 ${gesamt} Vokabeln aus dem Orakel geborgen ⚡`);
+  SFX.glitzer();
+  HAPTIK.erfolg();
+  partikel();
+}
+
+// Handyfotos vor dem Upload verkleinern — schnellerer Upload, bleibt unter dem Server-Limit
+async function bildVorbereiten(file) {
   try {
-    const b64 = await dateiAlsBase64(file);
-    const r = await fetch('/api/extract', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: b64, media_type: file.type || 'image/jpeg' })
-    });
-    const json = await r.json();
-    if (!r.ok) throw new Error(json.error || ('HTTP ' + r.status));
-
-    // Direkt zu Schritt 3 — strukturierte Vokabeln
-    document.getElementById('imp-rows').innerHTML = '';
-    json.vokabeln.forEach(v => impZeile(v.griechisch, v.umschrift, v.deutsch, v.erklaerung));
-    if (json.titel && !document.getElementById('imp-titel').value)
-      document.getElementById('imp-titel').value = json.titel;
-
-    status.textContent = `${json.vokabeln.length} Vokabeln erkannt — unten prüfen.`;
-    document.getElementById('imp-step2').style.display = 'none';
-    document.getElementById('imp-step3').style.display = 'block';
-    document.getElementById('imp-step3').scrollIntoView({ behavior: 'smooth' });
-  } catch (e) {
-    status.textContent = 'Claude-API nicht erreichbar (' + e.message + ') — versuche lokale OCR…';
-    ocrFallback(file);
+    const bmp = await createImageBitmap(file);
+    const max = 2400;
+    const f = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas');
+    c.width = Math.round(bmp.width * f);
+    c.height = Math.round(bmp.height * f);
+    c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+    bmp.close();
+    return { data: c.toDataURL('image/jpeg', 0.85).split(',')[1], mediaType: 'image/jpeg' };
+  } catch {
+    return { data: await dateiAlsBase64(file), mediaType: file.type || 'image/jpeg' };
   }
 }
 
@@ -2630,27 +2811,30 @@ function dateiAlsBase64(file) {
   });
 }
 
-async function ocrFallback(file) {
+async function ocrFallback(file, thumb) {
   const status = document.getElementById('imp-status');
   if (!window.Tesseract) {
     status.textContent = 'Weder Claude-API noch OCR-Bibliothek verfügbar.';
     return;
   }
+  if (thumb) { thumb.classList.remove('err'); thumb.querySelector('.thumb-badge')?.remove(); thumb.classList.add('scan'); }
   try {
-    status.textContent = 'Lade lokales OCR-Modell (Altgriechisch)…';
+    status.textContent = '🏺 Die Schreibstube rüstet sich (lokales Altgriechisch-Modell)…';
     const worker = await Tesseract.createWorker('grc+deu', 1, {
       logger: m => {
         if (m.status === 'recognizing text')
-          status.textContent = `Erkenne Text lokal… ${Math.round(m.progress * 100)}%`;
+          status.textContent = `🖋️ Die Schreiber entziffern lokal… ${Math.round(m.progress * 100)}%`;
       }
     });
     const { data } = await worker.recognize(file);
     await worker.terminate();
-    status.textContent = 'Lokale OCR fertig — Text unten prüfen.';
+    if (thumb) thumbFertig(thumb, 'ok', '✓');
+    status.textContent = '📜 Lokale Abschrift fertig — Text unten prüfen.';
     document.getElementById('imp-text').value = data.text.trim();
     document.getElementById('imp-step2').style.display = 'block';
     document.getElementById('imp-step2').scrollIntoView({ behavior: 'smooth' });
   } catch (e) {
+    if (thumb) thumbFertig(thumb, 'err', '✕');
     status.textContent = 'Fehler bei der Texterkennung: ' + e.message;
   }
 }
@@ -2659,23 +2843,25 @@ function zeilenAnalysieren() {
   const text = document.getElementById('imp-text').value;
   const rows = document.getElementById('imp-rows');
   rows.innerHTML = '';
+  zaehlerReset();
   let n = 0;
   text.split('\n').forEach(zeile => {
     zeile = zeile.trim();
     if (!zeile) return;
     const gr = (zeile.match(GR_RE) || []).join(' ');
     const de = zeile.replace(GR_RE, '').replace(/[\d|·•:–\-—,;]+/g, ' ').replace(/\s+/g, ' ').trim();
-    if (gr) { impZeile(gr, '', de, ''); n++; }
+    if (gr) { impZeile(gr, '', de, '', n * 60); n++; }
   });
   if (!n) impZeile('', '', '', '');
-  document.getElementById('imp-step3').style.display = 'block';
-  document.getElementById('imp-step3').scrollIntoView({ behavior: 'smooth' });
+  else zaehlerAuf(n);
+  schritt3Zeigen();
 }
 
-function impZeile(gr, um, de, erkl) {
+function impZeile(gr, um, de, erkl, delay) {
   const rows = document.getElementById('imp-rows');
   const div = document.createElement('div');
-  div.className = 'imp-row';
+  div.className = 'imp-row neu';
+  if (delay) div.style.animationDelay = delay + 'ms';
   div.dataset.erkl = erkl || '';
   div.innerHTML = `
     <input class="i-gr" placeholder="γλῶσσα" value="${(gr || '').replace(/"/g, '&quot;')}" />
@@ -2715,6 +2901,9 @@ function lektionSpeichern() {
   document.getElementById('imp-step2').style.display = 'none';
   document.getElementById('imp-step3').style.display = 'none';
   document.getElementById('imp-status').textContent = '';
+  document.querySelectorAll('#imp-thumbs img').forEach(i => URL.revokeObjectURL(i.src));
+  document.getElementById('imp-thumbs').innerHTML = '';
+  zaehlerReset();
 
   toast(`„${titel}" gespeichert — ${vokabeln.length} Vokabeln ⚡`);
   tabZu('bibliothek');
