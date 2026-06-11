@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>Zeus – Zugang</title>
+<meta name="theme-color" content="#0a0d15" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root { --bg:#0a0d15; --surface:#141a2a; --surface2:#1a2236; --border:#242e47; --gold:#e3b64f; --text:#edf0f7; --muted:#8b94ab; --rot:#e0566b; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background: radial-gradient(900px 420px at 50% -8%, #141c33 0%, transparent 60%), var(--bg);
+  color: var(--text); font-family:'Inter',sans-serif; min-height:100vh;
+  display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.box { width:100%; max-width:360px; text-align:center; }
+.bolt {
+  width:64px; height:64px; border-radius:19px; margin:0 auto 18px;
+  background:linear-gradient(140deg,var(--gold),#c2922f); color:#131008; font-size:32px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 40px rgba(227,182,79,.3);
+}
+h1 { font-size:21px; font-weight:800; margin-bottom:6px; }
+p { font-size:13px; color:var(--muted); margin-bottom:22px; line-height:1.6; }
+input {
+  width:100%; background:var(--surface); border:1px solid var(--border); border-radius:12px;
+  padding:14px 16px; color:var(--text); font-size:16px; text-align:center; letter-spacing:.06em;
+}
+input:focus { outline:none; border-color:var(--gold); }
+button {
+  width:100%; margin-top:12px; padding:14px; border:none; border-radius:12px;
+  background:linear-gradient(135deg,var(--gold),#c2922f); color:#131008;
+  font-family:'Inter',sans-serif; font-size:14.5px; font-weight:800; cursor:pointer;
+}
+.fehler { color:var(--rot); font-size:12.5px; font-weight:600; margin-top:12px; min-height:18px; }
+a { color:var(--muted); font-size:12px; text-decoration:none; display:inline-block; margin-top:22px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="bolt">⚡</div>
+  <h1>Zeus – Vokabeltrainer</h1>
+  <p>Der Zugang zur App ist passwortgeschützt.</p>
+  <form id="f">
+    <input type="password" id="pw" placeholder="Passwort" autofocus autocomplete="current-password" />
+    <button type="submit">Eintreten ⚡</button>
+  </form>
+  <div class="fehler" id="fehler"></div>
+  <a href="/">← Zurück zur Übersicht</a>
+</div>
+<script>
+document.getElementById('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  const r = await fetch('/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pw: document.getElementById('pw').value })
+  });
+  if (r.ok) {
+    const ziel = new URLSearchParams(location.search).get('weiter') || '/app/';
+    location.href = ziel;
+  } else {
+    document.getElementById('fehler').textContent = 'Falsches Passwort — Zeus runzelt die Stirn.';
+  }
+});
+</script>
+</body>
+</html>
