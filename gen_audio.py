@@ -49,6 +49,7 @@ ERSETZUNGEN = [
 # missdeutet. Bei οὔ und τί deckt sich die neugriechische Aussprache mit
 # der erasmischen — diese werden daher griechisch generiert.
 UEBERSCHREIBUNGEN = {
+    "eimí": "eimii",          # Endbetonung erzwingen (Standard wäre EI-mi)
     "chaíre": "kaire",
     "naí": "nai",
     "allá": "allah",
