@@ -16,7 +16,7 @@
           "griechisch": "σύ, σοῦ",
           "umschrift": "sý",
           "deutsch": "du",
-          "sprich": "sǘ",
+          "sprich": "sü",
           "audio": "data/audio/gws_00_01.m4a"
         },
         {
@@ -98,14 +98,14 @@
           "griechisch": "οὐδείς, οὐδεμία, οὐδέν",
           "umschrift": "oudeís",
           "deutsch": "keiner, niemand, nichts",
-          "sprich": "udeís",
+          "sprich": "udeis",
           "audio": "data/audio/gws_00_12.m4a"
         },
         {
           "griechisch": "μηδείς, μηδεμία, μηδέν",
           "umschrift": "mēdeís",
           "deutsch": "keiner, niemand (mit μή)",
-          "sprich": "mehdeís",
+          "sprich": "mehdeis",
           "audio": "data/audio/gws_00_13.m4a"
         },
         {
@@ -217,7 +217,7 @@
           "umschrift": "sýn",
           "deutsch": "mit, zusammen mit",
           "erklaerung": "Mit Dativ",
-          "sprich": "sǘn",
+          "sprich": "sün",
           "audio": "data/audio/gws_01_07.m4a"
         },
         {
@@ -326,7 +326,7 @@
           "umschrift": "kaí",
           "deutsch": "und, auch",
           "erklaerung": "καὶ ... καί: sowohl ... als auch",
-          "sprich": "kaí",
+          "sprich": "kai",
           "audio": "data/audio/gws_02_00.m4a"
         },
         {
@@ -385,7 +385,7 @@
           "griechisch": "τοίνυν",
           "umschrift": "toínyn",
           "deutsch": "also, nun, ferner",
-          "sprich": "toínün",
+          "sprich": "toinün",
           "audio": "data/audio/gws_02_08.m4a"
         },
         {
@@ -445,7 +445,7 @@
           "griechisch": "ἐπεί",
           "umschrift": "epeí",
           "deutsch": "als, nachdem; da, weil",
-          "sprich": "epeí",
+          "sprich": "epei",
           "audio": "data/audio/gws_02_16.m4a"
         },
         {
@@ -534,14 +534,14 @@
           "umschrift": "kaíper",
           "deutsch": "obwohl",
           "erklaerung": "Mit Partizip",
-          "sprich": "kaíper",
+          "sprich": "kaiper",
           "audio": "data/audio/gws_03_07.m4a"
         },
         {
           "griechisch": "καίτοι",
           "umschrift": "kaítoi",
           "deutsch": "und doch, freilich",
-          "sprich": "kaítoi",
+          "sprich": "kaitoi",
           "audio": "data/audio/gws_03_08.m4a"
         },
         {
@@ -555,7 +555,7 @@
           "griechisch": "εἴτε ... εἴτε",
           "umschrift": "eíte ... eíte",
           "deutsch": "sei es dass ... oder dass",
-          "sprich": "eíte ... eíte",
+          "sprich": "eite ... eite",
           "audio": "data/audio/gws_03_10.m4a"
         },
         {
@@ -579,7 +579,7 @@
           "umschrift": "eíthe",
           "deutsch": "wenn doch! (Wunschpartikel)",
           "erklaerung": "Mit Optativ",
-          "sprich": "eíte",
+          "sprich": "eite",
           "audio": "data/audio/gws_03_13.m4a"
         },
         {
@@ -826,7 +826,7 @@
           "griechisch": "κατὰ δύναμιν",
           "umschrift": "katà dýnamin",
           "deutsch": "nach Kräften",
-          "sprich": "katà dǘnamin",
+          "sprich": "katà dünamin",
           "audio": "data/audio/gws_05_06.m4a"
         },
         {
@@ -903,7 +903,7 @@
           "griechisch": "χάριν ἔχειν",
           "umschrift": "chárin échein",
           "deutsch": "Dank wissen, dankbar sein",
-          "sprich": "chárin échein",
+          "sprich": "kárin échein",
           "audio": "data/audio/gws_05_17.m4a"
         },
         {

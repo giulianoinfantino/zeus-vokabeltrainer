@@ -88,7 +88,7 @@
           "griechisch": "ἡ λεία, τῆς λείας",
           "umschrift": "leía",
           "deutsch": "Beute",
-          "sprich": "leía",
+          "sprich": "leia",
           "audio": "data/audio/gwk_00_11.m4a"
         },
         {
@@ -157,28 +157,28 @@
           "griechisch": "ὁ στρατός, τοῦ στρατοῦ",
           "umschrift": "stratós",
           "deutsch": "Heer",
-          "sprich": "stratós",
+          "sprich": "ßtratós",
           "audio": "data/audio/gwk_01_00.m4a"
         },
         {
           "griechisch": "ἡ στρατιά, τῆς στρατιᾶς",
           "umschrift": "stratiá",
           "deutsch": "Heer, Heereszug",
-          "sprich": "stratiá",
+          "sprich": "ßtratiá",
           "audio": "data/audio/gwk_01_01.m4a"
         },
         {
           "griechisch": "τὸ στράτευμα, τοῦ στρατεύματος",
           "umschrift": "stráteuma",
           "deutsch": "Heer, Streitmacht",
-          "sprich": "stráteuma",
+          "sprich": "ßtráteuma",
           "audio": "data/audio/gwk_01_02.m4a"
         },
         {
           "griechisch": "ὁ στρατιώτης, τοῦ στρατιώτου",
           "umschrift": "stratiṓtēs",
           "deutsch": "Soldat",
-          "sprich": "stratiṓtehs",
+          "sprich": "ßtratiṓtehs",
           "audio": "data/audio/gwk_01_03.m4a"
         },
         {
@@ -193,7 +193,7 @@
           "umschrift": "hippeús",
           "deutsch": "Reiter",
           "erklaerung": "Plural: Reiterei, Ritterstand",
-          "sprich": "hippeús",
+          "sprich": "hippeus",
           "audio": "data/audio/gwk_01_05.m4a"
         },
         {
@@ -263,7 +263,7 @@
           "griechisch": "τὸ στρατόπεδον, τοῦ στρατοπέδου",
           "umschrift": "stratópedon",
           "deutsch": "Lager, Heerlager",
-          "sprich": "stratópedon",
+          "sprich": "ßtratópedon",
           "audio": "data/audio/gwk_01_15.m4a"
         },
         {
@@ -277,7 +277,7 @@
           "griechisch": "ἡ πορεία, τῆς πορείας",
           "umschrift": "poreía",
           "deutsch": "Marsch, Reise",
-          "sprich": "poreía",
+          "sprich": "poreia",
           "audio": "data/audio/gwk_01_17.m4a"
         },
         {
@@ -438,7 +438,7 @@
           "griechisch": "ἡ ῥώμη στρατιωτική",
           "umschrift": "rhṓmē stratiōtikḗ",
           "deutsch": "militärische Stärke",
-          "sprich": "rṓmeh stratiohtikḗ",
+          "sprich": "rṓmeh ßtratiohtikḗ",
           "audio": "data/audio/gwk_02_19.m4a"
         }
       ]
@@ -479,7 +479,7 @@
           "griechisch": "ὁ στόλος, τοῦ στόλου",
           "umschrift": "stólos",
           "deutsch": "Flotte, Heereszug",
-          "sprich": "stólos",
+          "sprich": "ßtólos",
           "audio": "data/audio/gwk_03_04.m4a"
         },
         {
@@ -551,7 +551,7 @@
           "griechisch": "ὁ χειμών, τοῦ χειμῶνος",
           "umschrift": "cheimṓn",
           "deutsch": "Sturm; Winter",
-          "sprich": "cheimṓn",
+          "sprich": "keimṓn",
           "audio": "data/audio/gwk_03_14.m4a"
         },
         {
@@ -565,7 +565,7 @@
           "griechisch": "ὁ ναύκληρος, τοῦ ναυκλήρου",
           "umschrift": "naúklēros",
           "deutsch": "Schiffsherr, Reeder",
-          "sprich": "naúklehros",
+          "sprich": "nauklehros",
           "audio": "data/audio/gwk_03_16.m4a"
         },
         {
@@ -605,14 +605,14 @@
           "griechisch": "ἡ στρατηγία, τῆς στρατηγίας",
           "umschrift": "stratēgía",
           "deutsch": "Feldherrnamt, Kriegskunst",
-          "sprich": "stratehgía",
+          "sprich": "ßtratehgía",
           "audio": "data/audio/gwk_04_01.m4a"
         },
         {
           "griechisch": "τὸ στρατήγημα, τοῦ στρατηγήματος",
           "umschrift": "stratḗgēma",
           "deutsch": "Kriegslist",
-          "sprich": "stratḗgehma",
+          "sprich": "ßtratḗgehma",
           "audio": "data/audio/gwk_04_02.m4a"
         },
         {
@@ -697,7 +697,7 @@
           "griechisch": "ἡ στάσις, τῆς στάσεως",
           "umschrift": "stásis",
           "deutsch": "Aufstand, Bürgerkrieg, Parteiung",
-          "sprich": "stásis",
+          "sprich": "ßtásis",
           "audio": "data/audio/gwk_04_14.m4a"
         },
         {

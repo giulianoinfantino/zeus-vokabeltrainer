@@ -254,7 +254,7 @@
           "griechisch": "ἡ νύμφη, τῆς νύμφης",
           "umschrift": "nýmphē",
           "deutsch": "Braut, junge Frau; Nymphe",
-          "sprich": "nǘmfeh",
+          "sprich": "nümfeh",
           "audio": "data/audio/gwm_01_14.m4a"
         },
         {
@@ -275,7 +275,7 @@
           "griechisch": "ἡ παιδεία, τῆς παιδείας",
           "umschrift": "paideía",
           "deutsch": "Erziehung, Bildung",
-          "sprich": "paideía",
+          "sprich": "paideia",
           "audio": "data/audio/gwm_01_17.m4a"
         },
         {
@@ -343,7 +343,7 @@
           "griechisch": "τὸ στόμα, τοῦ στόματος",
           "umschrift": "stóma",
           "deutsch": "Mund",
-          "sprich": "stóma",
+          "sprich": "ßtóma",
           "audio": "data/audio/gwm_02_06.m4a"
         },
         {
@@ -365,7 +365,7 @@
           "griechisch": "ἡ χείρ, τῆς χειρός",
           "umschrift": "cheír",
           "deutsch": "Hand, Arm",
-          "sprich": "cheír",
+          "sprich": "keir",
           "audio": "data/audio/gwm_02_09.m4a"
         },
         {
@@ -400,7 +400,7 @@
           "griechisch": "τὸ στῆθος, τοῦ στήθους",
           "umschrift": "stêthos",
           "deutsch": "Brust",
-          "sprich": "stêtos",
+          "sprich": "ßtêtos",
           "audio": "data/audio/gwm_02_14.m4a"
         },
         {
@@ -510,7 +510,7 @@
           "griechisch": "ὑγιαίνω",
           "umschrift": "hygiaínō",
           "deutsch": "gesund sein",
-          "sprich": "hügiaínoh",
+          "sprich": "hügiainoh",
           "audio": "data/audio/gwm_03_09.m4a"
         },
         {
@@ -559,7 +559,7 @@
           "griechisch": "ὁ ὕπνος, τοῦ ὕπνου",
           "umschrift": "hýpnos",
           "deutsch": "Schlaf",
-          "sprich": "hǘpnos",
+          "sprich": "hüpnos",
           "audio": "data/audio/gwm_03_16.m4a"
         },
         {
@@ -621,7 +621,7 @@
           "griechisch": "τὸ ὕδωρ, τοῦ ὕδατος",
           "umschrift": "hýdōr",
           "deutsch": "Wasser",
-          "sprich": "hǘdohr",
+          "sprich": "hüdohr",
           "audio": "data/audio/gwm_04_04.m4a"
         },
         {
@@ -649,7 +649,7 @@
           "griechisch": "ὁ ἰχθύς, τοῦ ἰχθύος",
           "umschrift": "ichthýs",
           "deutsch": "Fisch",
-          "sprich": "ichtǘs",
+          "sprich": "ichtüs",
           "audio": "data/audio/gwm_04_08.m4a"
         },
         {
@@ -684,7 +684,7 @@
           "griechisch": "ὁ χιτών, τοῦ χιτῶνος",
           "umschrift": "chitṓn",
           "deutsch": "Untergewand, Chiton",
-          "sprich": "chitṓn",
+          "sprich": "kitṓn",
           "audio": "data/audio/gwm_04_13.m4a"
         },
         {
@@ -705,14 +705,14 @@
           "griechisch": "ὁ στέφανος, τοῦ στεφάνου",
           "umschrift": "stéphanos",
           "deutsch": "Kranz",
-          "sprich": "stéfanos",
+          "sprich": "ßtéfanos",
           "audio": "data/audio/gwm_04_16.m4a"
         },
         {
           "griechisch": "ὁ δακτύλιος, τοῦ δακτυλίου",
           "umschrift": "daktýlios",
           "deutsch": "Ring",
-          "sprich": "daktǘlios",
+          "sprich": "daktülios",
           "audio": "data/audio/gwm_04_17.m4a"
         },
         {
@@ -738,7 +738,7 @@
           "griechisch": "ἡ θύρα, τῆς θύρας",
           "umschrift": "thýra",
           "deutsch": "Tür",
-          "sprich": "tǘra",
+          "sprich": "türa",
           "audio": "data/audio/gwm_05_00.m4a"
         },
         {
@@ -766,7 +766,7 @@
           "griechisch": "ἡ στέγη, τῆς στέγης",
           "umschrift": "stégē",
           "deutsch": "Dach; Haus",
-          "sprich": "stégeh",
+          "sprich": "ßtégeh",
           "audio": "data/audio/gwm_05_04.m4a"
         },
         {
@@ -794,7 +794,7 @@
           "griechisch": "ὁ λύχνος, τοῦ λύχνου",
           "umschrift": "lýchnos",
           "deutsch": "Lampe, Leuchte",
-          "sprich": "lǘchnos",
+          "sprich": "lüchnos",
           "audio": "data/audio/gwm_05_08.m4a"
         },
         {
@@ -873,7 +873,7 @@
           "griechisch": "ὁ κύων, τοῦ κυνός",
           "umschrift": "kýōn",
           "deutsch": "Hund",
-          "sprich": "kǘohn",
+          "sprich": "küohn",
           "audio": "data/audio/gwm_05_19.m4a"
         }
       ]
@@ -920,14 +920,14 @@
           "griechisch": "ὁ στρατηγός, τοῦ στρατηγοῦ",
           "umschrift": "stratēgós",
           "deutsch": "Feldherr, Stratege",
-          "sprich": "stratehgós",
+          "sprich": "ßtratehgós",
           "audio": "data/audio/gwm_06_05.m4a"
         },
         {
           "griechisch": "ὁ ναύτης, τοῦ ναύτου",
           "umschrift": "naútēs",
           "deutsch": "Seemann, Matrose",
-          "sprich": "naútehs",
+          "sprich": "nautehs",
           "audio": "data/audio/gwm_06_06.m4a"
         },
         {
@@ -962,14 +962,14 @@
           "griechisch": "ὁ χαλκεύς, τοῦ χαλκέως",
           "umschrift": "chalkeús",
           "deutsch": "Schmied",
-          "sprich": "chalkeús",
+          "sprich": "kalkeus",
           "audio": "data/audio/gwm_06_11.m4a"
         },
         {
           "griechisch": "ὁ κεραμεύς, τοῦ κεραμέως",
           "umschrift": "kerameús",
           "deutsch": "Töpfer",
-          "sprich": "kerameús",
+          "sprich": "kerameus",
           "audio": "data/audio/gwm_06_12.m4a"
         },
         {
@@ -983,7 +983,7 @@
           "griechisch": "ὁ ἁλιεύς, τοῦ ἁλιέως",
           "umschrift": "halieús",
           "deutsch": "Fischer",
-          "sprich": "halieús",
+          "sprich": "halieus",
           "audio": "data/audio/gwm_06_14.m4a"
         },
         {
@@ -1004,7 +1004,7 @@
           "griechisch": "ὁ ἱερεύς, τοῦ ἱερέως",
           "umschrift": "hiereús",
           "deutsch": "Priester",
-          "sprich": "hiereús",
+          "sprich": "hiereus",
           "audio": "data/audio/gwm_06_17.m4a"
         },
         {
@@ -1044,21 +1044,21 @@
           "griechisch": "ἡ σωφροσύνη, τῆς σωφροσύνης",
           "umschrift": "sōphrosýnē",
           "deutsch": "Besonnenheit, Mäßigung",
-          "sprich": "sohfrosǘneh",
+          "sprich": "sohfrosüneh",
           "audio": "data/audio/gwm_07_02.m4a"
         },
         {
           "griechisch": "ἡ ἀνδρεία, τῆς ἀνδρείας",
           "umschrift": "andreía",
           "deutsch": "Tapferkeit, Mannhaftigkeit",
-          "sprich": "andreía",
+          "sprich": "andreia",
           "audio": "data/audio/gwm_07_03.m4a"
         },
         {
           "griechisch": "ἡ δικαιοσύνη, τῆς δικαιοσύνης",
           "umschrift": "dikaiosýnē",
           "deutsch": "Gerechtigkeit",
-          "sprich": "dikaiosǘneh",
+          "sprich": "dikaiosüneh",
           "audio": "data/audio/gwm_07_04.m4a"
         },
         {
@@ -1079,7 +1079,7 @@
           "griechisch": "ἡ ὕβρις, τῆς ὕβρεως",
           "umschrift": "hýbris",
           "deutsch": "Übermut, Frevel, Gewalttat",
-          "sprich": "hǘbris",
+          "sprich": "hübris",
           "audio": "data/audio/gwm_07_07.m4a"
         },
         {
@@ -1156,7 +1156,7 @@
           "griechisch": "ἡ εὔνοια, τῆς εὐνοίας",
           "umschrift": "eúnoia",
           "deutsch": "Wohlwollen",
-          "sprich": "eúnoia",
+          "sprich": "eunoia",
           "audio": "data/audio/gwm_07_18.m4a"
         },
         {
@@ -1164,7 +1164,7 @@
           "umschrift": "cháris",
           "deutsch": "Anmut; Gunst, Dank",
           "erklaerung": "χάριν εἰδέναι: dankbar sein",
-          "sprich": "cháris",
+          "sprich": "káris",
           "audio": "data/audio/gwm_07_19.m4a"
         }
       ]

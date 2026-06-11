@@ -39,7 +39,7 @@
           "griechisch": "ἡ δύναμις, τῆς δυνάμεως",
           "umschrift": "dýnamis",
           "deutsch": "Kraft, Macht, Fähigkeit; Streitmacht",
-          "sprich": "dǘnamis",
+          "sprich": "dünamis",
           "audio": "data/audio/gwx_00_04.m4a"
         },
         {
@@ -53,7 +53,7 @@
           "griechisch": "ἡ ἰσχύς, τῆς ἰσχύος",
           "umschrift": "ischýs",
           "deutsch": "Kraft, Stärke",
-          "sprich": "ischǘs",
+          "sprich": "ischüs",
           "audio": "data/audio/gwx_00_06.m4a"
         },
         {
@@ -89,7 +89,7 @@
           "griechisch": "ἡ χρεία, τῆς χρείας",
           "umschrift": "chreía",
           "deutsch": "Bedürfnis, Gebrauch, Nutzen",
-          "sprich": "chreía",
+          "sprich": "kreia",
           "audio": "data/audio/gwx_00_11.m4a"
         },
         {
@@ -131,7 +131,7 @@
           "griechisch": "τὸ ἐπιχείρημα, τοῦ ἐπιχειρήματος",
           "umschrift": "epicheírēma",
           "deutsch": "Unternehmen; Argument",
-          "sprich": "epicheírehma",
+          "sprich": "epicheirehma",
           "audio": "data/audio/gwx_00_17.m4a"
         },
         {
@@ -157,7 +157,7 @@
           "griechisch": "ἡ σπουδή, τῆς σπουδῆς",
           "umschrift": "spoudḗ",
           "deutsch": "Eifer, Eile, Ernst",
-          "sprich": "spudḗ",
+          "sprich": "ßpudḗ",
           "audio": "data/audio/gwx_01_00.m4a"
         },
         {
@@ -193,7 +193,7 @@
           "griechisch": "ἡ παίδευσις, τῆς παιδεύσεως",
           "umschrift": "paídeusis",
           "deutsch": "Erziehung, Unterricht",
-          "sprich": "paídeusis",
+          "sprich": "paideusis",
           "audio": "data/audio/gwx_01_05.m4a"
         },
         {
@@ -222,7 +222,7 @@
           "griechisch": "ἡ ἑρμηνεία, τῆς ἑρμηνείας",
           "umschrift": "hermēneía",
           "deutsch": "Auslegung, Ausdruck",
-          "sprich": "hermehneía",
+          "sprich": "hermehneia",
           "audio": "data/audio/gwx_01_09.m4a"
         },
         {
@@ -264,14 +264,14 @@
           "griechisch": "τὸ σύγγραμμα, τοῦ συγγράμματος",
           "umschrift": "sýngramma",
           "deutsch": "Schrift, Abhandlung",
-          "sprich": "sǘngramma",
+          "sprich": "süngramma",
           "audio": "data/audio/gwx_01_15.m4a"
         },
         {
           "griechisch": "ὁ συγγραφεύς, τοῦ συγγραφέως",
           "umschrift": "syngrapheús",
           "deutsch": "Schriftsteller, Geschichtsschreiber",
-          "sprich": "süngrafeús",
+          "sprich": "süngrafeus",
           "audio": "data/audio/gwx_01_16.m4a"
         },
         {
@@ -402,7 +402,7 @@
           "griechisch": "χαλεπῶς φέρω",
           "umschrift": "chalepôs phérō",
           "deutsch": "schwer ertragen, übel nehmen",
-          "sprich": "chalepôs féroh",
+          "sprich": "kalepôs féroh",
           "audio": "data/audio/gwx_02_13.m4a"
         },
         {
@@ -629,7 +629,7 @@
           "umschrift": "proístamai",
           "deutsch": "an der Spitze stehen, vorstehen",
           "erklaerung": "Mit Genitiv",
-          "sprich": "proístamai",
+          "sprich": "proistamai",
           "audio": "data/audio/gwx_04_03.m4a"
         },
         {
@@ -824,7 +824,7 @@
           "griechisch": "ὁ μέγας βασιλεύς",
           "umschrift": "mégas basileús",
           "deutsch": "der Großkönig (von Persien)",
-          "sprich": "mégas basileús",
+          "sprich": "mégas basileus",
           "audio": "data/audio/gwx_05_09.m4a"
         },
         {
@@ -838,7 +838,7 @@
           "griechisch": "ὁ Αἰγύπτιος, τοῦ Αἰγυπτίου",
           "umschrift": "Aigýptios",
           "deutsch": "Ägypter",
-          "sprich": "Aigǘptios",
+          "sprich": "Aigüptios",
           "audio": "data/audio/gwx_05_11.m4a"
         },
         {
@@ -888,7 +888,7 @@
           "umschrift": "Delphoí",
           "deutsch": "Delphi",
           "erklaerung": "Sitz des Apollon-Orakels",
-          "sprich": "Delfoí",
+          "sprich": "Delfoi",
           "audio": "data/audio/gwx_05_18.m4a"
         },
         {
@@ -966,7 +966,7 @@
           "umschrift": "kýrios",
           "deutsch": "maßgebend, bevollmächtigt",
           "erklaerung": "ὁ κύριος: der Herr",
-          "sprich": "kǘrios",
+          "sprich": "kürios",
           "audio": "data/audio/gwx_06_08.m4a"
         },
         {
@@ -980,7 +980,7 @@
           "griechisch": "ἀδύνατος, -ον",
           "umschrift": "adýnatos",
           "deutsch": "unfähig; unmöglich",
-          "sprich": "adǘnatos",
+          "sprich": "adünatos",
           "audio": "data/audio/gwx_06_10.m4a"
         },
         {
@@ -1001,7 +1001,7 @@
           "griechisch": "σπουδαῖος, -α, -ον",
           "umschrift": "spoudaîos",
           "deutsch": "eifrig, ernsthaft, trefflich",
-          "sprich": "spudaîos",
+          "sprich": "ßpudaîos",
           "audio": "data/audio/gwx_06_13.m4a"
         },
         {
@@ -1045,7 +1045,7 @@
           "griechisch": "χρήσιμος, -η, -ον",
           "umschrift": "chrḗsimos",
           "deutsch": "brauchbar, nützlich",
-          "sprich": "chrḗsimos",
+          "sprich": "krḗsimos",
           "audio": "data/audio/gwx_06_19.m4a"
         }
       ]
@@ -1105,7 +1105,7 @@
           "umschrift": "hýsteros",
           "deutsch": "später, der spätere",
           "erklaerung": "ὕστερον (Adv.): später",
-          "sprich": "hǘsteros",
+          "sprich": "hüsteros",
           "audio": "data/audio/gwx_07_06.m4a"
         },
         {
@@ -1168,7 +1168,7 @@
           "griechisch": "εὔνους, -ουν",
           "umschrift": "eúnous",
           "deutsch": "wohlgesinnt",
-          "sprich": "eúnus",
+          "sprich": "eunus",
           "audio": "data/audio/gwx_07_15.m4a"
         },
         {
@@ -1208,7 +1208,7 @@
           "griechisch": "προσαγορεύω",
           "umschrift": "prosagoreúō",
           "deutsch": "anreden, begrüßen, benennen",
-          "sprich": "prosagoreúoh",
+          "sprich": "prosagoreuoh",
           "audio": "data/audio/gwx_08_00.m4a"
         },
         {
@@ -1222,21 +1222,21 @@
           "griechisch": "κλαίω",
           "umschrift": "klaíō",
           "deutsch": "weinen, beweinen",
-          "sprich": "klaíoh",
+          "sprich": "klaioh",
           "audio": "data/audio/gwx_08_02.m4a"
         },
         {
           "griechisch": "στενάζω",
           "umschrift": "stenázō",
           "deutsch": "seufzen, stöhnen",
-          "sprich": "stenázoh",
+          "sprich": "ßtenázoh",
           "audio": "data/audio/gwx_08_03.m4a"
         },
         {
           "griechisch": "νεύω",
           "umschrift": "neúō",
           "deutsch": "nicken, zunicken",
-          "sprich": "neúoh",
+          "sprich": "neuoh",
           "audio": "data/audio/gwx_08_04.m4a"
         },
         {
@@ -1258,7 +1258,7 @@
           "umschrift": "aírō",
           "deutsch": "heben, aufheben, wegnehmen",
           "erklaerung": "Stammformen: ἀρῶ, ἦρα",
-          "sprich": "aíroh",
+          "sprich": "airoh",
           "audio": "data/audio/gwx_08_07.m4a"
         },
         {
@@ -1288,14 +1288,14 @@
           "umschrift": "anoígō",
           "deutsch": "öffnen",
           "erklaerung": "Imperfekt: ἀνέῳγον",
-          "sprich": "anoígoh",
+          "sprich": "anoigoh",
           "audio": "data/audio/gwx_08_11.m4a"
         },
         {
           "griechisch": "κλείω",
           "umschrift": "kleíō",
           "deutsch": "schließen, verschließen",
-          "sprich": "kleíoh",
+          "sprich": "kleioh",
           "audio": "data/audio/gwx_08_12.m4a"
         },
         {
@@ -1316,7 +1316,7 @@
           "griechisch": "ἀναπαύομαι",
           "umschrift": "anapaúomai",
           "deutsch": "sich ausruhen, rasten",
-          "sprich": "anapaúomai",
+          "sprich": "anapauomai",
           "audio": "data/audio/gwx_08_15.m4a"
         },
         {
@@ -1421,7 +1421,7 @@
           "griechisch": "ἑρμηνεύω",
           "umschrift": "hermēneúō",
           "deutsch": "auslegen, übersetzen, ausdrücken",
-          "sprich": "hermehneúoh",
+          "sprich": "hermehneuoh",
           "audio": "data/audio/gwx_09_09.m4a"
         },
         {
@@ -1470,7 +1470,7 @@
           "griechisch": "μηνύω",
           "umschrift": "mēnýō",
           "deutsch": "anzeigen, verraten, melden",
-          "sprich": "mehnǘoh",
+          "sprich": "mehnüoh",
           "audio": "data/audio/gwx_09_16.m4a"
         },
         {
@@ -1568,7 +1568,7 @@
           "umschrift": "basileía",
           "deutsch": "Königsherrschaft, Königreich",
           "erklaerung": "ἡ βασιλεία τοῦ θεοῦ: das Reich Gottes",
-          "sprich": "basileía",
+          "sprich": "basileia",
           "audio": "data/audio/gwx_10_09.m4a"
         },
         {
@@ -1576,7 +1576,7 @@
           "umschrift": "kýrios",
           "deutsch": "Herr",
           "erklaerung": "Im NT: Gott, Christus",
-          "sprich": "kǘrios",
+          "sprich": "kürios",
           "audio": "data/audio/gwx_10_10.m4a"
         },
         {
@@ -1618,14 +1618,14 @@
           "griechisch": "ὁ σταυρός, τοῦ σταυροῦ",
           "umschrift": "staurós",
           "deutsch": "Pfahl, Kreuz",
-          "sprich": "staurós",
+          "sprich": "ßtaurós",
           "audio": "data/audio/gwx_10_16.m4a"
         },
         {
           "griechisch": "σταυρόω",
           "umschrift": "stauróō",
           "deutsch": "kreuzigen",
-          "sprich": "stauróoh",
+          "sprich": "ßtauróoh",
           "audio": "data/audio/gwx_10_17.m4a"
         },
         {
@@ -1728,7 +1728,7 @@
           "umschrift": "polýtropos",
           "deutsch": "vielgewandt, viel umhergetrieben",
           "erklaerung": "Beiwort des Odysseus",
-          "sprich": "polǘtropos",
+          "sprich": "polütropos",
           "audio": "data/audio/gwx_11_10.m4a"
         },
         {
@@ -1736,7 +1736,7 @@
           "umschrift": "polýmētis",
           "deutsch": "listenreich",
           "erklaerung": "Beiwort des Odysseus",
-          "sprich": "polǘmehtis",
+          "sprich": "polümehtis",
           "audio": "data/audio/gwx_11_11.m4a"
         },
         {
@@ -1831,7 +1831,7 @@
           "griechisch": "ἀγαθῇ τύχῃ",
           "umschrift": "agathêi týchēi",
           "deutsch": "mit gutem Glück!, auf gut Glück",
-          "sprich": "agatêi tǘchehi",
+          "sprich": "agatêi tüchehi",
           "audio": "data/audio/gwx_12_03.m4a"
         },
         {
@@ -1902,7 +1902,7 @@
           "griechisch": "ὡς ἐπὶ τὸ πολύ",
           "umschrift": "hōs epì tò polý",
           "deutsch": "meistens, in der Regel",
-          "sprich": "hohs epì tò polǘ",
+          "sprich": "hohs epì tò polü",
           "audio": "data/audio/gwx_12_13.m4a"
         },
         {
@@ -1930,7 +1930,7 @@
           "griechisch": "κύκλῳ",
           "umschrift": "kýklōi",
           "deutsch": "ringsum, im Kreis",
-          "sprich": "kǘklohi",
+          "sprich": "küklohi",
           "audio": "data/audio/gwx_12_17.m4a"
         },
         {
@@ -1974,7 +1974,7 @@
           "umschrift": "eíōtha",
           "deutsch": "gewohnt sein, pflegen",
           "erklaerung": "Perfekt mit Präsensbedeutung",
-          "sprich": "eíohta",
+          "sprich": "eiohta",
           "audio": "data/audio/gwx_13_02.m4a"
         },
         {
@@ -1990,7 +1990,7 @@
           "umschrift": "charízomai",
           "deutsch": "sich gefällig erweisen, schenken",
           "erklaerung": "Mit Dativ",
-          "sprich": "charízomai",
+          "sprich": "karízomai",
           "audio": "data/audio/gwx_13_04.m4a"
         },
         {
@@ -2006,7 +2006,7 @@
           "umschrift": "apolaúō",
           "deutsch": "genießen, Nutzen ziehen",
           "erklaerung": "Mit Genitiv",
-          "sprich": "apolaúoh",
+          "sprich": "apolauoh",
           "audio": "data/audio/gwx_13_06.m4a"
         },
         {
@@ -2014,7 +2014,7 @@
           "umschrift": "dýō / dýomai",
           "deutsch": "eintauchen; untergehen (Sonne)",
           "erklaerung": "ἡλίου δύντος: bei Sonnenuntergang",
-          "sprich": "dǘoh / dǘomai",
+          "sprich": "düoh / düomai",
           "audio": "data/audio/gwx_13_07.m4a"
         },
         {
@@ -2028,7 +2028,7 @@
           "griechisch": "φθείρω",
           "umschrift": "phtheírō",
           "deutsch": "verderben, zugrunde richten",
-          "sprich": "fteíroh",
+          "sprich": "fteiroh",
           "audio": "data/audio/gwx_13_09.m4a"
         },
         {
@@ -2072,7 +2072,7 @@
           "griechisch": "μείγνυμι",
           "umschrift": "meígnymi",
           "deutsch": "mischen, vermischen, vereinigen",
-          "sprich": "meígnümi",
+          "sprich": "meignümi",
           "audio": "data/audio/gwx_13_15.m4a"
         },
         {
@@ -2087,7 +2087,7 @@
           "griechisch": "ζεύγνυμι",
           "umschrift": "zeúgnymi",
           "deutsch": "anschirren, verbinden, überbrücken",
-          "sprich": "zeúgnümi",
+          "sprich": "zeugnümi",
           "audio": "data/audio/gwx_13_17.m4a"
         },
         {
@@ -2122,14 +2122,14 @@
           "griechisch": "ἡ πρεσβεία, τῆς πρεσβείας",
           "umschrift": "presbeía",
           "deutsch": "Gesandtschaft",
-          "sprich": "presbeía",
+          "sprich": "presbeia",
           "audio": "data/audio/gwx_14_01.m4a"
         },
         {
           "griechisch": "πρεσβεύω",
           "umschrift": "presbeúō",
           "deutsch": "Gesandter sein, verhandeln",
-          "sprich": "presbeúoh",
+          "sprich": "presbeuoh",
           "audio": "data/audio/gwx_14_02.m4a"
         },
         {
@@ -2263,7 +2263,7 @@
           "griechisch": "ἡ ἡμέρα — ἡ νύξ",
           "umschrift": "hēméra — nýx",
           "deutsch": "Tag — Nacht",
-          "sprich": "hehméra — nǘx",
+          "sprich": "hehméra — nüx",
           "audio": "data/audio/gwx_15_00.m4a"
         },
         {
@@ -2334,7 +2334,7 @@
           "umschrift": "hýpnos — thánatos",
           "deutsch": "Schlaf — Tod",
           "erklaerung": "Bei Homer Zwillingsbrüder",
-          "sprich": "hǘpnos — tánatos",
+          "sprich": "hüpnos — tánatos",
           "audio": "data/audio/gwx_15_10.m4a"
         },
         {
@@ -2355,7 +2355,7 @@
           "griechisch": "ἐγγύς — πόρρω",
           "umschrift": "engýs — pórrō",
           "deutsch": "nah — fern",
-          "sprich": "engǘs — pórroh",
+          "sprich": "engüs — pórroh",
           "audio": "data/audio/gwx_15_13.m4a"
         },
         {

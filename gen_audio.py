@@ -25,7 +25,7 @@ import tempfile
 from pathlib import Path
 
 KEY_DATEI = Path.home() / ".config/zeus/elevenlabs.key"
-VOICE_ID = "onwK4e9ZLuTAKqWW03F9"  # Daniel — ruhiger, klarer Sprecher
+VOICE_ID = "MTTjXkEpZepLTqO0xH0f"  # Marlena — deutsche Muttersprachlerin (Library, Starter-Plan nötig)
 MODELL = "eleven_turbo_v2_5"        # unterstützt language_code-Erzwingung
 SAY_STIMME = "Sandy (German (Germany))"
 SAY_RATE = 160
@@ -34,11 +34,13 @@ SAY_RATE = 160
 # Reihenfolge wichtig: Digraphen vor Einzelzeichen.
 ERSETZUNGEN = [
     ("ou", "u"), ("oú", "ú"), ("oû", "uh"),   # ου = langes u
+    # Akzente auf Diphthongen zerbrechen die TTS-Aussprache (verifiziert):
+    ("aí", "ai"), ("eí", "ei"), ("oí", "oi"), ("aú", "au"), ("eú", "eu"),
     ("rh", "r"),
     ("th", "t"),                                # θ = t (Schulaussprache)
     ("ph", "f"),                                # φ = f
     ("ō", "oh"), ("ē", "eh"), ("ī", "ih"),     # Längen ausschreiben
-    ("y", "ü"), ("ý", "ǘ"),                    # υ = ü
+    ("y", "ü"), ("ý", "ü"),                    # υ = ü (Akzent stört die TTS)
 ]
 
 # Handkorrekturen, wo die automatische Regel nicht reicht.
@@ -63,6 +65,11 @@ def sprechtext(umschrift: str) -> tuple[str, str]:
     t = umschrift
     for alt, neu in ERSETZUNGEN:
         t = t.replace(alt, neu)
+    # Anlautendes ch wird von deutscher TTS als „sch" gesprochen → k
+    # (Erasmus-Kompromiss, verifiziert: „cheir" → „Scheier", „kaire" ✓)
+    t = re.sub(r"(^|(?<= ))ch", "k", t)
+    # Anlautendes st/sp: ß erzwingt messbar sauberes [s] statt „scht/schp"
+    t = re.sub(r"(^|(?<= ))s(?=[tp])", "ß", t)
     return re.sub(r"[?;·]", "", t).strip(), "de"
 
 
@@ -73,7 +80,7 @@ def elevenlabs_mp3(text: str, key: str, lang: str = "de") -> bytes:
         "text": text,
         "model_id": MODELL,
         "language_code": lang,
-        "voice_settings": {"stability": 0.6, "similarity_boost": 0.8,
+        "voice_settings": {"stability": 0.85, "similarity_boost": 0.75,
                            "speed": 0.9},
     })
     # curl statt urllib: das python.org-Python hat keine CA-Zertifikate.

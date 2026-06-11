@@ -47,7 +47,7 @@
           "umschrift": "chaírō",
           "deutsch": "sich freuen",
           "erklaerung": "Mit Dativ oder Partizip",
-          "sprich": "chaíroh",
+          "sprich": "kairoh",
           "audio": "data/audio/gwv2_00_05.m4a"
         },
         {
@@ -116,7 +116,7 @@
           "umschrift": "aischýnomai",
           "deutsch": "sich schämen",
           "erklaerung": "Mit Partizip oder Infinitiv",
-          "sprich": "aischǘnomai",
+          "sprich": "aischünomai",
           "audio": "data/audio/gwv2_00_14.m4a"
         },
         {
@@ -151,7 +151,7 @@
           "griechisch": "δακρύω",
           "umschrift": "dakrýō",
           "deutsch": "weinen",
-          "sprich": "dakrǘoh",
+          "sprich": "dakrüoh",
           "audio": "data/audio/gwv2_00_19.m4a"
         }
       ]
@@ -164,14 +164,14 @@
           "umschrift": "basileúō",
           "deutsch": "König sein, herrschen",
           "erklaerung": "Mit Genitiv",
-          "sprich": "basileúoh",
+          "sprich": "basileuoh",
           "audio": "data/audio/gwv2_01_00.m4a"
         },
         {
           "griechisch": "τυραννεύω",
           "umschrift": "tyranneúō",
           "deutsch": "Tyrann sein, unumschränkt herrschen",
-          "sprich": "türanneúoh",
+          "sprich": "türanneuoh",
           "audio": "data/audio/gwv2_01_01.m4a"
         },
         {
@@ -186,7 +186,7 @@
           "umschrift": "douleúō",
           "deutsch": "Sklave sein, dienen",
           "erklaerung": "Mit Dativ",
-          "sprich": "duleúoh",
+          "sprich": "duleuoh",
           "audio": "data/audio/gwv2_01_03.m4a"
         },
         {
@@ -200,7 +200,7 @@
           "griechisch": "θεραπεύω",
           "umschrift": "therapeúō",
           "deutsch": "dienen, pflegen, verehren; heilen",
-          "sprich": "terapeúoh",
+          "sprich": "terapeuoh",
           "audio": "data/audio/gwv2_01_05.m4a"
         },
         {
@@ -208,7 +208,7 @@
           "umschrift": "peíthō",
           "deutsch": "überreden, überzeugen",
           "erklaerung": "Medium: gehorchen, vertrauen (mit Dativ)",
-          "sprich": "peítoh",
+          "sprich": "peitoh",
           "audio": "data/audio/gwv2_01_06.m4a"
         },
         {
@@ -216,7 +216,7 @@
           "umschrift": "peíthomai",
           "deutsch": "gehorchen, sich überzeugen lassen",
           "erklaerung": "Mit Dativ",
-          "sprich": "peítomai",
+          "sprich": "peitomai",
           "audio": "data/audio/gwv2_01_07.m4a"
         },
         {
@@ -260,7 +260,7 @@
           "umschrift": "symbouleúō",
           "deutsch": "raten, beraten",
           "erklaerung": "Medium: sich beraten lassen",
-          "sprich": "sümbuleúoh",
+          "sprich": "sümbuleuoh",
           "audio": "data/audio/gwv2_01_13.m4a"
         },
         {
@@ -425,7 +425,7 @@
           "umschrift": "pheúgō díkēn",
           "deutsch": "angeklagt sein",
           "erklaerung": "Wendung; der Beklagte heißt ὁ φεύγων",
-          "sprich": "feúgoh díkehn",
+          "sprich": "feugoh díkehn",
           "audio": "data/audio/gwv2_02_15.m4a"
         },
         {
@@ -433,7 +433,7 @@
           "umschrift": "opheílō",
           "deutsch": "schulden, verpflichtet sein",
           "erklaerung": "ὤφελον + Inf.: unerfüllbarer Wunsch",
-          "sprich": "ofeíloh",
+          "sprich": "ofeiloh",
           "audio": "data/audio/gwv2_02_16.m4a"
         },
         {
@@ -455,7 +455,7 @@
           "griechisch": "εἵργω",
           "umschrift": "heírgō",
           "deutsch": "einschließen, ausschließen, hindern",
-          "sprich": "heírgoh",
+          "sprich": "heirgoh",
           "audio": "data/audio/gwv2_02_19.m4a"
         }
       ]
@@ -504,7 +504,7 @@
           "griechisch": "κερδαίνω",
           "umschrift": "kerdaínō",
           "deutsch": "gewinnen, Gewinn machen",
-          "sprich": "kerdaínoh",
+          "sprich": "kerdainoh",
           "audio": "data/audio/gwv2_03_05.m4a"
         },
         {
@@ -533,7 +533,7 @@
           "umschrift": "aporéō chrēmátōn",
           "deutsch": "kein Geld haben",
           "erklaerung": "ἀπορία: Mangel, Ratlosigkeit",
-          "sprich": "aporéoh chrehmátohn",
+          "sprich": "aporéoh krehmátohn",
           "audio": "data/audio/gwv2_03_09.m4a"
         },
         {
@@ -548,7 +548,7 @@
           "umschrift": "daneízō",
           "deutsch": "Geld verleihen",
           "erklaerung": "Medium: borgen",
-          "sprich": "daneízoh",
+          "sprich": "daneizoh",
           "audio": "data/audio/gwv2_03_11.m4a"
         },
         {
@@ -563,7 +563,7 @@
           "griechisch": "ἐργάζομαι χρήματα",
           "umschrift": "ergázomai chrḗmata",
           "deutsch": "Geld verdienen",
-          "sprich": "ergázomai chrḗmata",
+          "sprich": "ergázomai krḗmata",
           "audio": "data/audio/gwv2_03_13.m4a"
         },
         {
@@ -602,7 +602,7 @@
           "umschrift": "spéndō",
           "deutsch": "ein Trankopfer ausgießen",
           "erklaerung": "Medium: einen Vertrag schließen",
-          "sprich": "spéndoh",
+          "sprich": "ßpéndoh",
           "audio": "data/audio/gwv2_03_18.m4a"
         },
         {
@@ -649,14 +649,14 @@
           "griechisch": "χορεύω",
           "umschrift": "choreúō",
           "deutsch": "tanzen, im Chor tanzen",
-          "sprich": "choreúoh",
+          "sprich": "koreuoh",
           "audio": "data/audio/gwv2_04_04.m4a"
         },
         {
           "griechisch": "παίζω",
           "umschrift": "paízō",
           "deutsch": "spielen, scherzen",
-          "sprich": "paízoh",
+          "sprich": "paizoh",
           "audio": "data/audio/gwv2_04_05.m4a"
         },
         {
@@ -721,7 +721,7 @@
           "griechisch": "στεφανόω",
           "umschrift": "stephanóō",
           "deutsch": "bekränzen, krönen",
-          "sprich": "stefanóoh",
+          "sprich": "ßtefanóoh",
           "audio": "data/audio/gwv2_04_14.m4a"
         },
         {
@@ -750,7 +750,7 @@
           "umschrift": "epideíknymi",
           "deutsch": "vorzeigen, vorführen",
           "erklaerung": "Medium: prunken, sich zeigen",
-          "sprich": "epideíknümi",
+          "sprich": "epideiknümi",
           "audio": "data/audio/gwv2_04_18.m4a"
         },
         {
@@ -769,7 +769,7 @@
           "griechisch": "ἱκετεύω",
           "umschrift": "hiketeúō",
           "deutsch": "anflehen, als Schutzflehender bitten",
-          "sprich": "hiketeúoh",
+          "sprich": "hiketeuoh",
           "audio": "data/audio/gwv2_05_00.m4a"
         },
         {
@@ -812,28 +812,28 @@
           "griechisch": "λατρεύω",
           "umschrift": "latreúō",
           "deutsch": "dienen, Gottesdienst verrichten",
-          "sprich": "latreúoh",
+          "sprich": "latreuoh",
           "audio": "data/audio/gwv2_05_06.m4a"
         },
         {
           "griechisch": "ἁγνεύω",
           "umschrift": "hagneúō",
           "deutsch": "rein sein, sich rein halten",
-          "sprich": "hagneúoh",
+          "sprich": "hagneuoh",
           "audio": "data/audio/gwv2_05_07.m4a"
         },
         {
           "griechisch": "καθαίρω",
           "umschrift": "kathaírō",
           "deutsch": "reinigen, entsühnen",
-          "sprich": "kataíroh",
+          "sprich": "katairoh",
           "audio": "data/audio/gwv2_05_08.m4a"
         },
         {
           "griechisch": "μιαίνω",
           "umschrift": "miaínō",
           "deutsch": "beflecken, entweihen",
-          "sprich": "miaínoh",
+          "sprich": "miainoh",
           "audio": "data/audio/gwv2_05_09.m4a"
         },
         {
@@ -870,14 +870,14 @@
           "griechisch": "μαντεύομαι",
           "umschrift": "manteúomai",
           "deutsch": "weissagen, ein Orakel befragen",
-          "sprich": "manteúomai",
+          "sprich": "manteuomai",
           "audio": "data/audio/gwv2_05_14.m4a"
         },
         {
           "griechisch": "χρηστηριάζομαι",
           "umschrift": "chrēstēriázomai",
           "deutsch": "das Orakel befragen",
-          "sprich": "chrehstehriázomai",
+          "sprich": "krehstehriázomai",
           "audio": "data/audio/gwv2_05_15.m4a"
         },
         {
@@ -891,7 +891,7 @@
           "griechisch": "ἱερεύω",
           "umschrift": "hiereúō",
           "deutsch": "opfern, schlachten",
-          "sprich": "hiereúoh",
+          "sprich": "hiereuoh",
           "audio": "data/audio/gwv2_05_17.m4a"
         },
         {
@@ -928,7 +928,7 @@
           "umschrift": "epaúsato",
           "deutsch": "er hörte auf (Aorist)",
           "erklaerung": "παύομαι mit Partizip",
-          "sprich": "epaúsato",
+          "sprich": "epausato",
           "audio": "data/audio/gwv2_06_01.m4a"
         },
         {
@@ -1041,7 +1041,7 @@
           "umschrift": "gígnetaí ti",
           "deutsch": "etwas geschieht",
           "erklaerung": "τὰ γενόμενα: die Ereignisse",
-          "sprich": "gígnetaí ti",
+          "sprich": "gígnetai ti",
           "audio": "data/audio/gwv2_06_16.m4a"
         },
         {
@@ -1049,7 +1049,7 @@
           "umschrift": "symbaínei",
           "deutsch": "es ereignet sich, es trifft sich",
           "erklaerung": "Unpersönlich mit AcI",
-          "sprich": "sümbaínei",
+          "sprich": "sümbainei",
           "audio": "data/audio/gwv2_06_17.m4a"
         },
         {
@@ -1084,28 +1084,28 @@
           "umschrift": "apophaínō",
           "deutsch": "aufzeigen, darlegen",
           "erklaerung": "Medium: seine Meinung äußern",
-          "sprich": "apofaínoh",
+          "sprich": "apofainoh",
           "audio": "data/audio/gwv2_07_01.m4a"
         },
         {
           "griechisch": "ἀποκαλύπτω",
           "umschrift": "apokalýptō",
           "deutsch": "enthüllen, offenbaren",
-          "sprich": "apokalǘptoh",
+          "sprich": "apokalüptoh",
           "audio": "data/audio/gwv2_07_02.m4a"
         },
         {
           "griechisch": "καλύπτω",
           "umschrift": "kalýptō",
           "deutsch": "verhüllen, bedecken",
-          "sprich": "kalǘptoh",
+          "sprich": "kalüptoh",
           "audio": "data/audio/gwv2_07_03.m4a"
         },
         {
           "griechisch": "ἀποκρύπτω",
           "umschrift": "apokrýptō",
           "deutsch": "verbergen, verheimlichen",
-          "sprich": "apokrǘptoh",
+          "sprich": "apokrüptoh",
           "audio": "data/audio/gwv2_07_04.m4a"
         },
         {
@@ -1147,7 +1147,7 @@
           "griechisch": "τεκμαίρομαι",
           "umschrift": "tekmaíromai",
           "deutsch": "schließen aus, folgern",
-          "sprich": "tekmaíromai",
+          "sprich": "tekmairomai",
           "audio": "data/audio/gwv2_07_10.m4a"
         },
         {
@@ -1168,7 +1168,7 @@
           "griechisch": "ὑποπτεύω",
           "umschrift": "hypopteúō",
           "deutsch": "argwöhnen, verdächtigen",
-          "sprich": "hüpopteúoh",
+          "sprich": "hüpopteuoh",
           "audio": "data/audio/gwv2_07_13.m4a"
         },
         {
@@ -1282,7 +1282,7 @@
           "griechisch": "διαβαίνω",
           "umschrift": "diabaínō",
           "deutsch": "hinübergehen, überschreiten",
-          "sprich": "diabaínoh",
+          "sprich": "diabainoh",
           "audio": "data/audio/gwv2_08_08.m4a"
         },
         {
@@ -1296,21 +1296,21 @@
           "griechisch": "ἀναβαίνω",
           "umschrift": "anabaínō",
           "deutsch": "hinaufsteigen, besteigen",
-          "sprich": "anabaínoh",
+          "sprich": "anabainoh",
           "audio": "data/audio/gwv2_08_10.m4a"
         },
         {
           "griechisch": "καταβαίνω",
           "umschrift": "katabaínō",
           "deutsch": "hinabsteigen",
-          "sprich": "katabaínoh",
+          "sprich": "katabainoh",
           "audio": "data/audio/gwv2_08_11.m4a"
         },
         {
           "griechisch": "ὑπερβαίνω",
           "umschrift": "hyperbaínō",
           "deutsch": "übersteigen, überschreiten",
-          "sprich": "hüperbaínoh",
+          "sprich": "hüperbainoh",
           "audio": "data/audio/gwv2_08_12.m4a"
         },
         {
@@ -1340,14 +1340,14 @@
           "griechisch": "ἀποβαίνω",
           "umschrift": "apobaínō",
           "deutsch": "aussteigen, landen; ausgehen (Ergebnis)",
-          "sprich": "apobaínoh",
+          "sprich": "apobainoh",
           "audio": "data/audio/gwv2_08_16.m4a"
         },
         {
           "griechisch": "ἐκβαίνω",
           "umschrift": "ekbaínō",
           "deutsch": "herausgehen, aussteigen",
-          "sprich": "ekbaínoh",
+          "sprich": "ekbainoh",
           "audio": "data/audio/gwv2_08_17.m4a"
         },
         {
@@ -1389,7 +1389,7 @@
           "umschrift": "epibouleúō",
           "deutsch": "nachstellen, Anschläge planen",
           "erklaerung": "Mit Dativ",
-          "sprich": "epibuleúoh",
+          "sprich": "epibuleuoh",
           "audio": "data/audio/gwv2_09_02.m4a"
         },
         {
@@ -1491,7 +1491,7 @@
           "griechisch": "ἐλλείπω",
           "umschrift": "elleípō",
           "deutsch": "zurücklassen, ermangeln, fehlen",
-          "sprich": "elleípoh",
+          "sprich": "elleipoh",
           "audio": "data/audio/gwv2_09_16.m4a"
         },
         {

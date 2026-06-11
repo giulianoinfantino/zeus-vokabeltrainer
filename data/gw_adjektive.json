@@ -37,7 +37,7 @@
           "griechisch": "χρηστός, -ή, -όν",
           "umschrift": "chrēstós",
           "deutsch": "brauchbar, gut, rechtschaffen",
-          "sprich": "chrehstós",
+          "sprich": "krehstós",
           "audio": "data/audio/gwa_00_04.m4a"
         },
         {
@@ -142,7 +142,7 @@
           "griechisch": "ἐλεύθερος, -α, -ον",
           "umschrift": "eleútheros",
           "deutsch": "frei",
-          "sprich": "eleúteros",
+          "sprich": "eleuteros",
           "audio": "data/audio/gwa_00_19.m4a"
         }
       ]
@@ -171,7 +171,7 @@
           "umschrift": "polýs",
           "deutsch": "viel",
           "erklaerung": "Komparativ: πλείων, Superlativ: πλεῖστος",
-          "sprich": "polǘs",
+          "sprich": "polüs",
           "audio": "data/audio/gwa_01_02.m4a"
         },
         {
@@ -222,21 +222,21 @@
           "griechisch": "βραχύς, -εῖα, -ύ",
           "umschrift": "brachýs",
           "deutsch": "kurz",
-          "sprich": "brachǘs",
+          "sprich": "brachüs",
           "audio": "data/audio/gwa_01_09.m4a"
         },
         {
           "griechisch": "εὐρύς, -εῖα, -ύ",
           "umschrift": "eurýs",
           "deutsch": "breit, weit",
-          "sprich": "eurǘs",
+          "sprich": "eurüs",
           "audio": "data/audio/gwa_01_10.m4a"
         },
         {
           "griechisch": "στενός, -ή, -όν",
           "umschrift": "stenós",
           "deutsch": "eng, schmal",
-          "sprich": "stenós",
+          "sprich": "ßtenós",
           "audio": "data/audio/gwa_01_11.m4a"
         },
         {
@@ -250,7 +250,7 @@
           "griechisch": "βαθύς, -εῖα, -ύ",
           "umschrift": "bathýs",
           "deutsch": "tief",
-          "sprich": "batǘs",
+          "sprich": "batüs",
           "audio": "data/audio/gwa_01_13.m4a"
         },
         {
@@ -334,7 +334,7 @@
           "umschrift": "presbýteros",
           "deutsch": "älter",
           "erklaerung": "οἱ πρεσβύτεροι: die Älteren",
-          "sprich": "presbǘteros",
+          "sprich": "presbüteros",
           "audio": "data/audio/gwa_02_04.m4a"
         },
         {
@@ -342,14 +342,14 @@
           "umschrift": "tachýs",
           "deutsch": "schnell",
           "erklaerung": "Komparativ: θάττων; ταχέως: schnell (Adv.)",
-          "sprich": "tachǘs",
+          "sprich": "tachüs",
           "audio": "data/audio/gwa_02_05.m4a"
         },
         {
           "griechisch": "βραδύς, -εῖα, -ύ",
           "umschrift": "bradýs",
           "deutsch": "langsam",
-          "sprich": "bradǘs",
+          "sprich": "bradüs",
           "audio": "data/audio/gwa_02_06.m4a"
         },
         {
@@ -364,7 +364,7 @@
           "griechisch": "χαλεπός, -ή, -όν",
           "umschrift": "chalepós",
           "deutsch": "schwierig, schlimm, streng",
-          "sprich": "chalepós",
+          "sprich": "kalepós",
           "audio": "data/audio/gwa_02_08.m4a"
         },
         {
@@ -421,7 +421,7 @@
           "griechisch": "χωλός, -ή, -όν",
           "umschrift": "chōlós",
           "deutsch": "lahm, hinkend",
-          "sprich": "chohlós",
+          "sprich": "kohlós",
           "audio": "data/audio/gwa_02_16.m4a"
         },
         {
@@ -476,14 +476,14 @@
           "griechisch": "χλωρός, -ά, -όν",
           "umschrift": "chlōrós",
           "deutsch": "grünlich, frisch, blass",
-          "sprich": "chlohrós",
+          "sprich": "klohrós",
           "audio": "data/audio/gwa_03_03.m4a"
         },
         {
           "griechisch": "γλυκύς, -εῖα, -ύ",
           "umschrift": "glykýs",
           "deutsch": "süß",
-          "sprich": "glükǘs",
+          "sprich": "glüküs",
           "audio": "data/audio/gwa_03_04.m4a"
         },
         {
@@ -497,7 +497,7 @@
           "griechisch": "ὀξύς, -εῖα, -ύ",
           "umschrift": "oxýs",
           "deutsch": "scharf, spitz, schnell",
-          "sprich": "oxǘs",
+          "sprich": "oxüs",
           "audio": "data/audio/gwa_03_06.m4a"
         },
         {
@@ -546,7 +546,7 @@
           "griechisch": "βαρύς, -εῖα, -ύ",
           "umschrift": "barýs",
           "deutsch": "schwer, lästig",
-          "sprich": "barǘs",
+          "sprich": "barüs",
           "audio": "data/audio/gwa_03_13.m4a"
         },
         {
@@ -582,7 +582,7 @@
           "umschrift": "hēdýs",
           "deutsch": "angenehm, süß, erfreulich",
           "erklaerung": "Adv. ἡδέως: gern",
-          "sprich": "hehdǘs",
+          "sprich": "hehdüs",
           "audio": "data/audio/gwa_03_18.m4a"
         },
         {
@@ -629,7 +629,7 @@
           "griechisch": "εὐδαίμων, -ον",
           "umschrift": "eudaímōn",
           "deutsch": "glücklich, gesegnet",
-          "sprich": "eudaímohn",
+          "sprich": "eudaimohn",
           "audio": "data/audio/gwa_04_04.m4a"
         },
         {
@@ -885,7 +885,7 @@
           "griechisch": "ὁμοίως",
           "umschrift": "homoíōs",
           "deutsch": "in gleicher Weise, ebenso",
-          "sprich": "homoíohs",
+          "sprich": "homoiohs",
           "audio": "data/audio/gwa_05_19.m4a"
         }
       ]
@@ -905,7 +905,7 @@
           "griechisch": "δύο",
           "umschrift": "dýo",
           "deutsch": "zwei",
-          "sprich": "dǘo",
+          "sprich": "düo",
           "audio": "data/audio/gwa_06_01.m4a"
         },
         {
@@ -968,7 +968,7 @@
           "griechisch": "εἴκοσι(ν)",
           "umschrift": "eíkosi(n)",
           "deutsch": "zwanzig",
-          "sprich": "eíkosi(n)",
+          "sprich": "eikosi(n)",
           "audio": "data/audio/gwa_06_10.m4a"
         },
         {
@@ -982,7 +982,7 @@
           "griechisch": "χίλιοι, -αι, -α",
           "umschrift": "chílioi",
           "deutsch": "tausend",
-          "sprich": "chílioi",
+          "sprich": "kílioi",
           "audio": "data/audio/gwa_06_12.m4a"
         },
         {
@@ -990,7 +990,7 @@
           "umschrift": "mýrioi",
           "deutsch": "zehntausend",
           "erklaerung": "μυρίοι (Akzent!): unzählige",
-          "sprich": "mǘrioi",
+          "sprich": "mürioi",
           "audio": "data/audio/gwa_06_13.m4a"
         },
         {
@@ -1005,7 +1005,7 @@
           "griechisch": "δεύτερος, -α, -ον",
           "umschrift": "deúteros",
           "deutsch": "zweiter",
-          "sprich": "deúteros",
+          "sprich": "deuteros",
           "audio": "data/audio/gwa_06_15.m4a"
         },
         {
