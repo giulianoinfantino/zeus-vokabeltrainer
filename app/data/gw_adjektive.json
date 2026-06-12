@@ -9,141 +9,214 @@
           "griechisch": "ἀγαθός, -ή, -όν",
           "umschrift": "agathós",
           "deutsch": "gut, tüchtig, tapfer",
-          "sprich": "agatós",
-          "audio": "data/audio/gwa_00_00.m4a"
+          "sprich": "agatós, agatä, agatón",
+          "audio": "data/audio/gwa_00_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_00_f1.m4a",
+            "data/audio/gwa_00_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "κακός, -ή, -όν",
           "umschrift": "kakós",
           "deutsch": "schlecht, böse, feige",
-          "sprich": "kakós",
-          "audio": "data/audio/gwa_00_01.m4a"
+          "sprich": "kakós, kakä, kakón",
+          "audio": "data/audio/gwa_00_01.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_01_f1.m4a",
+            "data/audio/gwa_00_01_f2.m4a"
+          ]
         },
         {
           "griechisch": "καλός, -ή, -όν",
           "umschrift": "kalós",
           "deutsch": "schön, gut, edel",
-          "sprich": "kalós",
-          "audio": "data/audio/gwa_00_02.m4a"
+          "sprich": "kalós, kalä, kalón",
+          "audio": "data/audio/gwa_00_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_02_f1.m4a",
+            "data/audio/gwa_00_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "αἰσχρός, -ά, -όν",
           "umschrift": "aischrós",
           "deutsch": "hässlich, schändlich",
-          "sprich": "aiskrós",
-          "audio": "data/audio/gwa_00_03.m4a"
+          "sprich": "aischrós, aischrá, aischrón",
+          "audio": "data/audio/gwa_00_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_03_f1.m4a",
+            "data/audio/gwa_00_03_f2.m4a"
+          ]
         },
         {
           "griechisch": "χρηστός, -ή, -όν",
           "umschrift": "chrēstós",
           "deutsch": "brauchbar, gut, rechtschaffen",
-          "sprich": "krähstós",
-          "audio": "data/audio/gwa_00_04.m4a"
+          "sprich": "chrähstós, chrähstä, chrähstón",
+          "audio": "data/audio/gwa_00_04.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_04_f1.m4a",
+            "data/audio/gwa_00_04_f2.m4a"
+          ]
         },
         {
           "griechisch": "πονηρός, -ά, -όν",
           "umschrift": "ponērós",
           "deutsch": "schlecht, böse, schurkisch",
-          "sprich": "ponährós",
-          "audio": "data/audio/gwa_00_05.m4a"
+          "sprich": "ponährós, ponährá, ponährón",
+          "audio": "data/audio/gwa_00_05.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_05_f1.m4a",
+            "data/audio/gwa_00_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "δίκαιος, -α, -ον",
           "umschrift": "díkaios",
           "deutsch": "gerecht",
-          "sprich": "díkaios",
-          "audio": "data/audio/gwa_00_06.m4a"
+          "sprich": "díkaios, díkaia, díkaion",
+          "audio": "data/audio/gwa_00_06.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_06_f1.m4a",
+            "data/audio/gwa_00_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἄδικος, -ον",
           "umschrift": "ádikos",
           "deutsch": "ungerecht",
-          "sprich": "ádikos",
-          "audio": "data/audio/gwa_00_07.m4a"
+          "sprich": "ádikos, ádikon",
+          "audio": "data/audio/gwa_00_07.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "σοφός, -ή, -όν",
           "umschrift": "sophós",
           "deutsch": "weise, klug, geschickt",
-          "sprich": "sopós",
-          "audio": "data/audio/gwa_00_08.m4a"
+          "sprich": "sofós, sofä, sofón",
+          "audio": "data/audio/gwa_00_08.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_08_f1.m4a",
+            "data/audio/gwa_00_08_f2.m4a"
+          ]
         },
         {
           "griechisch": "φρόνιμος, -ον",
           "umschrift": "phrónimos",
           "deutsch": "verständig, klug",
-          "sprich": "prónimos",
-          "audio": "data/audio/gwa_00_09.m4a"
+          "sprich": "frónimos, frónimon",
+          "audio": "data/audio/gwa_00_09.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἄφρων, -ον",
           "umschrift": "áphrōn",
           "deutsch": "unverständig, töricht",
-          "sprich": "áprohn",
-          "audio": "data/audio/gwa_00_10.m4a"
+          "sprich": "áfrohn, áfron",
+          "audio": "data/audio/gwa_00_10.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "μῶρος, -α, -ον",
           "umschrift": "môros",
           "deutsch": "dumm, töricht",
-          "sprich": "môros",
-          "audio": "data/audio/gwa_00_11.m4a"
+          "sprich": "mohros, mohra, mohron",
+          "audio": "data/audio/gwa_00_11.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_11_f1.m4a",
+            "data/audio/gwa_00_11_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀνδρεῖος, -α, -ον",
           "umschrift": "andreîos",
           "deutsch": "tapfer, mannhaft",
-          "sprich": "andrehos",
-          "audio": "data/audio/gwa_00_12.m4a"
+          "sprich": "andreios, andreia, andreion",
+          "audio": "data/audio/gwa_00_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_12_f1.m4a",
+            "data/audio/gwa_00_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "δειλός, -ή, -όν",
           "umschrift": "deilós",
           "deutsch": "feige, elend",
-          "sprich": "dehlós",
-          "audio": "data/audio/gwa_00_13.m4a"
+          "sprich": "deilós, deilä, deilón",
+          "audio": "data/audio/gwa_00_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_13_f1.m4a",
+            "data/audio/gwa_00_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "σώφρων, -ον",
           "umschrift": "sṓphrōn",
           "deutsch": "besonnen, maßvoll",
-          "sprich": "sṓprohn",
-          "audio": "data/audio/gwa_00_14.m4a"
+          "sprich": "sóhfrohn, sóhfron",
+          "audio": "data/audio/gwa_00_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "εὐσεβής, -ές",
           "umschrift": "eusebḗs",
           "deutsch": "fromm",
-          "sprich": "ehusebähs",
-          "audio": "data/audio/gwa_00_15.m4a"
+          "sprich": "eusebähs, eusebés",
+          "audio": "data/audio/gwa_00_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἀσεβής, -ές",
           "umschrift": "asebḗs",
           "deutsch": "gottlos, frevelhaft",
-          "sprich": "asebähs",
-          "audio": "data/audio/gwa_00_16.m4a"
+          "sprich": "asebähs, asebés",
+          "audio": "data/audio/gwa_00_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "πιστός, -ή, -όν",
           "umschrift": "pistós",
           "deutsch": "treu, zuverlässig, glaubwürdig",
-          "sprich": "pistós",
-          "audio": "data/audio/gwa_00_17.m4a"
+          "sprich": "pistós, pistä, pistón",
+          "audio": "data/audio/gwa_00_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_17_f1.m4a",
+            "data/audio/gwa_00_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἄπιστος, -ον",
           "umschrift": "ápistos",
           "deutsch": "unglaubwürdig, treulos, misstrauisch",
-          "sprich": "ápistos",
-          "audio": "data/audio/gwa_00_18.m4a"
+          "sprich": "ápistos, ápiston",
+          "audio": "data/audio/gwa_00_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἐλεύθερος, -α, -ον",
           "umschrift": "eleútheros",
           "deutsch": "frei",
-          "sprich": "elehuteros",
-          "audio": "data/audio/gwa_00_19.m4a"
+          "sprich": "eleuteros, eleutera, eleuteron",
+          "audio": "data/audio/gwa_00_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_00_19_f1.m4a",
+            "data/audio/gwa_00_19_f2.m4a"
+          ]
         }
       ]
     },
@@ -155,146 +228,225 @@
           "umschrift": "mégas",
           "deutsch": "groß",
           "erklaerung": "Komparativ: μείζων, Superlativ: μέγιστος",
-          "sprich": "mégas",
-          "audio": "data/audio/gwa_01_00.m4a"
+          "sprich": "mégas, megálä, méga",
+          "audio": "data/audio/gwa_01_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_00_f1.m4a",
+            "data/audio/gwa_01_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "μικρός, -ά, -όν",
           "umschrift": "mikrós",
           "deutsch": "klein",
           "erklaerung": "Auch σμικρός",
-          "sprich": "mikrós",
-          "audio": "data/audio/gwa_01_01.m4a"
+          "sprich": "mikrós, mikrá, mikrón",
+          "audio": "data/audio/gwa_01_01.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_01_f1.m4a",
+            "data/audio/gwa_01_01_f2.m4a"
+          ]
         },
         {
           "griechisch": "πολύς, πολλή, πολύ",
           "umschrift": "polýs",
           "deutsch": "viel",
           "erklaerung": "Komparativ: πλείων, Superlativ: πλεῖστος",
-          "sprich": "polüs",
-          "audio": "data/audio/gwa_01_02.m4a"
+          "sprich": "polüs, pollä, polü",
+          "audio": "data/audio/gwa_01_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_02_f1.m4a",
+            "data/audio/gwa_01_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὀλίγος, -η, -ον",
           "umschrift": "olígos",
           "deutsch": "wenig, gering",
-          "sprich": "olígos",
-          "audio": "data/audio/gwa_01_03.m4a"
+          "sprich": "olígos, olígä, olígon",
+          "audio": "data/audio/gwa_01_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_03_f1.m4a",
+            "data/audio/gwa_01_03_f2.m4a"
+          ]
         },
         {
           "griechisch": "πᾶς, πᾶσα, πᾶν",
           "umschrift": "pâs",
           "deutsch": "jeder, ganz, all",
           "erklaerung": "Genitiv: παντός, πάσης, παντός",
-          "sprich": "pâs",
-          "audio": "data/audio/gwa_01_04.m4a"
+          "sprich": "pahs, pahsa, pahn",
+          "audio": "data/audio/gwa_01_04.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_04_f1.m4a",
+            "data/audio/gwa_01_04_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἅπας, ἅπασα, ἅπαν",
           "umschrift": "hápas",
           "deutsch": "ganz, sämtlich, all",
-          "sprich": "hápas",
-          "audio": "data/audio/gwa_01_05.m4a"
+          "sprich": "hápas, hápasa, hápan",
+          "audio": "data/audio/gwa_01_05.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_05_f1.m4a",
+            "data/audio/gwa_01_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὅλος, -η, -ον",
           "umschrift": "hólos",
           "deutsch": "ganz, vollständig",
-          "sprich": "hólos",
-          "audio": "data/audio/gwa_01_06.m4a"
+          "sprich": "hólos, hólä, hólon",
+          "audio": "data/audio/gwa_01_06.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_06_f1.m4a",
+            "data/audio/gwa_01_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "μόνος, -η, -ον",
           "umschrift": "mónos",
           "deutsch": "allein, einzig",
           "erklaerung": "μόνον (Adv.): nur",
-          "sprich": "mónos",
-          "audio": "data/audio/gwa_01_07.m4a"
+          "sprich": "mónos, mónä, mónon",
+          "audio": "data/audio/gwa_01_07.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_07_f1.m4a",
+            "data/audio/gwa_01_07_f2.m4a"
+          ]
         },
         {
           "griechisch": "μακρός, -ά, -όν",
           "umschrift": "makrós",
           "deutsch": "lang, groß",
-          "sprich": "makrós",
-          "audio": "data/audio/gwa_01_08.m4a"
+          "sprich": "makrós, makrá, makrón",
+          "audio": "data/audio/gwa_01_08.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_08_f1.m4a",
+            "data/audio/gwa_01_08_f2.m4a"
+          ]
         },
         {
           "griechisch": "βραχύς, -εῖα, -ύ",
           "umschrift": "brachýs",
           "deutsch": "kurz",
-          "sprich": "braküs",
-          "audio": "data/audio/gwa_01_09.m4a"
+          "sprich": "brachüs, bracheia, brachü",
+          "audio": "data/audio/gwa_01_09.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_09_f1.m4a",
+            "data/audio/gwa_01_09_f2.m4a"
+          ]
         },
         {
           "griechisch": "εὐρύς, -εῖα, -ύ",
           "umschrift": "eurýs",
           "deutsch": "breit, weit",
-          "sprich": "ehurüs",
-          "audio": "data/audio/gwa_01_10.m4a"
+          "sprich": "eurüs, eureia, eurü",
+          "audio": "data/audio/gwa_01_10.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_10_f1.m4a",
+            "data/audio/gwa_01_10_f2.m4a"
+          ]
         },
         {
           "griechisch": "στενός, -ή, -όν",
           "umschrift": "stenós",
           "deutsch": "eng, schmal",
-          "sprich": "ßtenós",
-          "audio": "data/audio/gwa_01_11.m4a"
+          "sprich": "ßtenós, ßtenä, ßtenón",
+          "audio": "data/audio/gwa_01_11.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_11_f1.m4a",
+            "data/audio/gwa_01_11_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὑψηλός, -ή, -όν",
           "umschrift": "hypsēlós",
           "deutsch": "hoch, erhaben",
-          "sprich": "hüpsählós",
-          "audio": "data/audio/gwa_01_12.m4a"
+          "sprich": "hüpsählós, hüpsählä, hüpsählón",
+          "audio": "data/audio/gwa_01_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_12_f1.m4a",
+            "data/audio/gwa_01_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "βαθύς, -εῖα, -ύ",
           "umschrift": "bathýs",
           "deutsch": "tief",
-          "sprich": "batüs",
-          "audio": "data/audio/gwa_01_13.m4a"
+          "sprich": "batüs, bateia, batü",
+          "audio": "data/audio/gwa_01_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_13_f1.m4a",
+            "data/audio/gwa_01_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "πλήρης, -ες",
           "umschrift": "plḗrēs",
           "deutsch": "voll, angefüllt",
           "erklaerung": "Mit Genitiv",
-          "sprich": "plährähs",
-          "audio": "data/audio/gwa_01_14.m4a"
+          "sprich": "plährähs, plähres",
+          "audio": "data/audio/gwa_01_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "κενός, -ή, -όν",
           "umschrift": "kenós",
           "deutsch": "leer, eitel",
-          "sprich": "kenós",
-          "audio": "data/audio/gwa_01_15.m4a"
+          "sprich": "kenós, kenä, kenón",
+          "audio": "data/audio/gwa_01_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_15_f1.m4a",
+            "data/audio/gwa_01_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "μέσος, -η, -ον",
           "umschrift": "mésos",
           "deutsch": "mittlerer, in der Mitte",
-          "sprich": "mésos",
-          "audio": "data/audio/gwa_01_16.m4a"
+          "sprich": "mésos, mésä, méson",
+          "audio": "data/audio/gwa_01_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_16_f1.m4a",
+            "data/audio/gwa_01_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἄκρος, -α, -ον",
           "umschrift": "ákros",
           "deutsch": "äußerster, höchster, Spitzen-",
-          "sprich": "ákros",
-          "audio": "data/audio/gwa_01_17.m4a"
+          "sprich": "ákros, ákra, ákron",
+          "audio": "data/audio/gwa_01_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_17_f1.m4a",
+            "data/audio/gwa_01_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἔσχατος, -η, -ον",
           "umschrift": "éschatos",
           "deutsch": "äußerster, letzter",
-          "sprich": "éskatos",
-          "audio": "data/audio/gwa_01_18.m4a"
+          "sprich": "éschatos, éschatä, éschaton",
+          "audio": "data/audio/gwa_01_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_18_f1.m4a",
+            "data/audio/gwa_01_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἱκανός, -ή, -όν",
           "umschrift": "hikanós",
           "deutsch": "hinreichend, fähig, geeignet",
-          "sprich": "hikanós",
-          "audio": "data/audio/gwa_01_19.m4a"
+          "sprich": "hikanós, hikanä, hikanón",
+          "audio": "data/audio/gwa_01_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_01_19_f1.m4a",
+            "data/audio/gwa_01_19_f2.m4a"
+          ]
         }
       ]
     },
@@ -305,146 +457,224 @@
           "griechisch": "νέος, -α, -ον",
           "umschrift": "néos",
           "deutsch": "jung, neu",
-          "sprich": "néos",
-          "audio": "data/audio/gwa_02_00.m4a"
+          "sprich": "néos, néa, néon",
+          "audio": "data/audio/gwa_02_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_00_f1.m4a",
+            "data/audio/gwa_02_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "παλαιός, -ά, -όν",
           "umschrift": "palaiós",
           "deutsch": "alt, altertümlich",
-          "sprich": "palaiós",
-          "audio": "data/audio/gwa_02_01.m4a"
+          "sprich": "palaiós, palaiá, palaión",
+          "audio": "data/audio/gwa_02_01.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_01_f1.m4a",
+            "data/audio/gwa_02_01_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀρχαῖος, -α, -ον",
           "umschrift": "archaîos",
           "deutsch": "alt, ursprünglich, altmodisch",
-          "sprich": "arkaîos",
-          "audio": "data/audio/gwa_02_02.m4a"
+          "sprich": "archaios, archaia, archaion",
+          "audio": "data/audio/gwa_02_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_02_f1.m4a",
+            "data/audio/gwa_02_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "καινός, -ή, -όν",
           "umschrift": "kainós",
           "deutsch": "neu, neuartig",
-          "sprich": "kainós",
-          "audio": "data/audio/gwa_02_03.m4a"
+          "sprich": "kainós, kainä, kainón",
+          "audio": "data/audio/gwa_02_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_03_f1.m4a",
+            "data/audio/gwa_02_03_f2.m4a"
+          ]
         },
         {
           "griechisch": "πρεσβύτερος, -α, -ον",
           "umschrift": "presbýteros",
           "deutsch": "älter",
           "erklaerung": "οἱ πρεσβύτεροι: die Älteren",
-          "sprich": "presbüteros",
-          "audio": "data/audio/gwa_02_04.m4a"
+          "sprich": "presbüteros, presbütera, presbüteron",
+          "audio": "data/audio/gwa_02_04.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_04_f1.m4a",
+            "data/audio/gwa_02_04_f2.m4a"
+          ]
         },
         {
           "griechisch": "ταχύς, -εῖα, -ύ",
           "umschrift": "tachýs",
           "deutsch": "schnell",
           "erklaerung": "Komparativ: θάττων; ταχέως: schnell (Adv.)",
-          "sprich": "taküs",
-          "audio": "data/audio/gwa_02_05.m4a"
+          "sprich": "tachüs, tacheia, tachü",
+          "audio": "data/audio/gwa_02_05.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_05_f1.m4a",
+            "data/audio/gwa_02_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "βραδύς, -εῖα, -ύ",
           "umschrift": "bradýs",
           "deutsch": "langsam",
-          "sprich": "bradüs",
-          "audio": "data/audio/gwa_02_06.m4a"
+          "sprich": "bradüs, bradeia, bradü",
+          "audio": "data/audio/gwa_02_06.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_06_f1.m4a",
+            "data/audio/gwa_02_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "ῥᾴδιος, -α, -ον",
           "umschrift": "rháidios",
           "deutsch": "leicht (zu tun)",
           "erklaerung": "Komparativ: ῥᾴων; Adv. ῥᾳδίως",
-          "sprich": "ráidios",
-          "audio": "data/audio/gwa_02_07.m4a"
+          "sprich": "rahdios, rahdia, rahdion",
+          "audio": "data/audio/gwa_02_07.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_07_f1.m4a",
+            "data/audio/gwa_02_07_f2.m4a"
+          ]
         },
         {
           "griechisch": "χαλεπός, -ή, -όν",
           "umschrift": "chalepós",
           "deutsch": "schwierig, schlimm, streng",
-          "sprich": "kalepós",
-          "audio": "data/audio/gwa_02_08.m4a"
+          "sprich": "chalepós, chalepä, chalepón",
+          "audio": "data/audio/gwa_02_08.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_08_f1.m4a",
+            "data/audio/gwa_02_08_f2.m4a"
+          ]
         },
         {
           "griechisch": "δεινός, -ή, -όν",
           "umschrift": "deinós",
           "deutsch": "furchtbar, gewaltig; tüchtig",
           "erklaerung": "δεινὸς λέγειν: gewandt im Reden",
-          "sprich": "dehnós",
-          "audio": "data/audio/gwa_02_09.m4a"
+          "sprich": "deinós, deinä, deinón",
+          "audio": "data/audio/gwa_02_09.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_09_f1.m4a",
+            "data/audio/gwa_02_09_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἰσχυρός, -ά, -όν",
           "umschrift": "ischyrós",
           "deutsch": "stark, kräftig",
-          "sprich": "iskürós",
-          "audio": "data/audio/gwa_02_10.m4a"
+          "sprich": "ischürós, ischürá, ischürón",
+          "audio": "data/audio/gwa_02_10.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_10_f1.m4a",
+            "data/audio/gwa_02_10_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀσθενής, -ές",
           "umschrift": "asthenḗs",
           "deutsch": "schwach, kraftlos, krank",
-          "sprich": "astenähs",
-          "audio": "data/audio/gwa_02_11.m4a"
+          "sprich": "astenähs, astenés",
+          "audio": "data/audio/gwa_02_11.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "ῥωμαλέος, -α, -ον",
           "umschrift": "rhōmaléos",
           "deutsch": "stark, robust",
-          "sprich": "rohmaléos",
-          "audio": "data/audio/gwa_02_12.m4a"
+          "sprich": "rohmaléos, rohmaléa, rohmaléon",
+          "audio": "data/audio/gwa_02_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_12_f1.m4a",
+            "data/audio/gwa_02_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὑγιής, -ές",
           "umschrift": "hygiḗs",
           "deutsch": "gesund",
-          "sprich": "hügiähs",
-          "audio": "data/audio/gwa_02_13.m4a"
+          "sprich": "hügiähs, hügiés",
+          "audio": "data/audio/gwa_02_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "τυφλός, -ή, -όν",
           "umschrift": "typhlós",
           "deutsch": "blind",
-          "sprich": "tüplós",
-          "audio": "data/audio/gwa_02_14.m4a"
+          "sprich": "tüflós, tüflä, tüflón",
+          "audio": "data/audio/gwa_02_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_14_f1.m4a",
+            "data/audio/gwa_02_14_f2.m4a"
+          ]
         },
         {
           "griechisch": "κωφός, -ή, -όν",
           "umschrift": "kōphós",
           "deutsch": "stumm, taub",
-          "sprich": "kohpós",
-          "audio": "data/audio/gwa_02_15.m4a"
+          "sprich": "kohfós, kohfä, kohfón",
+          "audio": "data/audio/gwa_02_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_15_f1.m4a",
+            "data/audio/gwa_02_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "χωλός, -ή, -όν",
           "umschrift": "chōlós",
           "deutsch": "lahm, hinkend",
-          "sprich": "kohlós",
-          "audio": "data/audio/gwa_02_16.m4a"
+          "sprich": "chohlós, chohlä, chohlón",
+          "audio": "data/audio/gwa_02_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_16_f1.m4a",
+            "data/audio/gwa_02_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "γυμνός, -ή, -όν",
           "umschrift": "gymnós",
           "deutsch": "nackt, unbewaffnet",
-          "sprich": "gümnós",
-          "audio": "data/audio/gwa_02_17.m4a"
+          "sprich": "gümnós, gümnä, gümnón",
+          "audio": "data/audio/gwa_02_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_17_f1.m4a",
+            "data/audio/gwa_02_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "ζωός, -ή, -όν",
           "umschrift": "zōós",
           "deutsch": "lebendig",
           "erklaerung": "Attisch meist ζῶν (Partizip)",
-          "sprich": "zohós",
-          "audio": "data/audio/gwa_02_18.m4a"
+          "sprich": "zohós, zohä, zohón",
+          "audio": "data/audio/gwa_02_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_18_f1.m4a",
+            "data/audio/gwa_02_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἕτοιμος, -η, -ον",
           "umschrift": "hétoimos",
           "deutsch": "bereit, fertig",
-          "sprich": "hétohimos",
-          "audio": "data/audio/gwa_02_19.m4a"
+          "sprich": "hétoimos, hétoimä, hétoimon",
+          "audio": "data/audio/gwa_02_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_02_19_f1.m4a",
+            "data/audio/gwa_02_19_f2.m4a"
+          ]
         }
       ]
     },
@@ -455,142 +685,222 @@
           "griechisch": "λευκός, -ή, -όν",
           "umschrift": "leukós",
           "deutsch": "weiß, hell",
-          "sprich": "lehukós",
-          "audio": "data/audio/gwa_03_00.m4a"
+          "sprich": "leukós, leukä, leukón",
+          "audio": "data/audio/gwa_03_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_00_f1.m4a",
+            "data/audio/gwa_03_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "μέλας, μέλαινα, μέλαν",
           "umschrift": "mélas",
           "deutsch": "schwarz, dunkel",
-          "sprich": "mélas",
-          "audio": "data/audio/gwa_03_01.m4a"
+          "sprich": "mélas, mélaina, mélan",
+          "audio": "data/audio/gwa_03_01.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_01_f1.m4a",
+            "data/audio/gwa_03_01_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἐρυθρός, -ά, -όν",
           "umschrift": "erythrós",
           "deutsch": "rot",
-          "sprich": "erütrós",
-          "audio": "data/audio/gwa_03_02.m4a"
+          "sprich": "erütrós, erütrá, erütrón",
+          "audio": "data/audio/gwa_03_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_02_f1.m4a",
+            "data/audio/gwa_03_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "χλωρός, -ά, -όν",
           "umschrift": "chlōrós",
           "deutsch": "grünlich, frisch, blass",
-          "sprich": "klohrós",
-          "audio": "data/audio/gwa_03_03.m4a"
+          "sprich": "chlohrós, chlohrá, chlohrón",
+          "audio": "data/audio/gwa_03_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_03_f1.m4a",
+            "data/audio/gwa_03_03_f2.m4a"
+          ]
         },
         {
           "griechisch": "γλυκύς, -εῖα, -ύ",
           "umschrift": "glykýs",
           "deutsch": "süß",
-          "sprich": "glüküs",
-          "audio": "data/audio/gwa_03_04.m4a"
+          "sprich": "glüküs, glükeia, glükü",
+          "audio": "data/audio/gwa_03_04.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_04_f1.m4a",
+            "data/audio/gwa_03_04_f2.m4a"
+          ]
         },
         {
           "griechisch": "πικρός, -ά, -όν",
           "umschrift": "pikrós",
           "deutsch": "bitter, scharf",
-          "sprich": "pikrós",
-          "audio": "data/audio/gwa_03_05.m4a"
+          "sprich": "pikrós, pikrá, pikrón",
+          "audio": "data/audio/gwa_03_05.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_05_f1.m4a",
+            "data/audio/gwa_03_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὀξύς, -εῖα, -ύ",
           "umschrift": "oxýs",
           "deutsch": "scharf, spitz, schnell",
-          "sprich": "oxüs",
-          "audio": "data/audio/gwa_03_06.m4a"
+          "sprich": "oxüs, oxeia, oxü",
+          "audio": "data/audio/gwa_03_06.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_06_f1.m4a",
+            "data/audio/gwa_03_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "θερμός, -ή, -όν",
           "umschrift": "thermós",
           "deutsch": "warm, heiß",
-          "sprich": "termós",
-          "audio": "data/audio/gwa_03_07.m4a"
+          "sprich": "termós, termä, termón",
+          "audio": "data/audio/gwa_03_07.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_07_f1.m4a",
+            "data/audio/gwa_03_07_f2.m4a"
+          ]
         },
         {
           "griechisch": "ψυχρός, -ά, -όν",
           "umschrift": "psychrós",
           "deutsch": "kalt",
-          "sprich": "psükrós",
-          "audio": "data/audio/gwa_03_08.m4a"
+          "sprich": "psüchrós, psüchrá, psüchrón",
+          "audio": "data/audio/gwa_03_08.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_08_f1.m4a",
+            "data/audio/gwa_03_08_f2.m4a"
+          ]
         },
         {
           "griechisch": "ξηρός, -ά, -όν",
           "umschrift": "xērós",
           "deutsch": "trocken, dürr",
-          "sprich": "xährós",
-          "audio": "data/audio/gwa_03_09.m4a"
+          "sprich": "xährós, xährá, xährón",
+          "audio": "data/audio/gwa_03_09.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_09_f1.m4a",
+            "data/audio/gwa_03_09_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὑγρός, -ά, -όν",
           "umschrift": "hygrós",
           "deutsch": "feucht, nass, flüssig",
-          "sprich": "hügrós",
-          "audio": "data/audio/gwa_03_10.m4a"
+          "sprich": "hügrós, hügrá, hügrón",
+          "audio": "data/audio/gwa_03_10.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_10_f1.m4a",
+            "data/audio/gwa_03_10_f2.m4a"
+          ]
         },
         {
           "griechisch": "σκληρός, -ά, -όν",
           "umschrift": "sklērós",
           "deutsch": "hart, spröde",
-          "sprich": "sklährós",
-          "audio": "data/audio/gwa_03_11.m4a"
+          "sprich": "sklährós, sklährá, sklährón",
+          "audio": "data/audio/gwa_03_11.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_11_f1.m4a",
+            "data/audio/gwa_03_11_f2.m4a"
+          ]
         },
         {
           "griechisch": "μαλακός, -ή, -όν",
           "umschrift": "malakós",
           "deutsch": "weich; weichlich",
-          "sprich": "malakós",
-          "audio": "data/audio/gwa_03_12.m4a"
+          "sprich": "malakós, malakä, malakón",
+          "audio": "data/audio/gwa_03_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_12_f1.m4a",
+            "data/audio/gwa_03_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "βαρύς, -εῖα, -ύ",
           "umschrift": "barýs",
           "deutsch": "schwer, lästig",
-          "sprich": "barüs",
-          "audio": "data/audio/gwa_03_13.m4a"
+          "sprich": "barüs, bareia, barü",
+          "audio": "data/audio/gwa_03_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_13_f1.m4a",
+            "data/audio/gwa_03_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "κοῦφος, -η, -ον",
           "umschrift": "koûphos",
           "deutsch": "leicht (an Gewicht)",
-          "sprich": "kuhpos",
-          "audio": "data/audio/gwa_03_14.m4a"
+          "sprich": "kuhfos, kuhfä, kuhfon",
+          "audio": "data/audio/gwa_03_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_14_f1.m4a",
+            "data/audio/gwa_03_14_f2.m4a"
+          ]
         },
         {
           "griechisch": "καθαρός, -ά, -όν",
           "umschrift": "katharós",
           "deutsch": "rein, sauber",
-          "sprich": "katarós",
-          "audio": "data/audio/gwa_03_15.m4a"
+          "sprich": "katarós, katará, katarón",
+          "audio": "data/audio/gwa_03_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_15_f1.m4a",
+            "data/audio/gwa_03_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "λαμπρός, -ά, -όν",
           "umschrift": "lamprós",
           "deutsch": "glänzend, strahlend, prächtig",
-          "sprich": "lamprós",
-          "audio": "data/audio/gwa_03_16.m4a"
+          "sprich": "lamprós, lamprá, lamprón",
+          "audio": "data/audio/gwa_03_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_16_f1.m4a",
+            "data/audio/gwa_03_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "σκοτεινός, -ή, -όν",
           "umschrift": "skoteinós",
           "deutsch": "dunkel, finster",
-          "sprich": "skotehnós",
-          "audio": "data/audio/gwa_03_17.m4a"
+          "sprich": "skoteinós, skoteinä, skoteinón",
+          "audio": "data/audio/gwa_03_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_17_f1.m4a",
+            "data/audio/gwa_03_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἡδύς, -εῖα, -ύ",
           "umschrift": "hēdýs",
           "deutsch": "angenehm, süß, erfreulich",
           "erklaerung": "Adv. ἡδέως: gern",
-          "sprich": "hähdüs",
-          "audio": "data/audio/gwa_03_18.m4a"
+          "sprich": "hähdüs, hähdeia, hähdü",
+          "audio": "data/audio/gwa_03_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_18_f1.m4a",
+            "data/audio/gwa_03_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὠμός, -ή, -όν",
           "umschrift": "ōmós",
           "deutsch": "roh, grausam",
-          "sprich": "ohmós",
-          "audio": "data/audio/gwa_03_19.m4a"
+          "sprich": "ohmós, ohmä, ohmón",
+          "audio": "data/audio/gwa_03_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_03_19_f1.m4a",
+            "data/audio/gwa_03_19_f2.m4a"
+          ]
         }
       ]
     },
@@ -601,143 +911,215 @@
           "griechisch": "φίλος, -η, -ον",
           "umschrift": "phílos",
           "deutsch": "lieb, freundlich, eigen",
-          "sprich": "pílos",
-          "audio": "data/audio/gwa_04_00.m4a"
+          "sprich": "fílos, fílä, fílon",
+          "audio": "data/audio/gwa_04_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_00_f1.m4a",
+            "data/audio/gwa_04_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἐχθρός, -ά, -όν",
           "umschrift": "echthrós",
           "deutsch": "verhasst, feindlich",
-          "sprich": "ektrós",
-          "audio": "data/audio/gwa_04_01.m4a"
+          "sprich": "echtrós, echtrá, echtrón",
+          "audio": "data/audio/gwa_04_01.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_01_f1.m4a",
+            "data/audio/gwa_04_01_f2.m4a"
+          ]
         },
         {
           "griechisch": "πλούσιος, -α, -ον",
           "umschrift": "ploúsios",
           "deutsch": "reich",
-          "sprich": "plúsios",
-          "audio": "data/audio/gwa_04_02.m4a"
+          "sprich": "plúsios, plúsia, plúsion",
+          "audio": "data/audio/gwa_04_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_02_f1.m4a",
+            "data/audio/gwa_04_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "πένης, -ητος",
           "umschrift": "pénēs",
           "deutsch": "arm",
-          "sprich": "pénähs",
-          "audio": "data/audio/gwa_04_03.m4a"
+          "sprich": "pénähs, pénähtos",
+          "audio": "data/audio/gwa_04_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "εὐδαίμων, -ον",
           "umschrift": "eudaímōn",
           "deutsch": "glücklich, gesegnet",
-          "sprich": "ehudaimohn",
-          "audio": "data/audio/gwa_04_04.m4a"
+          "sprich": "eudaimohn, eudaimon",
+          "audio": "data/audio/gwa_04_04.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἄθλιος, -α, -ον",
           "umschrift": "áthlios",
           "deutsch": "elend, unglücklich",
-          "sprich": "átlios",
-          "audio": "data/audio/gwa_04_05.m4a"
+          "sprich": "átlios, átlia, átlion",
+          "audio": "data/audio/gwa_04_05.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_05_f1.m4a",
+            "data/audio/gwa_04_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "μακάριος, -α, -ον",
           "umschrift": "makários",
           "deutsch": "selig, glücklich, gepriesen",
-          "sprich": "makários",
-          "audio": "data/audio/gwa_04_06.m4a"
+          "sprich": "makários, makária, makárion",
+          "audio": "data/audio/gwa_04_06.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_06_f1.m4a",
+            "data/audio/gwa_04_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "δυστυχής, -ές",
           "umschrift": "dystychḗs",
           "deutsch": "unglücklich",
-          "sprich": "düstükähs",
-          "audio": "data/audio/gwa_04_07.m4a"
+          "sprich": "düstüchähs, düstüchés",
+          "audio": "data/audio/gwa_04_07.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "εὐτυχής, -ές",
           "umschrift": "eutychḗs",
           "deutsch": "glücklich, erfolgreich",
-          "sprich": "ehutükähs",
-          "audio": "data/audio/gwa_04_08.m4a"
+          "sprich": "eutüchähs, eutüchés",
+          "audio": "data/audio/gwa_04_08.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἔνδοξος, -ον",
           "umschrift": "éndoxos",
           "deutsch": "berühmt, angesehen",
-          "sprich": "éndoxos",
-          "audio": "data/audio/gwa_04_09.m4a"
+          "sprich": "éndoxos, éndoxon",
+          "audio": "data/audio/gwa_04_09.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἄδοξος, -ον",
           "umschrift": "ádoxos",
           "deutsch": "ruhmlos, unbedeutend",
-          "sprich": "ádoxos",
-          "audio": "data/audio/gwa_04_10.m4a"
+          "sprich": "ádoxos, ádoxon",
+          "audio": "data/audio/gwa_04_10.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "γενναῖος, -α, -ον",
           "umschrift": "gennaîos",
           "deutsch": "edel, adlig, trefflich",
-          "sprich": "gennaîos",
-          "audio": "data/audio/gwa_04_11.m4a"
+          "sprich": "gennaios, gennaia, gennaion",
+          "audio": "data/audio/gwa_04_11.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_11_f1.m4a",
+            "data/audio/gwa_04_11_f2.m4a"
+          ]
         },
         {
           "griechisch": "εὐγενής, -ές",
           "umschrift": "eugenḗs",
           "deutsch": "von edler Herkunft, edel",
-          "sprich": "ehugenähs",
-          "audio": "data/audio/gwa_04_12.m4a"
+          "sprich": "eugenähs, eugenés",
+          "audio": "data/audio/gwa_04_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἄξιος, -α, -ον",
           "umschrift": "áxios",
           "deutsch": "würdig, wert",
           "erklaerung": "Mit Genitiv",
-          "sprich": "áxios",
-          "audio": "data/audio/gwa_04_13.m4a"
+          "sprich": "áxios, áxia, áxion",
+          "audio": "data/audio/gwa_04_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_13_f1.m4a",
+            "data/audio/gwa_04_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀνάξιος, -ον",
           "umschrift": "anáxios",
           "deutsch": "unwürdig",
-          "sprich": "anáxios",
-          "audio": "data/audio/gwa_04_14.m4a"
+          "sprich": "anáxios, anáxion",
+          "audio": "data/audio/gwa_04_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "κοινός, -ή, -όν",
           "umschrift": "koinós",
           "deutsch": "gemeinsam, öffentlich",
-          "sprich": "kohinós",
-          "audio": "data/audio/gwa_04_15.m4a"
+          "sprich": "koinós, koinä, koinón",
+          "audio": "data/audio/gwa_04_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_15_f1.m4a",
+            "data/audio/gwa_04_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἴδιος, -α, -ον",
           "umschrift": "ídios",
           "deutsch": "eigen, privat",
           "erklaerung": "ἰδίᾳ: privat, für sich",
-          "sprich": "ídios",
-          "audio": "data/audio/gwa_04_16.m4a"
+          "sprich": "ídios, ídia, ídion",
+          "audio": "data/audio/gwa_04_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_16_f1.m4a",
+            "data/audio/gwa_04_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "ξένος, -η, -ον",
           "umschrift": "xénos",
           "deutsch": "fremd",
-          "sprich": "xénos",
-          "audio": "data/audio/gwa_04_17.m4a"
+          "sprich": "xénos, xénä, xénon",
+          "audio": "data/audio/gwa_04_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_17_f1.m4a",
+            "data/audio/gwa_04_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "οἰκεῖος, -α, -ον",
           "umschrift": "oikeîos",
           "deutsch": "zum Haus gehörig, verwandt, vertraut",
-          "sprich": "ohikehos",
-          "audio": "data/audio/gwa_04_18.m4a"
+          "sprich": "oikeios, oikeia, oikeion",
+          "audio": "data/audio/gwa_04_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_18_f1.m4a",
+            "data/audio/gwa_04_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "πολέμιος, -α, -ον",
           "umschrift": "polémios",
           "deutsch": "feindlich",
-          "sprich": "polémios",
-          "audio": "data/audio/gwa_04_19.m4a"
+          "sprich": "polémios, polémia, polémion",
+          "audio": "data/audio/gwa_04_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_04_19_f1.m4a",
+            "data/audio/gwa_04_19_f2.m4a"
+          ]
         }
       ]
     },
@@ -748,21 +1130,21 @@
           "griechisch": "εὖ",
           "umschrift": "eû",
           "deutsch": "gut, wohl",
-          "sprich": "ehu",
+          "sprich": "eu",
           "audio": "data/audio/gwa_05_00.m4a"
         },
         {
           "griechisch": "κακῶς",
           "umschrift": "kakôs",
           "deutsch": "schlecht, übel",
-          "sprich": "kakôs",
+          "sprich": "kakohs",
           "audio": "data/audio/gwa_05_01.m4a"
         },
         {
           "griechisch": "καλῶς",
           "umschrift": "kalôs",
           "deutsch": "schön, gut, richtig",
-          "sprich": "kalôs",
+          "sprich": "kalohs",
           "audio": "data/audio/gwa_05_02.m4a"
         },
         {
@@ -777,7 +1159,7 @@
           "griechisch": "μᾶλλον",
           "umschrift": "mâllon",
           "deutsch": "mehr, eher, lieber",
-          "sprich": "mâllon",
+          "sprich": "mahllon",
           "audio": "data/audio/gwa_05_04.m4a"
         },
         {
@@ -791,7 +1173,7 @@
           "griechisch": "σφόδρα",
           "umschrift": "sphódra",
           "deutsch": "heftig, sehr",
-          "sprich": "ßpódra",
+          "sprich": "sfódra",
           "audio": "data/audio/gwa_05_06.m4a"
         },
         {
@@ -820,7 +1202,7 @@
           "griechisch": "σχεδόν",
           "umschrift": "schedón",
           "deutsch": "beinahe, fast, ungefähr",
-          "sprich": "skedón",
+          "sprich": "schedón",
           "audio": "data/audio/gwa_05_10.m4a"
         },
         {
@@ -834,14 +1216,14 @@
           "griechisch": "ὀρθῶς",
           "umschrift": "orthôs",
           "deutsch": "richtig, recht",
-          "sprich": "ortôs",
+          "sprich": "ortohs",
           "audio": "data/audio/gwa_05_12.m4a"
         },
         {
           "griechisch": "ἀληθῶς",
           "umschrift": "alēthôs",
           "deutsch": "wahrhaftig, wirklich",
-          "sprich": "alähtôs",
+          "sprich": "alähtohs",
           "audio": "data/audio/gwa_05_13.m4a"
         },
         {
@@ -863,7 +1245,7 @@
           "umschrift": "dêlon hóti",
           "deutsch": "offenbar, offensichtlich",
           "erklaerung": "Wendung: es ist klar, dass",
-          "sprich": "dêlon hóti",
+          "sprich": "dählon hóti",
           "audio": "data/audio/gwa_05_16.m4a"
         },
         {
@@ -878,14 +1260,14 @@
           "griechisch": "ὧδε",
           "umschrift": "hôde",
           "deutsch": "so, folgendermaßen",
-          "sprich": "hôde",
+          "sprich": "hohde",
           "audio": "data/audio/gwa_05_18.m4a"
         },
         {
           "griechisch": "ὁμοίως",
           "umschrift": "homoíōs",
           "deutsch": "in gleicher Weise, ebenso",
-          "sprich": "homohiohs",
+          "sprich": "homoiohs",
           "audio": "data/audio/gwa_05_19.m4a"
         }
       ]
@@ -898,8 +1280,12 @@
           "umschrift": "heîs",
           "deutsch": "eins",
           "erklaerung": "Genitiv: ἑνός, μιᾶς, ἑνός",
-          "sprich": "hehs",
-          "audio": "data/audio/gwa_06_00.m4a"
+          "sprich": "heis, mía, hén",
+          "audio": "data/audio/gwa_06_00.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_00_f1.m4a",
+            "data/audio/gwa_06_00_f2.m4a"
+          ]
         },
         {
           "griechisch": "δύο",
@@ -912,15 +1298,21 @@
           "griechisch": "τρεῖς, τρία",
           "umschrift": "treîs",
           "deutsch": "drei",
-          "sprich": "trehs",
-          "audio": "data/audio/gwa_06_02.m4a"
+          "sprich": "treis, tría",
+          "audio": "data/audio/gwa_06_02.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "τέτταρες, τέτταρα",
           "umschrift": "téttares",
           "deutsch": "vier",
-          "sprich": "téttares",
-          "audio": "data/audio/gwa_06_03.m4a"
+          "sprich": "téttares, téttara",
+          "audio": "data/audio/gwa_06_03.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "πέντε",
@@ -947,7 +1339,7 @@
           "griechisch": "ὀκτώ",
           "umschrift": "oktṓ",
           "deutsch": "acht",
-          "sprich": "oktṓ",
+          "sprich": "októh",
           "audio": "data/audio/gwa_06_07.m4a"
         },
         {
@@ -968,7 +1360,7 @@
           "griechisch": "εἴκοσι(ν)",
           "umschrift": "eíkosi(n)",
           "deutsch": "zwanzig",
-          "sprich": "ehkosi(n)",
+          "sprich": "eikosi",
           "audio": "data/audio/gwa_06_10.m4a"
         },
         {
@@ -982,59 +1374,91 @@
           "griechisch": "χίλιοι, -αι, -α",
           "umschrift": "chílioi",
           "deutsch": "tausend",
-          "sprich": "kíliohi",
-          "audio": "data/audio/gwa_06_12.m4a"
+          "sprich": "chílioi, chíliai, chília",
+          "audio": "data/audio/gwa_06_12.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_12_f1.m4a",
+            "data/audio/gwa_06_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "μύριοι, -αι, -α",
           "umschrift": "mýrioi",
           "deutsch": "zehntausend",
           "erklaerung": "μυρίοι (Akzent!): unzählige",
-          "sprich": "müriohi",
-          "audio": "data/audio/gwa_06_13.m4a"
+          "sprich": "mürioi, müriai, müria",
+          "audio": "data/audio/gwa_06_13.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_13_f1.m4a",
+            "data/audio/gwa_06_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "πρῶτος, -η, -ον",
           "umschrift": "prôtos",
           "deutsch": "erster",
           "erklaerung": "πρῶτον (Adv.): zuerst",
-          "sprich": "prôtos",
-          "audio": "data/audio/gwa_06_14.m4a"
+          "sprich": "prohtos, prohtä, prohton",
+          "audio": "data/audio/gwa_06_14.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_14_f1.m4a",
+            "data/audio/gwa_06_14_f2.m4a"
+          ]
         },
         {
           "griechisch": "δεύτερος, -α, -ον",
           "umschrift": "deúteros",
           "deutsch": "zweiter",
-          "sprich": "dehuteros",
-          "audio": "data/audio/gwa_06_15.m4a"
+          "sprich": "deuteros, deutera, deuteron",
+          "audio": "data/audio/gwa_06_15.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_15_f1.m4a",
+            "data/audio/gwa_06_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "τρίτος, -η, -ον",
           "umschrift": "trítos",
           "deutsch": "dritter",
-          "sprich": "trítos",
-          "audio": "data/audio/gwa_06_16.m4a"
+          "sprich": "trítos, trítä, tríton",
+          "audio": "data/audio/gwa_06_16.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_16_f1.m4a",
+            "data/audio/gwa_06_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἥμισυς, -εια, -υ",
           "umschrift": "hḗmisys",
           "deutsch": "halb",
-          "sprich": "hähmisüs",
-          "audio": "data/audio/gwa_06_17.m4a"
+          "sprich": "hähmisüs, hähmiseia, hähmisü",
+          "audio": "data/audio/gwa_06_17.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_17_f1.m4a",
+            "data/audio/gwa_06_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "διπλοῦς, -ῆ, -οῦν",
           "umschrift": "diploûs",
           "deutsch": "doppelt",
-          "sprich": "dipluhs",
-          "audio": "data/audio/gwa_06_18.m4a"
+          "sprich": "dipluhs, diplä, dipluhn",
+          "audio": "data/audio/gwa_06_18.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_18_f1.m4a",
+            "data/audio/gwa_06_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀμφότεροι, -αι, -α",
           "umschrift": "amphóteroi",
           "deutsch": "beide",
-          "sprich": "ampóterohi",
-          "audio": "data/audio/gwa_06_19.m4a"
+          "sprich": "amfóteroi, amfóterai, amfótera",
+          "audio": "data/audio/gwa_06_19.m4a",
+          "flexAudio": [
+            "data/audio/gwa_06_19_f1.m4a",
+            "data/audio/gwa_06_19_f2.m4a"
+          ]
         }
       ]
     }

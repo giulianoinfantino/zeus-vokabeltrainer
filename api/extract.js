@@ -14,11 +14,16 @@ const SCHEMA = {
         type: 'object',
         properties: {
           griechisch: { type: 'string', description: 'Griechisches Wort exakt wie gedruckt, polyton (alle Akzente, Spiritus, Iota subscriptum); Substantive mit Artikel, falls angegeben' },
-          umschrift: { type: 'string', description: 'Wissenschaftliche lateinische Umschrift (ē für η, ō für ω, Spiritus asper als h), z.B. glōssa' },
+          umschrift: { type: 'string', description: 'Wissenschaftliche lateinische Umschrift der Grundform INKLUSIVE Artikel (ē für η, ō für ω, Spiritus asper als h), z.B. "hē glōssa"' },
           deutsch: { type: 'string', description: 'Deutsche Bedeutung(en)' },
-          erklaerung: { type: 'string', description: 'Grammatikangabe oder Zusatzinfo (Genitiv, Stammformen, Hinweise), sonst leerer String' }
+          erklaerung: { type: 'string', description: 'Grammatikangabe oder Zusatzinfo (Genitiv, Stammformen, Hinweise), sonst leerer String' },
+          flexion: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Umschrift der weiteren auf der Seite angegebenen Formen, jeweils VOLL ausgeschrieben: aus "ὁ θεός, -οῦ" wird ["tou theoú"] (Genitiv mit Artikel), aus "ἀγαθός, -ή, -όν" wird ["agathḗ", "agathón"]. Leer, wenn keine Flexionsangaben auf der Seite stehen.'
+          }
         },
-        required: ['griechisch', 'umschrift', 'deutsch', 'erklaerung'],
+        required: ['griechisch', 'umschrift', 'deutsch', 'erklaerung', 'flexion'],
         additionalProperties: false
       }
     }
@@ -29,7 +34,8 @@ const SCHEMA = {
 
 const AUFTRAG = `Auf dem Bild ist eine Vokabelseite aus einem Altgriechisch-Lehrbuch (oder eine handschriftliche Vokabelliste).
 Extrahiere ALLE Vokabeleinträge vollständig und exakt — lass keinen Eintrag aus und erfinde nichts, was nicht auf der Seite steht.
-Übernimm die polytone Schreibung buchstabengetreu. Fehlt die Umschrift auf der Seite, erzeuge sie selbst nach wissenschaftlicher Konvention.`;
+Übernimm die polytone Schreibung buchstabengetreu. Fehlt die Umschrift auf der Seite, erzeuge sie selbst nach wissenschaftlicher Konvention.
+Wichtig für umschrift und flexion: abgekürzte Endungen immer zur vollen gesprochenen Form expandieren (aus "-οῦ" wird der volle Genitiv mit Artikel, z.B. "tou theoú") — aber NUR Formen aufnehmen, die auf der Seite tatsächlich angegeben sind.`;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Nur POST erlaubt' });

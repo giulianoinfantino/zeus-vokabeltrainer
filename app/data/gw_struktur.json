@@ -9,74 +9,110 @@
           "griechisch": "ἐγώ, ἐμοῦ",
           "umschrift": "egṓ",
           "deutsch": "ich",
-          "sprich": "egṓ",
-          "audio": "data/audio/gws_00_00.m4a"
+          "sprich": "egóh, emuh",
+          "audio": "data/audio/gws_00_00.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "σύ, σοῦ",
           "umschrift": "sý",
           "deutsch": "du",
-          "sprich": "sü",
-          "audio": "data/audio/gws_00_01.m4a"
+          "sprich": "sü, suh",
+          "audio": "data/audio/gws_00_01.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡμεῖς, ἡμῶν",
           "umschrift": "hēmeîs",
           "deutsch": "wir",
-          "sprich": "hähmehs",
-          "audio": "data/audio/gws_00_02.m4a"
+          "sprich": "hähmeis, hähmohn",
+          "audio": "data/audio/gws_00_02.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὑμεῖς, ὑμῶν",
           "umschrift": "hymeîs",
           "deutsch": "ihr",
-          "sprich": "hümehs",
-          "audio": "data/audio/gws_00_03.m4a"
+          "sprich": "hümeis, hümohn",
+          "audio": "data/audio/gws_00_03.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "αὐτός, -ή, -ό",
           "umschrift": "autós",
           "deutsch": "selbst; er, sie, es; derselbe",
           "erklaerung": "Mit Artikel: derselbe; obliquus: er/sie/es",
-          "sprich": "autós",
-          "audio": "data/audio/gws_00_04.m4a"
+          "sprich": "autós, autä, autó",
+          "audio": "data/audio/gws_00_04.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_04_f1.m4a",
+            "data/audio/gws_00_04_f2.m4a"
+          ]
         },
         {
           "griechisch": "οὗτος, αὕτη, τοῦτο",
           "umschrift": "hoûtos",
           "deutsch": "dieser (da)",
           "erklaerung": "Verweist meist zurück",
-          "sprich": "huhtos",
-          "audio": "data/audio/gws_00_05.m4a"
+          "sprich": "huhtos, hautä, tuhto",
+          "audio": "data/audio/gws_00_05.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_05_f1.m4a",
+            "data/audio/gws_00_05_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὅδε, ἥδε, τόδε",
           "umschrift": "hóde",
           "deutsch": "dieser (hier)",
           "erklaerung": "Verweist meist nach vorn",
-          "sprich": "hóde",
-          "audio": "data/audio/gws_00_06.m4a"
+          "sprich": "hóde, hähde, tóde",
+          "audio": "data/audio/gws_00_06.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_06_f1.m4a",
+            "data/audio/gws_00_06_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἐκεῖνος, -η, -ο",
           "umschrift": "ekeînos",
           "deutsch": "jener",
-          "sprich": "ekehnos",
-          "audio": "data/audio/gws_00_07.m4a"
+          "sprich": "ekeinos, ekeinä, ekeino",
+          "audio": "data/audio/gws_00_07.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_07_f1.m4a",
+            "data/audio/gws_00_07_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὅς, ἥ, ὅ",
           "umschrift": "hós",
           "deutsch": "der, die, das (Relativpronomen)",
-          "sprich": "hós",
-          "audio": "data/audio/gws_00_08.m4a"
+          "sprich": "hós, hä, hó",
+          "audio": "data/audio/gws_00_08.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_08_f1.m4a",
+            "data/audio/gws_00_08_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὅστις, ἥτις, ὅ τι",
           "umschrift": "hóstis",
           "deutsch": "wer auch immer; welcher",
-          "sprich": "hóstis",
-          "audio": "data/audio/gws_00_09.m4a"
+          "sprich": "hóstis, hähtis, hó ti",
+          "audio": "data/audio/gws_00_09.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_09_f1.m4a",
+            "data/audio/gws_00_09_f2.m4a"
+          ]
         },
         {
           "griechisch": "τίς; τί;",
@@ -92,57 +128,88 @@
           "deutsch": "irgendeiner, etwas",
           "erklaerung": "Enklitisch: unbestimmtes Pronomen",
           "sprich": "tis, ti",
-          "audio": "data/audio/gws_00_11.m4a"
+          "audio": "data/audio/gws_00_11.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "οὐδείς, οὐδεμία, οὐδέν",
           "umschrift": "oudeís",
           "deutsch": "keiner, niemand, nichts",
-          "sprich": "udehs",
-          "audio": "data/audio/gws_00_12.m4a"
+          "sprich": "udeis, udemía, udén",
+          "audio": "data/audio/gws_00_12.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_12_f1.m4a",
+            "data/audio/gws_00_12_f2.m4a"
+          ]
         },
         {
           "griechisch": "μηδείς, μηδεμία, μηδέν",
           "umschrift": "mēdeís",
           "deutsch": "keiner, niemand (mit μή)",
-          "sprich": "mähdehs",
-          "audio": "data/audio/gws_00_13.m4a"
+          "sprich": "mähdeis, mähdemía, mähdén",
+          "audio": "data/audio/gws_00_13.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_13_f1.m4a",
+            "data/audio/gws_00_13_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἕκαστος, -η, -ον",
           "umschrift": "hékastos",
           "deutsch": "jeder (einzelne)",
-          "sprich": "hékastos",
-          "audio": "data/audio/gws_00_14.m4a"
+          "sprich": "hékastos, hékastä, hékaston",
+          "audio": "data/audio/gws_00_14.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_14_f1.m4a",
+            "data/audio/gws_00_14_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἑκάτερος, -α, -ον",
           "umschrift": "hekáteros",
           "deutsch": "jeder von beiden",
-          "sprich": "hekáteros",
-          "audio": "data/audio/gws_00_15.m4a"
+          "sprich": "hekáteros, hekátera, hekáteron",
+          "audio": "data/audio/gws_00_15.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_15_f1.m4a",
+            "data/audio/gws_00_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἄλλος, -η, -ο",
           "umschrift": "állos",
           "deutsch": "ein anderer",
           "erklaerung": "ἄλλοι ἄλλα: die einen dies, die anderen das",
-          "sprich": "állos",
-          "audio": "data/audio/gws_00_16.m4a"
+          "sprich": "állos, állä, állo",
+          "audio": "data/audio/gws_00_16.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_16_f1.m4a",
+            "data/audio/gws_00_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἕτερος, -α, -ον",
           "umschrift": "héteros",
           "deutsch": "der andere (von zweien)",
-          "sprich": "héteros",
-          "audio": "data/audio/gws_00_17.m4a"
+          "sprich": "héteros, hétera, héteron",
+          "audio": "data/audio/gws_00_17.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_17_f1.m4a",
+            "data/audio/gws_00_17_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἑαυτοῦ, -ῆς, -οῦ",
           "umschrift": "heautoû",
           "deutsch": "seiner selbst (reflexiv)",
-          "sprich": "heautuh",
-          "audio": "data/audio/gws_00_18.m4a"
+          "sprich": "heautuh, heautähs, heautuh",
+          "audio": "data/audio/gws_00_18.m4a",
+          "flexAudio": [
+            "data/audio/gws_00_18_f1.m4a",
+            "data/audio/gws_00_18_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἀλλήλων",
@@ -169,7 +236,7 @@
           "umschrift": "eis",
           "deutsch": "in, nach (wohin?)",
           "erklaerung": "Mit Akkusativ",
-          "sprich": "ehs",
+          "sprich": "eis",
           "audio": "data/audio/gws_01_01.m4a"
         },
         {
@@ -178,7 +245,10 @@
           "deutsch": "aus, von ... her",
           "erklaerung": "Mit Genitiv; ἐξ vor Vokal",
           "sprich": "ek, ex",
-          "audio": "data/audio/gws_01_02.m4a"
+          "audio": "data/audio/gws_01_02.m4a",
+          "flexAudio": [
+            "data/audio/gws_01_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἀπό",
@@ -281,7 +351,7 @@
           "umschrift": "amphí",
           "deutsch": "um, um ... herum",
           "erklaerung": "οἱ ἀμφί τινα: jemandes Umgebung",
-          "sprich": "ampí",
+          "sprich": "amfí",
           "audio": "data/audio/gws_01_15.m4a"
         },
         {
@@ -313,7 +383,7 @@
           "umschrift": "áneu",
           "deutsch": "ohne",
           "erklaerung": "Mit Genitiv",
-          "sprich": "ánehu",
+          "sprich": "áneu",
           "audio": "data/audio/gws_01_19.m4a"
         }
       ]
@@ -385,7 +455,7 @@
           "griechisch": "τοίνυν",
           "umschrift": "toínyn",
           "deutsch": "also, nun, ferner",
-          "sprich": "tohinün",
+          "sprich": "toinün",
           "audio": "data/audio/gws_02_08.m4a"
         },
         {
@@ -400,14 +470,14 @@
           "griechisch": "οὔτε ... οὔτε",
           "umschrift": "oúte ... oúte",
           "deutsch": "weder ... noch",
-          "sprich": "úte ... úte",
+          "sprich": "úte úte",
           "audio": "data/audio/gws_02_10.m4a"
         },
         {
           "griechisch": "εἰ",
           "umschrift": "ei",
           "deutsch": "wenn, falls; ob",
-          "sprich": "eh",
+          "sprich": "ei",
           "audio": "data/audio/gws_02_11.m4a"
         },
         {
@@ -438,21 +508,21 @@
           "umschrift": "hṓste",
           "deutsch": "sodass, daher",
           "erklaerung": "Mit Infinitiv oder Indikativ",
-          "sprich": "hṓste",
+          "sprich": "hóhste",
           "audio": "data/audio/gws_02_15.m4a"
         },
         {
           "griechisch": "ἐπεί",
           "umschrift": "epeí",
           "deutsch": "als, nachdem; da, weil",
-          "sprich": "epeh",
+          "sprich": "epei",
           "audio": "data/audio/gws_02_16.m4a"
         },
         {
           "griechisch": "ἐπειδή",
           "umschrift": "epeidḗ",
           "deutsch": "nachdem, da ja",
-          "sprich": "epehdä",
+          "sprich": "epeidä",
           "audio": "data/audio/gws_02_17.m4a"
         },
         {
@@ -496,8 +566,12 @@
           "umschrift": "ou, ouk, ouch",
           "deutsch": "nicht",
           "erklaerung": "Verneinung im Aussagesatz",
-          "sprich": "u, uk, uk",
-          "audio": "data/audio/gws_03_02.m4a"
+          "sprich": "u, uk, uch",
+          "audio": "data/audio/gws_03_02.m4a",
+          "flexAudio": [
+            "data/audio/gws_03_02_f1.m4a",
+            "data/audio/gws_03_02_f2.m4a"
+          ]
         },
         {
           "griechisch": "ἕως",
@@ -511,7 +585,7 @@
           "umschrift": "méchri",
           "deutsch": "bis",
           "erklaerung": "Auch Präposition mit Genitiv",
-          "sprich": "mékri",
+          "sprich": "méchri",
           "audio": "data/audio/gws_03_04.m4a"
         },
         {
@@ -526,7 +600,7 @@
           "griechisch": "ὥσπερ",
           "umschrift": "hṓsper",
           "deutsch": "wie, gleichwie",
-          "sprich": "hṓsper",
+          "sprich": "hóhsper",
           "audio": "data/audio/gws_03_06.m4a"
         },
         {
@@ -541,7 +615,7 @@
           "griechisch": "καίτοι",
           "umschrift": "kaítoi",
           "deutsch": "und doch, freilich",
-          "sprich": "kaitohi",
+          "sprich": "kaitoi",
           "audio": "data/audio/gws_03_08.m4a"
         },
         {
@@ -555,7 +629,7 @@
           "griechisch": "εἴτε ... εἴτε",
           "umschrift": "eíte ... eíte",
           "deutsch": "sei es dass ... oder dass",
-          "sprich": "ehte ... ehte",
+          "sprich": "eite eite",
           "audio": "data/audio/gws_03_10.m4a"
         },
         {
@@ -571,7 +645,7 @@
           "umschrift": "âra",
           "deutsch": "(Fragepartikel)",
           "erklaerung": "ἆρ' οὐ: nicht wahr? ἆρα μή: doch nicht etwa?",
-          "sprich": "âra",
+          "sprich": "ahra",
           "audio": "data/audio/gws_03_12.m4a"
         },
         {
@@ -579,7 +653,7 @@
           "umschrift": "eíthe",
           "deutsch": "wenn doch! (Wunschpartikel)",
           "erklaerung": "Mit Optativ",
-          "sprich": "ehte",
+          "sprich": "eite",
           "audio": "data/audio/gws_03_13.m4a"
         },
         {
@@ -600,7 +674,7 @@
           "griechisch": "οἷ",
           "umschrift": "hoî",
           "deutsch": "wohin (Relativadverb)",
-          "sprich": "hohi",
+          "sprich": "hoi",
           "audio": "data/audio/gws_03_16.m4a"
         },
         {
@@ -622,7 +696,7 @@
           "umschrift": "hṓste mḗ",
           "deutsch": "sodass nicht",
           "erklaerung": "Mit Infinitiv",
-          "sprich": "hṓste mä",
+          "sprich": "hóhste mä",
           "audio": "data/audio/gws_03_19.m4a"
         }
       ]
@@ -657,7 +731,7 @@
           "griechisch": "τοι",
           "umschrift": "toi",
           "deutsch": "doch, bekanntlich (enklitisch)",
-          "sprich": "tohi",
+          "sprich": "toi",
           "audio": "data/audio/gws_04_03.m4a"
         },
         {
@@ -686,14 +760,14 @@
           "griechisch": "οὐδαμῶς",
           "umschrift": "oudamôs",
           "deutsch": "keineswegs",
-          "sprich": "udamôs",
+          "sprich": "udamohs",
           "audio": "data/audio/gws_04_07.m4a"
         },
         {
           "griechisch": "πῶς;",
           "umschrift": "pôs?",
           "deutsch": "wie?",
-          "sprich": "pôs",
+          "sprich": "pohs",
           "audio": "data/audio/gws_04_08.m4a"
         },
         {
@@ -714,7 +788,7 @@
           "griechisch": "ποῖ;",
           "umschrift": "poî?",
           "deutsch": "wohin?",
-          "sprich": "pohi",
+          "sprich": "poi",
           "audio": "data/audio/gws_04_11.m4a"
         },
         {
@@ -735,29 +809,37 @@
           "griechisch": "διὰ τί;",
           "umschrift": "dià tí?",
           "deutsch": "warum? weshalb?",
-          "sprich": "dià tí",
+          "sprich": "dia tí",
           "audio": "data/audio/gws_04_14.m4a"
         },
         {
           "griechisch": "πόσος, -η, -ον;",
           "umschrift": "pósos?",
           "deutsch": "wie groß? wie viel?",
-          "sprich": "pósos",
-          "audio": "data/audio/gws_04_15.m4a"
+          "sprich": "pósos, pósä, póson",
+          "audio": "data/audio/gws_04_15.m4a",
+          "flexAudio": [
+            "data/audio/gws_04_15_f1.m4a",
+            "data/audio/gws_04_15_f2.m4a"
+          ]
         },
         {
           "griechisch": "ποῖος, -α, -ον;",
           "umschrift": "poîos?",
           "deutsch": "was für ein? wie beschaffen?",
-          "sprich": "pohios",
-          "audio": "data/audio/gws_04_16.m4a"
+          "sprich": "poios, poia, poion",
+          "audio": "data/audio/gws_04_16.m4a",
+          "flexAudio": [
+            "data/audio/gws_04_16_f1.m4a",
+            "data/audio/gws_04_16_f2.m4a"
+          ]
         },
         {
           "griechisch": "ὦ",
           "umschrift": "ô",
           "deutsch": "o! (Anrede)",
           "erklaerung": "ὦ ἄνδρες Ἀθηναῖοι: ihr Männer von Athen",
-          "sprich": "ô",
+          "sprich": "oh",
           "audio": "data/audio/gws_04_17.m4a"
         },
         {
@@ -771,7 +853,7 @@
           "griechisch": "φεῦ",
           "umschrift": "pheû",
           "deutsch": "ach! wehe!",
-          "sprich": "pehu",
+          "sprich": "feu",
           "audio": "data/audio/gws_04_19.m4a"
         }
       ]
@@ -783,14 +865,14 @@
           "griechisch": "οἷόν τε ἐστί",
           "umschrift": "hoîón te estí",
           "deutsch": "es ist möglich",
-          "sprich": "hohión te estí",
+          "sprich": "hoión te estí",
           "audio": "data/audio/gws_05_00.m4a"
         },
         {
           "griechisch": "ὡς ἔπος εἰπεῖν",
           "umschrift": "hōs épos eipeîn",
           "deutsch": "sozusagen",
-          "sprich": "hohs épos ehpehn",
+          "sprich": "hohs épos eipein",
           "audio": "data/audio/gws_05_01.m4a"
         },
         {
@@ -798,21 +880,21 @@
           "umschrift": "hōs táchista",
           "deutsch": "so schnell wie möglich",
           "erklaerung": "ὡς + Superlativ: möglichst",
-          "sprich": "hohs tákista",
+          "sprich": "hohs táchista",
           "audio": "data/audio/gws_05_02.m4a"
         },
         {
           "griechisch": "κατὰ γῆν καὶ κατὰ θάλατταν",
           "umschrift": "katà gên kaì katà thálattan",
           "deutsch": "zu Land und zu Wasser",
-          "sprich": "katà gên kaì katà tálattan",
+          "sprich": "kata gähn kai kata tálattan",
           "audio": "data/audio/gws_05_03.m4a"
         },
         {
           "griechisch": "τῷ ὄντι",
           "umschrift": "tôi ónti",
           "deutsch": "in der Tat, wirklich",
-          "sprich": "tôi ónti",
+          "sprich": "toh ónti",
           "audio": "data/audio/gws_05_04.m4a"
         },
         {
@@ -826,49 +908,49 @@
           "griechisch": "κατὰ δύναμιν",
           "umschrift": "katà dýnamin",
           "deutsch": "nach Kräften",
-          "sprich": "katà dünamin",
+          "sprich": "kata dünamin",
           "audio": "data/audio/gws_05_06.m4a"
         },
         {
           "griechisch": "παρὰ δόξαν",
           "umschrift": "parà dóxan",
           "deutsch": "wider Erwarten",
-          "sprich": "parà dóxan",
+          "sprich": "para dóxan",
           "audio": "data/audio/gws_05_07.m4a"
         },
         {
           "griechisch": "ἐπὶ τούτοις",
           "umschrift": "epì toútois",
           "deutsch": "unter diesen Bedingungen, daraufhin",
-          "sprich": "epì tútohis",
+          "sprich": "epi tútois",
           "audio": "data/audio/gws_05_08.m4a"
         },
         {
           "griechisch": "ἐν τούτῳ",
           "umschrift": "en toútōi",
           "deutsch": "unterdessen, in diesem Augenblick",
-          "sprich": "en tútohi",
+          "sprich": "en tútoh",
           "audio": "data/audio/gws_05_09.m4a"
         },
         {
           "griechisch": "μετὰ ταῦτα",
           "umschrift": "metà taûta",
           "deutsch": "danach, hierauf",
-          "sprich": "metà taûta",
+          "sprich": "meta tauta",
           "audio": "data/audio/gws_05_10.m4a"
         },
         {
           "griechisch": "διὰ ταῦτα",
           "umschrift": "dià taûta",
           "deutsch": "deswegen, deshalb",
-          "sprich": "dià taûta",
+          "sprich": "dia tauta",
           "audio": "data/audio/gws_05_11.m4a"
         },
         {
           "griechisch": "τὸ λοιπόν",
           "umschrift": "tò loipón",
           "deutsch": "künftig, von nun an",
-          "sprich": "tò lohipón",
+          "sprich": "to loipón",
           "audio": "data/audio/gws_05_12.m4a"
         },
         {
@@ -882,7 +964,7 @@
           "griechisch": "οὐδὲν ἧττον",
           "umschrift": "oudèn hêtton",
           "deutsch": "nichtsdestoweniger",
-          "sprich": "udèn hêtton",
+          "sprich": "uden hähtton",
           "audio": "data/audio/gws_05_14.m4a"
         },
         {
@@ -896,14 +978,14 @@
           "griechisch": "εὖ οἶδ' ὅτι",
           "umschrift": "eû oîd' hóti",
           "deutsch": "ich weiß genau, dass",
-          "sprich": "ehu ohid' hóti",
+          "sprich": "eu oid hóti",
           "audio": "data/audio/gws_05_16.m4a"
         },
         {
           "griechisch": "χάριν ἔχειν",
           "umschrift": "chárin échein",
           "deutsch": "Dank wissen, dankbar sein",
-          "sprich": "kárin ékehn",
+          "sprich": "chárin échein",
           "audio": "data/audio/gws_05_17.m4a"
         },
         {

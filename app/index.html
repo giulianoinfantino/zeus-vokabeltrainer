@@ -1533,7 +1533,10 @@ async function offlineLaden() {
   try {
     (await (await fetch('data/index.json')).json()).forEach(f => urls.add('data/' + f));
   } catch {}
-  lektionen.forEach(l => l.vokabeln.forEach(v => { if (v.audio) urls.add(v.audio); }));
+  lektionen.forEach(l => l.vokabeln.forEach(v => {
+    if (v.audio) urls.add(v.audio);
+    (v.flexAudio || []).forEach(a => urls.add(a));
+  }));
   const liste = [...urls];
   const cache = await caches.open('zeus-v1');
   let ok = 0, fehler = 0;
@@ -2314,23 +2317,34 @@ document.addEventListener('touchstart', () => SFX.init(), { once: true });
 document.addEventListener('click', () => SFX.init(), { once: true });
 
 /* ═══════════ AUDIO ═══════════ */
-function audioAbspielen(v) {
-  const btn = document.getElementById('lc-audio');
-  if (v.audio) {
-    if (!audioCache[v.audio]) audioCache[v.audio] = new Audio(v.audio);
-    const a = audioCache[v.audio];
-    a.currentTime = 0;
-    btn.classList.add('playing');
-    a.play().catch(() => {});
-    a.onended = () => btn.classList.remove('playing');
-    setTimeout(() => btn.classList.remove('playing'), 3000);
-  } else if ('speechSynthesis' in window) {
-    btn.classList.add('playing');
+// Lemma + Flexions-Chunks nacheinander, mit kurzer Pause wie beim Diktieren
+function vokabelVorlesen(v, fertig) {
+  const dateien = v.audio ? [v.audio, ...(v.flexAudio || [])] : [];
+  if (!dateien.length) {
+    if (!('speechSynthesis' in window)) { if (fertig) fertig(); return; }
     const u = new SpeechSynthesisUtterance(v.sprich || v.umschrift);
     u.lang = 'de-DE'; u.rate = 0.8;
-    u.onend = () => btn.classList.remove('playing');
+    u.onend = () => { if (fertig) fertig(); };
     speechSynthesis.speak(u);
+    return;
   }
+  const naechste = i => {
+    if (i >= dateien.length) { if (fertig) fertig(); return; }
+    if (!audioCache[dateien[i]]) audioCache[dateien[i]] = new Audio(dateien[i]);
+    const a = audioCache[dateien[i]];
+    a.currentTime = 0;
+    a.onended = () => setTimeout(() => naechste(i + 1), 250);
+    a.play().catch(() => { if (fertig) fertig(); });
+  };
+  naechste(0);
+}
+
+function audioAbspielen(v) {
+  const btn = document.getElementById('lc-audio');
+  btn.classList.add('playing');
+  const aus = () => btn.classList.remove('playing');
+  vokabelVorlesen(v, aus);
+  setTimeout(aus, 9000);
 }
 function sprechen(e) {
   e.stopPropagation();
@@ -2617,17 +2631,7 @@ function wortschatzAufbauen() {
         <div class="voc-de">${v.deutsch}</div>
         <div class="voc-stage-tag" style="color:${STUFEN[f.phase].hex}">${STUFEN[f.phase].name}</div>
       </div>`;
-    el.querySelector('.voc-play').onclick = () => {
-      if (v.audio) {
-        if (!audioCache[v.audio]) audioCache[v.audio] = new Audio(v.audio);
-        audioCache[v.audio].currentTime = 0;
-        audioCache[v.audio].play().catch(() => {});
-      } else if ('speechSynthesis' in window) {
-        const u = new SpeechSynthesisUtterance(v.sprich || v.umschrift);
-        u.lang = 'de-DE'; u.rate = 0.8;
-        speechSynthesis.speak(u);
-      }
-    };
+    el.querySelector('.voc-play').onclick = () => vokabelVorlesen(v);
     list.appendChild(el);
   });
   });
@@ -2749,7 +2753,7 @@ async function fotosVerarbeiten(files) {
       thumbFertig(thumbs[n], 'ok', '✓ ' + json.vokabeln.length);
       document.getElementById('imp-step2').style.display = 'none';
       schritt3Zeigen();
-      json.vokabeln.forEach((v, i) => impZeile(v.griechisch, v.umschrift, v.deutsch, v.erklaerung, i * 70));
+      json.vokabeln.forEach((v, i) => impZeile(v.griechisch, v.umschrift, v.deutsch, v.erklaerung, v.flexion, i * 70));
       gesamt += json.vokabeln.length;
       zaehlerAuf(json.vokabeln.length);
       HAPTIK.tick();
@@ -2850,19 +2854,20 @@ function zeilenAnalysieren() {
     if (!zeile) return;
     const gr = (zeile.match(GR_RE) || []).join(' ');
     const de = zeile.replace(GR_RE, '').replace(/[\d|·•:–\-—,;]+/g, ' ').replace(/\s+/g, ' ').trim();
-    if (gr) { impZeile(gr, '', de, '', n * 60); n++; }
+    if (gr) { impZeile(gr, '', de, '', [], n * 60); n++; }
   });
-  if (!n) impZeile('', '', '', '');
+  if (!n) impZeile('', '', '', '', []);
   else zaehlerAuf(n);
   schritt3Zeigen();
 }
 
-function impZeile(gr, um, de, erkl, delay) {
+function impZeile(gr, um, de, erkl, flexion, delay) {
   const rows = document.getElementById('imp-rows');
   const div = document.createElement('div');
   div.className = 'imp-row neu';
   if (delay) div.style.animationDelay = delay + 'ms';
   div.dataset.erkl = erkl || '';
+  div.dataset.flexion = JSON.stringify(Array.isArray(flexion) ? flexion : []);
   div.innerHTML = `
     <input class="i-gr" placeholder="γλῶσσα" value="${(gr || '').replace(/"/g, '&quot;')}" />
     <input class="i-um" placeholder="glōssa" value="${(um || '').replace(/"/g, '&quot;')}" />
@@ -2879,7 +2884,9 @@ function lektionSpeichern() {
     const gr = r.querySelector('.i-gr').value.trim();
     const um = r.querySelector('.i-um').value.trim();
     const de = r.querySelector('.i-de').value.trim();
-    if (gr && de) vokabeln.push({ griechisch: gr, umschrift: um, deutsch: de, erklaerung: r.dataset.erkl || '' });
+    let flexion = [];
+    try { flexion = JSON.parse(r.dataset.flexion || '[]'); } catch {}
+    if (gr && de) vokabeln.push({ griechisch: gr, umschrift: um, deutsch: de, erklaerung: r.dataset.erkl || '', flexion });
   });
   if (!vokabeln.length) { toast('Keine gültigen Vokabeln gefunden'); return; }
 
@@ -2907,6 +2914,33 @@ function lektionSpeichern() {
 
   toast(`„${titel}" gespeichert — ${vokabeln.length} Vokabeln ⚡`);
   tabZu('bibliothek');
+  lektionVertonen(lek);   // im Hintergrund mit Marlena nachvertonen
+}
+
+// Eigene Vokabeln serverseitig (ElevenLabs, gleiche Stimme) vertonen.
+// Pro Vokabel: Grundform-Chunk + Flexions-Chunks → audio + flexAudio.
+async function lektionVertonen(lek) {
+  for (const v of lek.vokabeln) {
+    const grund = (v.umschrift || '').trim();
+    if (!grund) continue;
+    const chunks = [grund, ...(Array.isArray(v.flexion) ? v.flexion : []).filter(Boolean)];
+    try {
+      const r = await fetch('/api/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chunks })
+      });
+      if (!r.ok) continue;          // bleibt beim speechSynthesis-Fallback
+      const { urls } = await r.json();
+      if (!urls || !urls[0]) continue;
+      v.audio = urls[0];
+      const flex = urls.slice(1).filter(Boolean);
+      if (flex.length) v.flexAudio = flex;
+    } catch { /* offline o.ä. → Fallback-Stimme */ }
+    speichereEigeneLektionen();     // inkrementell sichern
+  }
+  // Falls die Bibliothek gerade offen ist: fällige-Zähler unverändert,
+  // aber neue Audio-URLs sind ab dem nächsten Abspielen aktiv.
 }
 
 function toast(msg) {

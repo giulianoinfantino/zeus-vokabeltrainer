@@ -9,29 +9,41 @@
           "griechisch": "ὁ θεός, τοῦ θεοῦ",
           "umschrift": "theós",
           "deutsch": "Gott",
-          "sprich": "teós",
-          "audio": "data/audio/gwg_00_00.m4a"
+          "sprich": "ho teós, tuh te-uh",
+          "audio": "data/audio/gwg_00_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ θεά, τῆς θεᾶς",
           "umschrift": "theá",
           "deutsch": "Göttin",
-          "sprich": "teá",
-          "audio": "data/audio/gwg_00_01.m4a"
+          "sprich": "hä teá, tähs teahs",
+          "audio": "data/audio/gwg_00_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ δαίμων, τοῦ δαίμονος",
           "umschrift": "daímōn",
           "deutsch": "Gottheit, Schicksalsmacht, Dämon",
-          "sprich": "daimohn",
-          "audio": "data/audio/gwg_00_02.m4a"
+          "sprich": "ho daimohn, tuh daimonos",
+          "audio": "data/audio/gwg_00_02.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ἥρως, τοῦ ἥρωος",
           "umschrift": "hḗrōs",
           "deutsch": "Heros, Halbgott, Held",
-          "sprich": "hährohs",
-          "audio": "data/audio/gwg_00_03.m4a"
+          "sprich": "ho hährohs, tuh hährohos",
+          "audio": "data/audio/gwg_00_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἀθάνατος",
@@ -60,92 +72,131 @@
           "griechisch": "ἡ εὐσέβεια, τῆς εὐσεβείας",
           "umschrift": "eusébeia",
           "deutsch": "Frömmigkeit",
-          "sprich": "ehusébeha",
-          "audio": "data/audio/gwg_00_07.m4a"
+          "sprich": "hä eusébeia, tähs eusebeias",
+          "audio": "data/audio/gwg_00_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀσέβεια, τῆς ἀσεβείας",
           "umschrift": "asébeia",
           "deutsch": "Gottlosigkeit, Frevel",
-          "sprich": "asébeha",
-          "audio": "data/audio/gwg_00_08.m4a"
+          "sprich": "hä asébeia, tähs asebeias",
+          "audio": "data/audio/gwg_00_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ θυσία, τῆς θυσίας",
           "umschrift": "thysía",
           "deutsch": "Opfer, Opferfest",
-          "sprich": "tüsía",
-          "audio": "data/audio/gwg_00_09.m4a"
+          "sprich": "hä tüsía, tähs tüsías",
+          "audio": "data/audio/gwg_00_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ἱερεῖον, τοῦ ἱερείου",
           "umschrift": "hiereîon",
           "deutsch": "Opfertier",
-          "sprich": "hierehon",
-          "audio": "data/audio/gwg_00_10.m4a"
+          "sprich": "to hiereion, tuh hiereiu",
+          "audio": "data/audio/gwg_00_10.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ βωμός, τοῦ βωμοῦ",
           "umschrift": "bōmós",
           "deutsch": "Altar",
-          "sprich": "bohmós",
-          "audio": "data/audio/gwg_00_11.m4a"
+          "sprich": "ho bohmós, tuh bohmuh",
+          "audio": "data/audio/gwg_00_11.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ εὐχή, τῆς εὐχῆς",
           "umschrift": "euchḗ",
           "deutsch": "Gebet, Gelübde, Wunsch",
-          "sprich": "ehukä",
-          "audio": "data/audio/gwg_00_12.m4a"
+          "sprich": "hä euchä, tähs euchähs",
+          "audio": "data/audio/gwg_00_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ μαντεῖον, τοῦ μαντείου",
           "umschrift": "manteîon",
           "deutsch": "Orakel, Orakelstätte",
-          "sprich": "mantehon",
-          "audio": "data/audio/gwg_00_13.m4a"
+          "sprich": "to manteion, tuh manteiu",
+          "audio": "data/audio/gwg_00_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ χρησμός, τοῦ χρησμοῦ",
           "umschrift": "chrēsmós",
           "deutsch": "Orakelspruch",
-          "sprich": "krähsmós",
-          "audio": "data/audio/gwg_00_14.m4a"
+          "sprich": "ho chrähsmós, tuh chrähsmuh",
+          "audio": "data/audio/gwg_00_14.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἑορτή, τῆς ἑορτῆς",
           "umschrift": "heortḗ",
           "deutsch": "Fest, Festtag",
-          "sprich": "heortä",
-          "audio": "data/audio/gwg_00_15.m4a"
+          "sprich": "hä heortä, tähs heortähs",
+          "audio": "data/audio/gwg_00_15.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ πομπή, τῆς πομπῆς",
           "umschrift": "pompḗ",
           "deutsch": "Festzug, Prozession; Geleit",
-          "sprich": "pompä",
-          "audio": "data/audio/gwg_00_16.m4a"
+          "sprich": "hä pompä, tähs pompähs",
+          "audio": "data/audio/gwg_00_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ χορός, τοῦ χοροῦ",
           "umschrift": "chorós",
           "deutsch": "Tanz, Chor, Reigen",
-          "sprich": "korós",
-          "audio": "data/audio/gwg_00_17.m4a"
+          "sprich": "ho chorós, tuh choruh",
+          "audio": "data/audio/gwg_00_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ὕμνος, τοῦ ὕμνου",
           "umschrift": "hýmnos",
           "deutsch": "Hymnus, Loblied",
-          "sprich": "hümnos",
-          "audio": "data/audio/gwg_00_18.m4a"
+          "sprich": "ho hümnos, tuh hümnu",
+          "audio": "data/audio/gwg_00_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ἀνάθημα, τοῦ ἀναθήματος",
           "umschrift": "anáthēma",
           "deutsch": "Weihgeschenk",
-          "sprich": "anátähma",
-          "audio": "data/audio/gwg_00_19.m4a"
+          "sprich": "to anátähma, tuh anatähmatos",
+          "audio": "data/audio/gwg_00_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_00_19_f1.m4a"
+          ]
         }
       ]
     },
@@ -157,142 +208,202 @@
           "umschrift": "Zeús",
           "deutsch": "Zeus",
           "erklaerung": "Akk. Δία, Dat. Διί",
-          "sprich": "Zehus",
-          "audio": "data/audio/gwg_01_00.m4a"
+          "sprich": "ho Zeus, tuh Diós",
+          "audio": "data/audio/gwg_01_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Ἥρα, τῆς Ἥρας",
           "umschrift": "Hḗra",
           "deutsch": "Hera",
-          "sprich": "Hähra",
-          "audio": "data/audio/gwg_01_01.m4a"
+          "sprich": "hä Hähra, tähs Hähras",
+          "audio": "data/audio/gwg_01_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ποσειδῶν, τοῦ Ποσειδῶνος",
           "umschrift": "Poseidôn",
           "deutsch": "Poseidon",
-          "sprich": "Posehdôn",
-          "audio": "data/audio/gwg_01_02.m4a"
+          "sprich": "ho Poseidohn, tuh Poseidohnos",
+          "audio": "data/audio/gwg_01_02.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Ἀθηνᾶ, τῆς Ἀθηνᾶς",
           "umschrift": "Athēnâ",
           "deutsch": "Athena",
-          "sprich": "Atähnâ",
-          "audio": "data/audio/gwg_01_03.m4a"
+          "sprich": "hä Atähnah, tähs Atähnahs",
+          "audio": "data/audio/gwg_01_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἀπόλλων, τοῦ Ἀπόλλωνος",
           "umschrift": "Apóllōn",
           "deutsch": "Apollon",
-          "sprich": "Apóllohn",
-          "audio": "data/audio/gwg_01_04.m4a"
+          "sprich": "ho Apóllohn, tuh Apóllohnos",
+          "audio": "data/audio/gwg_01_04.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Ἄρτεμις, τῆς Ἀρτέμιδος",
           "umschrift": "Ártemis",
           "deutsch": "Artemis",
-          "sprich": "Ártemis",
-          "audio": "data/audio/gwg_01_05.m4a"
+          "sprich": "hä Ártemis, tähs Artémidos",
+          "audio": "data/audio/gwg_01_05.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_05_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἑρμῆς, τοῦ Ἑρμοῦ",
           "umschrift": "Hermês",
           "deutsch": "Hermes",
-          "sprich": "Hermês",
-          "audio": "data/audio/gwg_01_06.m4a"
+          "sprich": "ho Hermähs, tuh Hermuh",
+          "audio": "data/audio/gwg_01_06.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_06_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἄρης, τοῦ Ἄρεως",
           "umschrift": "Árēs",
           "deutsch": "Ares",
-          "sprich": "Árähs",
-          "audio": "data/audio/gwg_01_07.m4a"
+          "sprich": "ho Árähs, tuh Áreohs",
+          "audio": "data/audio/gwg_01_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Ἀφροδίτη, τῆς Ἀφροδίτης",
           "umschrift": "Aphrodítē",
           "deutsch": "Aphrodite",
-          "sprich": "Aprodítä",
-          "audio": "data/audio/gwg_01_08.m4a"
+          "sprich": "hä Afrodítä, tähs Afrodítähs",
+          "audio": "data/audio/gwg_01_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἥφαιστος, τοῦ Ἡφαίστου",
           "umschrift": "Hḗphaistos",
           "deutsch": "Hephaistos",
-          "sprich": "Hähpaistos",
-          "audio": "data/audio/gwg_01_09.m4a"
+          "sprich": "ho Hähfaistos, tuh Hähfaistu",
+          "audio": "data/audio/gwg_01_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Δημήτηρ, τῆς Δήμητρος",
           "umschrift": "Dēmḗtēr",
           "deutsch": "Demeter",
-          "sprich": "Dähmähtähr",
-          "audio": "data/audio/gwg_01_10.m4a"
+          "sprich": "hä Dähmähtähr, tähs Dähmähtros",
+          "audio": "data/audio/gwg_01_10.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Διόνυσος, τοῦ Διονύσου",
           "umschrift": "Diónysos",
           "deutsch": "Dionysos",
-          "sprich": "Diónüsos",
-          "audio": "data/audio/gwg_01_11.m4a"
+          "sprich": "ho Diónüsos, tuh Dionüsu",
+          "audio": "data/audio/gwg_01_11.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Ἑστία, τῆς Ἑστίας",
           "umschrift": "Hestía",
           "deutsch": "Hestia",
-          "sprich": "Hestía",
-          "audio": "data/audio/gwg_01_12.m4a"
+          "sprich": "hä Hestía, tähs Hestías",
+          "audio": "data/audio/gwg_01_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἅιδης, τοῦ Ἅιδου",
           "umschrift": "Háidēs",
           "deutsch": "Hades, Unterwelt",
           "erklaerung": "ἐν Ἅιδου: in der Unterwelt",
-          "sprich": "Háidähs",
-          "audio": "data/audio/gwg_01_13.m4a"
+          "sprich": "ho Hahdähs, tuh Hahdu",
+          "audio": "data/audio/gwg_01_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ὄλυμπος, τοῦ Ὀλύμπου",
           "umschrift": "Ólympos",
           "deutsch": "Olymp",
-          "sprich": "Ólümpos",
-          "audio": "data/audio/gwg_01_14.m4a"
+          "sprich": "ho Ólümpos, tuh Olümpu",
+          "audio": "data/audio/gwg_01_14.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ Μοῦσα, τῆς Μούσης",
           "umschrift": "Moûsa",
           "deutsch": "Muse",
-          "sprich": "Muhsa",
-          "audio": "data/audio/gwg_01_15.m4a"
+          "sprich": "hä Muhsa, tähs Músähs",
+          "audio": "data/audio/gwg_01_15.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ νύμφη, τῆς νύμφης",
           "umschrift": "nýmphē",
           "deutsch": "Nymphe",
-          "sprich": "nümpä",
-          "audio": "data/audio/gwg_01_16.m4a"
+          "sprich": "hä nümfä, tähs nümfähs",
+          "audio": "data/audio/gwg_01_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Τιτάν, τοῦ Τιτᾶνος",
           "umschrift": "Titán",
           "deutsch": "Titan",
-          "sprich": "Titán",
-          "audio": "data/audio/gwg_01_17.m4a"
+          "sprich": "ho Titán, tuh Titahnos",
+          "audio": "data/audio/gwg_01_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Προμηθεύς, τοῦ Προμηθέως",
           "umschrift": "Promētheús",
           "deutsch": "Prometheus",
-          "sprich": "Promähtehus",
-          "audio": "data/audio/gwg_01_18.m4a"
+          "sprich": "ho Promähteus, tuh Promähtéohs",
+          "audio": "data/audio/gwg_01_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ Ἡρακλῆς, τοῦ Ἡρακλέους",
           "umschrift": "Hēraklês",
           "deutsch": "Herakles",
-          "sprich": "Hähraklês",
-          "audio": "data/audio/gwg_01_19.m4a"
+          "sprich": "ho Hähraklähs, tuh Hährakléus",
+          "audio": "data/audio/gwg_01_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_01_19_f1.m4a"
+          ]
         }
       ]
     },
@@ -304,72 +415,102 @@
           "umschrift": "noûs",
           "deutsch": "Verstand, Geist, Sinn",
           "erklaerung": "ἐν νῷ ἔχειν: beabsichtigen",
-          "sprich": "nuhs",
-          "audio": "data/audio/gwg_02_00.m4a"
+          "sprich": "ho nuhs, tuh nuh",
+          "audio": "data/audio/gwg_02_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ διάνοια, τῆς διανοίας",
           "umschrift": "diánoia",
           "deutsch": "Denken, Absicht, Verstand",
-          "sprich": "diánohia",
-          "audio": "data/audio/gwg_02_01.m4a"
+          "sprich": "hä diánoia, tähs dianoias",
+          "audio": "data/audio/gwg_02_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ φρήν, τῆς φρενός",
           "umschrift": "phrḗn",
           "deutsch": "Zwerchfell; Geist, Gemüt",
           "erklaerung": "Meist Plural: φρένες",
-          "sprich": "prähn",
-          "audio": "data/audio/gwg_02_02.m4a"
+          "sprich": "hä frähn, tähs frenós",
+          "audio": "data/audio/gwg_02_02.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ θυμός, τοῦ θυμοῦ",
           "umschrift": "thymós",
           "deutsch": "Mut, Gemüt, Zorn, Verlangen",
-          "sprich": "tümós",
-          "audio": "data/audio/gwg_02_03.m4a"
+          "sprich": "ho tümós, tuh tümuh",
+          "audio": "data/audio/gwg_02_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ καρδία, τῆς καρδίας",
           "umschrift": "kardía",
           "deutsch": "Herz",
-          "sprich": "kardía",
-          "audio": "data/audio/gwg_02_04.m4a"
+          "sprich": "hä kardía, tähs kardías",
+          "audio": "data/audio/gwg_02_04.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ μνεία, τῆς μνείας",
           "umschrift": "mneía",
           "deutsch": "Erwähnung, Gedenken",
-          "sprich": "mneha",
-          "audio": "data/audio/gwg_02_05.m4a"
+          "sprich": "hä mneia, tähs mneias",
+          "audio": "data/audio/gwg_02_05.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_05_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ λήθη, τῆς λήθης",
           "umschrift": "lḗthē",
           "deutsch": "Vergessen",
-          "sprich": "lähtä",
-          "audio": "data/audio/gwg_02_06.m4a"
+          "sprich": "hä lähtä, tähs lähtähs",
+          "audio": "data/audio/gwg_02_06.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_06_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἄγνοια, τῆς ἀγνοίας",
           "umschrift": "ágnoia",
           "deutsch": "Unwissenheit",
-          "sprich": "ágnohia",
-          "audio": "data/audio/gwg_02_07.m4a"
+          "sprich": "hä ágnoia, tähs agnoias",
+          "audio": "data/audio/gwg_02_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀμαθία, τῆς ἀμαθίας",
           "umschrift": "amathía",
           "deutsch": "Unbildung, Dummheit",
-          "sprich": "amatía",
-          "audio": "data/audio/gwg_02_08.m4a"
+          "sprich": "hä amatía, tähs amatías",
+          "audio": "data/audio/gwg_02_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ μανία, τῆς μανίας",
           "umschrift": "manía",
           "deutsch": "Wahnsinn, Raserei",
-          "sprich": "manía",
-          "audio": "data/audio/gwg_02_09.m4a"
+          "sprich": "hä manía, tähs manías",
+          "audio": "data/audio/gwg_02_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "μαίνομαι",
@@ -382,65 +523,92 @@
           "griechisch": "ἡ αἴσθησις, τῆς αἰσθήσεως",
           "umschrift": "aísthēsis",
           "deutsch": "Wahrnehmung, Sinn",
-          "sprich": "aistähsis",
-          "audio": "data/audio/gwg_02_11.m4a"
+          "sprich": "hä aistähsis, tähs aistähseohs",
+          "audio": "data/audio/gwg_02_11.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ὄψις, τῆς ὄψεως",
           "umschrift": "ópsis",
           "deutsch": "Sehen, Anblick, Aussehen",
-          "sprich": "ópsis",
-          "audio": "data/audio/gwg_02_12.m4a"
+          "sprich": "hä ópsis, tähs ópseohs",
+          "audio": "data/audio/gwg_02_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀκοή, τῆς ἀκοῆς",
           "umschrift": "akoḗ",
           "deutsch": "Gehör, Hören; Kunde",
-          "sprich": "akoä",
-          "audio": "data/audio/gwg_02_13.m4a"
+          "sprich": "hä akoä, tähs akoähs",
+          "audio": "data/audio/gwg_02_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ εἶδος, τοῦ εἴδους",
           "umschrift": "eîdos",
           "deutsch": "Aussehen, Gestalt; Art, Form",
           "erklaerung": "Bei Platon: Idee",
-          "sprich": "ehdos",
-          "audio": "data/audio/gwg_02_14.m4a"
+          "sprich": "to eidos, tuh eidus",
+          "audio": "data/audio/gwg_02_14.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἰδέα, τῆς ἰδέας",
           "umschrift": "idéa",
           "deutsch": "Gestalt, Form, Idee",
-          "sprich": "idéa",
-          "audio": "data/audio/gwg_02_15.m4a"
+          "sprich": "hä idéa, tähs idéas",
+          "audio": "data/audio/gwg_02_15.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀλήθεια, τῆς ἀληθείας",
           "umschrift": "alḗtheia",
           "deutsch": "Wahrheit",
-          "sprich": "alähteha",
-          "audio": "data/audio/gwg_02_16.m4a"
+          "sprich": "hä alähteia, tähs alähteias",
+          "audio": "data/audio/gwg_02_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ψεῦδος, τοῦ ψεύδους",
           "umschrift": "pseûdos",
           "deutsch": "Lüge, Täuschung",
-          "sprich": "psehudos",
-          "audio": "data/audio/gwg_02_17.m4a"
+          "sprich": "to pseudos, tuh pseudus",
+          "audio": "data/audio/gwg_02_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀπάτη, τῆς ἀπάτης",
           "umschrift": "apátē",
           "deutsch": "Betrug, Täuschung",
-          "sprich": "apátä",
-          "audio": "data/audio/gwg_02_18.m4a"
+          "sprich": "hä apátä, tähs apátähs",
+          "audio": "data/audio/gwg_02_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ αἴνιγμα, τοῦ αἰνίγματος",
           "umschrift": "aínigma",
           "deutsch": "Rätsel",
-          "sprich": "ainigma",
-          "audio": "data/audio/gwg_02_19.m4a"
+          "sprich": "to ainigma, tuh ainígmatos",
+          "audio": "data/audio/gwg_02_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_02_19_f1.m4a"
+          ]
         }
       ]
     },
@@ -451,143 +619,200 @@
           "griechisch": "ὁ ἔρως, τοῦ ἔρωτος",
           "umschrift": "érōs",
           "deutsch": "Liebe, Verlangen",
-          "sprich": "érohs",
-          "audio": "data/audio/gwg_03_00.m4a"
+          "sprich": "ho érohs, tuh érohtos",
+          "audio": "data/audio/gwg_03_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἡδονή, τῆς ἡδονῆς",
           "umschrift": "hēdonḗ",
           "deutsch": "Lust, Vergnügen, Genuss",
-          "sprich": "hähdonä",
-          "audio": "data/audio/gwg_03_01.m4a"
+          "sprich": "hä hähdonä, tähs hähdonähs",
+          "audio": "data/audio/gwg_03_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ χαρά, τῆς χαρᾶς",
           "umschrift": "chará",
           "deutsch": "Freude",
-          "sprich": "kará",
-          "audio": "data/audio/gwg_03_02.m4a"
+          "sprich": "hä chará, tähs charahs",
+          "audio": "data/audio/gwg_03_02.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ λύπη, τῆς λύπης",
           "umschrift": "lýpē",
           "deutsch": "Trauer, Schmerz, Kummer",
-          "sprich": "lüpä",
-          "audio": "data/audio/gwg_03_03.m4a"
+          "sprich": "hä lüpä, tähs lüpähs",
+          "audio": "data/audio/gwg_03_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ἄλγος, τοῦ ἄλγους",
           "umschrift": "álgos",
           "deutsch": "Schmerz, Leid (poet.)",
-          "sprich": "álgos",
-          "audio": "data/audio/gwg_03_04.m4a"
+          "sprich": "to álgos, tuh álgus",
+          "audio": "data/audio/gwg_03_04.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ πάθος, τοῦ πάθους",
           "umschrift": "páthos",
           "deutsch": "Leiden, Erlebnis, Affekt",
-          "sprich": "pátos",
-          "audio": "data/audio/gwg_03_05.m4a"
+          "sprich": "to pátos, tuh pátus",
+          "audio": "data/audio/gwg_03_05.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_05_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ πένθος, τοῦ πένθους",
           "umschrift": "pénthos",
           "deutsch": "Trauer, Leid",
-          "sprich": "péntos",
-          "audio": "data/audio/gwg_03_06.m4a"
+          "sprich": "to péntos, tuh péntus",
+          "audio": "data/audio/gwg_03_06.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_06_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ δάκρυον, τοῦ δακρύου",
           "umschrift": "dákryon",
           "deutsch": "Träne",
-          "sprich": "dákrüon",
-          "audio": "data/audio/gwg_03_07.m4a"
+          "sprich": "to dákrüon, tuh dakrüu",
+          "audio": "data/audio/gwg_03_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ γέλως, τοῦ γέλωτος",
           "umschrift": "gélōs",
           "deutsch": "Gelächter, Lachen",
-          "sprich": "gélohs",
-          "audio": "data/audio/gwg_03_08.m4a"
+          "sprich": "ho gélohs, tuh gélohtos",
+          "audio": "data/audio/gwg_03_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ θαῦμα, τοῦ θαύματος",
           "umschrift": "thaûma",
           "deutsch": "Wunder, Staunen",
-          "sprich": "taûma",
-          "audio": "data/audio/gwg_03_09.m4a"
+          "sprich": "to tauma, tuh taumatos",
+          "audio": "data/audio/gwg_03_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἔκπληξις, τῆς ἐκπλήξεως",
           "umschrift": "ékplēxis",
           "deutsch": "Bestürzung, Schrecken",
-          "sprich": "ékplähxis",
-          "audio": "data/audio/gwg_03_10.m4a"
+          "sprich": "hä ékplähxis, tähs ekplähxeohs",
+          "audio": "data/audio/gwg_03_10.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ μῖσος, τοῦ μίσους",
           "umschrift": "mîsos",
           "deutsch": "Hass",
-          "sprich": "mîsos",
-          "audio": "data/audio/gwg_03_11.m4a"
+          "sprich": "to mihsos, tuh mísus",
+          "audio": "data/audio/gwg_03_11.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ζῆλος, τοῦ ζήλου",
           "umschrift": "zêlos",
           "deutsch": "Eifer; Eifersucht, Neid",
-          "sprich": "zêlos",
-          "audio": "data/audio/gwg_03_12.m4a"
+          "sprich": "ho zählos, tuh zählu",
+          "audio": "data/audio/gwg_03_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ μεταμέλεια, τῆς μεταμελείας",
           "umschrift": "metaméleia",
           "deutsch": "Reue",
-          "sprich": "metaméleha",
-          "audio": "data/audio/gwg_03_13.m4a"
+          "sprich": "hä metaméleia, tähs metameleias",
+          "audio": "data/audio/gwg_03_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "μεταμέλει μοι",
           "umschrift": "metamélei moi",
           "deutsch": "ich bereue",
           "erklaerung": "Unpersönlich mit Dativ",
-          "sprich": "metaméleh mohi",
+          "sprich": "metamélei moi",
           "audio": "data/audio/gwg_03_14.m4a"
         },
         {
           "griechisch": "ὁ πόθος, τοῦ πόθου",
           "umschrift": "póthos",
           "deutsch": "Sehnsucht, Verlangen",
-          "sprich": "pótos",
-          "audio": "data/audio/gwg_03_15.m4a"
+          "sprich": "ho pótos, tuh pótu",
+          "audio": "data/audio/gwg_03_15.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἐλεημοσύνη, τῆς ἐλεημοσύνης",
           "umschrift": "eleēmosýnē",
           "deutsch": "Mitleid, Almosen",
           "erklaerung": "Vor allem biblisch",
-          "sprich": "eleähmosünä",
-          "audio": "data/audio/gwg_03_16.m4a"
+          "sprich": "hä eleähmosünä, tähs eleähmosünähs",
+          "audio": "data/audio/gwg_03_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ἔλεος, τοῦ ἐλέου",
           "umschrift": "éleos",
           "deutsch": "Mitleid, Erbarmen",
-          "sprich": "éleos",
-          "audio": "data/audio/gwg_03_17.m4a"
+          "sprich": "ho éleos, tuh eléu",
+          "audio": "data/audio/gwg_03_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀθυμία, τῆς ἀθυμίας",
           "umschrift": "athymía",
           "deutsch": "Mutlosigkeit, Verzagtheit",
-          "sprich": "atümía",
-          "audio": "data/audio/gwg_03_18.m4a"
+          "sprich": "hä atümía, tähs atümías",
+          "audio": "data/audio/gwg_03_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ εὐθυμία, τῆς εὐθυμίας",
           "umschrift": "euthymía",
           "deutsch": "Frohsinn, Heiterkeit",
-          "sprich": "ehutümía",
-          "audio": "data/audio/gwg_03_19.m4a"
+          "sprich": "hä eutümía, tähs eutümías",
+          "audio": "data/audio/gwg_03_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_03_19_f1.m4a"
+          ]
         }
       ]
     },
@@ -598,145 +823,199 @@
           "griechisch": "ἡ φιλοσοφία, τῆς φιλοσοφίας",
           "umschrift": "philosophía",
           "deutsch": "Philosophie, Liebe zur Weisheit",
-          "sprich": "pilosopía",
-          "audio": "data/audio/gwg_04_00.m4a"
+          "sprich": "hä filosofía, tähs filosofías",
+          "audio": "data/audio/gwg_04_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ φιλόσοφος, τοῦ φιλοσόφου",
           "umschrift": "philósophos",
           "deutsch": "Philosoph",
-          "sprich": "pilósopos",
-          "audio": "data/audio/gwg_04_01.m4a"
+          "sprich": "ho filósofos, tuh filosófu",
+          "audio": "data/audio/gwg_04_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "φιλοσοφέω",
           "umschrift": "philosophéō",
           "deutsch": "philosophieren",
-          "sprich": "pilosopéoh",
+          "sprich": "filosoféoh",
           "audio": "data/audio/gwg_04_02.m4a"
         },
         {
           "griechisch": "ἡ θεωρία, τῆς θεωρίας",
           "umschrift": "theōría",
           "deutsch": "Betrachtung, Schau; Festgesandtschaft",
-          "sprich": "teohría",
-          "audio": "data/audio/gwg_04_03.m4a"
+          "sprich": "hä teohría, tähs teohrías",
+          "audio": "data/audio/gwg_04_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ σκέψις, τῆς σκέψεως",
           "umschrift": "sképsis",
           "deutsch": "Betrachtung, Untersuchung",
-          "sprich": "sképsis",
-          "audio": "data/audio/gwg_04_04.m4a"
+          "sprich": "hä sképsis, tähs sképseohs",
+          "audio": "data/audio/gwg_04_04.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ζήτησις, τῆς ζητήσεως",
           "umschrift": "zḗtēsis",
           "deutsch": "Suche, Untersuchung",
-          "sprich": "zähtähsis",
-          "audio": "data/audio/gwg_04_05.m4a"
+          "sprich": "hä zähtähsis, tähs zähtähseohs",
+          "audio": "data/audio/gwg_04_05.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_05_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ πρόβλημα, τοῦ προβλήματος",
           "umschrift": "próblēma",
           "deutsch": "Aufgabe, Problem; Vorgebirge",
-          "sprich": "próblähma",
-          "audio": "data/audio/gwg_04_06.m4a"
+          "sprich": "to próblähma, tuh problähmatos",
+          "audio": "data/audio/gwg_04_06.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_06_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ὑπόθεσις, τῆς ὑποθέσεως",
           "umschrift": "hypóthesis",
           "deutsch": "Annahme, Grundlage, Thema",
-          "sprich": "hüpótesis",
-          "audio": "data/audio/gwg_04_07.m4a"
+          "sprich": "hä hüpótesis, tähs hüpotéseohs",
+          "audio": "data/audio/gwg_04_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ὁρισμός, τοῦ ὁρισμοῦ",
           "umschrift": "horismós",
           "deutsch": "Definition, Begriffsbestimmung",
-          "sprich": "horismós",
-          "audio": "data/audio/gwg_04_08.m4a"
+          "sprich": "ho horismós, tuh horismuh",
+          "audio": "data/audio/gwg_04_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ αἴτιον, τοῦ αἰτίου",
           "umschrift": "aítion",
           "deutsch": "Ursache",
-          "sprich": "aition",
-          "audio": "data/audio/gwg_04_09.m4a"
+          "sprich": "to aition, tuh aitíu",
+          "audio": "data/audio/gwg_04_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ φύσις, τῆς φύσεως",
           "umschrift": "phýsis",
           "deutsch": "Natur, Wesen, Beschaffenheit",
-          "sprich": "püsis",
-          "audio": "data/audio/gwg_04_10.m4a"
+          "sprich": "hä füsis, tähs füseohs",
+          "audio": "data/audio/gwg_04_10.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ λόγος, τοῦ λόγου",
           "umschrift": "lógos",
           "deutsch": "Vernunft, Begriff, Argument",
           "erklaerung": "Zentralbegriff der Philosophie",
-          "sprich": "lógos",
-          "audio": "data/audio/gwg_04_11.m4a"
+          "sprich": "ho lógos, tuh lógu",
+          "audio": "data/audio/gwg_04_11.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_11_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ὄν, τοῦ ὄντος",
           "umschrift": "ón",
           "deutsch": "das Seiende",
           "erklaerung": "Partizip von εἰμί; τῷ ὄντι: wirklich",
-          "sprich": "ón",
-          "audio": "data/audio/gwg_04_12.m4a"
+          "sprich": "to ón, tuh óntos",
+          "audio": "data/audio/gwg_04_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἀρχή, τῆς ἀρχῆς",
           "umschrift": "archḗ",
           "deutsch": "Ursprung, Prinzip",
           "erklaerung": "Bei den Vorsokratikern: Urgrund",
-          "sprich": "arkä",
-          "audio": "data/audio/gwg_04_13.m4a"
+          "sprich": "hä archä, tähs archähs",
+          "audio": "data/audio/gwg_04_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ στοιχεῖον, τοῦ στοιχείου",
           "umschrift": "stoicheîon",
           "deutsch": "Element, Grundstoff; Buchstabe",
-          "sprich": "ßtohikehon",
-          "audio": "data/audio/gwg_04_14.m4a"
+          "sprich": "to ßtoicheion, tuh ßtoicheiu",
+          "audio": "data/audio/gwg_04_14.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ψυχή ἀθάνατος",
           "umschrift": "psychḗ athánatos",
           "deutsch": "die unsterbliche Seele",
-          "sprich": "psükä atánatos",
+          "sprich": "hä psüchä atánatos",
           "audio": "data/audio/gwg_04_15.m4a"
         },
         {
           "griechisch": "ἡ ἀπόδειξις, τῆς ἀποδείξεως",
           "umschrift": "apódeixis",
           "deutsch": "Beweis, Darlegung",
-          "sprich": "apódehxis",
-          "audio": "data/audio/gwg_04_16.m4a"
+          "sprich": "hä apódeixis, tähs apodeixeohs",
+          "audio": "data/audio/gwg_04_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ διαλεκτική, τῆς διαλεκτικῆς",
           "umschrift": "dialektikḗ",
           "deutsch": "Dialektik, Gesprächskunst",
-          "sprich": "dialektikä",
-          "audio": "data/audio/gwg_04_17.m4a"
+          "sprich": "hä dialektikä, tähs dialektikähs",
+          "audio": "data/audio/gwg_04_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ῥητορική, τῆς ῥητορικῆς",
           "umschrift": "rhētorikḗ",
           "deutsch": "Redekunst, Rhetorik",
-          "sprich": "rähtorikä",
-          "audio": "data/audio/gwg_04_18.m4a"
+          "sprich": "hä rähtorikä, tähs rähtorikähs",
+          "audio": "data/audio/gwg_04_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ἀγαθόν, τοῦ ἀγαθοῦ",
           "umschrift": "agathón",
           "deutsch": "das Gute",
           "erklaerung": "Bei Platon: höchste Idee",
-          "sprich": "agatón",
-          "audio": "data/audio/gwg_04_19.m4a"
+          "sprich": "to agatón, tuh agatuh",
+          "audio": "data/audio/gwg_04_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_04_19_f1.m4a"
+          ]
         }
       ]
     },
@@ -747,141 +1026,198 @@
           "griechisch": "ἡ μουσική, τῆς μουσικῆς",
           "umschrift": "mousikḗ",
           "deutsch": "Musik, musische Bildung",
-          "sprich": "musikä",
-          "audio": "data/audio/gwg_05_00.m4a"
+          "sprich": "hä musikä, tähs musikähs",
+          "audio": "data/audio/gwg_05_00.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_00_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ποίησις, τῆς ποιήσεως",
           "umschrift": "poíēsis",
           "deutsch": "Dichtung; Herstellung",
-          "sprich": "pohiähsis",
-          "audio": "data/audio/gwg_05_01.m4a"
+          "sprich": "hä poiähsis, tähs poiähseohs",
+          "audio": "data/audio/gwg_05_01.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_01_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ ποίημα, τοῦ ποιήματος",
           "umschrift": "poíēma",
           "deutsch": "Gedicht, Werk",
-          "sprich": "pohiähma",
-          "audio": "data/audio/gwg_05_02.m4a"
+          "sprich": "to poiähma, tuh poiähmatos",
+          "audio": "data/audio/gwg_05_02.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_02_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ᾠδή, τῆς ᾠδῆς",
           "umschrift": "ōidḗ",
           "deutsch": "Gesang, Lied",
-          "sprich": "ohidä",
-          "audio": "data/audio/gwg_05_03.m4a"
+          "sprich": "hä ohdä, tähs ohdähs",
+          "audio": "data/audio/gwg_05_03.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_03_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ μέλος, τοῦ μέλους",
           "umschrift": "mélos",
           "deutsch": "Lied, Weise; Glied",
-          "sprich": "mélos",
-          "audio": "data/audio/gwg_05_04.m4a"
+          "sprich": "to mélos, tuh mélus",
+          "audio": "data/audio/gwg_05_04.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_04_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ λύρα, τῆς λύρας",
           "umschrift": "lýra",
           "deutsch": "Lyra, Leier",
-          "sprich": "lüra",
-          "audio": "data/audio/gwg_05_05.m4a"
+          "sprich": "hä lüra, tähs lüras",
+          "audio": "data/audio/gwg_05_05.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_05_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ κιθάρα, τῆς κιθάρας",
           "umschrift": "kithára",
           "deutsch": "Kithara, Zither",
-          "sprich": "kitára",
-          "audio": "data/audio/gwg_05_06.m4a"
+          "sprich": "hä kitára, tähs kitáras",
+          "audio": "data/audio/gwg_05_06.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_06_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ αὐλός, τοῦ αὐλοῦ",
           "umschrift": "aulós",
           "deutsch": "Aulos, Doppelflöte",
-          "sprich": "aulós",
-          "audio": "data/audio/gwg_05_07.m4a"
+          "sprich": "ho aulós, tuh auluh",
+          "audio": "data/audio/gwg_05_07.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_07_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ τραγῳδία, τῆς τραγῳδίας",
           "umschrift": "tragōidía",
           "deutsch": "Tragödie",
-          "sprich": "tragohidía",
-          "audio": "data/audio/gwg_05_08.m4a"
+          "sprich": "hä tragohdía, tähs tragohdías",
+          "audio": "data/audio/gwg_05_08.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_08_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ κωμῳδία, τῆς κωμῳδίας",
           "umschrift": "kōmōidía",
           "deutsch": "Komödie",
-          "sprich": "kohmohidía",
-          "audio": "data/audio/gwg_05_09.m4a"
+          "sprich": "hä kohmohdía, tähs kohmohdías",
+          "audio": "data/audio/gwg_05_09.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_09_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ δρᾶμα, τοῦ δράματος",
           "umschrift": "drâma",
           "deutsch": "Handlung, Drama",
-          "sprich": "drâma",
-          "audio": "data/audio/gwg_05_10.m4a"
+          "sprich": "to drahma, tuh drámatos",
+          "audio": "data/audio/gwg_05_10.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_10_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ χορός τραγικός",
           "umschrift": "chorós tragikós",
           "deutsch": "tragischer Chor",
-          "sprich": "korós tragikós",
+          "sprich": "ho chorós tragikós",
           "audio": "data/audio/gwg_05_11.m4a"
         },
         {
           "griechisch": "ὁ θεατής, τοῦ θεατοῦ",
           "umschrift": "theatḗs",
           "deutsch": "Zuschauer",
-          "sprich": "teatähs",
-          "audio": "data/audio/gwg_05_12.m4a"
+          "sprich": "ho teatähs, tuh teatuh",
+          "audio": "data/audio/gwg_05_12.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_12_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ σκηνή, τῆς σκηνῆς",
           "umschrift": "skēnḗ",
           "deutsch": "Bühne, Szene",
-          "sprich": "skähnä",
-          "audio": "data/audio/gwg_05_13.m4a"
+          "sprich": "hä skähnä, tähs skähnähs",
+          "audio": "data/audio/gwg_05_13.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_13_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ μῦθος, τοῦ μύθου",
           "umschrift": "mŷthos",
           "deutsch": "Erzählung, Mythos, Handlung",
-          "sprich": "mŷtos",
-          "audio": "data/audio/gwg_05_14.m4a"
+          "sprich": "ho mütos, tuh mütu",
+          "audio": "data/audio/gwg_05_14.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_14_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἱστορία, τῆς ἱστορίας",
           "umschrift": "historía",
           "deutsch": "Erkundung, Geschichtsschreibung",
-          "sprich": "historía",
-          "audio": "data/audio/gwg_05_15.m4a"
+          "sprich": "hä historía, tähs historías",
+          "audio": "data/audio/gwg_05_15.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_15_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ῥαψῳδός, τοῦ ῥαψῳδοῦ",
           "umschrift": "rhapsōidós",
           "deutsch": "Rhapsode, Sänger",
-          "sprich": "rapsohidós",
-          "audio": "data/audio/gwg_05_16.m4a"
+          "sprich": "ho rapsohdós, tuh rapsohduh",
+          "audio": "data/audio/gwg_05_16.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_16_f1.m4a"
+          ]
         },
         {
           "griechisch": "τὸ προοίμιον, τοῦ προοιμίου",
           "umschrift": "prooímion",
           "deutsch": "Vorspiel, Einleitung",
-          "sprich": "proohimion",
-          "audio": "data/audio/gwg_05_17.m4a"
+          "sprich": "to prooimion, tuh prooimíu",
+          "audio": "data/audio/gwg_05_17.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_17_f1.m4a"
+          ]
         },
         {
           "griechisch": "ὁ ῥυθμός, τοῦ ῥυθμοῦ",
           "umschrift": "rhythmós",
           "deutsch": "Rhythmus, Takt",
-          "sprich": "rütmós",
-          "audio": "data/audio/gwg_05_18.m4a"
+          "sprich": "ho rütmós, tuh rütmuh",
+          "audio": "data/audio/gwg_05_18.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_18_f1.m4a"
+          ]
         },
         {
           "griechisch": "ἡ ἁρμονία, τῆς ἁρμονίας",
           "umschrift": "harmonía",
           "deutsch": "Fügung, Einklang, Harmonie",
-          "sprich": "harmonía",
-          "audio": "data/audio/gwg_05_19.m4a"
+          "sprich": "hä harmonía, tähs harmonías",
+          "audio": "data/audio/gwg_05_19.m4a",
+          "flexAudio": [
+            "data/audio/gwg_05_19_f1.m4a"
+          ]
         }
       ]
     }
