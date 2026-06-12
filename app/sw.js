@@ -1,6 +1,6 @@
 /* Zeus – Service Worker: macht die App offline-fähig.
    Audio: Cache-first (unveränderlich). Rest: Netz zuerst, Cache als Fallback. */
-const CACHE = 'zeus-v1';
+const CACHE = 'zeus-v2';
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', e => {

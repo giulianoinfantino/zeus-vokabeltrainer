@@ -1538,7 +1538,7 @@ async function offlineLaden() {
     (v.flexAudio || []).forEach(a => urls.add(a));
   }));
   const liste = [...urls];
-  const cache = await caches.open('zeus-v1');
+  const cache = await caches.open('zeus-v2');
   let ok = 0, fehler = 0;
   for (let i = 0; i < liste.length; i += 25) {
     await Promise.all(liste.slice(i, i + 25).map(u =>
@@ -2919,28 +2919,55 @@ function lektionSpeichern() {
 
 // Eigene Vokabeln serverseitig (ElevenLabs, gleiche Stimme) vertonen.
 // Pro Vokabel: Grundform-Chunk + Flexions-Chunks → audio + flexAudio.
+let vertonungLaeuft = false;
+
+async function vokabelVertonen(v) {
+  const grund = (v.umschrift || '').trim();
+  if (!grund) return false;
+  const chunks = [grund, ...(Array.isArray(v.flexion) ? v.flexion : []).filter(Boolean)];
+  const r = await fetch('/api/tts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chunks })
+  });
+  if (!r.ok) throw new Error('tts ' + r.status);
+  const { urls } = await r.json();
+  if (!urls || !urls[0]) return false;
+  v.audio = urls[0];
+  const flex = urls.slice(1).filter(Boolean);
+  if (flex.length) v.flexAudio = flex; else delete v.flexAudio;
+  return true;
+}
+
 async function lektionVertonen(lek) {
   for (const v of lek.vokabeln) {
-    const grund = (v.umschrift || '').trim();
-    if (!grund) continue;
-    const chunks = [grund, ...(Array.isArray(v.flexion) ? v.flexion : []).filter(Boolean)];
-    try {
-      const r = await fetch('/api/tts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chunks })
-      });
-      if (!r.ok) continue;          // bleibt beim speechSynthesis-Fallback
-      const { urls } = await r.json();
-      if (!urls || !urls[0]) continue;
-      v.audio = urls[0];
-      const flex = urls.slice(1).filter(Boolean);
-      if (flex.length) v.flexAudio = flex;
-    } catch { /* offline o.ä. → Fallback-Stimme */ }
-    speichereEigeneLektionen();     // inkrementell sichern
+    if (v.audio) continue;
+    try { if (await vokabelVertonen(v)) speichereEigeneLektionen(); }
+    catch { /* offline / API-Fehler → speechSynthesis-Fallback, später erneut */ }
   }
-  // Falls die Bibliothek gerade offen ist: fällige-Zähler unverändert,
-  // aber neue Audio-URLs sind ab dem nächsten Abspielen aktiv.
+}
+
+// Rückwirkend: ALLE eigenen Vokabeln ohne Audio nachvertonen (z.B. vor dem
+// Feature importierte, oder wo die Vertonung beim Speichern fehlschlug).
+// Läuft beim App-Start im Hintergrund; ein Wort genau einmal (globaler Cache).
+async function eigeneNachvertonen() {
+  if (vertonungLaeuft) return;
+  const offen = [];
+  lektionen.forEach(l => { if (l.eigene) l.vokabeln.forEach(v => {
+    if (!v.audio && (v.umschrift || '').trim()) offen.push(v);
+  }); });
+  if (!offen.length) return;
+  vertonungLaeuft = true;
+  let fertig = 0, fehler = 0;
+  for (const v of offen) {
+    try { if (await vokabelVertonen(v)) { fertig++; speichereEigeneLektionen(); } }
+    catch { fehler++; if (fehler >= 3) break; }   // Server tot → abbrechen, nächster Start versucht erneut
+  }
+  vertonungLaeuft = false;
+  if (fertig) {
+    toast(`🔊 ${fertig} eigene Vokabeln nachvertont`);
+    if (document.getElementById('view-bibliothek').classList.contains('on')) bibliothekAufbauen();
+  }
 }
 
 function toast(msg) {
@@ -3054,6 +3081,7 @@ async function init() {
     else if (h === 'einstellungen') drawerZu('einstellungen');
     else if (h === 'menu') drawerOeffnen();
     if (schaden > 0) setTimeout(() => zerstoerungSequenz(schaden), 900);
+    setTimeout(eigeneNachvertonen, 2500);   // eigene Vokabeln ohne Audio nachvertonen
   } catch (e) {
     document.getElementById('fehler').style.display = 'block';
     document.getElementById('fehler').textContent = 'Fehler beim Laden: ' + e.message;
