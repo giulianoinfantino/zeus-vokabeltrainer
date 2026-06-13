@@ -1,0 +1,9 @@
+{
+  "appId": "online.zeusvokabeltrainer.app",
+  "appName": "Zeus",
+  "webDir": "app",
+  "ios": {
+    "contentInset": "always",
+    "backgroundColor": "#0a0d15"
+  }
+}

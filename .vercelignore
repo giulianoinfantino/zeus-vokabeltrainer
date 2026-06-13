@@ -1,2 +1,5 @@
 *.py
 __pycache__/
+ios/
+node_modules/
+capacitor.config.json

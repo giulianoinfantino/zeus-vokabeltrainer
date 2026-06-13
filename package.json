@@ -4,6 +4,14 @@
   "type": "module",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/core": "^8.4.0",
+    "@capacitor/ios": "^8.4.0",
     "@vercel/blob": "^1.1.1"
+  },
+  "scripts": {
+    "ios:sync": "cap sync ios",
+    "ios:open": "cap open ios",
+    "ios:build": "cap sync ios && cap open ios"
   }
 }
