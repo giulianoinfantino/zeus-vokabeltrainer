@@ -3,25 +3,28 @@
 // wird genau einmal überhaupt vertont — danach Cache-Treffer für alle Nutzer.
 import crypto from 'node:crypto';
 import { put, list } from '@vercel/blob';
-import { chunkTeile, normChunk } from './_phonetik.js';
+import { chunkTeileV3, normChunk } from './_phonetik.js';
 import { zutrittErlaubt } from './_auth.js';
 
 const VOICE_ID = 'MTTjXkEpZepLTqO0xH0f';   // Marlena
-const MODELL = 'eleven_turbo_v2_5';
+const MODELL = 'eleven_turbo_v2_5';         // χ-Pfad (Neugriechisch+el)
+const MODELL_V3 = 'eleven_v3';              // Normalpfad: Inline-IPA /…/
+const CACHE_VER = 'v3';                     // Bump invalidiert alte turbo-Aufnahmen
 const MAX_CHUNKS = 8;                       // pro Vokabel mehr als genug
 const MAX_ZEICHEN = 60;                     // pro Chunk
 const TAGES_LIMIT = 3000;                   // neue Vertonungen pro Tag (global)
 
 async function elevenlabsMp3(text, lang) {
+  const body = lang === 'v3'
+    ? { text, model_id: MODELL_V3, voice_settings: { stability: 0.5, similarity_boost: 0.75 } }
+    : { text, model_id: MODELL, language_code: lang,
+        voice_settings: { stability: 0.85, similarity_boost: 0.75, speed: 0.9 } };
   const r = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`,
     {
       method: 'POST',
       headers: { 'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        text, model_id: MODELL, language_code: lang,
-        voice_settings: { stability: 0.85, similarity_boost: 0.75, speed: 0.9 },
-      }),
+      body: JSON.stringify(body),
     });
   if (!r.ok) throw new Error(`ElevenLabs ${r.status}: ${(await r.text()).slice(0, 150)}`);
   return Buffer.from(await r.arrayBuffer());
@@ -61,22 +64,26 @@ export default async function handler(req, res) {
   let { chunks } = req.body || {};
   if (!Array.isArray(chunks) || !chunks.length)
     return res.status(400).json({ error: 'chunks fehlt' });
-  chunks = chunks.slice(0, MAX_CHUNKS).map(c => String(c).slice(0, MAX_ZEICHEN));
+  // Chunks: { g: Griechisch, u: Umschrift }. String-Fallback für ältere Clients.
+  chunks = chunks.slice(0, MAX_CHUNKS).map(c => {
+    const o = (c && typeof c === 'object') ? c : { u: String(c) };
+    return { g: String(o.g || '').slice(0, MAX_ZEICHEN), u: String(o.u || '').slice(0, MAX_ZEICHEN) };
+  });
 
   try {
     const urls = [];
     let neuErzeugt = 0;
-    for (const chunk of chunks) {
-      const norm = normChunk(chunk);
+    for (const { g, u } of chunks) {
+      const norm = normChunk(u || g);
       if (!norm) { urls.push(null); continue; }
-      const hash = crypto.createHash('sha1').update(norm).digest('hex').slice(0, 24);
+      const hash = crypto.createHash('sha1').update(`${CACHE_VER}|${norm}`).digest('hex').slice(0, 24);
       const pfad = `tts/${hash}.mp3`;
 
       let url = await blobUrl(pfad);
       if (!url) {
         if (await tagesZaehler(0) >= TAGES_LIMIT)
           return res.status(429).json({ error: 'Tageskontingent der Vertonung erschöpft — morgen wieder' });
-        const teile = chunkTeile(norm);
+        const teile = chunkTeileV3({ g, u });
         const mp3 = Buffer.concat(await Promise.all(teile.map(([t, l]) => elevenlabsMp3(t, l))));
         ({ url } = await put(pfad, mp3, {
           access: 'public', addRandomSuffix: false, contentType: 'audio/mpeg', allowOverwrite: true,

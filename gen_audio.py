@@ -33,9 +33,12 @@ import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from grc_ipa import grc_to_ipa
+
 KEY_DATEI = Path.home() / ".config/zeus/elevenlabs.key"
 VOICE_ID = "MTTjXkEpZepLTqO0xH0f"  # Marlena — deutsche Muttersprachlerin
-MODELL = "eleven_turbo_v2_5"        # unterstützt language_code-Erzwingung
+MODELL = "eleven_turbo_v2_5"        # χ-Pfad (Neugriechisch+el): language_code-Erzwingung
+MODELL_V3 = "eleven_v3"             # Normalpfad: Inline-IPA /…/ aus grc_ipa.py
 SAY_STIMME = "Sandy (German (Germany))"
 SAY_RATE = 160
 
@@ -260,6 +263,13 @@ def teile_fuer_chunk(chunk: str) -> tuple[list[tuple[str, str]], str]:
             teile.append((sp, "de"))
     return teile, " ".join(sprich)
 
+def ipa_chunk(chunk: str) -> str:
+    """Nicht-χ-Chunk → v3-Sprechtext: jedes Wort als /IPA/ (Schulaussprache,
+    Betonung+Länge aus grc_ipa.py). χ-Wörter laufen NICHT hierüber — v3 gibt
+    initiales [x] nicht zuverlässig wieder (→ s/ʃ/h), medial unsicher; die
+    bleiben auf dem turbo-Pfad (dt. medial-ch / Neugriechisch+el bei Anlaut)."""
+    return " ".join(f"/{grc_to_ipa(w)}/" for w in chunk.split() if w)
+
 def sprechtext(umschrift: str) -> tuple[str, str]:
     u = UEBERSCHREIBUNGEN.get(umschrift)
     if u is not None:
@@ -277,13 +287,14 @@ def sprechtext(umschrift: str) -> tuple[str, str]:
 def elevenlabs_mp3(text: str, key: str, lang: str = "de") -> bytes:
     url = (f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
            f"?output_format=mp3_44100_128")
-    body = json.dumps({
-        "text": text,
-        "model_id": MODELL,
-        "language_code": lang,
-        "voice_settings": {"stability": 0.85, "similarity_boost": 0.75,
-                           "speed": 0.9},
-    })
+    if lang == "v3":                     # Inline-IPA-Pfad: eleven_v3, kein language_code
+        payload = {"text": text, "model_id": MODELL_V3,
+                   "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}}
+    else:                                # χ-/Sonderpfad: turbo mit language_code-Erzwingung
+        payload = {"text": text, "model_id": MODELL, "language_code": lang,
+                   "voice_settings": {"stability": 0.85, "similarity_boost": 0.75,
+                                      "speed": 0.9}}
+    body = json.dumps(payload)
     # curl statt urllib: das python.org-Python hat keine CA-Zertifikate.
     r = subprocess.run(
         ["curl", "-sf", "-X", "POST", url,
@@ -339,11 +350,14 @@ def vokabel_vertonen(v, audio_pfad: str, basis: Path, key, neu: bool) -> str:
         if schluessel is not None:
             text, lang = sprechtext(schluessel)
             teile, sprich = [(text, lang)], text
-        elif any(translit_wort(w).lower().startswith("ch") for w in chunk.split()):
+        elif any("ch" in translit_wort(w).lower() for w in chunk.split()):
+            # χ (an- ODER inlautend) → bewährter turbo-Pfad: teile_fuer_chunk macht
+            # Neugriechisch+el für χ-Anlaut, dt. medial-ch (= korrektes [ç]/[x]) sonst.
             teile, sprich = teile_fuer_chunk(chunk)
         else:
-            text, _ = sprechtext(um)
-            teile, sprich = [(text, "de")], text
+            # Normalfall → v3 + Inline-IPA. „sprich" bleibt dt. Orthographie für den
+            # speechSynthesis-Fallback der App.
+            teile, sprich = [(ipa_chunk(chunk), "v3")], sprechtext(um)[0]
         sprich_teile.append(sprich)
         pfad = audio_pfad if k == 0 else flex_pfad(audio_pfad, k)
         texte.append((teile, pfad))

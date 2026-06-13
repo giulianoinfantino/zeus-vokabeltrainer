@@ -3139,9 +3139,14 @@ function lektionSpeichern() {
 let vertonungLaeuft = false;
 
 async function vokabelVertonen(v) {
-  const grund = (v.umschrift || '').trim();
-  if (!grund) return false;
-  const chunks = [grund, ...(Array.isArray(v.flexion) ? v.flexion : []).filter(Boolean)];
+  const grundU = (v.umschrift || '').trim();
+  if (!grundU) return false;
+  const grundG = (v.griechisch || '').split(',')[0].trim();   // Lemma in griech. Schrift
+  // Flexionen: neu = {griechisch,umschrift}-Objekte, alt-gespeichert = Umschrift-Strings
+  const flex = (Array.isArray(v.flexion) ? v.flexion : [])
+    .map(f => (typeof f === 'string') ? { u: f } : { g: f.griechisch, u: f.umschrift })
+    .filter(f => (f.u || '').trim());
+  const chunks = [{ g: grundG, u: grundU }, ...flex];
   const r = await fetch(API_BASE + '/api/tts', {
     method: 'POST',
     headers: apiHeaders(),

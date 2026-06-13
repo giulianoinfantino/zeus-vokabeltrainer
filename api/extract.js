@@ -20,8 +20,16 @@ const SCHEMA = {
           erklaerung: { type: 'string', description: 'Grammatikangabe oder Zusatzinfo (Genitiv, Stammformen, Hinweise), sonst leerer String' },
           flexion: {
             type: 'array',
-            items: { type: 'string' },
-            description: 'Umschrift der weiteren auf der Seite angegebenen Formen, jeweils VOLL ausgeschrieben: aus "ὁ θεός, -οῦ" wird ["tou theoú"] (Genitiv mit Artikel), aus "ἀγαθός, -ή, -όν" wird ["agathḗ", "agathón"]. Leer, wenn keine Flexionsangaben auf der Seite stehen.'
+            items: {
+              type: 'object',
+              properties: {
+                griechisch: { type: 'string', description: 'Die weitere Form in GRIECHISCHER Schrift, polyton (alle Akzente/Spiritus/Iota subscriptum), VOLL ausgeschrieben: aus "ὁ θεός, -οῦ" → "τοῦ θεοῦ" (Genitiv mit Artikel); aus "ἀγαθός, -ή, -όν" → "ἀγαθή" bzw. "ἀγαθόν". Mit Artikel, falls für die Form angegeben.' },
+                umschrift: { type: 'string', description: 'Wissenschaftliche lateinische Umschrift DERSELBEN Form (z.B. "tou theoú", "agathḗ", "agathón").' }
+              },
+              required: ['griechisch', 'umschrift'],
+              additionalProperties: false
+            },
+            description: 'Weitere auf der Seite angegebene Formen, jeweils VOLL ausgeschrieben in Griechisch UND Umschrift. Leer, wenn keine Flexionsangaben auf der Seite stehen.'
           }
         },
         required: ['griechisch', 'umschrift', 'deutsch', 'erklaerung', 'flexion'],
@@ -36,7 +44,7 @@ const SCHEMA = {
 const AUFTRAG = `Auf dem Bild ist eine Vokabelseite aus einem Altgriechisch-Lehrbuch (oder eine handschriftliche Vokabelliste).
 Extrahiere ALLE Vokabeleinträge vollständig und exakt — lass keinen Eintrag aus und erfinde nichts, was nicht auf der Seite steht.
 Übernimm die polytone Schreibung buchstabengetreu. Fehlt die Umschrift auf der Seite, erzeuge sie selbst nach wissenschaftlicher Konvention.
-Wichtig für umschrift und flexion: abgekürzte Endungen immer zur vollen gesprochenen Form expandieren (aus "-οῦ" wird der volle Genitiv mit Artikel, z.B. "tou theoú") — aber NUR Formen aufnehmen, die auf der Seite tatsächlich angegeben sind.`;
+Wichtig für umschrift und flexion: abgekürzte Endungen immer zur vollen gesprochenen Form expandieren (aus "-οῦ" wird der volle Genitiv mit Artikel, in Griechisch "τοῦ θεοῦ" und Umschrift "tou theoú") — aber NUR Formen aufnehmen, die auf der Seite tatsächlich angegeben sind. Jede Flexionsform IMMER in griechischer Schrift UND Umschrift angeben.`;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Nur POST erlaubt' });

@@ -1,6 +1,7 @@
 // Aussprache-Pipeline (deutsche Schulaussprache, erasmisch) — JS-Port der in
 // gen_audio.py per STT validierten Regeln. Eingabe ist die wissenschaftliche
 // Umschrift (z.B. "ho theós", "tou theoú"), wie sie die Vision-API liefert.
+import { ipaChunk } from './grc_ipa.js';
 
 // Deutsch-phonetischer Sprechtext. Reihenfolge wichtig.
 const ERSETZUNGEN = [
@@ -104,6 +105,17 @@ export function chunkTeile(umschriftChunk) {
       teile.push([sp, 'de']);
   }
   return teile;
+}
+
+// Chunk {g:Griechisch, u:Umschrift} → [[Teiltext, Sprachcode], …] für die Synthese.
+// Nicht-χ + vorhandenes Griechisch → eleven_v3 + Inline-IPA (/…/) aus grc_ipa.js;
+// χ (an- ODER inlautend) oder fehlendes Griechisch → bewährter turbo-Pfad über die
+// Umschrift (chunkTeile: Neugriechisch+el bei χ-Anlaut, dt. medial-ch sonst).
+// Deckt sich mit der Routing-Logik in gen_audio.py.
+export function chunkTeileV3({ g, u }) {
+  const griech = (g || '').normalize('NFC');
+  if (griech && !/[χΧ]/.test(griech)) return [[ipaChunk(griech), 'v3']];
+  return chunkTeile(u || '');
 }
 
 // Cache-Schlüssel: Typografie raus, Aussprache-Relevantes bleibt
