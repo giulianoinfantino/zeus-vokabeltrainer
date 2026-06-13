@@ -1230,6 +1230,18 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
 <script>
 /* ═══════════ KONFIG ═══════════ */
+// Nativer Kontext (Capacitor/iOS-App) vs. Web (Vercel-PWA).
+// Im App-Bündel gibt es keinen eigenen Server → API absolut auf Vercel zeigen
+// und per App-Token authentifizieren (im Web übernimmt das Login-Cookie).
+const NATIV = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+const API_BASE = NATIV ? 'https://www.zeus-vokabeltrainer.online' : '';
+const APP_TOKEN = 'zeus-ios-7f3a9c1e8b';   // nur Schutz gegen wahllosen Bot-Zugriff; echte Bremse ist das Tageslimit
+function apiHeaders(extra) {
+  const h = Object.assign({ 'Content-Type': 'application/json' }, extra || {});
+  if (NATIV) h['x-zeus-app'] = APP_TOKEN;
+  return h;
+}
+
 const INTERVALL = { 1: 0, 2: 1, 3: 3, 4: 7, 5: 14 };
 const STUFEN = {
   1: { name: 'Neu',        hex: '#e0566b' },
@@ -2742,9 +2754,9 @@ async function fotosVerarbeiten(files) {
     orakelStart(prefix);
     try {
       const bild = await bildVorbereiten(files[n]);
-      const r = await fetch('/api/extract', {
+      const r = await fetch(API_BASE + '/api/extract', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: apiHeaders(),
         body: JSON.stringify({ image: bild.data, media_type: bild.mediaType })
       });
       const json = await r.json();
@@ -2925,9 +2937,9 @@ async function vokabelVertonen(v) {
   const grund = (v.umschrift || '').trim();
   if (!grund) return false;
   const chunks = [grund, ...(Array.isArray(v.flexion) ? v.flexion : []).filter(Boolean)];
-  const r = await fetch('/api/tts', {
+  const r = await fetch(API_BASE + '/api/tts', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: apiHeaders(),
     body: JSON.stringify({ chunks })
   });
   if (!r.ok) throw new Error('tts ' + r.status);
@@ -3088,7 +3100,9 @@ async function init() {
   }
 }
 init();
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+// Service-Worker nur im Web (PWA). In der nativen App liegen die Assets im
+// Bündel — ein SW unter capacitor:// würde nur Probleme machen.
+if (!NATIV && 'serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 /* Splash: läuft automatisch durch und mündet direkt im Homescreen.
    Der Start-Sound spielt, wo Autoplay erlaubt ist; auf iOS holt ihn eine
    Berührung während der Animation nach (Apple-Sperre vor der ersten Geste). */

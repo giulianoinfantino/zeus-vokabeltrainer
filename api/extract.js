@@ -1,5 +1,6 @@
 // Foto einer Vokabelseite → Claude Vision → strukturierte Vokabelliste
 import Anthropic from '@anthropic-ai/sdk';
+import { zutrittErlaubt } from './_auth.js';
 
 const SCHEMA = {
   type: 'object',
@@ -42,11 +43,9 @@ export default async function handler(req, res) {
   if (!process.env.ANTHROPIC_API_KEY)
     return res.status(500).json({ error: 'ANTHROPIC_API_KEY ist auf dem Server nicht konfiguriert' });
 
-  // Gleicher Zutrittsschutz wie /app/* — sonst könnte jeder auf fremde Kosten scannen
-  const pw = process.env.ZEUS_PASSWORT || '';
-  const token = Buffer.from(pw, 'utf8').toString('base64');
-  if (pw && !(req.headers.cookie || '').includes('zeus_zutritt=' + token))
-    return res.status(401).json({ error: 'Nicht angemeldet — bitte zuerst einloggen' });
+  // Zutritt: Login-Cookie (Web) oder App-Token (iOS-App) — sonst könnte jeder auf fremde Kosten scannen
+  if (!zutrittErlaubt(req))
+    return res.status(401).json({ error: 'Nicht angemeldet' });
 
   const { image, media_type } = req.body || {};
   if (!image) return res.status(400).json({ error: 'Kein Bild übermittelt' });

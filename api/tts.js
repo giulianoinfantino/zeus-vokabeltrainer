@@ -4,6 +4,7 @@
 import crypto from 'node:crypto';
 import { put, list } from '@vercel/blob';
 import { chunkTeile, normChunk } from './_phonetik.js';
+import { zutrittErlaubt } from './_auth.js';
 
 const VOICE_ID = 'MTTjXkEpZepLTqO0xH0f';   // Marlena
 const MODELL = 'eleven_turbo_v2_5';
@@ -53,11 +54,9 @@ export default async function handler(req, res) {
   for (const env of ['ELEVENLABS_API_KEY', 'BLOB_READ_WRITE_TOKEN']) {
     if (!process.env[env]) return res.status(500).json({ error: env + ' ist nicht konfiguriert' });
   }
-  // Gleicher Zutrittsschutz wie /app/*
-  const pw = process.env.ZEUS_PASSWORT || '';
-  const token = Buffer.from(pw, 'utf8').toString('base64');
-  if (pw && !(req.headers.cookie || '').includes('zeus_zutritt=' + token))
-    return res.status(401).json({ error: 'Nicht angemeldet — bitte zuerst einloggen' });
+  // Zutritt: Login-Cookie (Web) oder App-Token (iOS-App)
+  if (!zutrittErlaubt(req))
+    return res.status(401).json({ error: 'Nicht angemeldet' });
 
   let { chunks } = req.body || {};
   if (!Array.isArray(chunks) || !chunks.length)
