@@ -749,10 +749,10 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .ws-suche-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--faint); pointer-events: none; }
 #ws-suche { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px 12px 40px; color: var(--text); font-size: 16px; }
 .heat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 14px; }
-.heat-wochentage { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 6px; }
-.heat-wochentage span { text-align: center; font-size: 10px; font-weight: 700; color: var(--faint); letter-spacing: .04em; }
-.heat-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-.hz { aspect-ratio: 1; border-radius: 4px; background: var(--surface2); }
+.heat-wochentage { display: grid; grid-template-columns: repeat(7, 26px); gap: 7px; margin-bottom: 7px; justify-content: center; }
+.heat-wochentage span { text-align: center; font-size: 10.5px; font-weight: 700; color: var(--faint); letter-spacing: .04em; }
+.heat-grid { display: grid; grid-template-columns: repeat(7, 26px); gap: 7px; justify-content: center; }
+.hz { width: 26px; height: 26px; border-radius: 6px; background: var(--surface2); }
 .hz.h1 { background: rgba(227,182,79,.32); }
 .hz.h2 { background: rgba(227,182,79,.62); }
 .hz.h3 { background: var(--gold); }
@@ -2240,7 +2240,7 @@ function heatmapZeichnen() {
   // Wochen als Zeilen, Mo–So als Spalten. Vollständiges Rechteck: von Montag
   // 9 Wochen zurück bis Sonntag der aktuellen Woche → 10×7 = 70 Zellen, lückenlos.
   const wochentag = (heute.getDay() + 6) % 7;        // Mo=0 … So=6
-  const WOCHEN = 10;
+  const WOCHEN = 4;
   const start = new Date(heute);
   start.setDate(heute.getDate() - wochentag - (WOCHEN - 1) * 7);
   for (let i = 0; i < WOCHEN * 7; i++) {
