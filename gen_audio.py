@@ -39,6 +39,7 @@ KEY_DATEI = Path.home() / ".config/zeus/elevenlabs.key"
 VOICE_ID = "MTTjXkEpZepLTqO0xH0f"  # Marlena — deutsche Muttersprachlerin
 MODELL = "eleven_turbo_v2_5"        # χ-Pfad (Neugriechisch+el): language_code-Erzwingung
 MODELL_V3 = "eleven_v3"             # Normalpfad: Inline-IPA /…/ aus grc_ipa.py
+V3_SEED = 42                        # fester Seed → konstante Stimme/Wiederholbarkeit (gemessen)
 SAY_STIMME = "Sandy (German (Germany))"
 SAY_RATE = 160
 
@@ -288,8 +289,8 @@ def elevenlabs_mp3(text: str, key: str, lang: str = "de") -> bytes:
     url = (f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
            f"?output_format=mp3_44100_128")
     if lang == "v3":                     # Inline-IPA-Pfad: eleven_v3, kein language_code
-        payload = {"text": text, "model_id": MODELL_V3,
-                   "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}}
+        payload = {"text": text, "model_id": MODELL_V3, "seed": V3_SEED,
+                   "voice_settings": {"stability": 0.5, "similarity_boost": 1.0}}
     else:                                # χ-/Sonderpfad: turbo mit language_code-Erzwingung
         payload = {"text": text, "model_id": MODELL, "language_code": lang,
                    "voice_settings": {"stability": 0.85, "similarity_boost": 0.75,

@@ -9,14 +9,15 @@ import { zutrittErlaubt } from './_auth.js';
 const VOICE_ID = 'MTTjXkEpZepLTqO0xH0f';   // Marlena
 const MODELL = 'eleven_turbo_v2_5';         // χ-Pfad (Neugriechisch+el)
 const MODELL_V3 = 'eleven_v3';              // Normalpfad: Inline-IPA /…/
-const CACHE_VER = 'v3';                     // Bump invalidiert alte turbo-Aufnahmen
+const V3_SEED = 42;                         // fester Seed → konstante Stimme (gemessen)
+const CACHE_VER = 'v3b';                    // Bump invalidiert alte Aufnahmen (neue v3-Settings)
 const MAX_CHUNKS = 8;                       // pro Vokabel mehr als genug
 const MAX_ZEICHEN = 60;                     // pro Chunk
 const TAGES_LIMIT = 3000;                   // neue Vertonungen pro Tag (global)
 
 async function elevenlabsMp3(text, lang) {
   const body = lang === 'v3'
-    ? { text, model_id: MODELL_V3, voice_settings: { stability: 0.5, similarity_boost: 0.75 } }
+    ? { text, model_id: MODELL_V3, seed: V3_SEED, voice_settings: { stability: 0.5, similarity_boost: 1.0 } }
     : { text, model_id: MODELL, language_code: lang,
         voice_settings: { stability: 0.85, similarity_boost: 0.75, speed: 0.9 } };
   const r = await fetch(
