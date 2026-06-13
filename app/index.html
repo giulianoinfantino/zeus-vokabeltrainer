@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
 <title>Zeus – Vokabeltrainer</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0a0d15" />
@@ -25,8 +25,8 @@
   --gold:     #e3b64f;
   --gold-2:   #f0cf85;
   --text:     #edf0f7;
-  --muted:    #8b94ab;
-  --faint:    #5a6379;
+  --muted:    #9aa3ba;
+  --faint:    #7e879d;
   --s1: #e0566b;
   --s2: #e58a4e;
   --s3: #e3b64f;
@@ -44,8 +44,8 @@ body.hell {
   --gold:     #b8860f;
   --gold-2:   #94690a;
   --text:     #211d14;
-  --muted:    #6e6857;
-  --faint:    #a39c87;
+  --muted:    #5f5949;
+  --faint:    #756f5b;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; touch-action: manipulation; }
@@ -76,11 +76,13 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   width: 30px; height: 30px; border-radius: 9px;
   background: linear-gradient(140deg, var(--gold), #c2922f);
   display: flex; align-items: center; justify-content: center;
-  font-size: 16px; color: #131008;
+  color: #131008;
   box-shadow: 0 2px 12px rgba(227,182,79,.3);
 }
+.brand-bolt svg { width: 17px; height: 17px; display: block; }
+.lc-audio svg { width: 19px; height: 19px; display: block; }
 .brand-name { font-size: 16px; font-weight: 800; letter-spacing: .04em; }
-.brand-sub { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 1px; }
+.brand-sub { font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 1px; }
 
 .topstats { display: flex; align-items: center; gap: 6px; }
 .chip {
@@ -184,13 +186,13 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .bau-item .nr {
   width: 23px; height: 23px; border-radius: 8px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 10.5px; font-weight: 800;
+  font-size: 11.5px; font-weight: 800;
   background: var(--surface2); color: var(--faint);
 }
 .bau-item.steht .nr { background: rgba(227,182,79,.14); color: var(--gold); }
 .bau-item .bn { color: var(--faint); font-weight: 600; }
 .bau-item.steht .bn { color: var(--text); }
-.bau-item .bs { margin-left: auto; font-size: 10.5px; font-weight: 700; color: var(--faint); text-align: right; white-space: nowrap; }
+.bau-item .bs { margin-left: auto; font-size: 11.5px; font-weight: 700; color: var(--faint); text-align: right; white-space: nowrap; }
 .bau-item.steht .bs { color: var(--s5); }
 .bau-item .kauf {
   margin-left: auto; flex-shrink: 0;
@@ -245,19 +247,21 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .city-card.beben { animation: kataShake .5s cubic-bezier(.36,.07,.19,.97); }
 
 /* ════════ STATS ════════ */
-.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
 .stat-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 16px;
   display: flex; align-items: center; gap: 14px;
 }
+.stat-card.solo { margin-bottom: 14px; gap: 16px; }
+.stat-card.solo .stat-meta { flex: 1; }
+.stat-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 0; }
 .ring { position: relative; width: 60px; height: 60px; flex-shrink: 0; }
 .ring svg { transform: rotate(-90deg); }
 .ring .ring-bg { stroke: var(--border); }
 .ring .ring-fg { stroke: var(--s5); stroke-linecap: round; transition: stroke-dashoffset .8s cubic-bezier(.22,1,.36,1); }
 .ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 800; color: var(--s5); }
 .stat-meta .n { font-size: 19px; font-weight: 800; }
-.stat-meta .l { font-size: 10.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
+.stat-meta .l { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
 
 .stages { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
 .stage-track { display: flex; height: 9px; border-radius: 6px; overflow: hidden; gap: 2px; margin-bottom: 12px; }
@@ -279,10 +283,11 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   flex: 1; max-width: 150px;
   display: flex; flex-direction: column; align-items: center; gap: 3px;
   padding: 7px 0; border: none; background: none;
-  color: var(--faint); font-size: 10.5px; font-weight: 700;
+  color: var(--faint); font-size: 11.5px; font-weight: 700;
   border-radius: 12px; transition: color .2s;
 }
-.tab .t-ico { font-size: 18px; }
+.tab .t-ico { height: 23px; display: flex; align-items: center; }
+.tab .t-ico svg { width: 23px; height: 23px; display: block; }
 .tab.on { color: var(--gold); }
 
 /* ════════ LERNEN ════════ */
@@ -314,7 +319,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 @keyframes cardIn { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
 .stage-pill {
   position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
-  font-size: 10.5px; font-weight: 800; letter-spacing: .08em;
+  font-size: 11.5px; font-weight: 800; letter-spacing: .08em;
   padding: 4px 13px; border-radius: 100px;
 }
 #lc-greek { font-size: clamp(44px, 12vw, 62px); line-height: 1.15; margin-bottom: 10px; }
@@ -356,7 +361,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 }
 .rate:hover { transform: translateY(-2px); }
 .rate:active { transform: scale(.97); }
-.rate .xp-tag { font-size: 10px; font-weight: 600; opacity: .65; letter-spacing: .03em; }
+.rate .xp-tag { font-size: 11.5px; font-weight: 600; opacity: .65; letter-spacing: .03em; }
 .r-sg { border-color: var(--s5); color: var(--s5); } .r-sg:hover { background: rgba(67,201,138,.07); }
 .r-ok { border-color: var(--s4); color: var(--s4); } .r-ok:hover { background: rgba(93,143,232,.07); }
 .r-sl { border-color: var(--s2); color: var(--s2); } .r-sl:hover { background: rgba(229,138,78,.07); }
@@ -497,7 +502,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 18px; margin-bottom: 12px;
 }
-.imp-step-n { font-size: 10px; font-weight: 800; letter-spacing: .14em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+.imp-step-n { font-size: 11.5px; font-weight: 800; letter-spacing: .14em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
 .imp-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
 .drop {
   border: 1.5px dashed var(--border2); border-radius: 12px;
@@ -524,8 +529,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .imp-row .i-um { flex: .7; color: var(--gold); font-size: 16px; }
 .imp-row .i-de { flex: 1; }
 .imp-row .i-del {
-  width: 36px; flex-shrink: 0; border-radius: 9px;
-  border: 1px solid var(--border); background: none; color: var(--faint); font-size: 14px;
+  width: 42px; min-height: 42px; flex-shrink: 0; border-radius: 9px;
+  border: 1px solid var(--border); background: none; color: var(--faint); font-size: 15px;
 }
 .imp-row .i-del:hover { color: var(--s1); border-color: var(--s1); }
 .imp-add {
@@ -566,7 +571,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .thumb-badge {
   position: absolute; right: 3px; bottom: 3px;
   background: rgba(10,13,21,.88); border-radius: 100px; padding: 2px 7px;
-  font-size: 10px; font-weight: 800; color: var(--s5);
+  font-size: 11.5px; font-weight: 800; color: var(--s5);
   animation: badgePop .35s cubic-bezier(.2,1.4,.4,1);
 }
 .imp-thumb.err .thumb-badge { color: var(--s1); }
@@ -602,9 +607,13 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .menu-btn {
   width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
   border: 1px solid var(--border); background: var(--surface);
-  color: var(--text); font-size: 15px;
+  color: var(--text);
   display: flex; align-items: center; justify-content: center;
 }
+.menu-btn svg { width: 18px; height: 18px; display: block; }
+.drawer-item .d-ico svg { width: 19px; height: 19px; display: block; }
+.drop .d-ico svg { width: 30px; height: 30px; display: block; margin: 0 auto; }
+.a-wechsel svg { width: 14px; height: 14px; vertical-align: -2px; }
 .drawer-overlay {
   position: fixed; inset: 0; z-index: 200;
   background: rgba(0,0,0,.5);
@@ -636,7 +645,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 }
 .drawer-name { font-size: 14.5px; font-weight: 800; }
 .drawer-stats { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.drawer-sektion { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 700; margin: 16px 4px 6px; }
+.drawer-sektion { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 700; margin: 16px 4px 6px; }
 .drawer-item {
   display: flex; align-items: center; gap: 12px; width: 100%;
   background: none; border: none; border-radius: 12px;
@@ -655,7 +664,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 }
 .set-row:last-child { border-bottom: none; }
 .set-label { font-size: 13px; font-weight: 600; }
-.set-hint { font-size: 10.5px; color: var(--faint); margin-top: 2px; }
+.set-hint { font-size: 11.5px; color: var(--faint); margin-top: 2px; }
 .set-row input[type="text"] {
   flex: 1; min-width: 0; background: var(--surface2); border: 1px solid var(--border);
   border-radius: 10px; padding: 9px 12px; color: var(--text); font-size: 16px;
@@ -680,7 +689,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   color: var(--text); font-size: 13px; font-weight: 600; text-align: left;
 }
 .set-aktion:last-of-type { border-bottom: none; }
-.set-hint-r { font-size: 10.5px; color: var(--faint); font-weight: 600; }
+.set-hint-r { font-size: 11.5px; color: var(--faint); font-weight: 600; }
 .btn-gefahr {
   width: 100%; padding: 13px; border: 1px solid rgba(224,86,107,.4);
   border-radius: 12px; background: rgba(224,86,107,.08);
@@ -694,7 +703,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   border-radius: var(--radius); padding: 13px 16px; margin-bottom: 16px;
 }
 .aktiv-bar .a-info { min-width: 0; }
-.aktiv-bar .a-kicker { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.aktiv-bar .a-kicker { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
 .aktiv-bar .a-name { font-size: 13.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
 .aktiv-bar .a-wechsel {
   margin-left: auto; flex-shrink: 0; border: 1px solid var(--border2);
@@ -709,7 +718,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   letter-spacing: .01em;
 }
 .sammlung-kopf .s-zahl { margin-left: auto; font-size: 11px; color: var(--faint); font-weight: 700; }
-.sammlung-kopf .s-pfeil { font-size: 10px; color: var(--faint); transition: transform .2s; }
+.sammlung-kopf .s-pfeil { font-size: 11.5px; color: var(--faint); transition: transform .2s; }
 .sammlung.zu .s-pfeil { transform: rotate(-90deg); }
 .sammlung.zu .sammlung-inhalt { display: none; }
 .ordner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
@@ -719,7 +728,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   font-size: 13px; font-weight: 700; color: var(--text); text-align: left;
 }
 .ordner-kopf .o-zahl { margin-left: auto; font-size: 11px; color: var(--faint); font-weight: 700; }
-.ordner-kopf .o-pfeil { font-size: 10px; color: var(--faint); transition: transform .2s; }
+.ordner-kopf .o-pfeil { font-size: 11.5px; color: var(--faint); transition: transform .2s; }
 .ordner.zu .o-pfeil { transform: rotate(-90deg); }
 .ordner.zu .ordner-inhalt { display: none; }
 .ordner-inhalt { border-top: 1px solid var(--border); }
@@ -730,13 +739,16 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .lek-zeile:last-child { border-bottom: none; }
 .lek-zeile .l-haupt { min-width: 0; flex: 1; }
 .lek-zeile .l-name { font-size: 12.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.lek-zeile .l-meta { font-size: 10.5px; color: var(--faint); margin-top: 2px; }
+.lek-zeile .l-meta { font-size: 11.5px; color: var(--faint); margin-top: 2px; }
 .lek-zeile.aktiv .l-name { color: var(--gold); }
-.lek-zeile .l-btn {
+.lek-zeile .l-btn, .ordner-kopf .l-btn {
   flex-shrink: 0; border: 1px solid var(--border); background: var(--surface2);
-  color: var(--muted); border-radius: 9px; padding: 6px 10px;
-  font-size: 10.5px; font-weight: 700;
+  color: var(--muted); border-radius: 9px; padding: 0 12px;
+  min-height: 40px; min-width: 40px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  font-size: 12px; font-weight: 700;
 }
+.l-btn svg { width: 16px; height: 16px; pointer-events: none; }
 .lek-zeile .l-btn.l-aktivieren { border-color: var(--border2); color: var(--muted); background: none; }
 .l-btn.an { border-color: var(--gold) !important; color: var(--gold) !important; background: rgba(227,182,79,.1) !important; }
 .ordner-neu { display: flex; gap: 8px; margin-top: 4px; }
@@ -761,7 +773,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .hz.h2 { background: rgba(227,182,79,.6); }
 .hz.h3 { background: var(--gold); }
 .hz.leer { background: none; }
-.heat-legende { display: flex; align-items: center; gap: 4px; justify-content: flex-end; margin-top: 10px; font-size: 10px; color: var(--faint); }
+.heat-legende { display: flex; align-items: center; gap: 4px; justify-content: flex-end; margin-top: 10px; font-size: 11.5px; color: var(--faint); }
 .heat-legende .hz { display: inline-block; }
 
 /* ════════ SPLASH ════════ */
@@ -801,7 +813,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   animation: splashText .6s .25s cubic-bezier(.22,1,.36,1) both;
 }
 .splash-sub {
-  margin-top: 5px; font-size: 10.5px; letter-spacing: .32em; text-transform: uppercase;
+  margin-top: 5px; font-size: 11.5px; letter-spacing: .32em; text-transform: uppercase;
   color: var(--muted); font-weight: 600;
   animation: splashText .6s .4s cubic-bezier(.22,1,.36,1) both;
 }
@@ -861,8 +873,8 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 <!-- ═══ TOP BAR ═══ -->
 <div class="topbar">
   <div class="brand">
-    <button class="menu-btn" onclick="drawerOeffnen()" aria-label="Menü">☰</button>
-    <div class="brand-bolt">⚡</div>
+    <button class="menu-btn" onclick="drawerOeffnen()" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="brand-bolt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 13.5h6L9 22l10-12.5h-6z"/></svg></div>
     <div>
       <div class="brand-name">Zeus</div>
       <div class="brand-sub">Vokabeltrainer</div>
@@ -888,15 +900,15 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
     <div class="aktiv-bar">
       <div class="a-info">
         <div class="a-kicker">Lernauswahl</div>
-        <div class="a-name" id="aktiv-name">—</div>
+        <div class="a-name" id="aktiv-name">Wird geladen…</div>
       </div>
-      <button class="a-wechsel" onclick="tabZu('bibliothek')">Wechseln 📚</button>
+      <button class="a-wechsel" onclick="tabZu('bibliothek')">Wechseln <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></button>
     </div>
 
     <div class="hero">
       <div class="hero-kicker" id="home-kicker">Lektion</div>
-      <div class="hero-title" id="home-titel">—</div>
-      <div class="hero-sub" id="home-sub">—</div>
+      <div class="hero-title" id="home-titel">Bereit zum Lernen</div>
+      <div class="hero-sub" id="home-sub">Deine Vokabeln werden geladen…</div>
       <button class="cta" id="cta-lernen" onclick="sitzungStarten()">
         Jetzt lernen <span class="badge" id="cta-due">0 fällig</span>
       </button>
@@ -911,29 +923,23 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
       </div>
     </div>
 
-    <div class="stat-row">
-      <div class="stat-card">
-        <div class="ring">
-          <svg width="60" height="60" viewBox="0 0 60 60">
-            <circle class="ring-bg" cx="30" cy="30" r="25" fill="none" stroke-width="6"/>
-            <circle class="ring-fg" id="ring-fg" cx="30" cy="30" r="25" fill="none" stroke-width="6"
-              stroke-dasharray="157" stroke-dashoffset="157"/>
-          </svg>
-          <div class="ring-label" id="ring-pct">0%</div>
-        </div>
-        <div class="stat-meta">
-          <div class="n" id="stat-mastered">0/0</div>
-          <div class="l">Wörter<br>gemeistert</div>
-        </div>
+    <div class="stat-card solo">
+      <div class="ring">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <circle class="ring-bg" cx="30" cy="30" r="25" fill="none" stroke-width="6"/>
+          <circle class="ring-fg" id="ring-fg" cx="30" cy="30" r="25" fill="none" stroke-width="6"
+            stroke-dasharray="157" stroke-dashoffset="157"/>
+        </svg>
+        <div class="ring-label" id="ring-pct">0%</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-meta" style="width:100%">
-          <div class="n" style="color:var(--gold)" id="stat-xp-total">0</div>
-          <div class="l">Gesamt-XP</div>
-          <div style="height:7px"></div>
-          <div class="n" style="font-size:14px" id="stat-next-lvl">—</div>
-          <div class="l">bis Level-Aufstieg</div>
-        </div>
+      <div class="stat-meta">
+        <div class="n" id="stat-mastered">0/0</div>
+        <div class="l">Wörter gemeistert</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-meta">
+        <div class="n" style="color:var(--gold)" id="stat-xp-total">0</div>
+        <div class="l">Gesamt-XP</div>
       </div>
     </div>
 
@@ -982,7 +988,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
         <div id="lc-deutsch"></div>
         <div id="lc-note"></div>
       </div>
-      <button class="lc-audio" id="lc-audio" onclick="sprechen(event)">♪</button>
+      <button class="lc-audio" id="lc-audio" onclick="sprechen(event)" aria-label="Aussprache anhören"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5z" fill="currentColor" stroke="none"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg></button>
     </div>
     <button class="reveal-btn" id="reveal-btn" onclick="aufdecken()">Antwort zeigen</button>
     <div class="rate-grid" id="rate-grid">
@@ -1136,7 +1142,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
       <div class="imp-step-n">Schritt 1 — Foto</div>
       <div class="imp-desc">Fotografiere eine oder mehrere Vokabelseiten deines Lehrbuchs oder lade Bilder hoch — auch mehrere auf einmal. Die Erkennung läuft über die Claude-Vision-API (präzise polytone Erkennung inkl. Umschrift). Ohne API-Schlüssel springt die lokale Browser-Texterkennung ein.</div>
       <div class="drop" id="drop" onclick="document.getElementById('imp-file').click()">
-        <span class="d-ico">📷</span>
+        <span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>
         Fotos aufnehmen oder Bilder hierher ziehen — mehrere möglich
       </div>
       <input type="file" id="imp-file" accept="image/*" multiple style="display:none" />
@@ -1168,10 +1174,10 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
 <!-- ═══ TABS ═══ -->
 <div class="tabbar" id="tabbar">
-  <button class="tab on" data-v="home" onclick="tabZu('home')"><span class="t-ico">⚡</span>Start</button>
-  <button class="tab" data-v="athen" onclick="tabZu('athen')"><span class="t-ico">🏛️</span>Athen</button>
-  <button class="tab" data-v="wortschatz" onclick="tabZu('wortschatz')"><span class="t-ico">📜</span>Wortschatz</button>
-  <button class="tab" data-v="bibliothek" onclick="tabZu('bibliothek')"><span class="t-ico">📚</span>Bibliothek</button>
+  <button class="tab on" data-v="home" onclick="tabZu('home')"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-5h5v5"/></svg></span>Start</button>
+  <button class="tab" data-v="athen" onclick="tabZu('athen')"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 12 3.2 21 8"/><path d="M3 8h18"/><path d="M5.5 8.5v9M9.5 8.5v9M14.5 8.5v9M18.5 8.5v9"/><path d="M3.5 20.5h17"/></svg></span>Athen</button>
+  <button class="tab" data-v="wortschatz" onclick="tabZu('wortschatz')"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 5 4.5 5.6v12.6C7 17.6 10 17.6 12 19"/><path d="M12 6.5C14 5 17 5 19.5 5.6v12.6C17 17.6 14 17.6 12 19"/><path d="M12 6.5V19"/></svg></span>Wortschatz</button>
+  <button class="tab" data-v="bibliothek" onclick="tabZu('bibliothek')"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h3.2v15H5z"/><path d="M9.7 4.5h3.2v15H9.7z"/><path d="M15.2 5.3l3 .5-2.2 14.4-3-.5z"/></svg></span>Bibliothek</button>
 </div>
 
 <!-- ═══ SIDEMENU ═══ -->
@@ -1185,11 +1191,11 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
     </div>
   </div>
   <div class="drawer-sektion">Inhalte</div>
-  <button class="drawer-item" onclick="drawerZu('import')"><span class="d-ico">📷</span>Import<span class="d-sub">Foto → Lektion</span></button>
-  <button class="drawer-item" onclick="drawerZu('bibliothek')"><span class="d-ico">📚</span>Bibliothek<span class="d-sub" id="drawer-lek-n"></span></button>
+  <button class="drawer-item" onclick="drawerZu('import')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>Import<span class="d-sub">Foto → Lektion</span></button>
+  <button class="drawer-item" onclick="drawerZu('bibliothek')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h3.2v15H5z"/><path d="M9.7 4.5h3.2v15H9.7z"/><path d="M15.2 5.3l3 .5-2.2 14.4-3-.5z"/></svg></span>Bibliothek<span class="d-sub" id="drawer-lek-n"></span></button>
   <div class="drawer-sektion">App</div>
-  <button class="drawer-item" onclick="drawerZu('einstellungen')"><span class="d-ico">⚙️</span>Einstellungen</button>
-  <button class="drawer-item" onclick="themeUmschalten()"><span class="d-ico">🌗</span>Design<span class="d-sub" id="drawer-theme">Dunkel</span></button>
+  <button class="drawer-item" onclick="drawerZu('einstellungen')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V20a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H4a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H10a1.6 1.6 0 0 0 1-1.5V4a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V10a1.6 1.6 0 0 0 1.5 1H20a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg></span>Einstellungen</button>
+  <button class="drawer-item" onclick="themeUmschalten()"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" fill="currentColor" fill-opacity=".0"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor" stroke="none"/></svg></span>Design<span class="d-sub" id="drawer-theme">Dunkel</span></button>
 </div>
 
 <!-- ═══ LEVEL UP ═══ -->
@@ -1491,6 +1497,18 @@ function themeAnwenden() {
   if (sch) sch.classList.toggle('an', einstellungen.hell);
   const dt = document.getElementById('drawer-theme');
   if (dt) dt.textContent = einstellungen.hell ? 'Hell' : 'Dunkel';
+  statusleisteAnpassen();
+}
+
+// Native Statusleiste an das Theme koppeln (im Web ein No-Op).
+// Style.Light = heller Hintergrund → dunkler Text; Style.Dark = umgekehrt.
+function statusleisteAnpassen() {
+  const sb = NATIV && window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
+  if (!sb) return;
+  try {
+    sb.setStyle({ style: einstellungen.hell ? 'LIGHT' : 'DARK' });
+    sb.setBackgroundColor({ color: einstellungen.hell ? '#f4f1e9' : '#0a0d15' }).catch(() => {});
+  } catch {}
 }
 function themeUmschalten() {
   einstellungen.hell = !einstellungen.hell;
@@ -1990,7 +2008,7 @@ function ordnerElement(g) {
   kopf.className = 'ordner-kopf';
   const alleAn = g.leks.length && g.leks.every(l => aktive.includes(l.id));
   kopf.innerHTML = `<span>📁 ${g.name}</span><span class="o-zahl">${g.leks.length}</span>` +
-    (!g.fest ? `<span class="l-btn o-foto" title="Fotos in diesen Ordner importieren">📷</span>` : '') +
+    (!g.fest ? `<span class="l-btn o-foto" title="Fotos in diesen Ordner importieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>` : '') +
     (g.leks.length ? `<span class="l-btn o-alle${alleAn ? ' an' : ''}">${alleAn ? 'Alle ✓' : 'Alle'}</span>` : '') +
     (!g.fest && !g.leks.length ? `<span class="o-zahl del-ordner" style="color:var(--s1)">✕</span>` : '') +
     `<span class="o-pfeil">▼</span>`;
@@ -2021,7 +2039,7 @@ function ordnerElement(g) {
         <div class="l-meta">${l.vokabeln.length} Vokabeln · ${due} fällig</div>
       </div>` +
       `<button class="l-btn l-aktivieren${an ? ' an' : ''}">${an ? 'Aktiv ✓' : 'Aktivieren'}</button>` +
-      (l.eigene ? `<button class="l-btn l-mv">📁</button><button class="l-btn l-del">✕</button>` : '');
+      (l.eigene ? `<button class="l-btn l-mv" title="In Ordner verschieben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></button><button class="l-btn l-del" title="Löschen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg></button>` : '');
     const akt = z.querySelector('button.l-aktivieren');
     if (akt) akt.onclick = () => {
       aktive = an ? aktive.filter(id => id !== l.id) : [...aktive, l.id];
@@ -2163,7 +2181,6 @@ function homeAktualisieren() {
   let gesamtXp = meta.xp;
   for (let l = 1; l < meta.level; l++) gesamtXp += xpFuerLevel(l);
   document.getElementById('stat-xp-total').textContent = gesamtXp;
-  document.getElementById('stat-next-lvl').textContent = (xpFuerLevel(meta.level) - meta.xp) + ' XP';
 
   const track = document.getElementById('stage-track');
   const legend = document.getElementById('stage-legend');
