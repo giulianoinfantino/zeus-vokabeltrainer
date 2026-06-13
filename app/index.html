@@ -35,17 +35,17 @@
   --radius: 16px;
 }
 body.hell {
-  --bg:       #f4f1e9;
-  --bg2:      #ece8dd;
-  --surface:  #fffdf7;
-  --surface2: #f1ecdf;
-  --border:   #e0d9c6;
-  --border2:  #cdc4ab;
-  --gold:     #b8860f;
-  --gold-2:   #94690a;
-  --text:     #211d14;
-  --muted:    #5f5949;
-  --faint:    #756f5b;
+  --bg:       #f3f1ec;
+  --bg2:      #eae6dd;
+  --surface:  #ffffff;
+  --surface2: #f1eee7;
+  --border:   #e7e1d4;
+  --border2:  #d8d0bf;
+  --gold:     #a9760a;
+  --gold-2:   #8a6307;
+  --text:     #211d16;
+  --muted:    #5d574a;
+  --faint:    #837c6b;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; touch-action: manipulation; }
@@ -141,9 +141,11 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   margin-bottom: 14px;
   display: flex; align-items: center; gap: 16px;
 }
-.streak-flame { font-size: 34px; filter: drop-shadow(0 0 14px rgba(240,138,75,.5)); }
+.streak-flame { color: #f08a4b; flex-shrink: 0; filter: drop-shadow(0 0 12px rgba(240,138,75,.45)); }
+.streak-flame svg { width: 32px; height: 32px; display: block; }
+.flame-ico { width: 13px; height: 13px; color: #f08a4b; flex-shrink: 0; }
 .streak-card.kalt { background: var(--surface); border-color: var(--border); }
-.streak-card.kalt .streak-flame { filter: grayscale(1) opacity(.4); }
+.streak-card.kalt .streak-flame { color: var(--faint); filter: none; opacity: .55; }
 .streak-big { font-size: 26px; font-weight: 800; line-height: 1.1; }
 .streak-big .streak-unit { font-size: 13px; color: var(--muted); font-weight: 700; margin-left: 7px; }
 .streak-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
@@ -296,9 +298,11 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .sess-quit {
   width: 34px; height: 34px; border-radius: 50%;
   border: 1px solid var(--border); background: var(--surface);
-  color: var(--muted); font-size: 15px;
+  color: var(--muted);
   display: flex; align-items: center; justify-content: center;
 }
+.sess-quit svg { width: 15px; height: 15px; }
+.x-ico { width: 13px; height: 13px; vertical-align: -1px; pointer-events: none; }
 .sess-quit:hover { color: var(--text); border-color: var(--border2); }
 .sess-bar { flex: 1; height: 9px; background: var(--surface2); border-radius: 6px; overflow: hidden; }
 .sess-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold-2)); border-radius: 6px; transition: width .5s cubic-bezier(.22,1,.36,1); }
@@ -383,7 +387,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 
 /* ════════ FERTIG ════════ */
 .fin { text-align: center; padding-top: 24px; }
-.fin-laurel { font-size: 58px; margin-bottom: 8px; animation: pop .5s cubic-bezier(.22,1.4,.36,1); }
+.fin-laurel { color: var(--gold); margin-bottom: 8px; animation: pop .5s cubic-bezier(.22,1.4,.36,1); }
+.fin-laurel svg { width: 54px; height: 54px; }
 @keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .fin-title { font-size: 23px; font-weight: 800; margin-bottom: 5px; }
 .fin-greek { font-size: 15px; color: var(--gold); margin-bottom: 24px; }
@@ -430,7 +435,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   60% { transform: translateX(6px); }
   75% { transform: translateX(-3px); }
 }
-.kata-ico { font-size: 58px; margin-bottom: 12px; filter: drop-shadow(0 0 24px rgba(224,86,107,.5)); }
+.kata-ico { color: var(--s1); margin-bottom: 12px; filter: drop-shadow(0 0 24px rgba(224,86,107,.5)); }
+.kata-ico svg { width: 56px; height: 56px; }
 .kata-t { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: #ff8d9b; font-weight: 800; margin-bottom: 10px; }
 .kata-msg { font-size: 14.5px; color: var(--text); line-height: 1.65; margin-bottom: 10px; font-weight: 700; }
 .kata-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 22px; line-height: 1.65; }
@@ -501,8 +507,10 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .imp-row .i-de { flex: 1; }
 .imp-row .i-del {
   width: 42px; min-height: 42px; flex-shrink: 0; border-radius: 9px;
-  border: 1px solid var(--border); background: none; color: var(--faint); font-size: 15px;
+  border: 1px solid var(--border); background: none; color: var(--faint);
+  display: inline-flex; align-items: center; justify-content: center;
 }
+.imp-row .i-del svg { width: 15px; height: 15px; }
 .imp-row .i-del:hover { color: var(--s1); border-color: var(--s1); }
 .imp-add {
   width: 100%; padding: 10px; border-radius: 9px;
@@ -660,6 +668,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   color: var(--text); font-size: 13px; font-weight: 600; text-align: left;
 }
 .set-aktion:last-of-type { border-bottom: none; }
+.set-l { display: flex; align-items: center; gap: 10px; }
+.set-aktion svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
 .set-hint-r { font-size: 11.5px; color: var(--faint); font-weight: 600; }
 .btn-gefahr {
   width: 100%; padding: 13px; border: 1px solid rgba(224,86,107,.4);
@@ -688,6 +698,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   font-size: 14px; font-weight: 800; color: var(--text); text-align: left;
   letter-spacing: .01em;
 }
+.grp-name { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.grp-name svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--gold); pointer-events: none; }
 .sammlung-kopf .s-zahl { margin-left: auto; font-size: 11px; color: var(--faint); font-weight: 700; }
 .sammlung-kopf .s-pfeil { font-size: 11.5px; color: var(--faint); transition: transform .2s; }
 .sammlung.zu .s-pfeil { transform: rotate(-90deg); }
@@ -733,19 +745,21 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 }
 
 /* ════════ HEATMAP ════════ */
+.ws-suche-wrap { position: relative; margin-bottom: 14px; }
+.ws-suche-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--faint); pointer-events: none; }
+#ws-suche { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px 12px 40px; color: var(--text); font-size: 16px; }
 .heat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 14px; }
-.heat-grid {
-  display: grid; grid-template-rows: repeat(7, 11px);
-  grid-auto-flow: column; grid-auto-columns: 11px; gap: 3px;
-  justify-content: end; overflow: hidden;
-}
-.hz { width: 11px; height: 11px; border-radius: 3px; background: var(--surface2); }
-.hz.h1 { background: rgba(227,182,79,.3); }
-.hz.h2 { background: rgba(227,182,79,.6); }
+.heat-wochentage { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 6px; }
+.heat-wochentage span { text-align: center; font-size: 10px; font-weight: 700; color: var(--faint); letter-spacing: .04em; }
+.heat-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.hz { aspect-ratio: 1; border-radius: 4px; background: var(--surface2); }
+.hz.h1 { background: rgba(227,182,79,.32); }
+.hz.h2 { background: rgba(227,182,79,.62); }
 .hz.h3 { background: var(--gold); }
-.hz.leer { background: none; }
+.hz.futur { background: var(--surface2); opacity: .4; }
+.hz.heute { box-shadow: 0 0 0 2px var(--gold-2); }
 .heat-legende { display: flex; align-items: center; gap: 4px; justify-content: flex-end; margin-top: 10px; font-size: 11.5px; color: var(--faint); }
-.heat-legende .hz { display: inline-block; }
+.heat-legende .hz { display: inline-block; width: 11px; height: 11px; aspect-ratio: auto; }
 
 /* ════════ SPLASH ════════ */
 .splash {
@@ -760,11 +774,12 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .splash-blitz {
   width: 76px; height: 76px; border-radius: 22px;
   background: linear-gradient(140deg, var(--gold), #c2922f);
-  color: #131008; font-size: 40px;
+  color: #131008;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 10px 44px rgba(227,182,79,.35);
   animation: splashBolt .7s cubic-bezier(.22,1.4,.36,1) both;
 }
+.splash-blitz svg { width: 40px; height: 40px; }
 @keyframes splashBolt {
   0%   { transform: scale(.3) rotate(-14deg); opacity: 0; }
   60%  { transform: scale(1.1) rotate(3deg); opacity: 1; }
@@ -810,7 +825,8 @@ body.hell .splash { background: var(--bg); }
   background: none; border: none; color: var(--faint);
   font-size: 12.5px; font-weight: 700;
 }
-.intro-ico { font-size: 56px; margin-bottom: 22px; filter: drop-shadow(0 6px 24px rgba(227,182,79,.25)); }
+.intro-ico { color: var(--gold); margin-bottom: 22px; filter: drop-shadow(0 6px 24px rgba(227,182,79,.25)); }
+.intro-ico svg { width: 54px; height: 54px; }
 .intro-titel { font-size: 23px; font-weight: 800; margin-bottom: 12px; }
 .intro-titel .greek { color: var(--gold); }
 .intro-text { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 320px; min-height: 100px; }
@@ -822,20 +838,27 @@ body.hell .splash { background: var(--bg); }
 body.hell .intro { background: var(--bg); }
 
 /* ════════ HELLES THEME ════════ */
-body.hell .topbar { background: rgba(252,250,243,.9); }
-body.hell .tabbar { background: rgba(252,250,243,.94); }
-body.hell .hero { background: linear-gradient(150deg, #efe8d4 0%, var(--surface) 60%); }
-body.hell .learn-card { background: linear-gradient(160deg, #f3ecda 0%, var(--surface) 60%); box-shadow: 0 18px 50px rgba(120,100,60,.16); }
-body.hell .streak-card { background: linear-gradient(150deg, #f6e9cf 0%, var(--surface) 55%); border-color: #e8d6ae; }
-body.hell .brand-bolt, body.hell .drawer-avatar, body.hell .cta, body.hell .bau-item .kauf { color: #2a2008; }
+body.hell .topbar { background: rgba(255,255,255,.88); }
+body.hell .tabbar { background: rgba(255,255,255,.92); }
+/* Dezente warme Tints statt muddy Tan — Karten bleiben fast weiß */
+body.hell .hero { background: linear-gradient(150deg, #fbf6ea 0%, var(--surface) 62%); }
+body.hell .learn-card { background: linear-gradient(160deg, #fbf6ea 0%, var(--surface) 60%); box-shadow: 0 16px 44px rgba(120,100,60,.12); }
+body.hell .streak-card { background: linear-gradient(150deg, #fdf4e1 0%, var(--surface) 58%); border-color: #efe2c6; }
+body.hell .brand-bolt, body.hell .drawer-avatar, body.hell .cta, body.hell .bau-item .kauf { color: #3a2c08; }
 body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
+/* Heatmap im Hell-Modus: leere Zellen kühl-neutral, damit Gold als Gold liest */
+body.hell .hz { background: #ece8df; }
+body.hell .hz.h1 { background: rgba(169,118,10,.28); }
+body.hell .hz.h2 { background: rgba(169,118,10,.55); }
+body.hell .hz.h3 { background: var(--gold); }
+body.hell .hz.futur { background: #ece8df; }
 </style>
 </head>
 <body>
 <div class="splash" id="splash">
   <div style="position:relative;display:flex;align-items:center;justify-content:center">
     <div class="splash-halo"></div>
-    <div class="splash-blitz">⚡</div>
+    <div class="splash-blitz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 13.5h6L9 22l10-12.5h-6z"/></svg></div>
   </div>
   <div class="splash-name">Zeus</div>
   <div class="splash-sub">Vokabeltrainer</div>
@@ -853,7 +876,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
   </div>
   <div class="topstats">
     <div class="chip"><span class="drachme-ico">δρ</span> <span class="drachme-n" id="drachme-n">0</span></div>
-    <div class="chip streak-chip">🔥 <span class="streak-n" id="streak-n">0</span> <span class="gunst-mult" id="gunst-mult">×1,0</span></div>
+    <div class="chip streak-chip"><svg class="flame-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2S7 7 7 13a5 5 0 0 0 10 0c0-1.6-.6-3-1.6-4.2.1.9-.6 1.7-1.5 1.7-1.2 0-1.9-1.1-1.4-2.6C13.4 5.4 12 2 12 2z"/></svg> <span class="streak-n" id="streak-n">0</span> <span class="gunst-mult" id="gunst-mult">×1,0</span></div>
   </div>
 </div>
 
@@ -882,7 +905,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
     <!-- Streak -->
     <div class="streak-card" id="streak-card">
-      <div class="streak-flame">🔥</div>
+      <div class="streak-flame"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2S7 7 7 13a5 5 0 0 0 10 0c0-1.6-.6-3-1.6-4.2.1.9-.6 1.7-1.5 1.7-1.2 0-1.9-1.1-1.4-2.6C13.4 5.4 12 2 12 2z"/></svg></div>
       <div class="streak-info">
         <div class="streak-big"><span id="streak-big-n">0</span><span class="streak-unit" id="streak-unit">Tage</span></div>
         <div class="streak-sub" id="streak-sub">—</div>
@@ -915,6 +938,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
     <div class="heat-card">
       <div class="section-title" style="margin-bottom:12px">Lernaktivität</div>
+      <div class="heat-wochentage"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
       <div class="heat-grid" id="heat-grid"></div>
       <div class="heat-legende">weniger <span class="hz"></span><span class="hz h1"></span><span class="hz h2"></span><span class="hz h3"></span> mehr</div>
     </div>
@@ -945,7 +969,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
   <!-- ═══ LERNEN ═══ -->
   <div class="view" id="view-lernen">
     <div class="sess-top">
-      <button class="sess-quit" onclick="sitzungAbbrechen()">✕</button>
+      <button class="sess-quit" onclick="sitzungAbbrechen()" aria-label="Sitzung abbrechen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="sess-bar"><div class="sess-fill" id="sess-fill"></div></div>
       <div class="sess-count" id="sess-count">0/0</div>
     </div>
@@ -972,7 +996,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
   <!-- ═══ FERTIG ═══ -->
   <div class="view" id="view-fertig">
     <div class="fin">
-      <div class="fin-laurel">⚡</div>
+      <div class="fin-laurel"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 13.5h6L9 22l10-12.5h-6z"/></svg></div>
       <div class="fin-title">Sitzung abgeschlossen!</div>
       <div class="fin-greek greek">εὖ γε — gut gemacht!</div>
       <div class="fin-xp"><span class="n" id="fin-xp">+0</span><span class="l">Drachmen verdient</span></div>
@@ -992,8 +1016,10 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
   <!-- ═══ WORTSCHATZ ═══ -->
   <div class="view" id="view-wortschatz">
-    <input type="text" id="ws-suche" placeholder="🔍 Alle Vokabeln durchsuchen …" oninput="wortschatzAufbauen()"
-      style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:16px;margin-bottom:14px" />
+    <div class="ws-suche-wrap">
+      <svg class="ws-suche-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input type="text" id="ws-suche" placeholder="Alle Vokabeln durchsuchen …" oninput="wortschatzAufbauen()" />
+    </div>
     <div class="section-title" style="margin-bottom:14px" id="ws-titel">Wortschatz</div>
     <div id="voc-list"></div>
   </div>
@@ -1089,18 +1115,18 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 
     <div class="section-title" style="margin:22px 0 14px">Offline</div>
     <div class="set-gruppe">
-      <button class="set-aktion" onclick="offlineLaden()">📥 Alles für offline herunterladen<span class="set-hint-r" id="offline-hint">~26 MB, einmalig</span></button>
+      <button class="set-aktion" onclick="offlineLaden()"><span class="set-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4-4m-4 4-4-4"/><path d="M5 19h14"/></svg>Alles für offline herunterladen</span><span class="set-hint-r" id="offline-hint">~26 MB, einmalig</span></button>
     </div>
 
     <div class="section-title" style="margin:22px 0 14px">Hilfe</div>
     <div class="set-gruppe">
-      <button class="set-aktion" onclick="introZeigen()">🏛️ Intro erneut ansehen<span class="set-hint-r">4 kurze Seiten</span></button>
+      <button class="set-aktion" onclick="introZeigen()"><span class="set-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 12 4l9 5"/><path d="M3 9h18"/><path d="M5.5 9.5v8M9.5 9.5v8M14.5 9.5v8M18.5 9.5v8"/><path d="M3.5 21h17"/></svg>Intro erneut ansehen</span><span class="set-hint-r">4 kurze Seiten</span></button>
     </div>
 
     <div class="section-title" style="margin:22px 0 14px">Daten</div>
     <div class="set-gruppe">
-      <button class="set-aktion" onclick="spielstandExportieren()">💾 Spielstand exportieren<span class="set-hint-r">als JSON-Datei sichern</span></button>
-      <button class="set-aktion" onclick="document.getElementById('import-datei').click()">📂 Spielstand importieren<span class="set-hint-r">Sicherung einspielen</span></button>
+      <button class="set-aktion" onclick="spielstandExportieren()"><span class="set-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4"/><path d="M8 13h8v7H8z"/></svg>Spielstand exportieren</span><span class="set-hint-r">als JSON-Datei sichern</span></button>
+      <button class="set-aktion" onclick="document.getElementById('import-datei').click()"><span class="set-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4m0 0 4 4m-4-4-4 4"/><path d="M5 19h14"/></svg>Spielstand importieren</span><span class="set-hint-r">Sicherung einspielen</span></button>
       <input type="file" id="import-datei" accept=".json,application/json" style="display:none" />
     </div>
     <button class="btn-gefahr" onclick="datenZuruecksetzen()">Allen Fortschritt unwiderruflich löschen</button>
@@ -1137,7 +1163,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
       <input type="text" id="imp-titel" placeholder="Name der Lektion, z.B. Kantharos Lektion 3" />
       <div style="height:10px"></div>
       <select id="imp-ordner" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:16px"></select>
-      <button class="imp-save" onclick="lektionSpeichern()">Lektion speichern ⚡</button>
+      <button class="imp-save" onclick="lektionSpeichern()">Lektion speichern</button>
     </div>
   </div>
 </div>
@@ -1172,7 +1198,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 <!-- ═══ KATASTROPHE ═══ -->
 <div class="kata" id="kata">
   <div class="kata-box">
-    <div class="kata-ico" id="kata-ico">⚔️</div>
+    <div class="kata-ico" id="kata-ico"></div>
     <div class="kata-t">Κατάστροφή</div>
     <div class="kata-msg" id="kata-msg">—</div>
     <div class="kata-sub" id="kata-sub">—</div>
@@ -1184,7 +1210,7 @@ body.hell .drawer-overlay { background: rgba(60,50,30,.3); }
 <div class="intro" id="intro">
   <button class="intro-skip" onclick="introFertig()">Überspringen</button>
   <div class="intro-card" id="intro-card">
-    <div class="intro-ico" id="intro-ico">⚡</div>
+    <div class="intro-ico" id="intro-ico"></div>
     <div class="intro-titel" id="intro-titel">—</div>
     <div class="intro-text" id="intro-text">—</div>
   </div>
@@ -1270,13 +1296,31 @@ let combo = 0;
 let kataTotal = false;
 let audioCache = {};
 
+// ═══ Zentrale SVG-Icons (keine Emoji) ═══ currentColor, per innerHTML eingesetzt
+const ICON = {
+  bolt:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 13.5h6L9 22l10-12.5h-6z"/></svg>',
+  flame:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2S7 7 7 13a5 5 0 0 0 10 0c0-1.6-.6-3-1.6-4.2.1.9-.6 1.7-1.5 1.7-1.2 0-1.9-1.1-1.4-2.6C13.4 5.4 12 2 12 2z"/></svg>',
+  cards:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="6.5" width="13" height="13" rx="2"/><path d="M7.5 6.5V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-1.5"/><path d="M6 11h7M6 14.5h4.5"/></svg>',
+  temple: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 12 4l9 5"/><path d="M3 9h18"/><path d="M5.5 9.5v8M9.5 9.5v8M14.5 9.5v8M18.5 9.5v8"/><path d="M3.5 21h17"/></svg>',
+  storm:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 15a4 4 0 0 1-.4-7.96A5 5 0 0 1 16 7a3.5 3.5 0 0 1 1.2 6.8"/><path d="M12.5 12l-3 4.2h2.6L11 21l4-5.3h-2.6z" fill="currentColor" stroke="none"/></svg>',
+  sword:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 3l-1 5-9.5 9.5"/><path d="M21 4 11.5 13.5"/><path d="M3 21l2.5-.6L8 18l-2-2-2.4 2.5z"/><path d="M5.5 16.5 8 19"/></svg>',
+  quake:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20l4-11 2.5 5 2-3.5L21 20"/><path d="M10.5 9l-1.2 4 2.2.8-1.3 3.2"/></svg>',
+  skull:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a8 8 0 0 0-5 14.2V20a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2.8A8 8 0 0 0 12 3z"/><circle cx="9" cy="12" r="1.7"/><circle cx="15" cy="12" r="1.7"/><path d="M10.5 21v-2.5M13.5 21v-2.5"/></svg>',
+  download:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4-4m-4 4-4-4"/><path d="M5 19h14"/></svg>',
+  save:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4"/><path d="M8 13h8v7H8z"/></svg>',
+  upload: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4m0 0 4 4m-4-4-4 4"/><path d="M5 19h14"/></svg>',
+  folder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+  collection:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 11h18"/></svg>',
+  x:      '<svg class="x-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+};
+
 const KATASTROPHEN = [
-  { ico: '⚔️', text: 'Ein feindliches Heer ist über Athen hergefallen und hat geplündert!' },
-  { ico: '🌋', text: 'Poseidon, der Erderschütterer, sandte ein gewaltiges Beben!' },
-  { ico: '💀', text: 'Eine Seuche wütete in den Gassen deiner Stadt!' },
-  { ico: '🔥', text: 'Ein Großfeuer hat die Unterstadt verwüstet!' }
+  { ico: 'sword', text: 'Ein feindliches Heer ist über Athen hergefallen und hat geplündert!' },
+  { ico: 'quake', text: 'Poseidon, der Erderschütterer, sandte ein gewaltiges Beben!' },
+  { ico: 'skull', text: 'Eine Seuche wütete in den Gassen deiner Stadt!' },
+  { ico: 'flame', text: 'Ein Großfeuer hat die Unterstadt verwüstet!' }
 ];
-const ZEUS_KATA = { ico: '⚡', text: 'Drei Tage ohne Lernen — Zeus schleuderte zornig seine Blitze und legte ganz Athen in Trümmer!' };
+const ZEUS_KATA = { ico: 'bolt', text: 'Drei Tage ohne Lernen — Zeus schleuderte zornig seine Blitze und legte ganz Athen in Trümmer!' };
 
 const aktiveLeks = () => lektionen.filter(l => aktive.includes(l.id));
 const KARTEN_PRO_SITZUNG = 20;
@@ -1335,7 +1379,7 @@ function pruefeKatastrophe() {
 
 function zeigeKatastrophe(schaden) {
   const k = kataTotal ? ZEUS_KATA : KATASTROPHEN[Math.floor(Math.random() * KATASTROPHEN.length)];
-  document.getElementById('kata-ico').textContent = k.ico;
+  document.getElementById('kata-ico').innerHTML = ICON[k.ico] || '';
   document.getElementById('kata-msg').textContent = k.text;
   document.getElementById('kata-sub').textContent = meta.stadt === 0
     ? 'Alle Bauwerke wurden zerstört — Athen liegt vollständig in Trümmern. Wiederaufbau zum halben Preis: Sammle Drachmen mit richtigen Antworten und Streaks!'
@@ -1444,7 +1488,7 @@ function drawerOeffnen() {
   document.getElementById('drawer-name').textContent = name;
   document.getElementById('drawer-avatar').textContent = name.trim().charAt(0).toUpperCase() || 'Ζ';
   document.getElementById('drawer-stats').textContent =
-    `${meta.drachmen} δρ · 🔥 ${meta.streak} · ×${multZeigen(gunstStufe(meta.streak).mult)}`;
+    `${meta.drachmen} δρ · Serie ${meta.streak} · ×${multZeigen(gunstStufe(meta.streak).mult)}`;
   document.getElementById('drawer-lek-n').textContent = lektionen.length + (lektionen.length === 1 ? ' Lektion' : ' Lektionen');
   document.getElementById('drawer-theme').textContent = einstellungen.hell ? 'Hell' : 'Dunkel';
   document.getElementById('drawer').classList.add('on');
@@ -1518,7 +1562,7 @@ function einstellungenFuellen() {
   const gemeistert = Object.values(srs).filter(f => f.phase === 5).length;
   const gg = gunstStufe(meta.streak);
   document.getElementById('set-statistik').textContent =
-    `${meta.drachmen} δρ · 🔥 ${meta.streak} (${gg.titel} ×${multZeigen(gg.mult)}) · ${gemeistert} Wörter gemeistert`;
+    `${meta.drachmen} δρ · Serie ${meta.streak} (${gg.titel} ×${multZeigen(gg.mult)}) · ${gemeistert} Wörter gemeistert`;
   document.getElementById('schalter-hell').classList.toggle('an', einstellungen.hell);
   document.getElementById('schalter-audio').classList.toggle('an', einstellungen.autoAudio);
   document.getElementById('set-neue').value = String(einstellungen.neueLimit);
@@ -1566,7 +1610,7 @@ function spielstandExportieren() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
-  toast('Spielstand exportiert 💾');
+  toast('Spielstand exportiert');
 }
 
 function spielstandImportieren(datei) {
@@ -1889,7 +1933,7 @@ function kaufen(i) {
   stadtAktualisieren(true);
   SFX.kauf();
   HAPTIK.erfolg();
-  toast(`${BAUWERKE[i]} errichtet ⚡`);
+  toast(`${BAUWERKE[i]} errichtet`);
   if (i === MAX_BAU) { partikel(); setTimeout(() => SFX.levelUp(), 500); }
 }
 
@@ -1940,9 +1984,9 @@ function bibliothekAufbauen() {
 
     const kopf = document.createElement('button');
     kopf.className = 'sammlung-kopf';
-    kopf.innerHTML = `<span>🗂 ${b.name}</span>` +
+    kopf.innerHTML = `<span class="grp-name">${ICON.collection}${b.name}</span>` +
       `<span class="s-zahl">${leks.length} Lektionen</span>` +
-      (!b.fest && !b.gruppen.length ? `<span class="s-zahl del-sammlung" style="color:var(--s1)">✕</span>` : '') +
+      (!b.fest && !b.gruppen.length ? `<span class="s-zahl del-sammlung" style="color:var(--s1)">${ICON.x}</span>` : '') +
       `<span class="s-pfeil">▼</span>`;
     kopf.onclick = (ev) => {
       if (ev.target.classList.contains('del-sammlung')) { sammlungLoeschen(b.id); return; }
@@ -1975,10 +2019,10 @@ function ordnerElement(g) {
   const kopf = document.createElement('button');
   kopf.className = 'ordner-kopf';
   const alleAn = g.leks.length && g.leks.every(l => aktive.includes(l.id));
-  kopf.innerHTML = `<span>📁 ${g.name}</span><span class="o-zahl">${g.leks.length}</span>` +
+  kopf.innerHTML = `<span class="grp-name">${ICON.folder}${g.name}</span><span class="o-zahl">${g.leks.length}</span>` +
     (!g.fest ? `<span class="l-btn o-foto" title="Fotos in diesen Ordner importieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>` : '') +
     (g.leks.length ? `<span class="l-btn o-alle${alleAn ? ' an' : ''}">${alleAn ? 'Alle ✓' : 'Alle'}</span>` : '') +
-    (!g.fest && !g.leks.length ? `<span class="o-zahl del-ordner" style="color:var(--s1)">✕</span>` : '') +
+    (!g.fest && !g.leks.length ? `<span class="o-zahl del-ordner" style="color:var(--s1)">${ICON.x}</span>` : '') +
     `<span class="o-pfeil">▼</span>`;
   kopf.onclick = (ev) => {
     if (ev.target.classList.contains('o-foto')) { importZuOrdner(g.id); return; }
@@ -2034,7 +2078,7 @@ function importZuOrdner(ordnerId) {
   importOrdnerFuellen();
   document.getElementById('imp-ordner').value = ordnerId || '';
   zeigeView('import');
-  toast(`📷 Neue Lektionen landen in „${ordnerName(ordnerId)}“`);
+  toast(`Neue Lektionen landen in „${ordnerName(ordnerId)}“`);
 }
 
 function ordnerAnlegen(sammlungId, inp) {
@@ -2130,7 +2174,7 @@ function homeAktualisieren() {
   const cta = document.getElementById('cta-lernen');
   if (leks.length === 0) {
     cta.classList.add('done-state');
-    cta.innerHTML = 'Wähle Lektionen in der Bibliothek 📚';
+    cta.innerHTML = 'Wähle Lektionen in der Bibliothek';
   } else if (naechste === 0) {
     cta.classList.add('done-state');
     cta.innerHTML = 'Alles erledigt — komm morgen wieder ✓';
@@ -2191,20 +2235,25 @@ function heatmapZeichnen() {
   const grid = document.getElementById('heat-grid');
   grid.innerHTML = '';
   const hist = meta.historie || {};
-  const heute = new Date();
-  // Letzte 16 Wochen, Spalten = Wochen (Mo–So), rechts = aktuelle Woche
+  const heute = new Date(); heute.setHours(0, 0, 0, 0);
+  const heuteISO = heute.toISOString().slice(0, 10);
+  // Wochen als Zeilen, Mo–So als Spalten. Vollständiges Rechteck: von Montag
+  // 9 Wochen zurück bis Sonntag der aktuellen Woche → 10×7 = 70 Zellen, lückenlos.
   const wochentag = (heute.getDay() + 6) % 7;        // Mo=0 … So=6
+  const WOCHEN = 10;
   const start = new Date(heute);
-  start.setDate(heute.getDate() - wochentag - 15 * 7);
-  for (let i = 0; i < 16 * 7; i++) {
+  start.setDate(heute.getDate() - wochentag - (WOCHEN - 1) * 7);
+  for (let i = 0; i < WOCHEN * 7; i++) {
     const d = new Date(start);
     d.setDate(start.getDate() + i);
+    const iso = d.toISOString().slice(0, 10);
     const z = document.createElement('span');
     if (d > heute) {
-      z.className = 'hz leer';
+      z.className = 'hz futur';                      // Zukunft: Teil des Rechtecks, gedimmt
     } else {
-      const n = hist[d.toISOString().slice(0, 10)] || 0;
-      z.className = 'hz' + (n >= 30 ? ' h3' : n >= 10 ? ' h2' : n >= 1 ? ' h1' : '');
+      const n = hist[iso] || 0;
+      z.className = 'hz' + (n >= 30 ? ' h3' : n >= 10 ? ' h2' : n >= 1 ? ' h1' : '')
+        + (iso === heuteISO ? ' heute' : '');
       z.title = d.toLocaleDateString('de-DE') + ' — ' + n + ' Karten';
     }
     grid.appendChild(z);
@@ -2447,7 +2496,7 @@ function bewerten(note, ev) {
       sessStats.dr += cb;
       SFX.glitzer();
       HAPTIK.erfolg();
-      setTimeout(() => toast(`⚡ ${combo}er-Serie! +${cb} δρ`), 350);
+      setTimeout(() => toast(`${combo}er-Serie! +${cb} δρ`), 350);
     }
   } else {
     combo = 0;
@@ -2485,7 +2534,7 @@ function bewerten(note, ev) {
     const neueGunst = gunstStufe(meta.streak);
     const gestiegen = gunstIndex(meta.streak) < gunstIndex(vorStreak);
     setTimeout(() => {
-      toast(`🔥 Streak ${meta.streak} — Bonus +${bonus} δρ`); SFX.muenze(); HAPTIK.tick();
+      toast(`Streak ${meta.streak} — Bonus +${bonus} δρ`); SFX.muenze(); HAPTIK.tick();
       // Dezente Info, wenn der Multiplikator steigt — keine Vollbild-Feier
       if (gestiegen && neueGunst.mult > 1)
         setTimeout(() => toast(`✦ ${neueGunst.titel} · ×${multZeigen(neueGunst.mult)} Drachmen`), 2700);
@@ -2526,7 +2575,7 @@ function sitzungFertig() {
   if (sessStats.sl === 0 && sessStats.ss === 0 && (sessStats.sg + sessStats.ok) >= 5) {
     meta.drachmen += 10;
     sessStats.dr += 10;
-    setTimeout(() => { toast('🏛 Fehlerfreie Sitzung! +10 δρ'); SFX.glitzer(); }, 900);
+    setTimeout(() => { toast('Fehlerfreie Sitzung! +10 δρ'); SFX.glitzer(); }, 900);
   }
   speichere();
   topbarAktualisieren();
@@ -2603,7 +2652,7 @@ function wortschatzAufbauen() {
     el.className = 'voc-item';
     el.innerHTML = `
       <div class="voc-stage-strip" style="background:${STUFEN[f.phase].hex}"></div>
-      <button class="voc-play">♪</button>
+      <button class="voc-play" aria-label="Anhören"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5z" fill="currentColor" stroke="none"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg></button>
       <div class="voc-main">
         <div class="voc-greek greek">${v.griechisch}</div>
         <div class="voc-translit">${v.umschrift || ''}</div>
@@ -2636,11 +2685,11 @@ drop.addEventListener('drop', e => {
 
 // Thematische Wartemeldungen, rotieren während das Orakel arbeitet
 const ORAKEL_SPRUECHE = [
-  '🦉 Die Eule der Athene trägt dein Foto zum Orakel…',
-  '⚡ Hermes eilt mit der Schriftrolle nach Delphi…',
-  '🏛️ Das Orakel entziffert die polytonen Zeichen…',
-  '📜 Spiritus und Akzente werden gedeutet…',
-  '🖋️ Die Musen ordnen die Vokabeln…',
+  'Die Eule der Athene trägt dein Foto zum Orakel…',
+  'Hermes eilt mit der Schriftrolle nach Delphi…',
+  'Das Orakel entziffert die polytonen Zeichen…',
+  'Spiritus und Akzente werden gedeutet…',
+  'Die Musen ordnen die Vokabeln…',
 ];
 let orakelTimer = null;
 function orakelStart(prefix) {
@@ -2745,26 +2794,26 @@ async function fotosVerarbeiten(files) {
       thumbFertig(thumbs[n], 'err', '✕');
       orakelStopp();
       if (files.length === 1) {
-        status.textContent = '🏺 Das Orakel schweigt (' + e.message + ') — die lokale Schreibstube übernimmt…';
+        status.textContent = 'Das Orakel schweigt (' + e.message + ') — die lokale Schreibstube übernimmt…';
         ocrFallback(files[0], thumbs[0]);
         return;
       }
-      status.textContent = prefix + '⚠️ ' + e.message;
+      status.textContent = prefix + e.message;
     }
   }
 
   if (!gesamt) {
-    status.textContent = `⚠️ Keines der ${files.length} Fotos konnte gelesen werden.`;
+    status.textContent = `Keines der ${files.length} Fotos konnte gelesen werden.`;
     return;
   }
   if (titel && !document.getElementById('imp-titel').value)
     document.getElementById('imp-titel').value = titel;
 
-  status.textContent = `⚡ Erfolgreich gescannt — ${gesamt} Vokabeln` +
+  status.textContent = `Erfolgreich gescannt — ${gesamt} Vokabeln` +
     (titel ? ` aus „${titel}“` : '') +
     (files.length > 1 ? ` von ${files.length - fehler} Seiten` : '') +
     ' geborgen. Unten prüfen!';
-  toast(`📜 ${gesamt} Vokabeln aus dem Orakel geborgen ⚡`);
+  toast(`${gesamt} Vokabeln aus dem Orakel geborgen`);
   SFX.glitzer();
   HAPTIK.erfolg();
   partikel();
@@ -2804,17 +2853,17 @@ async function ocrFallback(file, thumb) {
   }
   if (thumb) { thumb.classList.remove('err'); thumb.querySelector('.thumb-badge')?.remove(); thumb.classList.add('scan'); }
   try {
-    status.textContent = '🏺 Die Schreibstube rüstet sich (lokales Altgriechisch-Modell)…';
+    status.textContent = 'Die Schreibstube rüstet sich (lokales Altgriechisch-Modell)…';
     const worker = await Tesseract.createWorker('grc+deu', 1, {
       logger: m => {
         if (m.status === 'recognizing text')
-          status.textContent = `🖋️ Die Schreiber entziffern lokal… ${Math.round(m.progress * 100)}%`;
+          status.textContent = `Die Schreiber entziffern lokal… ${Math.round(m.progress * 100)}%`;
       }
     });
     const { data } = await worker.recognize(file);
     await worker.terminate();
     if (thumb) thumbFertig(thumb, 'ok', '✓');
-    status.textContent = '📜 Lokale Abschrift fertig — Text unten prüfen.';
+    status.textContent = 'Lokale Abschrift fertig — Text unten prüfen.';
     document.getElementById('imp-text').value = data.text.trim();
     document.getElementById('imp-step2').style.display = 'block';
     document.getElementById('imp-step2').scrollIntoView({ behavior: 'smooth' });
@@ -2853,7 +2902,7 @@ function impZeile(gr, um, de, erkl, flexion, delay) {
     <input class="i-gr" placeholder="γλῶσσα" value="${(gr || '').replace(/"/g, '&quot;')}" />
     <input class="i-um" placeholder="glōssa" value="${(um || '').replace(/"/g, '&quot;')}" />
     <input class="i-de" placeholder="Deutsch" value="${(de || '').replace(/"/g, '&quot;')}" />
-    <button class="i-del">✕</button>`;
+    <button class="i-del" aria-label="Zeile entfernen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`;
   div.querySelector('.i-del').onclick = () => div.remove();
   rows.appendChild(div);
 }
@@ -2893,7 +2942,7 @@ function lektionSpeichern() {
   document.getElementById('imp-thumbs').innerHTML = '';
   zaehlerReset();
 
-  toast(`„${titel}" gespeichert — ${vokabeln.length} Vokabeln ⚡`);
+  toast(`„${titel}" gespeichert — ${vokabeln.length} Vokabeln`);
   tabZu('bibliothek');
   lektionVertonen(lek);   // im Hintergrund mit Marlena nachvertonen
 }
@@ -2946,7 +2995,7 @@ async function eigeneNachvertonen() {
   }
   vertonungLaeuft = false;
   if (fertig) {
-    toast(`🔊 ${fertig} eigene Vokabeln nachvertont`);
+    toast(`${fertig} eigene Vokabeln nachvertont`);
     if (document.getElementById('view-bibliothek').classList.contains('on')) bibliothekAufbauen();
   }
 }
@@ -2960,13 +3009,13 @@ function toast(msg) {
 
 /* ═══════════ INTRO ═══════════ */
 const INTRO_SEITEN = [
-  { ico: '⚡', titel: '<span class="greek">Χαῖρε!</span> Willkommen bei Zeus',
+  { ico: 'bolt', titel: '<span class="greek">Χαῖρε!</span> Willkommen bei Zeus',
     text: 'Dein Trainer für Altgriechisch — über 1600 Vokabeln, alle vertont in der erasmischen Aussprache, wie sie an Schulen und Universitäten gelehrt wird.' },
-  { ico: '📜', titel: 'Lernen mit System',
+  { ico: 'cards', titel: 'Lernen mit System',
     text: 'Jede Vokabel durchläuft fünf Stufen von „Neu" bis „Gemeistert". Was du sicher kannst, kommt seltener wieder — was wackelt, öfter. Eine Sitzung sind 20 Karten, perfekt für zwischendurch.' },
-  { ico: '🏛️', titel: 'Baue dein Athen',
+  { ico: 'temple', titel: 'Baue dein Athen',
     text: 'Richtige Antworten bringen Drachmen (δρ). Je länger dein täglicher Streak, desto höher die Gunst der Götter — ein Multiplikator (bis ×3), der all deine Drachmen vervielfacht. Damit errichtest du zwölf Bauwerke — von der bescheidenen Hütte bis zur goldenen Athena auf der Akropolis.' },
-  { ico: '🌩', titel: 'Aber Zeus wacht!',
+  { ico: 'storm', titel: 'Aber Zeus wacht!',
     text: 'Ein Tag ohne Lernen: eine Naturkatastrophe zerstört ein Bauwerk. Zwei Tage: zwei. Ab dem dritten Tag legt Zeus ganz Athen in Trümmer. Wiederaufbau gibt es zum halben Preis — besser: lerne jeden Tag.' },
 ];
 let introIdx = 0;
@@ -2980,7 +3029,7 @@ function introRender() {
   const s = INTRO_SEITEN[introIdx];
   const card = document.getElementById('intro-card');
   card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
-  document.getElementById('intro-ico').textContent = s.ico;
+  document.getElementById('intro-ico').innerHTML = ICON[s.ico] || '';
   document.getElementById('intro-titel').innerHTML = s.titel;
   document.getElementById('intro-text').textContent = s.text;
   document.getElementById('intro-dots').innerHTML =
