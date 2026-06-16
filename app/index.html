@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="lib/pixi.min.js"></script>
 <style>
 :root {
   --bg:       #0a0d15;
@@ -166,7 +167,8 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .city-head { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 18px 0; }
 .city-title { font-size: 13px; font-weight: 700; }
 .city-stage { font-size: 11.5px; color: var(--gold); font-weight: 700; }
-.city-svg-wrap { padding: 4px 6px 0; }
+.city-svg-wrap { margin: 4px 6px 0; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; position: relative; }
+.city-svg-wrap canvas { display: block; width: 100% !important; height: 100% !important; }
 .city-svg-wrap svg { width: 100%; height: auto; display: block; }
 .city-caption {
   padding: 10px 18px 14px;
@@ -1579,6 +1581,17 @@ function blitzEinschlag(svg, ziel) {
 function zerstoerungsAnimation(vorher, nachher) {
   return new Promise(resolve => {
     const svg = document.querySelector('#city-svg-wrap svg');
+    if (!svg) {   // PixiJS-Renderer: kein SVG → Beben + Stadt rendert reduziert neu
+      const card = document.querySelector('.city-card');
+      card.classList.remove('beben'); void card.offsetWidth; card.classList.add('beben');
+      let i = vorher;
+      const tick = () => {
+        if (i > nachher) { stadtOverride = i; stadtAktualisieren(false); i--; setTimeout(tick, 430); }
+        else { stadtOverride = null; card.classList.remove('beben'); resolve(); }
+      };
+      setTimeout(tick, 1100);
+      return;
+    }
     const wolken = svg.querySelector('#wolken');
     wolken.classList.add('on');
 
@@ -1632,6 +1645,7 @@ function zeigeView(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.v === name));
   document.getElementById('tabbar').style.display = (name === 'lernen') ? 'none' : 'flex';
   window.scrollTo({ top: 0 });
+  if (isoApp) isoApp.ticker[name === 'athen' ? 'start' : 'stop']();
 }
 function tabZu(name) {
   zeigeView(name);
@@ -2086,14 +2100,72 @@ function stadtSvg(nacht = istNacht()) {
 let stadtOverride = null;   // zeigt vorübergehend den Zustand VOR der Zerstörung
 
 let stadtPhase = null;   // 'tag' | 'nacht' — für Neu-Render bei Tageszeitwechsel
+/* ═══════════ ISO-STADT (PixiJS) — ersetzt das SVG ═══════════ */
+const ISO_TW=56, ISO_TH=28, ISO_COLS=9, ISO_ROWS=9, ISO_RAND=2;
+let isoApp=null, isoWelt, isoObj, isoBauten, isoSky;
+const isoP=(c,r)=>({x:(c-r)*ISO_TW/2,y:(c+r)*ISO_TH/2});
+function isoSh(h,f){const r=(h>>16)&255,g=(h>>8)&255,b=h&255,m=v=>Math.max(0,Math.min(255,Math.round(v*(1+f))));return(m(r)<<16)|(m(g)<<8)|m(b);}
+function isoMx(a,b,f){const ar=(a>>16)&255,ag=(a>>8)&255,ab=a&255,br=(b>>16)&255,bg=(b>>8)&255,bb=b&255;return((ar+(br-ar)*f|0)<<16)|((ag+(bg-ag)*f|0)<<8)|(ab+(bb-ab)*f|0);}
+function isoTile(c,r,col,cont){const p=isoP(c,r),g=new PIXI.Graphics();g.beginFill(col).lineStyle(1,0,0.05).moveTo(p.x,p.y-ISO_TH/2).lineTo(p.x+ISO_TW/2,p.y).lineTo(p.x,p.y+ISO_TH/2).lineTo(p.x-ISO_TW/2,p.y).closePath().endFill();cont.addChild(g);}
+function isoBox(g,hw,hh,base,H,col){g.beginFill(isoSh(col,-0.14)).moveTo(-hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();g.beginFill(isoSh(col,-0.32)).moveTo(hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(hw,base-H).closePath().endFill();g.beginFill(col).moveTo(0,base-hh-H).lineTo(hw,base-H).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();}
+function isoRoof(g,hw,hh,H,col){const ax=0,ay=-H-hh-7,bk=[0,-hh-H],rt=[hw,-H],fr=[0,hh-H],lf=[-hw,-H],t=(a,b,c)=>g.beginFill(c).moveTo(a[0],a[1]).lineTo(b[0],b[1]).lineTo(ax,ay).closePath().endFill();t(bk,lf,isoSh(col,-0.1));t(lf,fr,isoSh(col,0.02));t(bk,rt,isoSh(col,-0.26));t(rt,fr,isoSh(col,-0.16));}
+function isoColR(g,n,sp,H,col){const w=(n-1)*sp;for(let i=0;i<n;i++){const x=-w/2+i*sp;g.beginFill(col).drawRect(x-2.5,-H,5,H).endFill();g.beginFill(isoSh(col,-0.12)).drawRect(x+1.5,-H,1.5,H).endFill();}}
+function isoTempel(c,scl,col){const g=new PIXI.Graphics();isoBox(g,30*scl,15*scl,0,7,isoSh(col,-0.06));isoBox(g,26*scl,13*scl,-7,7,col);c.addChild(g);const s=new PIXI.Graphics();s.y=-14;isoColR(s,Math.round(4+scl*2),11*scl,30*scl,0xefe8d4);c.addChild(s);const t=new PIXI.Graphics(),w=27*scl,top=-14-30*scl-8;t.beginFill(isoSh(col,0.05)).drawRect(-w,top,w*2,8).endFill();t.beginFill(isoSh(col,0.08)).moveTo(-w,top).lineTo(0,top-18*scl).lineTo(w,top).closePath().endFill();c.addChild(t);}
+const ISO_MODELL={
+  1:c=>{const g=new PIXI.Graphics();isoBox(g,14,7,0,16,0xcfa06a);isoRoof(g,14,7,16,0x8a6b3a);c.addChild(g);},
+  2:c=>{[[-13,4],[12,-4],[1,11]].forEach(([dx,dy],i)=>{const g=new PIXI.Graphics();g.x=dx;g.y=dy;isoBox(g,12,6,0,15+i*3,[0xcfa06a,0xc18b54,0xd0975c][i]);isoRoof(g,12,6,15+i*3,0xa64d39);c.addChild(g);});},
+  3:c=>{for(let i=0;i<5;i++){const g=new PIXI.Graphics();g.x=(i%3-1)*12;g.y=Math.floor(i/3)*8-4;g.beginFill(0x6b4a2e).drawRect(-1.5,-8,3,8).endFill();g.beginFill(0x5c7d4a).drawEllipse(0,-12,9,7).endFill();g.beginFill(0x6b8f57).drawEllipse(-2,-13,5,4).endFill();c.addChild(g);}},
+  4:c=>{const g=new PIXI.Graphics();isoBox(g,16,8,0,5,0xc1c8d1);g.beginFill(0x3f7ab8).moveTo(0,-5).lineTo(10,0).lineTo(0,5).lineTo(-10,0).closePath().endFill();isoBox(g,5,2.5,-9,13,0xd6d0bf);c.addChild(g);},
+  5:c=>{[-14,0,14].forEach((dx,i)=>{const g=new PIXI.Graphics();g.x=dx;g.beginFill(0x8a6b3a).drawRect(-9,-22,2,22).endFill();g.beginFill(0x8a6b3a).drawRect(7,-22,2,22).endFill();g.beginFill([0xc0563f,0x4a7d9e,0xd0a24a][i]).moveTo(-12,-22).lineTo(12,-26).lineTo(12,-21).lineTo(-12,-17).closePath().endFill();c.addChild(g);});},
+  7:c=>isoTempel(c,1.0,0xe7dfc8),
+  8:c=>{const g=new PIXI.Graphics();for(let i=3;i>=0;i--){g.beginFill(isoSh(0xc9c2ad,-0.04*i)).moveTo(-28+i*6,i*5+2).lineTo(0,18+i*2).lineTo(28-i*6,i*5+2).lineTo(0,i*5-4).closePath().endFill();}c.addChild(g);},
+  9:c=>{const g=new PIXI.Graphics();isoBox(g,34,9,0,8,0xe2dac4);c.addChild(g);const s=new PIXI.Graphics();s.y=-8;isoColR(s,8,9,28,0xefe8d4);c.addChild(s);const t=new PIXI.Graphics();isoBox(t,34,9,-36,6,0xd0c7ad);c.addChild(t);},
+  10:c=>{const g=new PIXI.Graphics();isoBox(g,28,13,0,7,0xe2dac4);c.addChild(g);[-12,12].forEach(dx=>{const s=new PIXI.Graphics();s.x=dx;s.y=-7;isoColR(s,2,12,38,0xefe8d4);c.addChild(s);});const t=new PIXI.Graphics();isoBox(t,30,14,-45,7,0xddd3b8);c.addChild(t);},
+  11:c=>isoTempel(c,1.6,0xeee7d6),
+  12:c=>{const g=new PIXI.Graphics();isoBox(g,13,6.5,0,11,0xc9c2ad);g.beginFill(0xe3b64f).drawRect(-3,-44,6,33).endFill();g.beginFill(0xf0cf85).drawCircle(0,-48,5).endFill();g.beginFill(0xe3b64f).drawRect(-9,-38,18,3.5).endFill();c.addChild(g);},
+};
+const ISO_SLOT={1:[2,6.4],2:[6.4,6.2],3:[1.6,3],4:[2.6,1.8],5:[6.4,2.2],7:[2.4,4.6],8:[6.3,4.8],9:[4.3,1.3],10:[4.2,6.6],11:[4.2,3.9],12:[4.2,2.6]};
+
+function isoInit(el){
+  if(isoApp||!el||typeof PIXI==='undefined')return;
+  isoApp=new PIXI.Application({background:'#0e1320',resizeTo:el,antialias:true,resolution:Math.min(2,devicePixelRatio||1)});
+  el.innerHTML='';el.appendChild(isoApp.view);
+  isoSky=new PIXI.Graphics();const wolken=new PIXI.Container();isoWelt=new PIXI.Container();
+  isoApp.stage.addChild(isoSky,wolken,isoWelt);
+  const wasser=new PIXI.Container(),land=new PIXI.Container();isoObj=new PIXI.Container();isoObj.sortableChildren=true;isoBauten=new PIXI.Container();isoBauten.sortableChildren=true;
+  isoWelt.addChild(wasser,land,isoObj);isoObj.addChild(isoBauten);
+  const L=(c,r)=>c>=0&&c<ISO_COLS&&r>=0&&r<ISO_ROWS,R=(c,r)=>c===0||r===0||c===ISO_COLS-1||r===ISO_ROWS-1;
+  for(let r=-ISO_RAND;r<ISO_ROWS+ISO_RAND;r++)for(let c=-ISO_RAND;c<ISO_COLS+ISO_RAND;c++){L(c,r)?isoTile(c,r,R(c,r)?0xd8c9a0:((c+r)%2?0x4c805a:0x477a54),land):isoTile(c,r,0x2f6aa8,wasser);}
+  [[4,4],[4,3],[3,4],[5,4],[4,5]].forEach(([c,r])=>isoTile(c,r,0xc7c0ab,land));
+  isoApp.buerger=[];for(let i=0;i<12;i++){const g=new PIXI.Graphics();g.beginFill(0x2a2f3a).drawEllipse(0,0,2,2.6).endFill();g.beginFill(i%3?0xcdd2db:0xe3b64f).drawCircle(0,-3,1.3).endFill();g.c=1+Math.random()*7;g.r=1+Math.random()*7;g.tc=g.c;g.tr=g.r;g.spd=0.004+Math.random()*0.003;isoObj.addChild(g);isoApp.buerger.push(g);}
+  isoApp.wolken=wolken;isoApp.wolkenA=[];for(let i=0;i<3;i++){const g=new PIXI.Graphics();g.beginFill(0xffffff,0.15);[[0,0,22],[16,3,16],[-14,3,14]].forEach(([x,y,rad])=>g.drawCircle(x,y,rad));g.endFill();g.x=Math.random()*400;g.y=18+Math.random()*70;g.spd=0.1+Math.random()*0.2;wolken.addChild(g);isoApp.wolkenA.push(g);}
+  const boot=new PIXI.Graphics();boot.beginFill(0x6b4a2e).moveTo(-12,0).lineTo(12,0).lineTo(8,5).lineTo(-8,5).closePath().endFill();boot.beginFill(0xf2ecdb).moveTo(0,-1).lineTo(0,-18).lineTo(9,-3).closePath().endFill();boot.zIndex=99;isoObj.addChild(boot);isoApp.boot=boot;
+  isoApp.rauch=[];const rauchC=new PIXI.Container();isoWelt.addChild(rauchC);isoApp.rauchC=rauchC;
+  const zen=()=>{const w=isoApp.screen.width,h=isoApp.screen.height;if(w!==isoApp._sw||h!==isoApp._sh){isoApp._sw=w;isoApp._sh=h;if(isoApp._nacht!==undefined)isoSkyMalen(isoApp._nacht);}const cw=(ISO_COLS+ISO_ROWS)*ISO_TW/2+60,ch=(ISO_COLS+ISO_ROWS)*ISO_TH/2+150,s=Math.min(w/cw,h/ch);isoWelt.scale.set(s);const m=isoP((ISO_COLS-1)/2,(ISO_ROWS-1)/2);isoWelt.x=w/2-m.x*s;isoWelt.y=h/2-(m.y+24)*s;};
+  zen();isoApp.zen=zen;let bootT=0,rt=0;
+  isoApp.ticker.add((d)=>{
+    zen();
+    isoApp.wolkenA.forEach(w=>{w.x+=w.spd*d;if(w.x>isoApp.screen.width+50)w.x=-50;});
+    isoApp.buerger.forEach(b=>{if(Math.abs(b.c-b.tc)<0.05&&Math.abs(b.r-b.tr)<0.05){b.tc=1+Math.random()*7;b.tr=1+Math.random()*7;}b.c+=(b.tc-b.c)*b.spd*d;b.r+=(b.tr-b.r)*b.spd*d;const p=isoP(b.c,b.r);b.x=p.x;b.y=p.y;b.zIndex=b.c+b.r+0.4;});
+    bootT+=0.0016*d;const bc=ISO_COLS/2+Math.cos(bootT)*(ISO_COLS/2+1.2),br=ISO_ROWS+1.2+Math.sin(bootT);const bp=isoP(bc,br);isoApp.boot.x=bp.x;isoApp.boot.y=bp.y;isoApp.boot.zIndex=bc+br;
+    rt-=d;if(rt<=0){rt=26;const tp=isoP(4.2,3.9);const g=new PIXI.Graphics();g.beginFill(0xe6e9f0,0.4).drawCircle(0,0,3).endFill();g.x=tp.x+(Math.random()*6-3);g.y=tp.y-58;g.life=1;rauchC.addChild(g);isoApp.rauch.push(g);}
+    for(let i=isoApp.rauch.length-1;i>=0;i--){const s=isoApp.rauch[i];s.y-=0.3*d;s.life-=0.006*d;s.alpha=s.life*0.4;s.scale.set(1+(1-s.life)*1.4);if(s.life<=0){rauchC.removeChild(s);isoApp.rauch.splice(i,1);}}
+  });
+  addEventListener('resize',zen);
+}
+function isoSkyMalen(nacht){if(!isoApp)return;isoApp._nacht=nacht;const tag=nacht?0.08:1,o=isoMx(0x0b1024,0x2e63b8,tag),u=isoMx(0x16203a,0xa6cdee,tag),h=isoApp.screen.height,w=isoApp.screen.width;isoSky.clear();for(let i=0;i<14;i++)isoSky.beginFill(isoMx(o,u,i/14)).drawRect(0,h*i/14,w,h/14+1).endFill();isoSky.beginFill(nacht?0xe6ecf7:0xffe9a8,0.95).drawCircle(w*0.78,h*0.2,nacht?13:19).endFill();isoApp.wolken.alpha=0.35+tag*0.65;isoObj.alpha=0.74+tag*0.26;}
+function isoRender(stufe,nacht){
+  isoInit(document.getElementById('city-svg-wrap'));
+  if(!isoApp)return;
+  isoApp.zen();isoSkyMalen(nacht);isoBauten.removeChildren();
+  if(stufe>=6){const ring=new PIXI.Graphics();for(let c=0;c<ISO_COLS;c++)for(let r=0;r<ISO_ROWS;r++)if(c===0||r===0||c===ISO_COLS-1||r===ISO_ROWS-1){const p=isoP(c,r);ring.beginFill(0xc3bca8).moveTo(p.x,p.y-7).lineTo(p.x+ISO_TW/2,p.y-10).lineTo(p.x+ISO_TW/2,p.y-3).lineTo(p.x,p.y).closePath().endFill();}ring.zIndex=0.3;isoBauten.addChild(ring);}
+  for(let i=1;i<=stufe;i++){const mk=ISO_MODELL[i];if(!mk||!ISO_SLOT[i])continue;const [c,r]=ISO_SLOT[i],cont=new PIXI.Container(),p=isoP(c,r);cont.x=p.x;cont.y=p.y;cont.zIndex=c+r+(i>=11?0.5:0.1);const sh=new PIXI.Graphics();sh.beginFill(0,0.16).drawEllipse(0,4,15,8).endFill();cont.addChild(sh);mk(cont);isoBauten.addChild(cont);}
+}
+
 function stadtAktualisieren(neuGebaut) {
   const wrap = document.getElementById('city-svg-wrap');
-  const phase = istNacht() ? 'nacht' : 'tag';
-  if (!wrap.innerHTML || phase !== stadtPhase) {
-    wrap.innerHTML = stadtSvg(phase === 'nacht');
-    stadtPhase = phase;
-  }
   const stufe = Math.max(0, Math.min(stadtOverride ?? meta.stadt, MAX_BAU));
+  isoRender(stufe, istNacht());
 
   const ruinen = wrap.querySelector('#b0');
   if (ruinen) ruinen.classList.toggle('on', stadtOverride === null && stufe === 0 && meta.maxStadt > 0);
