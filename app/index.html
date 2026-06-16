@@ -884,6 +884,40 @@ body.hell .hz.h1 { background: rgba(169,118,10,.28); }
 body.hell .hz.h2 { background: rgba(169,118,10,.55); }
 body.hell .hz.h3 { background: var(--gold); }
 body.hell .hz.futur { background: #ece8df; }
+/* ── Schätze / Altar ── */
+.altar-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px 20px; text-align:center; }
+.altar-flame { width:44px; height:44px; margin:0 auto 12px; color:var(--gold); }
+.altar-flame svg { width:100%; height:100%; }
+.altar-text { font-size:13px; color:var(--muted); max-width:44ch; margin:0 auto 16px; line-height:1.55; }
+.altar-text b { color:var(--gold-2); }
+.cta-opfer { background:linear-gradient(135deg,var(--gold),#c2922f); color:#131008; border:none; border-radius:12px; padding:13px 26px; font-size:14px; font-weight:800; cursor:pointer; box-shadow:0 6px 22px rgba(227,182,79,.22); }
+.cta-opfer:disabled { opacity:.4; cursor:not-allowed; box-shadow:none; }
+.kammer-prog { color:var(--gold); font-weight:700; letter-spacing:0; text-transform:none; margin-left:6px; }
+.schatz-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(94px,1fr)); gap:10px; }
+.schatz { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 8px; text-align:center; cursor:pointer; transition:transform .15s, border-color .2s; }
+.schatz:active { transform:scale(.95); }
+.schatz.have { border-color:var(--rar); }
+.schatz.locked { opacity:.5; }
+.schatz .sz-ico { width:34px; height:34px; margin:0 auto 8px; color:var(--rar); }
+.schatz.locked .sz-ico { color:var(--faint); }
+.schatz .sz-ico svg { width:100%; height:100%; }
+.schatz .sz-name { font-size:11.5px; font-weight:700; margin-bottom:2px; color:var(--text); }
+.schatz .sz-rar { font-size:9.5px; letter-spacing:.04em; color:var(--rar); text-transform:uppercase; }
+.reveal-ov { position:fixed; inset:0; z-index:200; background:rgba(6,8,14,.88); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; padding:28px; opacity:0; pointer-events:none; transition:opacity .25s; }
+.reveal-ov.on { opacity:1; pointer-events:auto; }
+.reveal-card { text-align:center; max-width:340px; }
+.rv-burst { width:150px; height:150px; margin:0 auto 6px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 90px -6px var(--rar); }
+.reveal-ov.on .rv-burst { animation:rvPop .55s cubic-bezier(.2,1.4,.4,1); }
+.rv-ico { width:84px; height:84px; color:var(--rar); }
+.rv-ico svg { width:100%; height:100%; filter:drop-shadow(0 0 12px var(--rar)); }
+.rv-rar { font-size:12px; letter-spacing:.2em; text-transform:uppercase; font-weight:800; margin-top:10px; }
+.rv-name { font-family:'GFS Didot',Georgia,serif; font-size:30px; margin:6px 0; color:var(--text); }
+.rv-myth { font-size:13px; color:var(--muted); line-height:1.55; margin-bottom:14px; }
+.rv-status { font-size:13.5px; color:var(--muted); }
+.rv-neu { color:var(--gold); font-weight:800; }
+.rv-w { color:var(--gold-2); font-weight:700; }
+.rv-weiter { margin-top:22px; background:none; border:1px solid var(--border2); color:var(--text); border-radius:12px; padding:11px 30px; font-size:13.5px; font-weight:700; cursor:pointer; }
+@keyframes rvPop { 0%{transform:scale(.4);opacity:0} 100%{transform:scale(1);opacity:1} }
 </style>
 </head>
 <body>
@@ -1001,6 +1035,16 @@ body.hell .hz.futur { background: #ece8df; }
 
     <div class="section-title" style="margin:20px 0 12px">Bauwerke</div>
     <div class="bau-liste" id="bau-liste"></div>
+
+    <div class="section-title" style="margin:26px 0 12px">Altar der Götter</div>
+    <div class="altar-card">
+      <div class="altar-flame"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 4 4.5 4 7.5a4 4 0 0 1-8 0c0-1.3.6-2.3 1.3-3"/><path d="M5 20.5h14"/></svg></div>
+      <div class="altar-text">Opfere Drachmen — die Götter gewähren dir einen Schatz. Doppelte werden zu <b>Weihrauch</b> (<span id="weihrauch-n">0</span>), mit dem du gezielt Schätze erwirbst.</div>
+      <button class="cta-opfer" id="opfer-btn" onclick="opfern()">Opfern</button>
+    </div>
+
+    <div class="section-title" style="margin:26px 0 12px">Schatzkammer <span class="kammer-prog" id="kammer-fortschritt"></span></div>
+    <div class="schatz-grid" id="kammer-grid"></div>
   </div>
 
   <!-- ═══ LERNEN ═══ -->
@@ -1213,6 +1257,18 @@ body.hell .hz.futur { background: #ece8df; }
   <button class="tab" data-v="bibliothek" onclick="tabZu('bibliothek')"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h3.2v15H5z"/><path d="M9.7 4.5h3.2v15H9.7z"/><path d="M15.2 5.3l3 .5-2.2 14.4-3-.5z"/></svg></span>Bibliothek</button>
 </div>
 
+<!-- ═══ SCHATZ-REVEAL ═══ -->
+<div class="reveal-ov" id="reveal" onclick="revealSchliessen()">
+  <div class="reveal-card" onclick="event.stopPropagation()">
+    <div class="rv-burst"><span class="rv-ico"></span></div>
+    <div class="rv-rar"></div>
+    <div class="rv-name"></div>
+    <div class="rv-myth"></div>
+    <div class="rv-status"></div>
+    <button class="rv-weiter" onclick="revealSchliessen()">Weiter</button>
+  </div>
+</div>
+
 <!-- ═══ SIDEMENU ═══ -->
 <div class="drawer-overlay" id="drawer-overlay" onclick="drawerSchliessen()"></div>
 <div class="drawer" id="drawer">
@@ -1402,6 +1458,9 @@ function lade() {
   if (typeof meta.drachmen !== 'number') meta.drachmen = 0;
   if (!meta.verteidigung) meta.verteidigung = { damm: false, mauer: false, tempel: false };
   if (!meta.lastDecay) meta.lastDecay = heuteStr();
+  if (!meta.schaetze) meta.schaetze = {};
+  if (typeof meta.weihrauch !== 'number') meta.weihrauch = 0;
+  if (typeof meta.opferPity !== 'number') meta.opferPity = 0;
   try { aktive = JSON.parse(localStorage.getItem('zeus_aktive') || 'null') || []; } catch { aktive = []; }
   // Migration: früher war genau eine Lektion aktiv
   if (!aktive.length && localStorage.getItem('zeus_aktiv')) aktive = [localStorage.getItem('zeus_aktiv')];
@@ -1563,7 +1622,7 @@ function zeigeView(name) {
 function tabZu(name) {
   zeigeView(name);
   if (name === 'home') homeAktualisieren();
-  if (name === 'athen') stadtAktualisieren(false);
+  if (name === 'athen') { stadtAktualisieren(false); schaetzeAktualisieren(); }
   if (name === 'wortschatz') wortschatzAufbauen();
   if (name === 'bibliothek') bibliothekAufbauen();
 }
@@ -2122,6 +2181,121 @@ function kaufen(i) {
   HAPTIK.erfolg();
   toast(`${BAUWERKE[i]} errichtet`);
   if (i === MAX_BAU) { partikel(); setTimeout(() => SFX.levelUp(), 500); }
+}
+
+/* ═══════════ SCHÄTZE (Opfergaben) ═══════════ */
+const OPFER_KOSTEN = 60;
+const OPFER_PITY = 12;
+const RARITAET = {
+  gewoehnlich: { name:'Gewöhnlich', farbe:'#8b94ab', gewicht:58, weihrauch:1 },
+  selten:      { name:'Selten',     farbe:'#5d8fe8', gewicht:28, weihrauch:3 },
+  episch:      { name:'Episch',     farbe:'#b06be0', gewicht:11, weihrauch:9 },
+  goettlich:   { name:'Göttlich',   farbe:'#e3b64f', gewicht:3,  weihrauch:30 },
+};
+const SZ_ICO = {
+  amphore:'<path d="M9 3h6"/><path d="M10 3c0 2-3 3-3 7a5 5 0 0 0 10 0c0-4-3-5-3-7"/><path d="M12 18v3M9 21h6"/>',
+  lampe:'<path d="M4 13a4 4 0 0 1 4-4h6l4-2v8l-4-2H8a4 4 0 0 1-4-4z"/><path d="M8 13v4h3"/>',
+  scherbe:'<path d="M5 8l4-3 6 2 4 5-3 7-7 1-5-5z"/>',
+  helm:'<path d="M5 14a7 7 0 0 1 14 0"/><path d="M12 3v4"/><path d="M5 14h14v3H5z"/>',
+  maske:'<path d="M5 5h14v5a7 7 0 0 1-14 0z"/><path d="M9 10h.01M15 10h.01"/>',
+  kylix:'<path d="M5 7h14a7 7 0 0 1-14 0z"/><path d="M12 13v6M9 21h6"/>',
+  eule:'<circle cx="9" cy="9" r="2.6"/><circle cx="15" cy="9" r="2.6"/><path d="M12 11.5V17M8 20h8"/>',
+  saeule:'<path d="M5 5h14M5 19h14"/><path d="M8 5v14M16 5v14"/>',
+  kranz:'<path d="M12 4a8 8 0 0 0 0 16"/><path d="M12 4a8 8 0 0 1 0 16"/>',
+  blitz:'<path d="M13 2 4 14h6l-1 8 10-13h-6z"/>',
+  dreizack:'<path d="M12 21V8"/><path d="M6 8V4M18 8V4M6 8c0 2 2 3 6 3s6-1 6-3"/><path d="M9 4h6"/>',
+  vlies:'<path d="M6 10a4 4 0 0 1 4-4h4a4 4 0 0 1 0 8 4 4 0 0 1-8 0z"/><path d="M8 17l-1 3M16 17l1 3"/>',
+};
+const SCHAETZE = [
+  { id:'amphore',  name:'Amphore',            rar:'gewoehnlich', ico:'amphore', mythos:'Tongefäß für Öl und Wein — Grundlage des antiken Handels.' },
+  { id:'lampe',    name:'Öllampe',            rar:'gewoehnlich', ico:'lampe',   mythos:'Spendete Licht in jedem griechischen Haus.' },
+  { id:'ostrakon', name:'Ostrakon',           rar:'gewoehnlich', ico:'scherbe', mythos:'Tonscherbe des Scherbengerichts — wer zu mächtig wurde, ward verbannt.' },
+  { id:'kylix',    name:'Kylix',              rar:'gewoehnlich', ico:'kylix',   mythos:'Flache Trinkschale des Symposions.' },
+  { id:'helm',     name:'Korinthischer Helm', rar:'selten',      ico:'helm',    mythos:'Bronzehelm des Hopliten — Schutz in der Phalanx.' },
+  { id:'maske',    name:'Theatermaske',       rar:'selten',      ico:'maske',   mythos:'Aus Tragödie und Komödie — das Antlitz des Dionysos-Theaters.' },
+  { id:'eule',     name:'Eule der Athene',    rar:'selten',      ico:'eule',    mythos:'Sinnbild der Weisheit und Wappentier Athens.' },
+  { id:'saeule',   name:'Dorische Säule',     rar:'selten',      ico:'saeule',  mythos:'Strenge, klare Ordnung — das Rückgrat des Tempels.' },
+  { id:'kranz',    name:'Lorbeerkranz',       rar:'episch',      ico:'kranz',   mythos:'Siegeszeichen der Spiele, dem Apollon geweiht.' },
+  { id:'kithara',  name:'Goldene Kithara',    rar:'episch',      ico:'maske',   mythos:'Saiteninstrument des Apollon und des Orpheus.' },
+  { id:'gorgo',    name:'Gorgoneion-Schild',  rar:'episch',      ico:'helm',    mythos:'Schild mit dem Haupt der Medusa — versteinert den Feind.' },
+  { id:'blitz',    name:'Zeus’ Blitzbündel',  rar:'goettlich',   ico:'blitz',   mythos:'Die Waffe des Göttervaters — kein Sterblicher trägt sie ungestraft.' },
+  { id:'dreizack', name:'Poseidons Dreizack', rar:'goettlich',   ico:'dreizack',mythos:'Erschüttert Meer und Erde mit einem Stoß.' },
+  { id:'vlies',    name:'Goldenes Vlies',     rar:'goettlich',   ico:'vlies',   mythos:'Ziel der Argonauten — Sinnbild des unerreichbaren Schatzes.' },
+];
+
+function schatzRoll() {
+  const t = Object.values(RARITAET).reduce((s, r) => s + r.gewicht, 0);
+  let x = Math.random() * t;
+  for (const k in RARITAET) { if ((x -= RARITAET[k].gewicht) < 0) return k; }
+  return 'gewoehnlich';
+}
+
+function opfern() {
+  if ((meta.drachmen || 0) < OPFER_KOSTEN) { toast('Nicht genug Drachmen für eine Opfergabe'); return; }
+  meta.drachmen -= OPFER_KOSTEN;
+  meta.schaetze = meta.schaetze || {};
+  meta.opferPity = (meta.opferPity || 0) + 1;
+  let rar = schatzRoll();
+  if (meta.opferPity >= OPFER_PITY && rar !== 'episch' && rar !== 'goettlich') rar = 'episch';
+  if (rar === 'episch' || rar === 'goettlich') meta.opferPity = 0;
+  const pool = SCHAETZE.filter(s => s.rar === rar);
+  const item = pool[Math.floor(Math.random() * pool.length)];
+  const neu = !meta.schaetze[item.id];
+  let w = 0;
+  if (neu) meta.schaetze[item.id] = 1;
+  else { meta.schaetze[item.id]++; w = RARITAET[rar].weihrauch; meta.weihrauch = (meta.weihrauch || 0) + w; }
+  speichere(); topbarAktualisieren(); schaetzeAktualisieren();
+  zeigeReveal(item, neu ? '<span class="rv-neu">Neu entdeckt!</span>' : ('Duplikat — <span class="rv-w">+' + w + ' Weihrauch</span>'));
+}
+
+function zeigeReveal(item, statusHtml) {
+  const r = RARITAET[item.rar], ov = document.getElementById('reveal');
+  ov.style.setProperty('--rar', r.farbe);
+  ov.querySelector('.rv-ico').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="' + r.farbe + '" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + SZ_ICO[item.ico] + '</svg>';
+  const rarEl = ov.querySelector('.rv-rar'); rarEl.textContent = r.name; rarEl.style.color = r.farbe;
+  ov.querySelector('.rv-name').textContent = item.name;
+  ov.querySelector('.rv-myth').textContent = item.mythos;
+  ov.querySelector('.rv-status').innerHTML = statusHtml;
+  ov.classList.add('on');
+  if (item.rar === 'goettlich') { SFX.levelUp(); HAPTIK.erfolg(); if (typeof partikel === 'function') partikel(); }
+  else if (item.rar === 'episch') { SFX.kauf(); HAPTIK.erfolg(); }
+  else { SFX.muenze(); }
+}
+function revealSchliessen() { document.getElementById('reveal').classList.remove('on'); }
+
+function schaetzeAktualisieren() {
+  const btn = document.getElementById('opfer-btn');
+  if (btn) { btn.disabled = (meta.drachmen || 0) < OPFER_KOSTEN; btn.textContent = 'Opfern — ' + OPFER_KOSTEN + ' δρ'; }
+  const wEl = document.getElementById('weihrauch-n'); if (wEl) wEl.textContent = (meta.weihrauch || 0);
+  const owned = meta.schaetze || {};
+  const anz = SCHAETZE.filter(s => owned[s.id]).length;
+  const fp = document.getElementById('kammer-fortschritt'); if (fp) fp.textContent = anz + ' / ' + SCHAETZE.length;
+  const grid = document.getElementById('kammer-grid'); if (!grid) return;
+  grid.innerHTML = '';
+  for (const s of SCHAETZE) {
+    const r = RARITAET[s.rar], have = owned[s.id];
+    const d = document.createElement('div');
+    d.className = 'schatz ' + (have ? 'have' : 'locked');
+    d.style.setProperty('--rar', r.farbe);
+    d.innerHTML = '<div class="sz-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + SZ_ICO[s.ico] + '</svg></div>' +
+      '<div class="sz-name">' + (have ? s.name : '???') + '</div>' +
+      '<div class="sz-rar">' + r.name + (have && owned[s.id] > 1 ? ' ·×' + owned[s.id] : '') + '</div>';
+    d.onclick = () => schatzTippen(s);
+    grid.appendChild(d);
+  }
+}
+
+function schatzTippen(s) {
+  const r = RARITAET[s.rar], owned = meta.schaetze || {}, have = owned[s.id];
+  if (have) { zeigeReveal(s, 'Gesammelt' + (have > 1 ? ' ·×' + have : '')); return; }
+  const kost = r.weihrauch * 3;
+  if ((meta.weihrauch || 0) >= kost) {
+    if (confirm('„' + s.name + '" mit ' + kost + ' Weihrauch erwerben?')) {
+      meta.weihrauch -= kost; meta.schaetze = meta.schaetze || {}; meta.schaetze[s.id] = 1;
+      speichere(); topbarAktualisieren(); schaetzeAktualisieren();
+      zeigeReveal(s, 'Mit Weihrauch erworben!');
+    }
+  } else { toast('Noch ' + (kost - (meta.weihrauch || 0)) + ' Weihrauch bis „' + s.name + '"'); }
 }
 
 /* ═══════════ BIBLIOTHEK ═══════════ */
