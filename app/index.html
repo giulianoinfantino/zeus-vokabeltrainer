@@ -3585,7 +3585,7 @@ function demoPruefen() {
   } else if (demo === 'reich') {
     // Frischer Spieler mit voller Schatzkammer (zum Testen der Käufe)
     localStorage.setItem('zeus_meta', JSON.stringify(
-      { xp: 0, level: 1, streak: 0, lastTag: null, stadt: 0, maxStadt: 0, drachmen: 9999, lastDecay: heute }
+      { xp: 0, level: 1, streak: 0, lastTag: null, stadt: 0, maxStadt: 0, drachmen: 999999, lastDecay: heute }
     ));
   } else if (demo === 'reset') {
     ['zeus_meta','zeus_srs','zeus_aktiv','zeus_aktive','greek_meta','greek_srs'].forEach(k => localStorage.removeItem(k));
