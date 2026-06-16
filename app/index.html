@@ -918,6 +918,17 @@ body.hell .hz.futur { background: #ece8df; }
 .rv-w { color:var(--gold-2); font-weight:700; }
 .rv-weiter { margin-top:22px; background:none; border:1px solid var(--border2); color:var(--text); border-radius:12px; padding:11px 30px; font-size:13.5px; font-weight:700; cursor:pointer; }
 @keyframes rvPop { 0%{transform:scale(.4);opacity:0} 100%{transform:scale(1);opacity:1} }
+.rv-stat { color:var(--gold-2); font-weight:700; font-size:12.5px; }
+/* ── Stadt-Werte (Dashboard) ── */
+.stadt-werte { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; }
+.sw-kopf { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+.sw-rang { font-family:'GFS Didot',Georgia,serif; font-size:23px; color:var(--gold); }
+.sw-buerger { font-size:12px; color:var(--muted); }
+.sw-row { display:flex; align-items:center; gap:12px; margin:9px 0; }
+.sw-name { font-size:12.5px; color:var(--text); width:106px; flex-shrink:0; }
+.sw-bar { flex:1; height:6px; background:var(--bg2); border-radius:6px; overflow:hidden; }
+.sw-bar i { display:block; height:100%; border-radius:6px; transition:width .45s; }
+.sw-val { font-size:13px; font-weight:700; width:36px; text-align:right; }
 </style>
 </head>
 <body>
@@ -1029,6 +1040,9 @@ body.hell .hz.futur { background: #ece8df; }
         <span id="city-next">—</span>
       </div>
     </div>
+    <div class="section-title" style="margin:22px 0 12px">Stadt-Werte</div>
+    <div class="stadt-werte" id="stadt-werte"></div>
+
     <div class="section-title" style="margin:20px 0 12px">Verteidigung</div>
     <div class="vert-desc">Dauerhafte Anlagen, die Schaden durch versäumte Lerntage mildern.</div>
     <div class="vert-liste" id="vert-liste"></div>
@@ -2164,6 +2178,7 @@ function verteidigungKaufen(key) {
   speichere();
   topbarAktualisieren();
   stadtAktualisieren(false);
+  stadtwerteAktualisieren();
   SFX.muenze(); HAPTIK.erfolg();
   toast(`${def.name} errichtet — Athen ist besser geschützt`);
 }
@@ -2177,6 +2192,7 @@ function kaufen(i) {
   speichere();
   topbarAktualisieren();
   stadtAktualisieren(true);
+  stadtwerteAktualisieren();
   SFX.kauf();
   HAPTIK.erfolg();
   toast(`${BAUWERKE[i]} errichtet`);
@@ -2207,21 +2223,61 @@ const SZ_ICO = {
   vlies:'<path d="M6 10a4 4 0 0 1 4-4h4a4 4 0 0 1 0 8 4 4 0 0 1-8 0z"/><path d="M8 17l-1 3M16 17l1 3"/>',
 };
 const SCHAETZE = [
-  { id:'amphore',  name:'Amphore',            rar:'gewoehnlich', ico:'amphore', mythos:'Tongefäß für Öl und Wein — Grundlage des antiken Handels.' },
-  { id:'lampe',    name:'Öllampe',            rar:'gewoehnlich', ico:'lampe',   mythos:'Spendete Licht in jedem griechischen Haus.' },
-  { id:'ostrakon', name:'Ostrakon',           rar:'gewoehnlich', ico:'scherbe', mythos:'Tonscherbe des Scherbengerichts — wer zu mächtig wurde, ward verbannt.' },
-  { id:'kylix',    name:'Kylix',              rar:'gewoehnlich', ico:'kylix',   mythos:'Flache Trinkschale des Symposions.' },
-  { id:'helm',     name:'Korinthischer Helm', rar:'selten',      ico:'helm',    mythos:'Bronzehelm des Hopliten — Schutz in der Phalanx.' },
-  { id:'maske',    name:'Theatermaske',       rar:'selten',      ico:'maske',   mythos:'Aus Tragödie und Komödie — das Antlitz des Dionysos-Theaters.' },
-  { id:'eule',     name:'Eule der Athene',    rar:'selten',      ico:'eule',    mythos:'Sinnbild der Weisheit und Wappentier Athens.' },
-  { id:'saeule',   name:'Dorische Säule',     rar:'selten',      ico:'saeule',  mythos:'Strenge, klare Ordnung — das Rückgrat des Tempels.' },
-  { id:'kranz',    name:'Lorbeerkranz',       rar:'episch',      ico:'kranz',   mythos:'Siegeszeichen der Spiele, dem Apollon geweiht.' },
-  { id:'kithara',  name:'Goldene Kithara',    rar:'episch',      ico:'maske',   mythos:'Saiteninstrument des Apollon und des Orpheus.' },
-  { id:'gorgo',    name:'Gorgoneion-Schild',  rar:'episch',      ico:'helm',    mythos:'Schild mit dem Haupt der Medusa — versteinert den Feind.' },
-  { id:'blitz',    name:'Zeus’ Blitzbündel',  rar:'goettlich',   ico:'blitz',   mythos:'Die Waffe des Göttervaters — kein Sterblicher trägt sie ungestraft.' },
-  { id:'dreizack', name:'Poseidons Dreizack', rar:'goettlich',   ico:'dreizack',mythos:'Erschüttert Meer und Erde mit einem Stoß.' },
-  { id:'vlies',    name:'Goldenes Vlies',     rar:'goettlich',   ico:'vlies',   mythos:'Ziel der Argonauten — Sinnbild des unerreichbaren Schatzes.' },
+  { id:'amphore',  name:'Amphore',            rar:'gewoehnlich', ico:'amphore', st:{w:2},      mythos:'Tongefäß für Öl und Wein — Grundlage des antiken Handels.' },
+  { id:'lampe',    name:'Öllampe',            rar:'gewoehnlich', ico:'lampe',   st:{w:2},      mythos:'Spendete Licht in jedem griechischen Haus.' },
+  { id:'ostrakon', name:'Ostrakon',           rar:'gewoehnlich', ico:'scherbe', st:{p:2},      mythos:'Tonscherbe des Scherbengerichts — wer zu mächtig wurde, ward verbannt.' },
+  { id:'kylix',    name:'Kylix',              rar:'gewoehnlich', ico:'kylix',   st:{w:2},      mythos:'Flache Trinkschale des Symposions.' },
+  { id:'helm',     name:'Korinthischer Helm', rar:'selten',      ico:'helm',    st:{h:5},      mythos:'Bronzehelm des Hopliten — Schutz in der Phalanx.' },
+  { id:'maske',    name:'Theatermaske',       rar:'selten',      ico:'maske',   st:{p:4},      mythos:'Aus Tragödie und Komödie — das Antlitz des Dionysos-Theaters.' },
+  { id:'eule',     name:'Eule der Athene',    rar:'selten',      ico:'eule',    st:{g:5},      mythos:'Sinnbild der Weisheit und Wappentier Athens.' },
+  { id:'saeule',   name:'Dorische Säule',     rar:'selten',      ico:'saeule',  st:{p:5},      mythos:'Strenge, klare Ordnung — das Rückgrat des Tempels.' },
+  { id:'kranz',    name:'Lorbeerkranz',       rar:'episch',      ico:'kranz',   st:{p:9},      mythos:'Siegeszeichen der Spiele, dem Apollon geweiht.' },
+  { id:'kithara',  name:'Goldene Kithara',    rar:'episch',      ico:'maske',   st:{p:6,g:3},  mythos:'Saiteninstrument des Apollon und des Orpheus.' },
+  { id:'gorgo',    name:'Gorgoneion-Schild',  rar:'episch',      ico:'helm',    st:{h:9},      mythos:'Schild mit dem Haupt der Medusa — versteinert den Feind.' },
+  { id:'blitz',    name:'Zeus’ Blitzbündel',  rar:'goettlich',   ico:'blitz',   st:{g:10,h:8}, mythos:'Die Waffe des Göttervaters — kein Sterblicher trägt sie ungestraft.' },
+  { id:'dreizack', name:'Poseidons Dreizack', rar:'goettlich',   ico:'dreizack',st:{h:14},     mythos:'Erschüttert Meer und Erde mit einem Stoß.' },
+  { id:'vlies',    name:'Goldenes Vlies',     rar:'goettlich',   ico:'vlies',   st:{p:16,g:6}, mythos:'Ziel der Argonauten — Sinnbild des unerreichbaren Schatzes.' },
 ];
+const STAT_DEF = {
+  prestige:  { name:'Prestige',     farbe:'#e3b64f' },
+  gunst:     { name:'Götter-Gunst', farbe:'#b06be0' },
+  heer:      { name:'Heeresstärke', farbe:'#e0566b' },
+  wohlstand: { name:'Wohlstand',    farbe:'#43c98a' },
+  bildung:   { name:'Bildung',      farbe:'#5d8fe8' },
+};
+const STAT_KURZ = { p:'Prestige', g:'Gunst', h:'Heer', w:'Wohlstand' };
+const STADT_RAENGE = [ {ab:0,t:'Weiler'},{ab:25,t:'Dorf'},{ab:60,t:'Polis'},{ab:120,t:'Stadtstaat'},{ab:220,t:'Metropole'},{ab:360,t:'Hegemon'} ];
+
+function stadtWerte() {
+  const owned = meta.schaetze || {};
+  let p=0, g=0, h=0, w=0;
+  for (const s of SCHAETZE) { if (owned[s.id] && s.st) { p+=s.st.p||0; g+=s.st.g||0; h+=s.st.h||0; w+=s.st.w||0; } }
+  const stadt = meta.stadt || 0, vert = meta.verteidigung || {};
+  const bildung = Object.values(srs).filter(f => f.phase === 5).length;
+  const gg = gunstStufe(meta.streak || 0);
+  p += stadt*8 + Math.floor(bildung/4);
+  g += Math.round((gg.mult - 1) * 30) + (vert.tempel ? 6 : 0);
+  h += stadt*2 + (vert.mauer ? 6 : 0) + (vert.damm ? 3 : 0);
+  w += stadt*5 + Math.floor((meta.drachmen || 0) / 120);
+  return { prestige:p, gunst:g, heer:h, wohlstand:w, bildung, buerger: 40 + p*3 + w*4 + bildung*2 };
+}
+function stadtRang(p) { let r = STADT_RAENGE[0]; for (const x of STADT_RAENGE) if (p >= x.ab) r = x; return r.t; }
+function statText(st) { return st ? Object.keys(st).map(k => '+'+st[k]+' '+STAT_KURZ[k]).join(' · ') : ''; }
+
+function stadtwerteAktualisieren() {
+  const box = document.getElementById('stadt-werte'); if (!box) return;
+  const v = stadtWerte();
+  const reihen = [['prestige',v.prestige],['gunst',v.gunst],['heer',v.heer],['wohlstand',v.wohlstand],['bildung',v.bildung]];
+  const max = Math.max(40, ...reihen.map(r => r[1]));
+  let html = '<div class="sw-kopf"><span class="sw-rang">'+stadtRang(v.prestige)+'</span><span class="sw-buerger">'+v.buerger.toLocaleString('de-DE')+' Bürger</span></div>';
+  for (const [k, val] of reihen) {
+    const d = STAT_DEF[k], pct = Math.max(4, Math.round(val/max*100));
+    html += '<div class="sw-row"><span class="sw-name">'+d.name+'</span>'+
+      '<span class="sw-bar"><i style="width:'+pct+'%;background:'+d.farbe+'"></i></span>'+
+      '<span class="sw-val" style="color:'+d.farbe+'">'+val+'</span></div>';
+  }
+  box.innerHTML = html;
+}
 
 function schatzRoll() {
   const t = Object.values(RARITAET).reduce((s, r) => s + r.gewicht, 0);
@@ -2254,7 +2310,7 @@ function zeigeReveal(item, statusHtml) {
   ov.querySelector('.rv-ico').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="' + r.farbe + '" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + SZ_ICO[item.ico] + '</svg>';
   const rarEl = ov.querySelector('.rv-rar'); rarEl.textContent = r.name; rarEl.style.color = r.farbe;
   ov.querySelector('.rv-name').textContent = item.name;
-  ov.querySelector('.rv-myth').textContent = item.mythos;
+  ov.querySelector('.rv-myth').innerHTML = item.mythos + (item.st ? '<br><span class="rv-stat">'+statText(item.st)+'</span>' : '');
   ov.querySelector('.rv-status').innerHTML = statusHtml;
   ov.classList.add('on');
   if (item.rar === 'goettlich') { SFX.levelUp(); HAPTIK.erfolg(); if (typeof partikel === 'function') partikel(); }
@@ -2283,6 +2339,7 @@ function schaetzeAktualisieren() {
     d.onclick = () => schatzTippen(s);
     grid.appendChild(d);
   }
+  stadtwerteAktualisieren();
 }
 
 function schatzTippen(s) {
