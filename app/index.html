@@ -15,6 +15,21 @@
 <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="lib/pixi.min.js"></script>
+<script>
+  /* iOS-Bundle lädt PixiJS offline aus lib/. Im Web kann der Pfad hinter der
+     Passwort-Middleware fehlschlagen → CDN-Fallback, dann Athen neu rendern. */
+  if (typeof PIXI === 'undefined') {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js';
+    s.onload = function () {
+      try {
+        var v = document.getElementById('view-athen');
+        if (typeof stadtAktualisieren === 'function' && v && v.classList.contains('on')) stadtAktualisieren(false);
+      } catch (e) {}
+    };
+    document.head.appendChild(s);
+  }
+</script>
 <style>
 :root {
   --bg:       #0a0d15;
