@@ -3658,7 +3658,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   const TOWN=1.1, ACRO=13.6, HILLBASE=21;
   let renderer, scene, camera, ctl, raf=null, gemountet=false, stadtGruppe, el0, himmelMat;
   let wasserGeo, wBasis, sonne, hemi, wolken, stadtBg, stadtFog={tag:0xa6cdee,nacht:0x10182e};
-  let laeuferMesh=null, laeuferData=[], booteArr=[], routen=[], tt=0;
+  let personen=[], booteArr=[], routen=[], tt=0;
   const dummy = ()=>0; let dummyObj;
 
   // ── Material ──
@@ -3680,6 +3680,17 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     g.setIndex([1,2,5,1,5,4,3,0,4,3,4,5,0,1,4,2,3,5,0,3,2,0,2,1]); g.computeVertexNormals(); return g; }
   function mesh(geo,m,cast=true,rec=true){ const x=new THREE.Mesh(geo,m); x.castShadow=cast; x.receiveShadow=rec; return x; }
   const at=(m,x,y,z)=>{ m.position.set(x,y,z); return m; };
+  // Geometrien zu einer verschmelzen (für instanzierbare Figuren-Typen)
+  function mergeGeo(parts){ const gs=parts.map(p=>{ const g=p.g.index?p.g.toNonIndexed():p.g.clone(); const m=new THREE.Matrix4().makeScale(p.sx||1,p.sy||1,p.sz||1); m.setPosition(p.x||0,p.y||0,p.z||0); g.applyMatrix4(m); return g; });
+    let n=0; gs.forEach(g=>n+=g.attributes.position.count); const pos=new Float32Array(n*3),nor=new Float32Array(n*3); let o=0;
+    gs.forEach(g=>{ pos.set(g.attributes.position.array,o*3); if(g.attributes.normal)nor.set(g.attributes.normal.array,o*3); o+=g.attributes.position.count; g.dispose(); });
+    const out=new THREE.BufferGeometry(); out.setAttribute('position',new THREE.BufferAttribute(pos,3)); out.setAttribute('normal',new THREE.BufferAttribute(nor,3)); out.userData.keep=true; return out; }
+  // Figuren-Typen (Silhouetten) + Stand-Materialien (geteilt → kein Leak)
+  const G={ tunika:mergeGeo([{g:new THREE.CapsuleGeometry(0.17,0.5,4,8),y:0.46},{g:new THREE.SphereGeometry(0.13,8,8),y:0.95}]),
+            robe:mergeGeo([{g:new THREE.ConeGeometry(0.28,0.92,9),y:0.46},{g:new THREE.SphereGeometry(0.13,8,8),y:1.03}]),
+            athlet:mergeGeo([{g:new THREE.CapsuleGeometry(0.15,0.42,4,8),y:0.40},{g:new THREE.SphereGeometry(0.12,8,8),y:0.82}]) };
+  const PM={ buerger:M(0xcdbd9e,{r:0.9,env:0.35}), markt:M(0xc99b63,{r:0.9,env:0.35}), priester:M(0xf2efe6,{r:0.8,env:0.4}),
+             adel:M(0x8c5bb0,{r:0.65,env:0.45}), gelehrt:M(0x4a72b0,{r:0.8,env:0.4}), gymnast:M(0xd0a06a,{r:0.85,env:0.35}) };
 
   function saeulen(n,sp,h,g,x0,z){ for(let i=0;i<n;i++){ const s=mesh(zyl(0.34,0.42,h,12),mat.saeule); s.position.set(x0+i*sp,h/2,z); g.add(s);
     const k=mesh(box(0.95,0.25,0.95),mat.saeule); k.position.set(x0+i*sp,h,z); g.add(k);} }
@@ -3754,11 +3765,17 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
 
   function add(obj,x,z,y,ry=0,s=1){ obj.position.set(x,y,z); obj.rotation.y=ry; obj.scale.setScalar(s); stadtGruppe.add(obj); return obj; }
 
-  function leere(g){ for(let i=g.children.length-1;i>=0;i--){ const c=g.children[i]; c.traverse(o=>{ if(o.geometry) o.geometry.dispose(); }); g.remove(c); } }
+  function leere(g){ for(let i=g.children.length-1;i>=0;i--){ const c=g.children[i]; c.traverse(o=>{ if(o.geometry && !o.geometry.userData.keep) o.geometry.dispose(); }); g.remove(c); } }
+  // Bevölkerung eines Typs setzen (stehend in der Agora oder laufend auf Straßen)
+  function bevoelkern(geo, material, anzahl, modus){ anzahl=Math.max(0,Math.min(60,anzahl|0)); if(!anzahl) return; if(modus==='lauf' && !routen.length) return;
+    const im=new THREE.InstancedMesh(geo, material, anzahl); im.castShadow=true; stadtGruppe.add(im); const data=[];
+    for(let i=0;i<anzahl;i++){ if(modus==='agora'){ dummyObj.position.set(-6+Math.random()*20,TOWN+0.18,24+Math.random()*12); dummyObj.rotation.set(0,Math.random()*6,0); dummyObj.scale.setScalar(1); dummyObj.updateMatrix(); im.setMatrixAt(i,dummyObj.matrix); }
+      else { const rm=routen[Math.floor(Math.random()*routen.length)]; data.push({i,rm,u:Math.random()*rm.tot,spd:1.4+Math.random()*1.7}); } }
+    im.instanceMatrix.needsUpdate=true; if(data.length) personen.push({mesh:im,data}); }
 
   // ── Stadt aus Spielstand bauen ──
   function baue(z){
-    leere(stadtGruppe); routen=[]; laeuferData=[]; booteArr=[];
+    leere(stadtGruppe); routen=[]; personen=[]; booteArr=[];
     const s=z.stufe||0, vert=z.vert||{}, hatMauer=s>=6||vert.mauer;
     // Straßen (ab Stufe 2)
     if(s>=2){ const ringIn=kreis(23,30), ringOut=kreis(38,40);
@@ -3802,16 +3819,14 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     const sCount=Math.min(14,Math.floor((z.heer||0)/8));
     if(hatMauer){ const RW=44; [13,16].forEach(i=>{const a=i/28*Math.PI*2; add(soldat(),Math.cos(a)*(RW-2),Math.sin(a)*(RW-2),TOWN,-a);}); }
     for(let i=0;i<sCount;i++){ const a=i/Math.max(1,sCount)*Math.PI*2; add(soldat(),Math.cos(a)*40,Math.sin(a)*40,TOWN,-a); }
-    // Leute: stehend (Agora) + laufend (Straßen)
-    const farben=[0xddd2c2,0xc9bca8,0xb5a890,0x9a8f7c,0xe3b64f,0x9e6b52];
-    const personGeo=new THREE.CapsuleGeometry(0.16,0.5,4,8);
-    if(s>=5){ const STAT=Math.min(50,Math.round((z.buerger||40)/8)); const steh=new THREE.InstancedMesh(personGeo,M(0xddd2c2,{r:1}),STAT); steh.castShadow=true;
-      for(let i=0;i<STAT;i++){ dummyObj.position.set(-6+Math.random()*20,TOWN+0.55,24+Math.random()*12); dummyObj.rotation.set(0,Math.random()*6,0); dummyObj.scale.setScalar(1); dummyObj.updateMatrix(); steh.setMatrixAt(i,dummyObj.matrix); steh.setColorAt(i,new THREE.Color(farben[i%6])); }
-      steh.instanceMatrix.needsUpdate=true; if(steh.instanceColor)steh.instanceColor.needsUpdate=true; stadtGruppe.add(steh); }
-    if(s>=2){ const WALK=Math.min(90,Math.round((z.buerger||40)/4)); laeuferMesh=new THREE.InstancedMesh(personGeo,M(0xddd2c2,{r:1}),WALK); laeuferMesh.castShadow=true; stadtGruppe.add(laeuferMesh);
-      for(let i=0;i<WALK;i++){ const rm=routen[i%routen.length]; laeuferData.push({rm,u:Math.random()*rm.tot,spd:1.6+Math.random()*1.8}); laeuferMesh.setColorAt(i,new THREE.Color(farben[i%6])); }
-      if(laeuferMesh.instanceColor)laeuferMesh.instanceColor.needsUpdate=true; }
-    else laeuferMesh=null;
+    // Bevölkerung — verschiedene Typen, erscheinen mit den Upgrades
+    const pop=z.buerger||40;
+    bevoelkern(G.tunika, PM.buerger, Math.round(pop/4), 'lauf');                                  // Bürger (Tunika)
+    if(s>=5) bevoelkern(G.tunika, PM.markt, Math.round(pop/9), 'agora');                           // Markt-Bürger auf der Agora
+    if(s>=7||vert.tempel) bevoelkern(G.robe, PM.priester, 3+Math.floor((z.gunst||0)/8), 'lauf');   // Priester (weiße Robe)
+    if(s>=11) bevoelkern(G.robe, PM.adel, 2+Math.floor((z.prestige||0)/45), 'lauf');               // Adlige (Purpur)
+    if(s>=9)  bevoelkern(G.robe, PM.gelehrt, 2+Math.floor((z.bildung||0)/3), 'lauf');              // Gelehrte (blaue Robe)
+    if(s>=7)  bevoelkern(G.athlet, PM.gymnast, 5, 'lauf');                                          // Gymnasten
   }
 
   function tagNacht(nacht){ if(!scene)return;
@@ -3889,7 +3904,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   function animiere(){ tt+=0.016;
     const p=wasserGeo.attributes.position.array; for(let i=0;i<p.length;i+=3){ p[i+1]=Math.sin((wBasis[i]+tt*6)*0.06)*0.4+Math.cos((wBasis[i+2]-tt*5)*0.07)*0.35; } wasserGeo.attributes.position.needsUpdate=true;
     wolken.children.forEach((c,i)=>{ c.position.x+=0.02+i*0.004; if(c.position.x>100)c.position.x=-100; });
-    if(laeuferMesh){ for(let i=0;i<laeuferData.length;i++){ const wk=laeuferData[i]; wk.u+=wk.spd*0.016; const q=routePos(wk.rm,wk.u); dummyObj.position.set(q.x,TOWN+0.55+Math.abs(Math.sin(wk.u*3))*0.07,q.z); dummyObj.rotation.set(0,-q.ang+Math.PI/2,0); dummyObj.scale.setScalar(1); dummyObj.updateMatrix(); laeuferMesh.setMatrixAt(i,dummyObj.matrix);} laeuferMesh.instanceMatrix.needsUpdate=true; }
+    for(const grp of personen){ for(const d of grp.data){ d.u+=d.spd*0.016; const q=routePos(d.rm,d.u); dummyObj.position.set(q.x,TOWN+0.18+Math.abs(Math.sin(d.u*3))*0.07,q.z); dummyObj.rotation.set(0,-q.ang+Math.PI/2,0); dummyObj.scale.setScalar(1); dummyObj.updateMatrix(); grp.mesh.setMatrixAt(d.i,dummyObj.matrix);} grp.mesh.instanceMatrix.needsUpdate=true; }
     booteArr.forEach((b,i)=>{ b.position.y=-0.4+Math.sin(tt*0.8+i)*0.12; b.rotation.z=Math.sin(tt*0.6+i)*0.04; });
     ctl && ctl.update();
   }
