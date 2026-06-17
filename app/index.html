@@ -3655,19 +3655,19 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   catch(e){ try { THREE = await import(CDN); } catch(e2){ console.warn('three.js nicht ladbar', e2); return; } }
 
   const TOWN=1.1, ACRO=9.6;
-  let renderer, scene, camera, ctl, raf=null, gemountet=false, stadtGruppe, el0;
+  let renderer, scene, camera, ctl, raf=null, gemountet=false, stadtGruppe, el0, himmelMat;
   let wasserGeo, wBasis, sonne, hemi, wolken, stadtBg, stadtFog={tag:0xa6cdee,nacht:0x10182e};
   let laeuferMesh=null, laeuferData=[], booteArr=[], routen=[], tt=0;
   const dummy = ()=>0; let dummyObj;
 
   // ── Material ──
-  const M=(c,o={})=>new THREE.MeshStandardMaterial({color:c,roughness:o.r??0.9,metalness:o.m??0,flatShading:o.flat??true,side:o.side,transparent:o.t,opacity:o.o,emissive:o.e||0x000000,emissiveIntensity:o.ei||0});
+  const M=(c,o={})=>new THREE.MeshStandardMaterial({color:c,roughness:o.r??0.9,metalness:o.m??0,flatShading:o.flat??true,side:o.side,transparent:o.t,opacity:o.o,emissive:o.e||0x000000,emissiveIntensity:o.ei||0,envMapIntensity:o.env??0.5});
   const mat={ gras:M(0x6f9355,{r:0.97}), gras2:M(0x789c5c,{r:0.97}), sand:M(0xd8c49a,{r:1}), fels:M(0x837866,{r:1}),
-    marmor:M(0xe9e4d6,{r:0.65}), saeule:M(0xf0ece0,{r:0.55}), dachZ:M(0xb24a35,{r:0.9,side:THREE.DoubleSide}),
-    gold:M(0xe3b64f,{r:0.3,m:0.65}), stamm:M(0x6b4a2e,{r:1}), laub:M(0x4d6b3c,{r:1}), laub2:M(0x6f8f55,{r:1}),
+    marmor:M(0xece7da,{r:0.62,env:0.55}), saeule:M(0xf2eee2,{r:0.55,env:0.55}), dachZ:M(0xb1462f,{r:0.85,side:THREE.DoubleSide}),
+    gold:M(0xe7bd57,{r:0.25,m:0.9,env:1.0}), stamm:M(0x6b4a2e,{r:1}), laub:M(0x47633a,{r:0.95}), laub2:M(0x6a8a50,{r:0.95}),
     stein:M(0xb8b0a0,{r:1}), steinD:M(0x9a9384,{r:1}), holz:M(0x6e4a2c,{r:1}), fenster:M(0x2c3a44,{r:0.5}),
     plaza:M(0xcfc7b3,{r:0.95}), weg:M(0xc6b690,{r:1}), bronze:M(0xb5872f,{r:0.5,m:0.4}),
-    wasser:new THREE.MeshStandardMaterial({color:0x2f6fb0,roughness:0.32,metalness:0.28}) };
+    wasser:new THREE.MeshStandardMaterial({color:0x1f5f95,roughness:0.22,metalness:0.18,envMapIntensity:0.6}) };
   const hausWand=[0xddc09a,0xd2b083,0xe2c6a0,0xcab189].map(c=>M(c,{r:0.95}));
   const hausDach=[0xb24a35,0x9c4230,0xc0563f,0xa84a38].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
   const awnings=[0xc0563f,0x4a7d9e,0xd0a24a,0x6a9a6a,0xb06be0].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
@@ -3813,9 +3813,10 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   }
 
   function tagNacht(nacht){ if(!scene)return;
-    const bg = nacht?0x14213e:0x9ec7ea; scene.background.setHex(bg); scene.fog.color.setHex(bg);
-    sonne.intensity = nacht?0.35:1.3; sonne.color.setHex(nacht?0x9fb4e6:0xfff2d6);
-    hemi.intensity = nacht?0.32:0.65; hemi.color.setHex(nacht?0x35406b:0xcfe4ff);
+    if(himmelMat){ himmelMat.uniforms.top.value.setHex(nacht?0x0b1633:0x2a6fc0); himmelMat.uniforms.bot.value.setHex(nacht?0x1a2440:0xcfe6f5); }
+    scene.fog.color.setHex(nacht?0x141d33:0xa8cdeb);
+    sonne.intensity = nacht?0.4:1.75; sonne.color.setHex(nacht?0x9fb4e6:0xfff1d4);
+    hemi.intensity = nacht?0.22:0.4; hemi.color.setHex(nacht?0x35406b:0xbfd6f0);
   }
 
   // ── eigene Kamera-Steuerung (Touch + Maus): drehen/zoomen/schieben ──
@@ -3845,14 +3846,21 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     if(gemountet)return; gemountet=true; el0=el; el.innerHTML='';
     renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setPixelRatio(Math.min(1.8,devicePixelRatio||1));
     renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.outputColorSpace=THREE.SRGBColorSpace;
-    renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.05; el.appendChild(renderer.domElement);
-    scene=new THREE.Scene(); scene.background=new THREE.Color(0x9ec7ea); scene.fog=new THREE.Fog(0x9ec7ea,150,300);
-    camera=new THREE.PerspectiveCamera(40,1,0.5,700);
-    hemi=new THREE.HemisphereLight(0xcfe4ff,0x6b5b42,0.65); scene.add(hemi); scene.add(new THREE.AmbientLight(0xffffff,0.1));
-    sonne=new THREE.DirectionalLight(0xfff2d6,1.3); sonne.position.set(60,90,38); sonne.castShadow=true;
-    sonne.shadow.mapSize.set(1536,1536); sonne.shadow.camera.near=1; sonne.shadow.camera.far=260;
+    renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=0.92; el.appendChild(renderer.domElement);
+    scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0xa8cdeb,0.0022);
+    camera=new THREE.PerspectiveCamera(40,1,0.5,900);
+    hemi=new THREE.HemisphereLight(0xbfd6f0,0x6b5b42,0.4); scene.add(hemi);
+    sonne=new THREE.DirectionalLight(0xfff1d4,1.75); { const sd=new THREE.Vector3().setFromSphericalCoords(1,THREE.MathUtils.degToRad(57),THREE.MathUtils.degToRad(135)); sonne.position.copy(sd).multiplyScalar(140); } sonne.castShadow=true;
+    sonne.shadow.mapSize.set(1536,1536); sonne.shadow.camera.near=1; sonne.shadow.camera.far=320;
     const S=70; sonne.shadow.camera.left=-S; sonne.shadow.camera.right=S; sonne.shadow.camera.top=S; sonne.shadow.camera.bottom=-S; sonne.shadow.bias=-0.0004; sonne.shadow.normalBias=0.03;
     scene.add(sonne); scene.add(sonne.target);
+    // Gradient-Himmel (Dome) + IBL ohne Addon
+    himmelMat=new THREE.ShaderMaterial({ side:THREE.BackSide, depthWrite:false, fog:false,
+      uniforms:{ top:{value:new THREE.Color(0x2a6fc0)}, bot:{value:new THREE.Color(0xcfe6f5)}, exph:{value:0.85} },
+      vertexShader:'varying vec3 vp; void main(){ vp=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+      fragmentShader:'varying vec3 vp; uniform vec3 top; uniform vec3 bot; uniform float exph; void main(){ float hh=normalize(vp).y*0.5+0.5; float k=pow(clamp(hh,0.0,1.0),exph); gl_FragColor=vec4(mix(bot,top,k),1.0); }' });
+    scene.add(new THREE.Mesh(new THREE.SphereGeometry(500,24,12), himmelMat));
+    { const pm=new THREE.PMREMGenerator(renderer); const es=new THREE.Scene(); es.add(new THREE.Mesh(new THREE.SphereGeometry(50,16,8), himmelMat)); scene.environment=pm.fromScene(es,0.0).texture; }
     const welt=new THREE.Group(); scene.add(welt);
     wasserGeo=new THREE.PlaneGeometry(600,600,40,40); wasserGeo.rotateX(-Math.PI/2);
     const wm=mesh(wasserGeo,mat.wasser,false,true); wm.position.y=-1.6; scene.add(wm); wBasis=wasserGeo.attributes.position.array.slice();
