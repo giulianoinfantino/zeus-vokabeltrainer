@@ -3672,6 +3672,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   const hausWand=[0xddc09a,0xd2b083,0xe2c6a0,0xcab189].map(c=>M(c,{r:0.95}));
   const hausDach=[0xb24a35,0x9c4230,0xc0563f,0xa84a38].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
   const awnings=[0xc0563f,0x4a7d9e,0xd0a24a,0x6a9a6a,0xb06be0].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
+  Object.assign(mat.weg, { polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-4 });   // gegen Z-Fighting auf dem Boden
 
   const box=(w,h,d)=>new THREE.BoxGeometry(w,h,d), zyl=(rt,rb,h,s=14)=>new THREE.CylinderGeometry(rt,rb,h,s);
   function giebel(w,h,d){ const hw=w/2,hd=d/2,g=new THREE.BufferGeometry();
@@ -3747,7 +3748,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
 
   // ── Straßennetz / Routen ──
   function kreis(r,n){ const p=[]; for(let i=0;i<n;i++){const a=i/n*Math.PI*2;p.push([Math.cos(a)*r,Math.sin(a)*r]);} return p; }
-  function strasse(pts,w,closed){ const n=pts.length; for(let i=0;i<(closed?n:n-1);i++){ const a=pts[i],b=pts[(i+1)%n],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz); const seg=mesh(box(len+w*0.5,0.08,w),mat.weg,false,true); seg.position.set((a[0]+b[0])/2,TOWN+0.06,(a[1]+b[1])/2); seg.rotation.y=-Math.atan2(dz,dx); stadtGruppe.add(seg);} }
+  function strasse(pts,w,closed,yo){ const n=pts.length, y=TOWN+(yo??0.2); for(let i=0;i<(closed?n:n-1);i++){ const a=pts[i],b=pts[(i+1)%n],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz); const seg=mesh(box(len+w*0.5,0.06,w),mat.weg,false,true); seg.position.set((a[0]+b[0])/2,y,(a[1]+b[1])/2); seg.rotation.y=-Math.atan2(dz,dx); stadtGruppe.add(seg);} }
   function route(pts,closed){ const p=closed?pts:pts.concat(pts.slice(1,-1).reverse()); const segs=[]; let tot=0; for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],d=Math.hypot(b[0]-a[0],b[1]-a[1]);segs.push(d);tot+=d;} const rm={p,segs,tot}; routen.push(rm); return rm; }
   function routePos(rm,u){ u=((u%rm.tot)+rm.tot)%rm.tot; let i=0; while(i<rm.segs.length&&u>rm.segs[i]){u-=rm.segs[i];i++;} const a=rm.p[i%rm.p.length],b=rm.p[(i+1)%rm.p.length],t=rm.segs[i]?u/rm.segs[i]:0; return {x:a[0]+(b[0]-a[0])*t,z:a[1]+(b[1]-a[1])*t,ang:Math.atan2(b[1]-a[1],b[0]-a[0])}; }
 
@@ -3763,8 +3764,8 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     if(s>=2){ const ringIn=kreis(23,30), ringOut=kreis(38,40);
       strasse(ringIn,2.6,true); route(ringIn,true);
       if(s>=5){ strasse(ringOut,3,true); route(ringOut,true); }
-      const weg1=[[3,44],[4,36],[5,29],[6,24],[7,21]]; strasse(weg1,3.2,false);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
-      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*23,Math.sin(a)*23],[Math.cos(a)*38,Math.sin(a)*38]]; strasse(rad,2.2,false); route(rad,false);} }
+      const weg1=[[3,44],[4,36],[5,29],[6,24],[7,21]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
+      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*23,Math.sin(a)*23],[Math.cos(a)*38,Math.sin(a)*38]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
     if(!routen.length) route([[0,16],[0,-16]],false);  // Notroute
     // Akropolis-Bauten
     if(s>=11) add(tempel(2.0),2,-2,ACRO,0);
