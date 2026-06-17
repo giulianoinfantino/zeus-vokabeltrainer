@@ -4,7 +4,9 @@
 Liefert IPA-Strings für SSML <phoneme alphabet="ipa" ph="…"> (Azure/Google TTS):
 - Betonung (ˈ) exakt auf der Silbe des griechischen Akzents (Akut/Gravis/Zirkumflex)
 - Länge (ː) auf η, ω, ου und zirkumflektierten Vokalen
-- Schul-Segmente: θ=t, φ=f, χ=ç/x, ζ=ts, υ=y, ει/αι=aɪ, ευ/οι=ɔʏ, αυ=aʊ, ου=uː
+- Schul-Segmente: θ=t, φ=f, χ=ç/x, ζ=dz, υ=y, ει/αι=aɪ, ευ/οι=ɔʏ, αυ=aʊ, ου=uː
+- IPA_OVERRIDE: Hand-Korrekturen (v.a. Vokallänge), die nicht aus der Schreibung
+  ableitbar sind. Schlüssel = NFC-Wortform. Mit api/grc_ipa.js synchron halten.
 
 Bewusst NICHT rekonstruiert (keine Aspiraten) — Projektnorm „wie an Schulen gelehrt".
 """
@@ -18,7 +20,7 @@ VOKALE = set("αεηιουω")
 
 # Einzelkonsonanten → IPA (Schulaussprache)
 KONS = {
-    "β": "b", "γ": "ɡ", "δ": "d", "ζ": "ts", "θ": "t", "κ": "k", "λ": "l",
+    "β": "b", "γ": "ɡ", "δ": "d", "ζ": "dz", "θ": "t", "κ": "k", "λ": "l",
     "μ": "m", "ν": "n", "ξ": "ks", "π": "p", "ρ": "r", "σ": "s", "ς": "s",
     "τ": "t", "φ": "f", "ψ": "ps",
 }
@@ -97,8 +99,16 @@ def _kons_ipa(buchst, i, folgevokal):
     return KONS.get(b, "")
 
 
+IPA_OVERRIDE = {
+    "πράττω": "ˈpraːttoː",   # Wurzel-langes α (πρᾱγ-/πρᾱκ-)
+}
+
+
 def grc_to_ipa(wort):
     """Ein griechisches Wort → IPA mit ˈ (Betonung) und ː (Länge)."""
+    ov = IPA_OVERRIDE.get(unicodedata.normalize("NFC", wort))
+    if ov is not None:
+        return ov
     buchst = _zerlege(wort)
     if not buchst:
         return ""

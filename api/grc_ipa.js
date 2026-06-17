@@ -3,8 +3,12 @@
 // BEIDE synchron halten und per `node api/_grc_ipa_test.mjs` gegen Python prüfen.
 //
 // Liefert IPA-Strings für eleven_v3 Inline-IPA (/…/). Schulaussprache:
-// θ=t, φ=f, χ=ç/x, ζ=ts, υ=y; ει/αι=[aɪ], ευ/οι=[ɔɪ], αυ=[aʊ], ου=[uː];
+// θ=t, φ=f, χ=ç/x, ζ=dz, υ=y; ει/αι=[aɪ], ευ/οι=[ɔɪ], αυ=[aʊ], ου=[uː];
 // Spiritus asper = [h]. Diphthonge germanisiert (Wahl A, vgl. grc_ipa.py).
+//
+// IPA_OVERRIDE: Hand-Korrekturen für Fälle, die der Algorithmus nicht aus der
+// Schreibung ableiten kann (v.a. Vokallänge bei α/ι/υ, z.B. wurzel-langes α).
+// Schlüssel = NFC-Wortform. BEIDE Dateien (js + py) synchron halten.
 
 const AKUT = '́', GRAVIS = '̀', ZIRK = '͂';
 const ASPER = '̔', IOTA = 'ͅ', TREMA = '̈';
@@ -12,7 +16,7 @@ const AKZENTE = new Set([AKUT, GRAVIS, ZIRK]);
 const VOKALE = new Set('αεηιουω');
 
 const KONS = {
-  β: 'b', γ: 'ɡ', δ: 'd', ζ: 'ts', θ: 't', κ: 'k', λ: 'l', μ: 'm', ν: 'n',
+  β: 'b', γ: 'ɡ', δ: 'd', ζ: 'dz', θ: 't', κ: 'k', λ: 'l', μ: 'm', ν: 'n',
   ξ: 'ks', π: 'p', ρ: 'r', σ: 's', ς: 's', τ: 't', φ: 'f', ψ: 'ps',
 };
 const DIPHTHONG = {
@@ -24,6 +28,11 @@ const VOKAL = {
   ο: ['ɔ', 'oː'], υ: ['y', 'yː'], ω: ['oː', 'oː'],
 };
 const FRONT = new Set('εηιυ');
+
+// Hand-Korrekturen (Vokallänge etc.), die nicht aus der Schreibung ableitbar sind.
+const IPA_OVERRIDE = {
+  'πράττω': 'ˈpraːttoː',   // Wurzel-langes α (πρᾱγ-/πρᾱκ-)
+};
 
 const istKombi = (c) => { const n = c.codePointAt(0); return n >= 0x300 && n <= 0x36f; };
 const hatAkzent = (marks) => { for (const a of AKZENTE) if (marks.has(a)) return true; return false; };
@@ -76,6 +85,8 @@ function konsIpa(b, i, folgevokal) {
 
 // Ein griechisches Wort → IPA mit ˈ (Betonung) und ː (Länge).
 export function grcToIpa(wort) {
+  const ov = IPA_OVERRIDE[wort.normalize('NFC')];
+  if (ov !== undefined) return ov;
   const b = zerlege(wort);
   if (!b.length) return '';
   const nuk = nuklei(b);
