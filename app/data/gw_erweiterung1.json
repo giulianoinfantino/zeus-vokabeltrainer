@@ -62,6 +62,522 @@
           "audio": "data/audio/erw1_00_07.m4a"
         }
       ]
+    },
+    {
+      "titel": "Aufbauwortschatz II — Hochfrequent",
+      "vokabeln": [
+        {
+          "griechisch": "οὐδέ",
+          "umschrift": "oudé",
+          "deutsch": "und nicht, auch nicht; nicht einmal",
+          "sprich": "udé",
+          "audio": "data/audio/erw1_01_00.m4a"
+        },
+        {
+          "griechisch": "τοιοῦτος",
+          "umschrift": "toioûtos",
+          "deutsch": "ein solcher, derartig",
+          "sprich": "toiuhtos",
+          "audio": "data/audio/erw1_01_01.m4a"
+        },
+        {
+          "griechisch": "ὅσος",
+          "umschrift": "hósos",
+          "deutsch": "so groß/so viel wie; wie viel",
+          "sprich": "hósos",
+          "audio": "data/audio/erw1_01_02.m4a"
+        },
+        {
+          "griechisch": "πράσσω",
+          "umschrift": "prássō",
+          "deutsch": "tun, handeln; (Geld) eintreiben",
+          "sprich": "prássoh",
+          "audio": "data/audio/erw1_01_03.m4a"
+        },
+        {
+          "griechisch": "μηδέ",
+          "umschrift": "mēdé",
+          "deutsch": "und nicht, auch nicht (verneint)",
+          "sprich": "mähdé",
+          "audio": "data/audio/erw1_01_04.m4a"
+        },
+        {
+          "griechisch": "ἅμα",
+          "umschrift": "háma",
+          "deutsch": "zugleich, zusammen (mit +Dat.)",
+          "sprich": "háma",
+          "audio": "data/audio/erw1_01_05.m4a"
+        },
+        {
+          "griechisch": "τοσοῦτος",
+          "umschrift": "tosoûtos",
+          "deutsch": "so groß, so viel",
+          "sprich": "tosuhtos",
+          "audio": "data/audio/erw1_01_06.m4a"
+        },
+        {
+          "griechisch": "μήτε",
+          "umschrift": "mḗte",
+          "deutsch": "und nicht; μήτε…μήτε weder…noch",
+          "sprich": "mähte",
+          "audio": "data/audio/erw1_01_07.m4a"
+        },
+        {
+          "griechisch": "ποτέ",
+          "umschrift": "poté",
+          "deutsch": "einmal, irgendwann; je",
+          "sprich": "poté",
+          "audio": "data/audio/erw1_01_08.m4a"
+        },
+        {
+          "griechisch": "ὅταν",
+          "umschrift": "hótan",
+          "deutsch": "wann immer, sobald (+Konj.)",
+          "sprich": "hótan",
+          "audio": "data/audio/erw1_01_09.m4a"
+        },
+        {
+          "griechisch": "ἡ θάλασσα",
+          "umschrift": "hē thálassa",
+          "deutsch": "Meer, See",
+          "sprich": "hä tálassa",
+          "audio": "data/audio/erw1_01_10.m4a"
+        },
+        {
+          "griechisch": "συμβαίνω",
+          "umschrift": "symbaínō",
+          "deutsch": "zusammentreffen; geschehen, sich ereignen",
+          "sprich": "sümbainoh",
+          "audio": "data/audio/erw1_01_11.m4a"
+        },
+        {
+          "griechisch": "τὸ χρῆμα",
+          "umschrift": "to chrêma",
+          "deutsch": "Sache; Pl. Geld, Güter",
+          "sprich": "to chrähma",
+          "audio": "data/audio/erw1_01_12.m4a"
+        },
+        {
+          "griechisch": "πλεῖστος",
+          "umschrift": "pleîstos",
+          "deutsch": "der meiste, größte",
+          "sprich": "pleistos",
+          "audio": "data/audio/erw1_01_13.m4a"
+        },
+        {
+          "griechisch": "εἶτα",
+          "umschrift": "eîta",
+          "deutsch": "dann, darauf, hierauf",
+          "sprich": "eita",
+          "audio": "data/audio/erw1_01_14.m4a"
+        },
+        {
+          "griechisch": "ἐμός",
+          "umschrift": "emós",
+          "deutsch": "mein",
+          "sprich": "emós",
+          "audio": "data/audio/erw1_01_15.m4a"
+        },
+        {
+          "griechisch": "ἵστημι",
+          "umschrift": "hístēmi",
+          "deutsch": "stellen; (intr.) (sich) stellen, stehen",
+          "sprich": "hístähmi",
+          "audio": "data/audio/erw1_01_16.m4a"
+        },
+        {
+          "griechisch": "ἐρῶ",
+          "umschrift": "erô",
+          "deutsch": "ich werde sagen (Fut. zu λέγω)",
+          "sprich": "eroh",
+          "audio": "data/audio/erw1_01_17.m4a"
+        },
+        {
+          "griechisch": "ἔπειτα",
+          "umschrift": "épeita",
+          "deutsch": "darauf, dann, hierauf",
+          "sprich": "épeita",
+          "audio": "data/audio/erw1_01_18.m4a"
+        },
+        {
+          "griechisch": "ἀμφότερος",
+          "umschrift": "amphóteros",
+          "deutsch": "beide(s)",
+          "sprich": "amfóteros",
+          "audio": "data/audio/erw1_01_19.m4a"
+        },
+        {
+          "griechisch": "ἐνταῦθα",
+          "umschrift": "entaûtha",
+          "deutsch": "hier, dort; da, dann",
+          "sprich": "entauta",
+          "audio": "data/audio/erw1_01_20.m4a"
+        },
+        {
+          "griechisch": "σός",
+          "umschrift": "sós",
+          "deutsch": "dein",
+          "sprich": "sós",
+          "audio": "data/audio/erw1_01_21.m4a"
+        },
+        {
+          "griechisch": "φυλάσσω",
+          "umschrift": "phylássō",
+          "deutsch": "bewachen, hüten; sich hüten",
+          "sprich": "fülássoh",
+          "audio": "data/audio/erw1_01_22.m4a"
+        },
+        {
+          "griechisch": "ὁ νοῦς",
+          "umschrift": "ho noûs",
+          "deutsch": "Geist, Verstand, Sinn",
+          "sprich": "ho nuhs",
+          "audio": "data/audio/erw1_01_23.m4a"
+        },
+        {
+          "griechisch": "ἄριστος",
+          "umschrift": "áristos",
+          "deutsch": "der beste, tüchtigste",
+          "sprich": "áristos",
+          "audio": "data/audio/erw1_01_24.m4a"
+        },
+        {
+          "griechisch": "ὁ λαός",
+          "umschrift": "ho laós",
+          "deutsch": "Volk, Kriegsvolk, Leute",
+          "sprich": "ho laós",
+          "audio": "data/audio/erw1_01_25.m4a"
+        },
+        {
+          "griechisch": "τὸ ὅπλον",
+          "umschrift": "to hóplon",
+          "deutsch": "Waffe, Gerät; Pl. Waffen, Rüstung",
+          "sprich": "to hóplon",
+          "audio": "data/audio/erw1_01_26.m4a"
+        },
+        {
+          "griechisch": "ἀφαιρέω",
+          "umschrift": "aphairéō",
+          "deutsch": "wegnehmen, entziehen",
+          "sprich": "afairéoh",
+          "audio": "data/audio/erw1_01_27.m4a"
+        },
+        {
+          "griechisch": "ἐλάσσων",
+          "umschrift": "elássōn",
+          "deutsch": "kleiner, geringer, weniger",
+          "sprich": "elássohn",
+          "audio": "data/audio/erw1_01_28.m4a"
+        },
+        {
+          "griechisch": "πλήν",
+          "umschrift": "plḗn",
+          "deutsch": "außer, ausgenommen; jedoch",
+          "sprich": "plähn",
+          "audio": "data/audio/erw1_01_29.m4a"
+        },
+        {
+          "griechisch": "προσήκω",
+          "umschrift": "prosḗkō",
+          "deutsch": "zukommen, sich gehören; verwandt sein",
+          "sprich": "prosähkoh",
+          "audio": "data/audio/erw1_01_30.m4a"
+        },
+        {
+          "griechisch": "οὐκοῦν",
+          "umschrift": "oukoûn",
+          "deutsch": "also, folglich, demnach",
+          "sprich": "ukuhn",
+          "audio": "data/audio/erw1_01_31.m4a"
+        },
+        {
+          "griechisch": "τὸ μέγεθος",
+          "umschrift": "to mégethos",
+          "deutsch": "Größe, Ausmaß",
+          "sprich": "to mégetos",
+          "audio": "data/audio/erw1_01_32.m4a"
+        },
+        {
+          "griechisch": "τὸ στάδιον",
+          "umschrift": "to stádion",
+          "deutsch": "Stadion (Längenmaß; Rennbahn)",
+          "sprich": "to ßtádion",
+          "audio": "data/audio/erw1_01_33.m4a"
+        },
+        {
+          "griechisch": "γοῦν",
+          "umschrift": "goûn",
+          "deutsch": "jedenfalls, wenigstens, freilich",
+          "sprich": "guhn",
+          "audio": "data/audio/erw1_01_34.m4a"
+        },
+        {
+          "griechisch": "διό",
+          "umschrift": "dió",
+          "deutsch": "deshalb, daher, weswegen",
+          "sprich": "dió",
+          "audio": "data/audio/erw1_01_35.m4a"
+        },
+        {
+          "griechisch": "μιμνῄσκω",
+          "umschrift": "mimnḗiskō",
+          "deutsch": "erinnern; (Med.) sich erinnern (+Gen.)",
+          "sprich": "mimnähiskoh",
+          "audio": "data/audio/erw1_01_36.m4a"
+        },
+        {
+          "griechisch": "θνῄσκω",
+          "umschrift": "thnḗiskō",
+          "deutsch": "sterben",
+          "sprich": "tnähiskoh",
+          "audio": "data/audio/erw1_01_37.m4a"
+        },
+        {
+          "griechisch": "ὅσπερ",
+          "umschrift": "hósper",
+          "deutsch": "welcher gerade, eben der, der",
+          "sprich": "hósper",
+          "audio": "data/audio/erw1_01_38.m4a"
+        },
+        {
+          "griechisch": "ἔνθα",
+          "umschrift": "éntha",
+          "deutsch": "dort, da; wohin, wo",
+          "sprich": "énta",
+          "audio": "data/audio/erw1_01_39.m4a"
+        },
+        {
+          "griechisch": "πλείων",
+          "umschrift": "pleíōn",
+          "deutsch": "mehr, größer (Komp. zu πολύς)",
+          "sprich": "pleiohn",
+          "audio": "data/audio/erw1_01_40.m4a"
+        },
+        {
+          "griechisch": "δείδω",
+          "umschrift": "deídō",
+          "deutsch": "fürchten, sich fürchten",
+          "sprich": "deidoh",
+          "audio": "data/audio/erw1_01_41.m4a"
+        },
+        {
+          "griechisch": "ἥσσων",
+          "umschrift": "hḗssōn",
+          "deutsch": "schwächer, geringer, unterlegen",
+          "sprich": "hähssohn",
+          "audio": "data/audio/erw1_01_42.m4a"
+        },
+        {
+          "griechisch": "ὁ ἡγεμών",
+          "umschrift": "ho hēgemṓn",
+          "deutsch": "Anführer, Führer",
+          "sprich": "ho hähgemóhn",
+          "audio": "data/audio/erw1_01_43.m4a"
+        },
+        {
+          "griechisch": "ὁ κύκλος",
+          "umschrift": "ho kýklos",
+          "deutsch": "Kreis, Ring, Rad",
+          "sprich": "ho küklos",
+          "audio": "data/audio/erw1_01_44.m4a"
+        },
+        {
+          "griechisch": "ἄλλως",
+          "umschrift": "állōs",
+          "deutsch": "anders, auf andere Weise; vergeblich",
+          "sprich": "állohs",
+          "audio": "data/audio/erw1_01_45.m4a"
+        },
+        {
+          "griechisch": "ἀφίστημι",
+          "umschrift": "aphístēmi",
+          "deutsch": "entfernen, abbringen; (intr.) abfallen",
+          "sprich": "afístähmi",
+          "audio": "data/audio/erw1_01_46.m4a"
+        },
+        {
+          "griechisch": "πότερος",
+          "umschrift": "póteros",
+          "deutsch": "wer/welcher von beiden?",
+          "sprich": "póteros",
+          "audio": "data/audio/erw1_01_47.m4a"
+        },
+        {
+          "griechisch": "τέσσαρες",
+          "umschrift": "téssares",
+          "deutsch": "vier",
+          "sprich": "téssares",
+          "audio": "data/audio/erw1_01_48.m4a"
+        },
+        {
+          "griechisch": "ἡμέτερος",
+          "umschrift": "hēméteros",
+          "deutsch": "unser",
+          "sprich": "hähméteros",
+          "audio": "data/audio/erw1_01_49.m4a"
+        },
+        {
+          "griechisch": "κρείσσων",
+          "umschrift": "kreíssōn",
+          "deutsch": "stärker, mächtiger, besser",
+          "sprich": "kreissohn",
+          "audio": "data/audio/erw1_01_50.m4a"
+        },
+        {
+          "griechisch": "παρακαλέω",
+          "umschrift": "parakaléō",
+          "deutsch": "herbeirufen; ermahnen, auffordern",
+          "sprich": "parakaléoh",
+          "audio": "data/audio/erw1_01_51.m4a"
+        },
+        {
+          "griechisch": "ἔρομαι",
+          "umschrift": "éromai",
+          "deutsch": "fragen, sich erkundigen",
+          "sprich": "éromai",
+          "audio": "data/audio/erw1_01_52.m4a"
+        },
+        {
+          "griechisch": "λείπω",
+          "umschrift": "leípō",
+          "deutsch": "(zurück)lassen, verlassen",
+          "sprich": "leipoh",
+          "audio": "data/audio/erw1_01_53.m4a"
+        },
+        {
+          "griechisch": "ἀποδείκνυμι",
+          "umschrift": "apodeíknymi",
+          "deutsch": "aufzeigen, ernennen, beweisen",
+          "sprich": "apodeiknümi",
+          "audio": "data/audio/erw1_01_54.m4a"
+        },
+        {
+          "griechisch": "ἔνιοι",
+          "umschrift": "énioi",
+          "deutsch": "einige, manche",
+          "sprich": "énioi",
+          "audio": "data/audio/erw1_01_55.m4a"
+        },
+        {
+          "griechisch": "πεζός",
+          "umschrift": "pezós",
+          "deutsch": "zu Fuß; Fußsoldat, Landheer",
+          "sprich": "pezós",
+          "audio": "data/audio/erw1_01_56.m4a"
+        },
+        {
+          "griechisch": "ὁ πρέσβυς",
+          "umschrift": "ho présbys",
+          "deutsch": "alter Mann, Greis; Pl. Gesandte",
+          "sprich": "ho présbüs",
+          "audio": "data/audio/erw1_01_57.m4a"
+        },
+        {
+          "griechisch": "ἔξεστι",
+          "umschrift": "éxesti",
+          "deutsch": "es ist erlaubt, es ist möglich",
+          "sprich": "éxesti",
+          "audio": "data/audio/erw1_01_58.m4a"
+        },
+        {
+          "griechisch": "συνάγω",
+          "umschrift": "synágō",
+          "deutsch": "zusammenbringen, versammeln",
+          "sprich": "sünágoh",
+          "audio": "data/audio/erw1_01_59.m4a"
+        },
+        {
+          "griechisch": "βελτίων",
+          "umschrift": "beltíōn",
+          "deutsch": "besser",
+          "sprich": "beltíohn",
+          "audio": "data/audio/erw1_01_60.m4a"
+        },
+        {
+          "griechisch": "ἀπολείπω",
+          "umschrift": "apoleípō",
+          "deutsch": "zurücklassen, übriglassen; verlassen",
+          "sprich": "apoleipoh",
+          "audio": "data/audio/erw1_01_61.m4a"
+        },
+        {
+          "griechisch": "παρέρχομαι",
+          "umschrift": "parérchomai",
+          "deutsch": "vorübergehen; auftreten, vortreten",
+          "sprich": "parérchomai",
+          "audio": "data/audio/erw1_01_62.m4a"
+        },
+        {
+          "griechisch": "πλησίος",
+          "umschrift": "plēsíos",
+          "deutsch": "nahe, benachbart",
+          "sprich": "plähsíos",
+          "audio": "data/audio/erw1_01_63.m4a"
+        },
+        {
+          "griechisch": "ὁπόσος",
+          "umschrift": "hopósos",
+          "deutsch": "wie viel/groß auch immer",
+          "sprich": "hopósos",
+          "audio": "data/audio/erw1_01_64.m4a"
+        },
+        {
+          "griechisch": "παραγίγνομαι",
+          "umschrift": "paragígnomai",
+          "deutsch": "dazukommen, erscheinen, beistehen",
+          "sprich": "paragígnomai",
+          "audio": "data/audio/erw1_01_65.m4a"
+        },
+        {
+          "griechisch": "τάσσω",
+          "umschrift": "tássō",
+          "deutsch": "ordnen, aufstellen, anordnen",
+          "sprich": "tássoh",
+          "audio": "data/audio/erw1_01_66.m4a"
+        },
+        {
+          "griechisch": "ἀπαλλάσσω",
+          "umschrift": "apallássō",
+          "deutsch": "befreien, entfernen; (Med.) weggehen",
+          "sprich": "apallássoh",
+          "audio": "data/audio/erw1_01_67.m4a"
+        },
+        {
+          "griechisch": "εἴκοσι",
+          "umschrift": "eíkosi",
+          "deutsch": "zwanzig",
+          "sprich": "eikosi",
+          "audio": "data/audio/erw1_01_68.m4a"
+        },
+        {
+          "griechisch": "χρύσεος",
+          "umschrift": "chrýseos",
+          "deutsch": "golden, aus Gold",
+          "sprich": "chrüseos",
+          "audio": "data/audio/erw1_01_69.m4a"
+        },
+        {
+          "griechisch": "ἅπτω",
+          "umschrift": "háptō",
+          "deutsch": "anzünden; (Med.) anfassen, berühren (+Gen.)",
+          "sprich": "háptoh",
+          "audio": "data/audio/erw1_01_70.m4a"
+        },
+        {
+          "griechisch": "πού",
+          "umschrift": "poú",
+          "deutsch": "irgendwo; etwa, wohl",
+          "sprich": "pú",
+          "audio": "data/audio/erw1_01_71.m4a"
+        },
+        {
+          "griechisch": "ἐμαυτοῦ",
+          "umschrift": "emautoû",
+          "deutsch": "meiner selbst (Reflexiv)",
+          "sprich": "emautuh",
+          "audio": "data/audio/erw1_01_72.m4a"
+        }
+      ]
     }
   ]
 }
