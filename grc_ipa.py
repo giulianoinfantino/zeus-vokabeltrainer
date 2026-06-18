@@ -165,6 +165,19 @@ def grc_to_ipa(wort):
                 out.append(("C", ci, None))
             i += 1
 
+    # Hiatus: Glottisschlag ʔ zwischen zwei direkt aufeinanderfolgenden Vokalen
+    # (eleven_v3 verschluckt sonst den ersten/betonten Vokal). Experten-Korrektur 06/2026.
+    # ... aber NICHT nach kurzem ι/υ (Gleitlaut → Artefakt „Heli-a-os") und NICHT nach
+    # einem Diphthong (endet auf ɪ/ʊ → trennt schon selbst; ʔ zerstört z.B. βασιλεύω).
+    hi = []
+    for idx, t in enumerate(out):
+        prev = out[idx - 1][1] if idx else ""
+        if idx > 0 and t[0] == "V" and out[idx - 1][0] == "V" \
+                and prev not in ("i", "iː", "y", "yː") and not prev.endswith(("ɪ", "ʊ")):
+            hi.append(("C", "ʔ", None))
+        hi.append(t)
+    out = hi
+
     # h-Prefix (Spiritus asper) — prüfe Marks beider ersten Vokalbuchstaben
     asper = False
     for p in range(nuk[0][0], nuk[0][1]):

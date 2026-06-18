@@ -119,6 +119,12 @@ export function grcToIpa(wort) {
     }
   }
 
+  // Hiatus: Glottisschlag ʔ zwischen zwei direkt aufeinanderfolgenden Vokalen
+  // (eleven_v3 verschluckt sonst den ersten/betonten Vokal). Experten-Korrektur.
+  // ... aber NICHT nach kurzem ι/υ (Gleitlaut → Artefakt „Heli-a-os") und NICHT nach
+  // einem Diphthong (endet auf ɪ/ʊ → trennt schon selbst; ʔ zerstört z.B. βασιλεύω).
+  { const GLEIT = new Set(['i', 'iː', 'y', 'yː']); const hi = []; for (let i = 0; i < out.length; i++) { const prev = i ? out[i - 1][1] : ''; if (i > 0 && out[i][0] === 'V' && out[i - 1][0] === 'V' && !GLEIT.has(prev) && !/[ɪʊ]$/.test(prev)) hi.push(['C', 'ʔ']); hi.push(out[i]); } out.length = 0; out.push(...hi); }
+
   let asper = false;
   for (let p = nuk[0][0]; p < nuk[0][1]; p++) if (b[p][1].has(ASPER)) asper = true;
   let res = asper ? 'h' : '';
