@@ -931,6 +931,23 @@ body.hell .hz.futur { background: #ece8df; }
 .sw-bar { flex:1; height:6px; background:var(--bg2); border-radius:6px; overflow:hidden; }
 .sw-bar i { display:block; height:100%; border-radius:6px; transition:width .45s; }
 .sw-val { font-size:13px; font-weight:700; width:36px; text-align:right; }
+/* ═══ Grammatik ═══ */
+#view-grammatik .gr-kap-t { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 800; margin: 22px 4px 8px; }
+.gr-d { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; overflow: hidden; }
+.gr-d > summary { padding: 13px 15px; font-weight: 700; cursor: pointer; list-style: none; font-size: 14.5px; display: flex; align-items: center; gap: 8px; }
+.gr-d > summary::-webkit-details-marker { display: none; }
+.gr-d > summary::before { content: '+'; color: var(--gold); font-weight: 800; font-size: 17px; line-height: 1; width: 14px; }
+.gr-d[open] > summary { color: var(--gold); }
+.gr-d[open] > summary::before { content: '–'; }
+.gr-body { padding: 2px 15px 15px; font-size: 14px; line-height: 1.6; }
+.gr-body p { margin: 9px 0; }
+.gr-body em { color: var(--muted); font-style: normal; }
+.gr-body .grc { font-weight: 600; color: var(--text); }
+.gr-tbl { overflow-x: auto; margin: 10px 0; }
+.gr-body table { border-collapse: collapse; min-width: 100%; font-size: 13px; }
+.gr-body th, .gr-body td { border: 1px solid var(--border); padding: 5px 9px; text-align: left; white-space: nowrap; }
+.gr-body th { color: var(--gold); font-weight: 700; background: var(--bg2); }
+.gr-body td:first-child, .gr-body th:first-child { color: var(--muted); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -1131,6 +1148,13 @@ body.hell .hz.futur { background: #ece8df; }
     </div>
   </div>
 
+  <!-- ═══ GRAMMATIK ═══ -->
+  <div class="view" id="view-grammatik">
+    <div class="section-title" style="margin-bottom:6px">Grammatik</div>
+    <p style="color:var(--muted);font-size:13px;margin:0 4px 14px">Altgriechische Formenlehre &amp; Syntax — Nachschlagewerk. Tippe ein Thema an.</p>
+    <div id="gr-inhalt"></div>
+  </div>
+
   <!-- ═══ EINSTELLUNGEN ═══ -->
   <div class="view" id="view-einstellungen">
     <div class="section-title" style="margin-bottom:14px">Profil</div>
@@ -1298,6 +1322,7 @@ body.hell .hz.futur { background: #ece8df; }
   <div class="drawer-sektion">Inhalte</div>
   <button class="drawer-item" onclick="drawerZu('import')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>Import<span class="d-sub">Foto → Lektion</span></button>
   <button class="drawer-item" onclick="drawerZu('bibliothek')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h3.2v15H5z"/><path d="M9.7 4.5h3.2v15H9.7z"/><path d="M15.2 5.3l3 .5-2.2 14.4-3-.5z"/></svg></span>Bibliothek<span class="d-sub" id="drawer-lek-n"></span></button>
+  <button class="drawer-item" onclick="drawerZu('grammatik')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h11a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 5.5h-3a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h3z"/></svg></span>Grammatik<span class="d-sub">Formenlehre &amp; Syntax</span></button>
   <div class="drawer-sektion">App</div>
   <button class="drawer-item" onclick="drawerZu('einstellungen')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V20a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H4a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H10a1.6 1.6 0 0 0 1-1.5V4a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V10a1.6 1.6 0 0 0 1.5 1H20a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg></span>Einstellungen</button>
   <button class="drawer-item" onclick="themeUmschalten()"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" fill="currentColor" fill-opacity=".0"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor" stroke="none"/></svg></span>Design<span class="d-sub" id="drawer-theme">Dunkel</span></button>
@@ -3582,6 +3607,234 @@ function demoPruefen() {
   }
 }
 
+/* ═══════════ GRAMMATIK (Nachschlagewerk) ═══════════ */
+const GRAMMATIK = [
+  // ───── NOMINA ─────
+  { kap:'Nomina & Artikel', h:'Der Artikel (ὁ ἡ τό)', html:`
+    <p>Das Griechische hat einen bestimmten Artikel in drei Genera. Er steht auch vor Eigennamen und Abstrakta.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>m.</th><th>f.</th><th>n.</th></tr>
+    <tr><td>Nom Sg</td><td class="grc">ὁ</td><td class="grc">ἡ</td><td class="grc">τό</td></tr>
+    <tr><td>Gen</td><td class="grc">τοῦ</td><td class="grc">τῆς</td><td class="grc">τοῦ</td></tr>
+    <tr><td>Dat</td><td class="grc">τῷ</td><td class="grc">τῇ</td><td class="grc">τῷ</td></tr>
+    <tr><td>Akk</td><td class="grc">τόν</td><td class="grc">τήν</td><td class="grc">τό</td></tr>
+    <tr><td>Nom Pl</td><td class="grc">οἱ</td><td class="grc">αἱ</td><td class="grc">τά</td></tr>
+    <tr><td>Gen</td><td class="grc">τῶν</td><td class="grc">τῶν</td><td class="grc">τῶν</td></tr>
+    <tr><td>Dat</td><td class="grc">τοῖς</td><td class="grc">ταῖς</td><td class="grc">τοῖς</td></tr>
+    <tr><td>Akk</td><td class="grc">τούς</td><td class="grc">τάς</td><td class="grc">τά</td></tr>
+    </table></div>
+    <p><em>Merke:</em> attributiv steht der Artikel wiederholt (<span class="grc">ὁ σοφὸς ἀνήρ</span> / <span class="grc">ὁ ἀνὴρ ὁ σοφός</span>); prädikativ ohne Artikel beim Adjektiv (<span class="grc">σοφὸς ὁ ἀνήρ</span> „der Mann ist weise").</p>` },
+
+  { kap:'Nomina & Artikel', h:'a-Deklination (1. Deklination)', html:`
+    <p>Feminina auf <span class="grc">-η/-α</span>, Maskulina auf <span class="grc">-ης/-ας</span>.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>ἡ τιμή <em>(Ehre)</em></th><th>ἡ χώρα <em>(Land)</em></th><th>ὁ πολίτης <em>(Bürger)</em></th></tr>
+    <tr><td>N</td><td class="grc">τιμή</td><td class="grc">χώρα</td><td class="grc">πολίτης</td></tr>
+    <tr><td>G</td><td class="grc">τιμῆς</td><td class="grc">χώρας</td><td class="grc">πολίτου</td></tr>
+    <tr><td>D</td><td class="grc">τιμῇ</td><td class="grc">χώρᾳ</td><td class="grc">πολίτῃ</td></tr>
+    <tr><td>A</td><td class="grc">τιμήν</td><td class="grc">χώραν</td><td class="grc">πολίτην</td></tr>
+    <tr><td>N Pl</td><td class="grc">τιμαί</td><td class="grc">χῶραι</td><td class="grc">πολῖται</td></tr>
+    <tr><td>G</td><td class="grc">τιμῶν</td><td class="grc">χωρῶν</td><td class="grc">πολιτῶν</td></tr>
+    <tr><td>D</td><td class="grc">τιμαῖς</td><td class="grc">χώραις</td><td class="grc">πολίταις</td></tr>
+    <tr><td>A</td><td class="grc">τιμάς</td><td class="grc">χώρας</td><td class="grc">πολίτας</td></tr>
+    </table></div>
+    <p><em>α purum</em> (nach ε, ι, ρ) behält das α durch (<span class="grc">χώρα, χώρας</span>); <em>α impurum</em> geht im Gen/Dat zu η über (<span class="grc">δόξα, δόξης</span>). Vokativ der Maskulina: <span class="grc">ὦ πολῖτα</span>.</p>` },
+
+  { kap:'Nomina & Artikel', h:'o-Deklination (2. Deklination)', html:`
+    <p>Maskulina/Feminina auf <span class="grc">-ος</span>, Neutra auf <span class="grc">-ον</span>.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>ὁ λόγος <em>(Wort)</em></th><th>τὸ δῶρον <em>(Geschenk)</em></th></tr>
+    <tr><td>N</td><td class="grc">λόγος</td><td class="grc">δῶρον</td></tr>
+    <tr><td>G</td><td class="grc">λόγου</td><td class="grc">δώρου</td></tr>
+    <tr><td>D</td><td class="grc">λόγῳ</td><td class="grc">δώρῳ</td></tr>
+    <tr><td>A</td><td class="grc">λόγον</td><td class="grc">δῶρον</td></tr>
+    <tr><td>V</td><td class="grc">λόγε</td><td class="grc">δῶρον</td></tr>
+    <tr><td>N Pl</td><td class="grc">λόγοι</td><td class="grc">δῶρα</td></tr>
+    <tr><td>G</td><td class="grc">λόγων</td><td class="grc">δώρων</td></tr>
+    <tr><td>D</td><td class="grc">λόγοις</td><td class="grc">δώροις</td></tr>
+    <tr><td>A</td><td class="grc">λόγους</td><td class="grc">δῶρα</td></tr>
+    </table></div>
+    <p><em>Neutra-Regel:</em> Nom = Akk; Plural auf <span class="grc">-α</span>. Neutrum Plural Subjekt → Verb im <strong>Singular</strong> (<span class="grc">τὰ ζῷα τρέχει</span>).</p>` },
+
+  { kap:'Nomina & Artikel', h:'3. Deklination (Konsonant- & i-/u-Stämme)', html:`
+    <p>Stamm aus dem Genitiv ablesen (<span class="grc">-ος</span> weg). Dativ Plural <span class="grc">-σι(ν)</span> mit Lautwandel.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>ὁ φύλαξ <em>(Wächter)</em></th><th>ἡ πόλις <em>(Stadt)</em></th><th>τὸ γένος <em>(Geschlecht)</em></th><th>ὁ βασιλεύς <em>(König)</em></th></tr>
+    <tr><td>N</td><td class="grc">φύλαξ</td><td class="grc">πόλις</td><td class="grc">γένος</td><td class="grc">βασιλεύς</td></tr>
+    <tr><td>G</td><td class="grc">φύλακος</td><td class="grc">πόλεως</td><td class="grc">γένους</td><td class="grc">βασιλέως</td></tr>
+    <tr><td>D</td><td class="grc">φύλακι</td><td class="grc">πόλει</td><td class="grc">γένει</td><td class="grc">βασιλεῖ</td></tr>
+    <tr><td>A</td><td class="grc">φύλακα</td><td class="grc">πόλιν</td><td class="grc">γένος</td><td class="grc">βασιλέα</td></tr>
+    <tr><td>N Pl</td><td class="grc">φύλακες</td><td class="grc">πόλεις</td><td class="grc">γένη</td><td class="grc">βασιλεῖς</td></tr>
+    <tr><td>G</td><td class="grc">φυλάκων</td><td class="grc">πόλεων</td><td class="grc">γενῶν</td><td class="grc">βασιλέων</td></tr>
+    <tr><td>D</td><td class="grc">φύλαξι(ν)</td><td class="grc">πόλεσι(ν)</td><td class="grc">γένεσι(ν)</td><td class="grc">βασιλεῦσι(ν)</td></tr>
+    <tr><td>A</td><td class="grc">φύλακας</td><td class="grc">πόλεις</td><td class="grc">γένη</td><td class="grc">βασιλέας</td></tr>
+    </table></div>` },
+
+  { kap:'Nomina & Artikel', h:'Adjektive & Steigerung', html:`
+    <p>Dreiendige Adjektive der o-/a-Deklination wie <span class="grc">καλός, καλή, καλόν</span> (m. wie <span class="grc">λόγος</span>, f. wie <span class="grc">τιμή</span>, n. wie <span class="grc">δῶρον</span>).</p>
+    <p>3. Deklination: <span class="grc">ἀληθής, ἀληθές</span> <em>(wahr)</em>; <span class="grc">σώφρων, σῶφρον</span> <em>(besonnen)</em> — zweiendig (m./f. gleich).</p>
+    <p><strong>Steigerung</strong> regelmäßig: <span class="grc">-τερος / -τατος</span> (<span class="grc">σοφός → σοφώτερος → σοφώτατος</span>).</p>
+    <div class="gr-tbl"><table>
+    <tr><th>Positiv</th><th>Komparativ</th><th>Superlativ</th></tr>
+    <tr><td class="grc">ἀγαθός</td><td class="grc">ἀμείνων / βελτίων</td><td class="grc">ἄριστος / βέλτιστος</td></tr>
+    <tr><td class="grc">κακός</td><td class="grc">κακίων / χείρων</td><td class="grc">κάκιστος / χείριστος</td></tr>
+    <tr><td class="grc">μέγας</td><td class="grc">μείζων</td><td class="grc">μέγιστος</td></tr>
+    <tr><td class="grc">πολύς</td><td class="grc">πλείων</td><td class="grc">πλεῖστος</td></tr>
+    <tr><td class="grc">ὀλίγος</td><td class="grc">ἐλάττων</td><td class="grc">ἐλάχιστος</td></tr>
+    </table></div>
+    <p>Vergleich mit <span class="grc">ἤ</span> („als") oder Genitivus comparationis.</p>` },
+
+  // ───── PRONOMINA ─────
+  { kap:'Pronomina & Zahlen', h:'Personal- & Reflexivpronomen', html:`
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>ich</th><th>du</th><th>wir</th><th>ihr</th></tr>
+    <tr><td>N</td><td class="grc">ἐγώ</td><td class="grc">σύ</td><td class="grc">ἡμεῖς</td><td class="grc">ὑμεῖς</td></tr>
+    <tr><td>G</td><td class="grc">ἐμοῦ/μου</td><td class="grc">σοῦ/σου</td><td class="grc">ἡμῶν</td><td class="grc">ὑμῶν</td></tr>
+    <tr><td>D</td><td class="grc">ἐμοί/μοι</td><td class="grc">σοί/σοι</td><td class="grc">ἡμῖν</td><td class="grc">ὑμῖν</td></tr>
+    <tr><td>A</td><td class="grc">ἐμέ/με</td><td class="grc">σέ/σε</td><td class="grc">ἡμᾶς</td><td class="grc">ὑμᾶς</td></tr>
+    </table></div>
+    <p>3. Person: Formen von <span class="grc">αὐτός</span> (Gen/Dat/Akk). <strong>Reflexiv</strong>: <span class="grc">ἐμαυτόν, σεαυτόν, ἑαυτόν</span> („mich/dich/sich selbst").</p>` },
+
+  { kap:'Pronomina & Zahlen', h:'αὐτός · οὗτος · ὅδε · ἐκεῖνος', html:`
+    <p><span class="grc">αὐτός, αὐτή, αὐτό</span> dekliniert wie <span class="grc">καλός</span>. Drei Bedeutungen:</p>
+    <p>1) prädikativ = „selbst" (<span class="grc">αὐτὸς ὁ βασιλεύς</span>); 2) attributiv mit Artikel = „derselbe" (<span class="grc">ὁ αὐτὸς ἀνήρ</span>); 3) obliquer Kasus = „ihn/sie/es".</p>
+    <p><strong>Demonstrativa:</strong> <span class="grc">οὗτος, αὕτη, τοῦτο</span> („dieser/jener, bekannt"); <span class="grc">ὅδε, ἥδε, τόδε</span> („dieser hier"); <span class="grc">ἐκεῖνος, -η, -ο</span> („jener"). Stehen prädikativ: <span class="grc">οὗτος ὁ ἀνήρ</span>.</p>` },
+
+  { kap:'Pronomina & Zahlen', h:'Relativ-, Frage- & Indefinitpronomen', html:`
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>Relativ (welcher)</th><th>Frage (wer?)</th><th>Indefinit (irgendein)</th></tr>
+    <tr><td>N m/f/n</td><td class="grc">ὅς / ἥ / ὅ</td><td class="grc">τίς / τί</td><td class="grc">τις / τι</td></tr>
+    <tr><td>G</td><td class="grc">οὗ / ἧς / οὗ</td><td class="grc">τίνος</td><td class="grc">τινός</td></tr>
+    <tr><td>D</td><td class="grc">ᾧ / ᾗ / ᾧ</td><td class="grc">τίνι</td><td class="grc">τινί</td></tr>
+    <tr><td>A</td><td class="grc">ὅν / ἥν / ὅ</td><td class="grc">τίνα / τί</td><td class="grc">τινά / τι</td></tr>
+    </table></div>
+    <p>Das Fragepronomen trägt <strong>immer Akut</strong> auf der ersten Silbe (<span class="grc">τίς;</span>), das Indefinitum ist enklitisch (<span class="grc">τις</span>). Relativsatz-Modus wie im Hauptsatz; oft Attraktion an den Bezugskasus.</p>` },
+
+  { kap:'Pronomina & Zahlen', h:'Zahlwörter', html:`
+    <p>1–4 werden flektiert, ab 5 (meist) indeklinabel.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>1 (m/f/n)</th><th>2</th><th>3 (m,f / n)</th><th>4 (m,f / n)</th></tr>
+    <tr><td>N</td><td class="grc">εἷς, μία, ἕν</td><td class="grc">δύο</td><td class="grc">τρεῖς / τρία</td><td class="grc">τέτταρες / τέτταρα</td></tr>
+    <tr><td>G</td><td class="grc">ἑνός, μιᾶς, ἑνός</td><td class="grc">δυοῖν</td><td class="grc">τριῶν</td><td class="grc">τεττάρων</td></tr>
+    <tr><td>D</td><td class="grc">ἑνί, μιᾷ, ἑνί</td><td class="grc">δυοῖν</td><td class="grc">τρισί(ν)</td><td class="grc">τέτταρσι(ν)</td></tr>
+    <tr><td>A</td><td class="grc">ἕνα, μίαν, ἕν</td><td class="grc">δύο</td><td class="grc">τρεῖς / τρία</td><td class="grc">τέτταρας / τέτταρα</td></tr>
+    </table></div>
+    <p>5 <span class="grc">πέντε</span>, 10 <span class="grc">δέκα</span>, 100 <span class="grc">ἑκατόν</span>, 1000 <span class="grc">χίλιοι</span>. Ordnungszahlen: <span class="grc">πρῶτος, δεύτερος, τρίτος …</span></p>` },
+
+  // ───── VERBEN ─────
+  { kap:'Verben', h:'Überblick: Stammformen, Augment, Endungen', html:`
+    <p>Jedes Verb hat (bis zu) sechs <strong>Stammformen</strong>:</p>
+    <div class="gr-tbl"><table>
+    <tr><th>Präs.</th><th>Fut.</th><th>Aor.</th><th>Perf. Akt.</th><th>Perf. M/P</th><th>Aor. Pass.</th></tr>
+    <tr><td class="grc">λύω</td><td class="grc">λύσω</td><td class="grc">ἔλυσα</td><td class="grc">λέλυκα</td><td class="grc">λέλυμαι</td><td class="grc">ἐλύθην</td></tr>
+    </table></div>
+    <p><strong>Augment</strong> (Vergangenheit im Indikativ): silbisch <span class="grc">ἐ-</span> (<span class="grc">ἔλυον</span>) bzw. temporal (Anfangsvokal gedehnt: <span class="grc">ἀ→η, ε→η, ο→ω</span>). <strong>Reduplikation</strong> im Perfekt (<span class="grc">λέ-λυκα</span>).</p>
+    <p>Drei <strong>Diathesen</strong>: Aktiv, Medium, Passiv. <strong>Modi</strong>: Indikativ, Konjunktiv, Optativ, Imperativ; dazu Infinitiv & Partizip.</p>
+    <div class="gr-tbl"><table>
+    <tr><th>Endungen Aktiv</th><th>primär</th><th>sekundär</th></tr>
+    <tr><td>1 Sg</td><td class="grc">-ω / -μι</td><td class="grc">-ν</td></tr>
+    <tr><td>2 Sg</td><td class="grc">-εις / -ς</td><td class="grc">-ς</td></tr>
+    <tr><td>3 Sg</td><td class="grc">-ει / -σι</td><td class="grc">-(ε)</td></tr>
+    <tr><td>1 Pl</td><td class="grc">-μεν</td><td class="grc">-μεν</td></tr>
+    <tr><td>2 Pl</td><td class="grc">-τε</td><td class="grc">-τε</td></tr>
+    <tr><td>3 Pl</td><td class="grc">-ουσι(ν)</td><td class="grc">-ν / -σαν</td></tr>
+    </table></div>` },
+
+  { kap:'Verben', h:'Präsens & Imperfekt — λύω', html:`
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>Präs. Akt.</th><th>Präs. M/P</th><th>Impf. Akt.</th><th>Impf. M/P</th></tr>
+    <tr><td>1 Sg</td><td class="grc">λύω</td><td class="grc">λύομαι</td><td class="grc">ἔλυον</td><td class="grc">ἐλυόμην</td></tr>
+    <tr><td>2 Sg</td><td class="grc">λύεις</td><td class="grc">λύῃ</td><td class="grc">ἔλυες</td><td class="grc">ἐλύου</td></tr>
+    <tr><td>3 Sg</td><td class="grc">λύει</td><td class="grc">λύεται</td><td class="grc">ἔλυε(ν)</td><td class="grc">ἐλύετο</td></tr>
+    <tr><td>1 Pl</td><td class="grc">λύομεν</td><td class="grc">λυόμεθα</td><td class="grc">ἐλύομεν</td><td class="grc">ἐλυόμεθα</td></tr>
+    <tr><td>2 Pl</td><td class="grc">λύετε</td><td class="grc">λύεσθε</td><td class="grc">ἐλύετε</td><td class="grc">ἐλύεσθε</td></tr>
+    <tr><td>3 Pl</td><td class="grc">λύουσι(ν)</td><td class="grc">λύονται</td><td class="grc">ἔλυον</td><td class="grc">ἐλύοντο</td></tr>
+    </table></div>
+    <p><strong>Konjunktiv</strong> (langer Themavokal): <span class="grc">λύω, λύῃς, λύῃ, λύωμεν, λύητε, λύωσι(ν)</span>. <strong>Optativ</strong>: <span class="grc">λύοιμι, λύοις, λύοι …</span> <strong>Imperativ</strong>: <span class="grc">λῦε, λυέτω, λύετε, λυόντων</span>.</p>
+    <p><strong>Infinitiv</strong>: <span class="grc">λύειν</span> (Akt.), <span class="grc">λύεσθαι</span> (M/P). <strong>Partizip</strong>: <span class="grc">λύων, λύουσα, λῦον</span> (Akt.); <span class="grc">λυόμενος, -η, -ον</span> (M/P).</p>` },
+
+  { kap:'Verben', h:'Futur · Aorist · Perfekt', html:`
+    <p><strong>Futur</strong>: Tempuszeichen <span class="grc">-σ-</span> → <span class="grc">λύσω, λύσεις …</span> (Endungen wie Präsens).</p>
+    <p><strong>Schwacher (sigmatischer) Aorist</strong>: Augment + <span class="grc">-σα-</span>:</p>
+    <div class="gr-tbl"><table>
+    <tr><td class="grc">ἔλυσα</td><td class="grc">ἔλυσας</td><td class="grc">ἔλυσε(ν)</td><td class="grc">ἐλύσαμεν</td><td class="grc">ἐλύσατε</td><td class="grc">ἔλυσαν</td></tr>
+    </table></div>
+    <p>Inf. <span class="grc">λῦσαι</span>, Part. <span class="grc">λύσας, -σασα, -σαν</span>. <strong>Starker Aorist</strong> (Endungen wie Impf., anderer Stamm): <span class="grc">ἔλιπον</span> (von <span class="grc">λείπω</span>), Inf. <span class="grc">λιπεῖν</span>, Part. <span class="grc">λιπών</span>.</p>
+    <p><strong>Aorist Passiv</strong>: <span class="grc">-θη-</span>: <span class="grc">ἐλύθην, ἐλύθης, ἐλύθη …</span>, Inf. <span class="grc">λυθῆναι</span>, Part. <span class="grc">λυθείς</span>.</p>
+    <p><strong>Perfekt</strong> (Reduplikation, „resultativ"): <span class="grc">λέλυκα …</span>; M/P <span class="grc">λέλυμαι</span>; Plusquamperfekt <span class="grc">ἐλελύκη</span>.</p>` },
+
+  { kap:'Verben', h:'Kontrakta (-έω / -άω / -όω)', html:`
+    <p>Verben auf <span class="grc">-έω, -άω, -όω</span> ziehen den Stammvokal mit der Endung zusammen.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>φιλέω → φιλῶ</th><th>τιμάω → τιμῶ</th><th>δηλόω → δηλῶ</th></tr>
+    <tr><td>1 Sg</td><td class="grc">φιλῶ</td><td class="grc">τιμῶ</td><td class="grc">δηλῶ</td></tr>
+    <tr><td>2 Sg</td><td class="grc">φιλεῖς</td><td class="grc">τιμᾷς</td><td class="grc">δηλοῖς</td></tr>
+    <tr><td>3 Sg</td><td class="grc">φιλεῖ</td><td class="grc">τιμᾷ</td><td class="grc">δηλοῖ</td></tr>
+    <tr><td>1 Pl</td><td class="grc">φιλοῦμεν</td><td class="grc">τιμῶμεν</td><td class="grc">δηλοῦμεν</td></tr>
+    <tr><td>2 Pl</td><td class="grc">φιλεῖτε</td><td class="grc">τιμᾶτε</td><td class="grc">δηλοῦτε</td></tr>
+    <tr><td>3 Pl</td><td class="grc">φιλοῦσι(ν)</td><td class="grc">τιμῶσι(ν)</td><td class="grc">δηλοῦσι(ν)</td></tr>
+    </table></div>
+    <p>Regel: <span class="grc">ε+ε→ει, ε+ο→ου</span>; <span class="grc">α</span> verschluckt folgendes <span class="grc">ε/η</span>; <span class="grc">ο</span> macht alles zu <span class="grc">ου/οι/ω</span>.</p>` },
+
+  { kap:'Verben', h:'μι-Verben & εἰμί', html:`
+    <p>Athematische Verben ohne Themavokal, mit Reduplikation im Präsens.</p>
+    <div class="gr-tbl"><table>
+    <tr><th></th><th>δίδωμι (geben)</th><th>τίθημι (setzen)</th><th>ἵστημι (stellen)</th><th>δείκνυμι (zeigen)</th></tr>
+    <tr><td>1 Sg</td><td class="grc">δίδωμι</td><td class="grc">τίθημι</td><td class="grc">ἵστημι</td><td class="grc">δείκνυμι</td></tr>
+    <tr><td>3 Sg</td><td class="grc">δίδωσι(ν)</td><td class="grc">τίθησι(ν)</td><td class="grc">ἵστησι(ν)</td><td class="grc">δείκνυσι(ν)</td></tr>
+    <tr><td>3 Pl</td><td class="grc">διδόασι(ν)</td><td class="grc">τιθέασι(ν)</td><td class="grc">ἱστᾶσι(ν)</td><td class="grc">δεικνύασι(ν)</td></tr>
+    </table></div>
+    <p><strong>εἰμί</strong> („sein"): <span class="grc">εἰμί, εἶ, ἐστί(ν), ἐσμέν, ἐστέ, εἰσί(ν)</span>; Impf. <span class="grc">ἦ/ἦν, ἦσθα, ἦν, ἦμεν, ἦτε, ἦσαν</span>; Inf. <span class="grc">εἶναι</span>; Part. <span class="grc">ὤν, οὖσα, ὄν</span>. Weitere unregelmäßige: <span class="grc">εἶμι</span> (gehen), <span class="grc">φημί</span> (sagen), <span class="grc">οἶδα</span> (wissen, Perf. mit Präs.-Bedeutung).</p>` },
+
+  // ───── SYNTAX ─────
+  { kap:'Syntax', h:'Kasuslehre', html:`
+    <p><strong>Nominativ</strong>: Subjekt, Prädikatsnomen.</p>
+    <p><strong>Genitiv</strong>: Zugehörigkeit (<span class="grc">ὁ τοῦ ἀνδρὸς λόγος</span>), Teil (partitiv), Trennung/Vergleich; bei Verben des Erinnerns, Herrschens, Anfassens; Genitivus absolutus.</p>
+    <p><strong>Dativ</strong>: indir. Objekt; Mittel/Werkzeug (instrumental), Ort & Zeit (Wann?), Gemeinschaft (<span class="grc">σύν</span>), dativus commodi.</p>
+    <p><strong>Akkusativ</strong>: direktes Objekt; Richtung/Ausdehnung (Wie weit/lange?); accusativus respectus (Beziehung); doppelter Akkusativ.</p>` },
+
+  { kap:'Syntax', h:'Das Partizip', html:`
+    <p>Sehr häufig — drei Verwendungen:</p>
+    <p><strong>attributiv</strong> (mit Artikel) = Relativsatz: <span class="grc">ὁ γράφων ἀνήρ</span> „der Mann, der schreibt".</p>
+    <p><strong>prädikativ</strong> = adverbialer Nebensatz (temporal/kausal/konzessiv/konditional/modal), oft mit <span class="grc">ἅμα, εὐθύς, καίπερ, ὡς</span>: <span class="grc">ταῦτα εἰπὼν ἀπῆλθεν</span> „nachdem er das gesagt hatte, ging er weg".</p>
+    <p><strong>Genitivus absolutus</strong>: Subjekt + Partizip im Genitiv, beziehungslos zum Hauptsatz: <span class="grc">τοῦ στρατηγοῦ κελεύσαντος</span> „als der Feldherr befohlen hatte".</p>
+    <p><strong>AcP</strong> (Akk. + Partizip) nach Verben der Wahrnehmung: <span class="grc">ὁρῶ σε γράφοντα</span> „ich sehe dich schreiben".</p>` },
+
+  { kap:'Syntax', h:'Infinitiv & AcI', html:`
+    <p><strong>Infinitiv</strong> als Subjekt/Objekt, final, konsekutiv. <strong>AcI</strong> (Akkusativ mit Infinitiv) nach Verben des Sagens, Meinens, Wollens: <span class="grc">νομίζω τὸν ἄνδρα σοφὸν εἶναι</span> „ich glaube, dass der Mann weise ist".</p>
+    <p>Bei Subjektsgleichheit steht statt des Akk. der Nominativ (NcI): <span class="grc">νομίζει σοφὸς εἶναι</span> „er glaubt, weise zu sein". Verneinung des AcI meist mit <span class="grc">οὐ</span>, beim Wollen/Verbieten <span class="grc">μή</span>.</p>` },
+
+  { kap:'Syntax', h:'Nebensätze & Bedingungssätze', html:`
+    <p><strong>Finalsätze</strong>: <span class="grc">ἵνα, ὅπως, ὡς</span> + Konjunktiv (nach Haupttempus) / Optativ (nach Nebentempus).</p>
+    <p><strong>Konsekutiv</strong>: <span class="grc">ὥστε</span> + Infinitiv (mögliche Folge) / Indikativ (tatsächliche Folge).</p>
+    <p><strong>Kausal</strong>: <span class="grc">ὅτι, διότι, ἐπεί, ἐπειδή</span> + Indikativ. <strong>Temporal</strong>: <span class="grc">ὅτε, ἐπεί, ἕως, πρίν</span>.</p>
+    <p><strong>Bedingungssätze</strong> (4 Typen):</p>
+    <div class="gr-tbl"><table>
+    <tr><th>Typ</th><th>Wenn-Satz</th><th>Hauptsatz</th></tr>
+    <tr><td>real</td><td class="grc">εἰ + Indikativ</td><td class="grc">Indikativ</td></tr>
+    <tr><td>eventual</td><td class="grc">ἐάν + Konjunktiv</td><td class="grc">Futur / Präs.</td></tr>
+    <tr><td>potential</td><td class="grc">εἰ + Optativ</td><td class="grc">Opt. + ἄν</td></tr>
+    <tr><td>irreal</td><td class="grc">εἰ + Impf./Aor. Ind.</td><td class="grc">Impf./Aor. Ind. + ἄν</td></tr>
+    </table></div>
+    <p><strong>Indirekte Rede/Frage</strong>: <span class="grc">ὅτι/ὡς</span> + Indikativ (oder Optativ nach Nebentempus); AcI; Partizip.</p>` },
+
+  { kap:'Syntax', h:'Partikeln & ἄν', html:`
+    <p>Partikeln strukturieren den Text: <span class="grc">μέν … δέ</span> („einerseits … andererseits"), <span class="grc">γάρ</span> („denn"), <span class="grc">οὖν</span> („also"), <span class="grc">δή</span> („eben, ja"), <span class="grc">ἄρα</span> („also, folglich"), <span class="grc">τοίνυν, μέντοι, καίτοι</span>.</p>
+    <p><strong>ἄν</strong> markiert Irrealis/Potentialis: mit Optativ = „könnte/würde" (potential), mit Indikativ der Vergangenheit = irreal, mit Konjunktiv in Nebensätzen = eventual (<span class="grc">ὅταν = ὅτε + ἄν</span>). <span class="grc">ἄν</span> steht enklitisch nach dem ersten betonten Wort.</p>` },
+];
+
+function grammatikAufbauen() {
+  const el = document.getElementById('gr-inhalt');
+  if (!el || el.dataset.fertig) return;
+  let html = '', kap = null;
+  for (const s of GRAMMATIK) {
+    if (s.kap !== kap) { kap = s.kap; html += `<div class="gr-kap-t">${kap}</div>`; }
+    html += `<details class="gr-d"><summary>${s.h}</summary><div class="gr-body">${s.html}</div></details>`;
+  }
+  el.innerHTML = html;
+  el.dataset.fertig = '1';
+}
+
 /* ═══════════ INIT ═══════════ */
 async function init() {
   demoPruefen();
@@ -3607,9 +3860,10 @@ async function init() {
     speichere();
     if (schaden > 0) stadtOverride = Math.min(meta.stadt + schaden, MAX_BAU);
     homeAktualisieren();
+    grammatikAufbauen();
     if (!localStorage.getItem('zeus_intro')) introZeigen();
     const h = location.hash.slice(1);
-    if (['athen','bibliothek','wortschatz'].includes(h)) tabZu(h);
+    if (['athen','bibliothek','wortschatz','grammatik'].includes(h)) tabZu(h);
     else if (h === 'einstellungen') drawerZu('einstellungen');
     else if (h === 'menu') drawerOeffnen();
     if (schaden > 0) setTimeout(() => zerstoerungSequenz(schaden), 900);
