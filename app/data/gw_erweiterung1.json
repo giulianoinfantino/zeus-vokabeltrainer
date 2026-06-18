@@ -1,0 +1,67 @@
+{
+  "id": "erw1",
+  "gruppe": "Aufbauwortschatz",
+  "lektionen": [
+    {
+      "titel": "Aufbauwortschatz I",
+      "vokabeln": [
+        {
+          "griechisch": "ἀπαντάω",
+          "umschrift": "apantáō",
+          "deutsch": "begegnen",
+          "sprich": "apantáoh",
+          "audio": "data/audio/erw1_00_00.m4a"
+        },
+        {
+          "griechisch": "ἀπατάω",
+          "umschrift": "apatáō",
+          "deutsch": "täuschen",
+          "sprich": "apatáoh",
+          "audio": "data/audio/erw1_00_01.m4a"
+        },
+        {
+          "griechisch": "ἀρέσκω",
+          "umschrift": "aréskō",
+          "deutsch": "gefallen",
+          "sprich": "aréskoh",
+          "audio": "data/audio/erw1_00_02.m4a"
+        },
+        {
+          "griechisch": "βαδίζω",
+          "umschrift": "badízō",
+          "deutsch": "gehen, schreiten",
+          "sprich": "badízoh",
+          "audio": "data/audio/erw1_00_03.m4a"
+        },
+        {
+          "griechisch": "θηρεύω",
+          "umschrift": "thēreúō",
+          "deutsch": "jagen",
+          "sprich": "tähreuoh",
+          "audio": "data/audio/erw1_00_04.m4a"
+        },
+        {
+          "griechisch": "τιμωρέω",
+          "umschrift": "timōréō",
+          "deutsch": "rächen, strafen",
+          "sprich": "timohréoh",
+          "audio": "data/audio/erw1_00_05.m4a"
+        },
+        {
+          "griechisch": "ἀσφαλής",
+          "umschrift": "asphalḗs",
+          "deutsch": "sicher, fest",
+          "sprich": "asfalähs",
+          "audio": "data/audio/erw1_00_06.m4a"
+        },
+        {
+          "griechisch": "ταχέως",
+          "umschrift": "tachéōs",
+          "deutsch": "schnell",
+          "sprich": "tachéohs",
+          "audio": "data/audio/erw1_00_07.m4a"
+        }
+      ]
+    }
+  ]
+}
