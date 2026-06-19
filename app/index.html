@@ -3909,7 +3909,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   try { THREE = await import(LOCAL); if(!THREE.Scene) throw 0; }
   catch(e){ try { THREE = await import(CDN); } catch(e2){ console.warn('three.js nicht ladbar', e2); return; } }
 
-  const TOWN=1.1, ACRO=13.6, HILLBASE=21;
+  const TOWN=1.1, ACRO=13.6, HILLBASE=24;
   let renderer, scene, camera, ctl, raf=null, gemountet=false, stadtGruppe, el0, himmelMat;
   let wasserGeo, wBasis, sonne, hemi, wolken, stadtBg, stadtFog={tag:0xa6cdee,nacht:0x10182e};
   let leute=[], booteArr=[], routen=[], tt=0;
@@ -4045,19 +4045,19 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     leere(stadtGruppe); routen=[]; leute=[]; booteArr=[];
     const s=z.stufe||0, vert=z.vert||{}, hatMauer=s>=6||vert.mauer;
     // Straßen (ab Stufe 2)
-    if(s>=2){ const ringIn=kreis(23,30), ringOut=kreis(38,40);
+    if(s>=2){ const ringIn=kreis(27,34), ringOut=kreis(39,40);
       strasse(ringIn,2.6,true); route(ringIn,true);
       if(s>=5){ strasse(ringOut,3,true); route(ringOut,true); }
-      const weg1=[[3,44],[4,36],[5,29],[6,24],[7,21]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
-      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*23,Math.sin(a)*23],[Math.cos(a)*38,Math.sin(a)*38]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
+      const weg1=[[3,46],[4,39],[5,33],[6,28],[7,25]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
+      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*27,Math.sin(a)*27],[Math.cos(a)*39,Math.sin(a)*39]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
     if(!routen.length) route([[0,16],[0,-16]],false);  // Notroute
     // Akropolis-Bauten
-    if(s>=11) add(tempel(2.0),2,-2,ACRO,0);
-    if(s>=7)  add(tempel(0.95),-7,3,ACRO,0.5);           // Hephaistos/Tempel
-    if(s>=12) add(statue(1.3),-2,7.5,ACRO,0);
-    if(s>=10) add(propylaeen(),4,9,ACRO,0);
-    if(s>=11) add(altar(z.gunst||0),2,5,ACRO,0);
-    if(vert.tempel){ add(tempel(1.0),-6,-5,ACRO,0.3); const glow=mesh(new THREE.SphereGeometry(5,16,16),M(0xffe9a8,{t:true,o:0.12}),false,false); glow.position.set(-6,ACRO+3.5,-5); stadtGruppe.add(glow); }
+    if(s>=11) add(tempel(1.8),1,-3,ACRO,0);              // Parthenon (Mitte)
+    if(s>=7)  add(tempel(0.95),-10,3,ACRO,0.5);          // Hephaistos/Tempel
+    if(s>=12) add(statue(1.3),-4,9,ACRO,0);
+    if(s>=10) add(propylaeen(),6,12,ACRO,0);             // Tor vorne am Rand
+    if(s>=11) add(altar(z.gunst||0),3,4,ACRO,0);
+    if(vert.tempel){ add(tempel(1.0),-9,-7,ACRO,0.3); const glow=mesh(new THREE.SphereGeometry(5,16,16),M(0xffe9a8,{t:true,o:0.12}),false,false); glow.position.set(-9,ACRO+3.5,-7); stadtGruppe.add(glow); }
     // Stadtmauer + Türme + Tor
     if(hatMauer){ const RW=44, seg=28;
       for(let i=0;i<seg;i++){ if(i===14||i===15) continue; const a=i/seg*Math.PI*2,a2=(i+1)/seg*Math.PI*2; const mx=Math.cos((a+a2)/2)*RW,mz=Math.sin((a+a2)/2)*RW,len=RW*(a2-a)+0.6; const w=mesh(box(len,4.5,1.4),mat.stein); w.position.set(mx,TOWN+2.2,mz); w.rotation.y=-(a+a2)/2+Math.PI/2; stadtGruppe.add(w);}
@@ -4075,13 +4075,13 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     if(s>=7) add(gymnasion(),22,18,TOWN,0.2);
     // Häuser — Anzahl wächst mit Stadt
     const hCount = s>=1 ? Math.min(58, 4+s*5) : 0; let hi=0;
-    outer: for(let ring=0;ring<4;ring++){ const r=24+ring*5, cnt=10+ring*4;
+    outer: for(let ring=0;ring<4;ring++){ const r=27+ring*5, cnt=11+ring*4;
       for(let k=0;k<cnt;k++){ if(hi>=hCount) break outer; const a=k/cnt*Math.PI*2+ring*0.3, x=Math.cos(a)*r+Math.sin(k*12.9)*1.8, zz=Math.sin(a)*r+Math.cos(k*7.7)*1.8;
         if(zz>22&&Math.abs(x-4)<13) continue; if(x>24&&zz<2&&zz>-16) continue; if(Math.hypot(x,zz)<HILLBASE+2) continue;
         add(haus(hi),x,zz,TOWN,Math.atan2(-zz,-x)+Math.PI/2); hi++; } }
     // Bäume (außerhalb des Bergfußes)
     if(s>=3){ for(let g=0;g<5;g++){ const ga=g/5*Math.PI*2+0.6,gr=33,cx=Math.cos(ga)*gr,cz=Math.sin(ga)*gr; for(let k=0;k<4;k++) add(olive(),cx+Math.sin(k*5)*2.5,cz+Math.cos(k*3)*2.5,TOWN);} }
-    if(s>=6){ for(let i=0;i<26;i++){ const a=i/26*Math.PI*2,r=23+(i%3)*1.2; add(zypresse(),Math.cos(a)*r,Math.sin(a)*r,TOWN);} }
+    if(s>=6){ for(let i=0;i<28;i++){ const a=i/28*Math.PI*2,r=26.5+(i%3)*1.2; add(zypresse(),Math.cos(a)*r,Math.sin(a)*r,TOWN);} }
     // Bevölkerung — verschiedene Typen, erscheinen mit den Upgrades (mit Geh-Animation)
     const pop=z.buerger||40;
     spawnLeute({k:'buerger',beine:1,arme:1}, Math.min(16,Math.round(pop/12)), 'lauf');    // Bürger
@@ -4153,8 +4153,8 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     const gf=zyl(48,54,7,72); verzerre(gf,1); welt.add(at(mesh(gf,mat.fels),0,-3.2,0));
     const gs=zyl(47.5,49,2,72); verzerre(gs,1); welt.add(at(mesh(gs,mat.sand),0,-0.3,0));
     const gg=zyl(46.5,47.5,1.4,72); verzerre(gg,1); welt.add(at(mesh(gg,mat.gras),0,0.5,0));
-    const hg=zyl(10.5,19,12,18); { const hp=hg.attributes.position; for(let i=0;i<hp.count;i++){ const x=hp.getX(i),y=hp.getY(i),zz=hp.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+0.13*(0.4+0.6*Math.sin(a*4+1.1))+0.06*Math.sin(a*9); hp.setX(i,x*f); hp.setZ(i,zz*f); hp.setY(i,y+Math.sin(a*7)*0.5); } hp.needsUpdate=true; hg.computeVertexNormals(); } welt.add(at(mesh(hg,mat.fels),0,TOWN+6,0));
-    const hc=zyl(10.2,10.9,1.0,18); verzerre(hc,0.9); welt.add(at(mesh(hc,mat.gras2),0,TOWN+12,0));
+    const hg=zyl(15,23,12,20); { const hp=hg.attributes.position; for(let i=0;i<hp.count;i++){ const x=hp.getX(i),y=hp.getY(i),zz=hp.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+0.13*(0.4+0.6*Math.sin(a*4+1.1))+0.06*Math.sin(a*9); hp.setX(i,x*f); hp.setZ(i,zz*f); hp.setY(i,y+Math.sin(a*7)*0.5); } hp.needsUpdate=true; hg.computeVertexNormals(); } welt.add(at(mesh(hg,mat.fels),0,TOWN+6,0));
+    const hc=zyl(14.5,15.3,1.0,20); verzerre(hc,0.9); welt.add(at(mesh(hc,mat.gras2),0,TOWN+12,0));
     for(let i=0;i<14;i++){ const a=i*2.3, fuss=i%2===0, rr=fuss?(20+(i%3)):(45+(i%4)); const rk=mesh(new THREE.IcosahedronGeometry(0.8+(i%3)*0.6,0),mat.fels); rk.position.set(Math.cos(a)*rr, fuss?TOWN+1+(i%2):0.2, Math.sin(a)*rr); rk.rotation.set(i,a,i*0.7); rk.scale.set(1,0.7,1.2); welt.add(rk); }
     stadtGruppe=new THREE.Group(); welt.add(stadtGruppe); dummyObj=new THREE.Object3D();
     wolken=new THREE.Group(); for(let i=0;i<6;i++){ const c=new THREE.Group(); for(let j=0;j<3;j++){const p=mesh(new THREE.SphereGeometry(2.2+Math.random(),8,8),M(0xffffff,{t:true,o:0.9}),false,false);p.position.set(j*3-3,Math.random(),Math.random()*2.4);c.add(p);} c.position.set(-90+i*32,46+Math.random()*8,-60+Math.random()*40); c.scale.set(1,0.6,1); wolken.add(c);} scene.add(wolken);
