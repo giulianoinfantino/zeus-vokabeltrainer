@@ -4045,11 +4045,11 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     leere(stadtGruppe); routen=[]; leute=[]; booteArr=[];
     const s=z.stufe||0, vert=z.vert||{}, hatMauer=s>=6||vert.mauer;
     // Straßen (ab Stufe 2)
-    if(s>=2){ const ringIn=kreis(27,34), ringOut=kreis(40,42);
+    if(s>=2){ const ringIn=kreis(34,40), ringOut=kreis(54,46);
       strasse(ringIn,2.6,true); route(ringIn,true);
       if(s>=5){ strasse(ringOut,3,true); route(ringOut,true); }
-      const weg1=[[3,46],[4,39],[5,33],[6,28],[7,25]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
-      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*27,Math.sin(a)*27],[Math.cos(a)*40,Math.sin(a)*40]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
+      const weg1=[[4,62],[5,52],[6,42],[7,34],[8,27]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
+      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*34,Math.sin(a)*34],[Math.cos(a)*54,Math.sin(a)*54]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
     if(!routen.length) route([[0,16],[0,-16]],false);  // Notroute
     // Akropolis-Bauten
     if(s>=11) add(tempel(1.8),1,-3,ACRO,0);              // Parthenon (Mitte)
@@ -4059,28 +4059,28 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     if(s>=11) add(altar(z.gunst||0),3,4,ACRO,0);
     if(vert.tempel){ add(tempel(1.0),-9,-7,ACRO,0.3); const glow=mesh(new THREE.SphereGeometry(5,16,16),M(0xffe9a8,{t:true,o:0.12}),false,false); glow.position.set(-9,ACRO+3.5,-7); stadtGruppe.add(glow); }
     // Stadtmauer + Türme + Tor
-    if(hatMauer){ const RW=44, seg=28;
+    if(hatMauer){ const RW=60, seg=28;
       for(let i=0;i<seg;i++){ if(i===14||i===15) continue; const a=i/seg*Math.PI*2,a2=(i+1)/seg*Math.PI*2; const mx=Math.cos((a+a2)/2)*RW,mz=Math.sin((a+a2)/2)*RW,len=RW*(a2-a)+0.6; const w=mesh(box(len,4.5,1.4),mat.stein); w.position.set(mx,TOWN+2.2,mz); w.rotation.y=-(a+a2)/2+Math.PI/2; stadtGruppe.add(w);}
       for(let i=0;i<8;i++){ const a=i/8*Math.PI*2; add(turm(7,vert.mauer),Math.cos(a)*RW,Math.sin(a)*RW,TOWN);} }
     // Agora + Stoa + Stände + Brunnen
-    if(s>=5){ add(mesh(box(22,0.25,16),mat.plaza),4,30,TOWN+0.12,0);
-      for(let i=0;i<8;i++) add(stall(i),-4+(i%4)*4,26+Math.floor(i/4)*4,TOWN,(i%2)*0.3);
-      add(brunnen(),4,31,TOWN); add(statue(0.7),-6,33,TOWN); add(tholos(),-15,22,TOWN,0);
+    if(s>=5){ add(mesh(box(28,0.3,20),mat.plaza),4,42,TOWN+0.12,0);
+      for(let i=0;i<8;i++) add(stall(i),-6+(i%4)*5,37+Math.floor(i/4)*5,TOWN,(i%2)*0.3);
+      add(brunnen(),4,43,TOWN); add(statue(0.7),-9,46,TOWN); add(tholos(),-22,32,TOWN,0);
       // Hafen
-      add(mesh(box(6,0.6,26),mat.holz),4,60,0.1,0);
-      booteArr.push(add(schiff(),-6,56,-0.4,0), add(schiff(),12,62,-0.4,0.6), add(schiff(),10,52,-0.4,1.2));
-      add(lager(),10,50,TOWN,0); add(lager(),-3,50,TOWN,0.3); }
-    if(s>=9) add(stoa(20),4,38,TOWN,0);
-    if(s>=8) add(theater(),34,-6,TOWN,-Math.PI*0.5);
-    if(s>=7) add(gymnasion(),22,18,TOWN,0.2);
+      add(mesh(box(7,0.7,32),mat.holz),4,86,0.1,0);
+      booteArr.push(add(schiff(),-8,78,-0.4,0), add(schiff(),16,88,-0.4,0.6), add(schiff(),14,72,-0.4,1.2));
+      add(lager(),14,70,TOWN,0); add(lager(),-4,70,TOWN,0.3); }
+    if(s>=9) add(stoa(26),4,53,TOWN,0);
+    if(s>=8) add(theater(),48,-8,TOWN,-Math.PI*0.5);
+    if(s>=7) add(gymnasion(),31,25,TOWN,0.2);
     // Häuser — Anzahl wächst mit Stadt
-    const hCount = s>=1 ? Math.min(58, 4+s*5) : 0; let hi=0;
-    outer: for(let ring=0;ring<4;ring++){ const r=27+ring*5, cnt=12+ring*4;
+    const hCount = s>=1 ? Math.min(80, 6+s*7) : 0; let hi=0;
+    outer: for(let ring=0;ring<4;ring++){ const r=34+ring*6, cnt=16+ring*6;
       for(let k=0;k<cnt;k++){ if(hi>=hCount) break outer; const a=k/cnt*Math.PI*2+ring*0.3, x=Math.cos(a)*r+Math.sin(k*12.9)*1.8, zz=Math.sin(a)*r+Math.cos(k*7.7)*1.8;
-        if(zz>22&&Math.abs(x-4)<13) continue; if(x>24&&zz<2&&zz>-16) continue; if(Math.hypot(x,zz)<HILLBASE+2) continue;
+        if(zz>30&&Math.abs(x-4)<17) continue; if(x>36&&zz<4&&zz>-24) continue; if(Math.hypot(x,zz)<HILLBASE+2) continue;
         add(haus(hi),x,zz,TOWN,Math.atan2(-zz,-x)+Math.PI/2); hi++; } }
     // Bäume (außerhalb des Bergfußes)
-    if(s>=3){ for(let g=0;g<5;g++){ const ga=g/5*Math.PI*2+0.6,gr=33,cx=Math.cos(ga)*gr,cz=Math.sin(ga)*gr; for(let k=0;k<4;k++) add(olive(),cx+Math.sin(k*5)*2.5,cz+Math.cos(k*3)*2.5,TOWN);} }
+    if(s>=3){ for(let g=0;g<5;g++){ const ga=g/5*Math.PI*2+0.6,gr=46,cx=Math.cos(ga)*gr,cz=Math.sin(ga)*gr; for(let k=0;k<4;k++) add(olive(),cx+Math.sin(k*5)*2.5,cz+Math.cos(k*3)*2.5,TOWN);} }
     if(s>=6){ for(let i=0;i<28;i++){ const a=i/28*Math.PI*2,r=25.5+(i%3)*1.2; add(zypresse(),Math.cos(a)*r,Math.sin(a)*r,TOWN);} }
     // Bevölkerung — verschiedene Typen, erscheinen mit den Upgrades (mit Geh-Animation)
     const pop=z.buerger||40;
@@ -4091,7 +4091,7 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     if(s>=9)  spawnLeute({k:'gelehrt',arme:1}, 2+Math.floor((z.bildung||0)/4), 'lauf');   // Gelehrte
     if(s>=7)  spawnLeute({k:'gymnast',beine:1,arme:1}, 4, 'lauf');                        // Gymnasten
     // Krieger (Heer): Torwachen + Patrouille
-    if(hatMauer){ const RW=44; [13,16].forEach(i=>{const a=i/28*Math.PI*2; const w=mensch({k:'krieger',beine:1,arme:1,schild:1,speer:1}); w.g.position.set(Math.cos(a)*(RW-2),TOWN+0.22,Math.sin(a)*(RW-2)); w.g.rotation.y=-a; stadtGruppe.add(w.g);}); }
+    if(hatMauer){ const RW=60; [13,16].forEach(i=>{const a=i/28*Math.PI*2; const w=mensch({k:'krieger',beine:1,arme:1,schild:1,speer:1}); w.g.position.set(Math.cos(a)*(RW-2),TOWN+0.22,Math.sin(a)*(RW-2)); w.g.rotation.y=-a; stadtGruppe.add(w.g);}); }
     spawnLeute({k:'krieger',beine:1,arme:1,schild:1,speer:1}, Math.min(10,Math.floor((z.heer||0)/9)), 'lauf');
   }
 
@@ -4104,20 +4104,20 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
 
   // ── eigene Kamera-Steuerung (Touch + Maus): drehen/zoomen/schieben ──
   function makeControls(cam,dom){
-    const tgt=new THREE.Vector3(0,7,0); let r=125, th=0.9, ph=0.92, tr=r,tth=th,tph=ph;
+    const tgt=new THREE.Vector3(0,7,0); let r=170, th=0.9, ph=0.92, tr=r,tth=th,tph=ph;
     const ptr=new Map(); let pinch=0;
     const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
     function apply(){ r+=(tr-r)*0.18; th+=(tth-th)*0.18; ph+=(tph-ph)*0.18;
       cam.position.set(tgt.x+r*Math.sin(ph)*Math.cos(th), tgt.y+r*Math.cos(ph), tgt.z+r*Math.sin(ph)*Math.sin(th)); cam.lookAt(tgt); }
-    function pan(dx,dy){ const f=r*0.0014; const right=new THREE.Vector3().setFromMatrixColumn(cam.matrix,0); const fwd=new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0),right).normalize(); tgt.addScaledVector(right,-dx*f); tgt.addScaledVector(fwd,-dy*f); tgt.x=cl(tgt.x,-40,40); tgt.z=cl(tgt.z,-40,40); }
+    function pan(dx,dy){ const f=r*0.0014; const right=new THREE.Vector3().setFromMatrixColumn(cam.matrix,0); const fwd=new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0),right).normalize(); tgt.addScaledVector(right,-dx*f); tgt.addScaledVector(fwd,-dy*f); tgt.x=cl(tgt.x,-58,58); tgt.z=cl(tgt.z,-58,58); }
     dom.addEventListener('pointerdown',e=>{ dom.setPointerCapture(e.pointerId); ptr.set(e.pointerId,{x:e.clientX,y:e.clientY}); });
     dom.addEventListener('pointerup',e=>{ ptr.delete(e.pointerId); pinch=0; });
     dom.addEventListener('pointercancel',e=>{ ptr.delete(e.pointerId); pinch=0; });
     dom.addEventListener('pointermove',e=>{ const p=ptr.get(e.pointerId); if(!p)return; const dx=e.clientX-p.x,dy=e.clientY-p.y; p.x=e.clientX; p.y=e.clientY;
-      if(ptr.size>=2){ const a=[...ptr.values()]; const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y); if(pinch) tr=cl(tr*(pinch/d),30,200); pinch=d; pan(dx*0.5,dy*0.5); }
+      if(ptr.size>=2){ const a=[...ptr.values()]; const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y); if(pinch) tr=cl(tr*(pinch/d),40,320); pinch=d; pan(dx*0.5,dy*0.5); }
       else if(e.pointerType!=='touch' && (e.buttons&2)){ pan(dx,dy); }
       else { tth-=dx*0.005; tph=cl(tph-dy*0.005,0.16,1.32); } });
-    dom.addEventListener('wheel',e=>{ tr=cl(tr*(1+Math.sign(e.deltaY)*0.12),30,200); e.preventDefault(); },{passive:false});
+    dom.addEventListener('wheel',e=>{ tr=cl(tr*(1+Math.sign(e.deltaY)*0.12),40,320); e.preventDefault(); },{passive:false});
     dom.addEventListener('contextmenu',e=>e.preventDefault());
     apply();
     return { update:apply, setTarget:(x,y,z)=>tgt.set(x,y,z), set:(R,T,P,tx,tz)=>{ tr=R; tth=T; tph=P; if(tx!=null)tgt.x=tx; if(tz!=null)tgt.z=tz; apply(); } };
@@ -4150,12 +4150,12 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
     // Unregelmäßige Küste (nur nach außen → Mauer bleibt an Land) + felsige Akropolis
     const coast=a=>1+0.075*(Math.sin(a*3+0.6)*0.5+0.5)+0.06*(Math.sin(a*5+2.1)*0.5+0.5)+0.04*(Math.sin(a*8+4)*0.5+0.5);
     const verzerre=(geo,amp)=>{ const p=geo.attributes.position; for(let i=0;i<p.count;i++){ const x=p.getX(i),zz=p.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+(coast(a)-1)*amp; p.setX(i,x*f); p.setZ(i,zz*f);} p.needsUpdate=true; geo.computeVertexNormals(); };
-    const gf=zyl(48,54,7,72); verzerre(gf,1); welt.add(at(mesh(gf,mat.fels),0,-3.2,0));
-    const gs=zyl(47.5,49,2,72); verzerre(gs,1); welt.add(at(mesh(gs,mat.sand),0,-0.3,0));
-    const gg=zyl(46.5,47.5,1.4,72); verzerre(gg,1); welt.add(at(mesh(gg,mat.gras),0,0.5,0));
+    const gf=zyl(66,73,7,72); verzerre(gf,1); welt.add(at(mesh(gf,mat.fels),0,-3.2,0));
+    const gs=zyl(65,67,2,72); verzerre(gs,1); welt.add(at(mesh(gs,mat.sand),0,-0.3,0));
+    const gg=zyl(64,65,1.4,72); verzerre(gg,1); welt.add(at(mesh(gg,mat.gras),0,0.5,0));
     const hg=zyl(18,23,12,22); { const hp=hg.attributes.position; for(let i=0;i<hp.count;i++){ const x=hp.getX(i),y=hp.getY(i),zz=hp.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+0.13*(0.4+0.6*Math.sin(a*4+1.1))+0.06*Math.sin(a*9); hp.setX(i,x*f); hp.setZ(i,zz*f); hp.setY(i,y+Math.sin(a*7)*0.5); } hp.needsUpdate=true; hg.computeVertexNormals(); } welt.add(at(mesh(hg,mat.fels),0,TOWN+6,0));
     const hc=zyl(17.5,18.3,1.0,22); verzerre(hc,0.9); welt.add(at(mesh(hc,mat.gras2),0,TOWN+12,0));
-    for(let i=0;i<14;i++){ const a=i*2.3, fuss=i%2===0, rr=fuss?(20+(i%3)):(45+(i%4)); const rk=mesh(new THREE.IcosahedronGeometry(0.8+(i%3)*0.6,0),mat.fels); rk.position.set(Math.cos(a)*rr, fuss?TOWN+1+(i%2):0.2, Math.sin(a)*rr); rk.rotation.set(i,a,i*0.7); rk.scale.set(1,0.7,1.2); welt.add(rk); }
+    for(let i=0;i<14;i++){ const a=i*2.3, fuss=i%2===0, rr=fuss?(24+(i%3)):(62+(i%4)); const rk=mesh(new THREE.IcosahedronGeometry(0.8+(i%3)*0.6,0),mat.fels); rk.position.set(Math.cos(a)*rr, fuss?TOWN+1+(i%2):0.2, Math.sin(a)*rr); rk.rotation.set(i,a,i*0.7); rk.scale.set(1,0.7,1.2); welt.add(rk); }
     stadtGruppe=new THREE.Group(); welt.add(stadtGruppe); dummyObj=new THREE.Object3D();
     wolken=new THREE.Group(); for(let i=0;i<6;i++){ const c=new THREE.Group(); for(let j=0;j<3;j++){const p=mesh(new THREE.SphereGeometry(2.2+Math.random(),8,8),M(0xffffff,{t:true,o:0.9}),false,false);p.position.set(j*3-3,Math.random(),Math.random()*2.4);c.add(p);} c.position.set(-90+i*32,46+Math.random()*8,-60+Math.random()*40); c.scale.set(1,0.6,1); wolken.add(c);} scene.add(wolken);
     ctl=makeControls(camera,renderer.domElement);
