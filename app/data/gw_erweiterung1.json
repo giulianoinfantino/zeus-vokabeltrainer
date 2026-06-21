@@ -578,6 +578,802 @@
           "audio": "data/audio/erw1_01_72.m4a"
         }
       ]
+    },
+    {
+      "titel": "Aufbauwortschatz III",
+      "vokabeln": [
+        {
+          "griechisch": "καθά",
+          "umschrift": "kathá",
+          "deutsch": "wie, gemäß, so wie",
+          "sprich": "katá",
+          "audio": "data/audio/erw1_02_00.m4a"
+        },
+        {
+          "griechisch": "πλέως",
+          "umschrift": "pléōs",
+          "deutsch": "voll (von +Gen.)",
+          "sprich": "pléohs",
+          "audio": "data/audio/erw1_02_01.m4a"
+        },
+        {
+          "griechisch": "κἀν",
+          "umschrift": "kan",
+          "deutsch": "und wenn, auch wenn, sogar",
+          "sprich": "kan",
+          "audio": "data/audio/erw1_02_02.m4a"
+        },
+        {
+          "griechisch": "φοβέω",
+          "umschrift": "phobéō",
+          "deutsch": "in die Flucht schlagen, schrecken; (Med.) sich fürchten",
+          "sprich": "fobéoh",
+          "audio": "data/audio/erw1_02_03.m4a"
+        },
+        {
+          "griechisch": "ποτός",
+          "umschrift": "potós",
+          "deutsch": "trinkbar; (subst.) Trank",
+          "sprich": "potós",
+          "audio": "data/audio/erw1_02_04.m4a"
+        },
+        {
+          "griechisch": "τοιόσδε",
+          "umschrift": "toiósde",
+          "deutsch": "ein solcher, derartig (hier)",
+          "sprich": "toiósde",
+          "audio": "data/audio/erw1_02_05.m4a"
+        },
+        {
+          "griechisch": "ἀποκρίνω",
+          "umschrift": "apokrínō",
+          "deutsch": "absondern, aussondern; (Med.) antworten",
+          "sprich": "apokrínoh",
+          "audio": "data/audio/erw1_02_06.m4a"
+        },
+        {
+          "griechisch": "ἀτάρ",
+          "umschrift": "atár",
+          "deutsch": "aber, doch, jedoch",
+          "sprich": "atár",
+          "audio": "data/audio/erw1_02_07.m4a"
+        },
+        {
+          "griechisch": "διαλέγω",
+          "umschrift": "dialégō",
+          "deutsch": "aussondern; (Med.) sich unterhalten, sprechen",
+          "sprich": "dialégoh",
+          "audio": "data/audio/erw1_02_08.m4a"
+        },
+        {
+          "griechisch": "πορεύω",
+          "umschrift": "poreúō",
+          "deutsch": "befördern, führen; (Med.) reisen, gehen",
+          "sprich": "poreuoh",
+          "audio": "data/audio/erw1_02_09.m4a"
+        },
+        {
+          "griechisch": "ὕπατος",
+          "umschrift": "hýpatos",
+          "deutsch": "der höchste, oberste; Konsul",
+          "sprich": "hüpatos",
+          "audio": "data/audio/erw1_02_10.m4a"
+        },
+        {
+          "griechisch": "μεταξύ",
+          "umschrift": "metaxý",
+          "deutsch": "(da)zwischen; inzwischen",
+          "sprich": "metaxü",
+          "audio": "data/audio/erw1_02_11.m4a"
+        },
+        {
+          "griechisch": "συνεχής",
+          "umschrift": "synechḗs",
+          "deutsch": "zusammenhängend, ununterbrochen, beständig",
+          "sprich": "sünechähs",
+          "audio": "data/audio/erw1_02_12.m4a"
+        },
+        {
+          "griechisch": "μυρίος",
+          "umschrift": "myríos",
+          "deutsch": "unzählig, zahllos; (μύριοι) zehntausend",
+          "sprich": "müríos",
+          "audio": "data/audio/erw1_02_13.m4a"
+        },
+        {
+          "griechisch": "εἴπερ",
+          "umschrift": "eíper",
+          "deutsch": "wenn überhaupt, wenn wirklich",
+          "sprich": "eiper",
+          "audio": "data/audio/erw1_02_14.m4a"
+        },
+        {
+          "griechisch": "ἔπειμι",
+          "umschrift": "épeimi",
+          "deutsch": "bevorstehen, folgen; herankommen",
+          "sprich": "épeimi",
+          "audio": "data/audio/erw1_02_15.m4a"
+        },
+        {
+          "griechisch": "χωρίς",
+          "umschrift": "chōrís",
+          "deutsch": "getrennt, abseits; ohne (+Gen.)",
+          "sprich": "chohrís",
+          "audio": "data/audio/erw1_02_16.m4a"
+        },
+        {
+          "griechisch": "προερέω",
+          "umschrift": "proeréō",
+          "deutsch": "vorhersagen, vorher ankündigen",
+          "sprich": "proeréoh",
+          "audio": "data/audio/erw1_02_17.m4a"
+        },
+        {
+          "griechisch": "διαιρέω",
+          "umschrift": "diairéō",
+          "deutsch": "teilen, trennen, unterscheiden",
+          "sprich": "diairéoh",
+          "audio": "data/audio/erw1_02_18.m4a"
+        },
+        {
+          "griechisch": "αὐτίκα",
+          "umschrift": "autíka",
+          "deutsch": "sogleich, sofort; zum Beispiel",
+          "sprich": "autíka",
+          "audio": "data/audio/erw1_02_19.m4a"
+        },
+        {
+          "griechisch": "ἀλλότριος",
+          "umschrift": "allótrios",
+          "deutsch": "fremd, einem anderen gehörig; feindlich",
+          "sprich": "allótrios",
+          "audio": "data/audio/erw1_02_20.m4a"
+        },
+        {
+          "griechisch": "λαλέω",
+          "umschrift": "laléō",
+          "deutsch": "reden, schwatzen, sprechen",
+          "sprich": "laléoh",
+          "audio": "data/audio/erw1_02_21.m4a"
+        },
+        {
+          "griechisch": "ὑπομένω",
+          "umschrift": "hypoménō",
+          "deutsch": "standhalten, ausharren; auf sich nehmen",
+          "sprich": "hüpoménoh",
+          "audio": "data/audio/erw1_02_22.m4a"
+        },
+        {
+          "griechisch": "ὁμοῦ",
+          "umschrift": "homoû",
+          "deutsch": "zusammen, zugleich; am selben Ort",
+          "sprich": "homuh",
+          "audio": "data/audio/erw1_02_23.m4a"
+        },
+        {
+          "griechisch": "τριάκοντα",
+          "umschrift": "triákonta",
+          "deutsch": "dreißig",
+          "sprich": "triákonta",
+          "audio": "data/audio/erw1_02_24.m4a"
+        },
+        {
+          "griechisch": "χείρων",
+          "umschrift": "cheírōn",
+          "deutsch": "schlechter, geringer (Komp.)",
+          "sprich": "cheirohn",
+          "audio": "data/audio/erw1_02_25.m4a"
+        },
+        {
+          "griechisch": "ἐλαύνω",
+          "umschrift": "elaúnō",
+          "deutsch": "treiben, antreiben; reiten, marschieren; schlagen",
+          "sprich": "elaunoh",
+          "audio": "data/audio/erw1_02_26.m4a"
+        },
+        {
+          "griechisch": "τὸ μῆκος",
+          "umschrift": "to mêkos",
+          "deutsch": "Länge",
+          "sprich": "to mähkos",
+          "audio": "data/audio/erw1_02_27.m4a"
+        },
+        {
+          "griechisch": "τὸ κάλλος",
+          "umschrift": "to kállos",
+          "deutsch": "Schönheit",
+          "sprich": "to kállos",
+          "audio": "data/audio/erw1_02_28.m4a"
+        },
+        {
+          "griechisch": "ἡ κίνησις",
+          "umschrift": "hē kínēsis",
+          "deutsch": "Bewegung",
+          "sprich": "hä kínähsis",
+          "audio": "data/audio/erw1_02_29.m4a"
+        },
+        {
+          "griechisch": "μέτριος",
+          "umschrift": "métrios",
+          "deutsch": "mäßig, maßvoll, angemessen",
+          "sprich": "métrios",
+          "audio": "data/audio/erw1_02_30.m4a"
+        },
+        {
+          "griechisch": "διέρχομαι",
+          "umschrift": "diérchomai",
+          "deutsch": "hindurchgehen, durchqueren; erörtern",
+          "sprich": "diérchomai",
+          "audio": "data/audio/erw1_02_31.m4a"
+        },
+        {
+          "griechisch": "ἡ ἡλικία",
+          "umschrift": "hē hēlikía",
+          "deutsch": "Lebensalter, Alter; Lebenszeit",
+          "sprich": "hä hählikía",
+          "audio": "data/audio/erw1_02_32.m4a"
+        },
+        {
+          "griechisch": "κατοικέω",
+          "umschrift": "katoikéō",
+          "deutsch": "bewohnen, wohnen, ansiedeln",
+          "sprich": "katoikéoh",
+          "audio": "data/audio/erw1_02_33.m4a"
+        },
+        {
+          "griechisch": "ἅγιος",
+          "umschrift": "hágios",
+          "deutsch": "heilig, geweiht",
+          "sprich": "hágios",
+          "audio": "data/audio/erw1_02_34.m4a"
+        },
+        {
+          "griechisch": "πολιτικός",
+          "umschrift": "politikós",
+          "deutsch": "bürgerlich, staatlich, politisch; (subst.) Staatsmann",
+          "sprich": "politikós",
+          "audio": "data/audio/erw1_02_35.m4a"
+        },
+        {
+          "griechisch": "ἡ κόρη",
+          "umschrift": "hē kórē",
+          "deutsch": "Mädchen, Tochter; Pupille",
+          "sprich": "hä kórä",
+          "audio": "data/audio/erw1_02_36.m4a"
+        },
+        {
+          "griechisch": "γεννάω",
+          "umschrift": "gennáō",
+          "deutsch": "zeugen, erzeugen, gebären; hervorbringen",
+          "sprich": "gennáoh",
+          "audio": "data/audio/erw1_02_37.m4a"
+        },
+        {
+          "griechisch": "φάσκω",
+          "umschrift": "pháskō",
+          "deutsch": "sagen, behaupten, versichern",
+          "sprich": "fáskoh",
+          "audio": "data/audio/erw1_02_38.m4a"
+        },
+        {
+          "griechisch": "ὑμέτερος",
+          "umschrift": "hyméteros",
+          "deutsch": "euer",
+          "sprich": "hüméteros",
+          "audio": "data/audio/erw1_02_39.m4a"
+        },
+        {
+          "griechisch": "προστάσσω",
+          "umschrift": "prostássō",
+          "deutsch": "anordnen, befehlen; zuweisen",
+          "sprich": "prostássoh",
+          "audio": "data/audio/erw1_02_40.m4a"
+        },
+        {
+          "griechisch": "ἀμείνων",
+          "umschrift": "ameínōn",
+          "deutsch": "besser, tüchtiger, tapferer (Komp.)",
+          "sprich": "ameinohn",
+          "audio": "data/audio/erw1_02_41.m4a"
+        },
+        {
+          "griechisch": "ἡ γένεσις",
+          "umschrift": "hē génesis",
+          "deutsch": "Entstehung, Ursprung, Werden",
+          "sprich": "hä génesis",
+          "audio": "data/audio/erw1_02_42.m4a"
+        },
+        {
+          "griechisch": "ἡ κρίσις",
+          "umschrift": "hē krísis",
+          "deutsch": "Entscheidung, Urteil; Trennung",
+          "sprich": "hä krísis",
+          "audio": "data/audio/erw1_02_43.m4a"
+        },
+        {
+          "griechisch": "ἔθω",
+          "umschrift": "éthō",
+          "deutsch": "gewohnt sein, pflegen",
+          "sprich": "étoh",
+          "audio": "data/audio/erw1_02_44.m4a"
+        },
+        {
+          "griechisch": "τέλειος",
+          "umschrift": "téleios",
+          "deutsch": "vollendet, vollkommen, fertig; erwachsen",
+          "sprich": "téleios",
+          "audio": "data/audio/erw1_02_45.m4a"
+        },
+        {
+          "griechisch": "παρίστημι",
+          "umschrift": "parístēmi",
+          "deutsch": "danebenstellen; (intr.) beistehen, zur Seite stehen",
+          "sprich": "parístähmi",
+          "audio": "data/audio/erw1_02_46.m4a"
+        },
+        {
+          "griechisch": "ἅτε",
+          "umschrift": "háte",
+          "deutsch": "gleichwie; (kausal) da ja, weil",
+          "sprich": "háte",
+          "audio": "data/audio/erw1_02_47.m4a"
+        },
+        {
+          "griechisch": "ἐπέρχομαι",
+          "umschrift": "epérchomai",
+          "deutsch": "herankommen; angreifen; befallen",
+          "sprich": "epérchomai",
+          "audio": "data/audio/erw1_02_48.m4a"
+        },
+        {
+          "griechisch": "ἐπειδάν",
+          "umschrift": "epeidán",
+          "deutsch": "sobald, wann immer (+Konj.)",
+          "sprich": "epeidán",
+          "audio": "data/audio/erw1_02_49.m4a"
+        },
+        {
+          "griechisch": "ἡ διαφορά",
+          "umschrift": "hē diaphorá",
+          "deutsch": "Unterschied, Verschiedenheit; Streit",
+          "sprich": "hä diaforá",
+          "audio": "data/audio/erw1_02_50.m4a"
+        },
+        {
+          "griechisch": "πρόσθεν",
+          "umschrift": "prósthen",
+          "deutsch": "vorn, vorher, früher; vor (+Gen.)",
+          "sprich": "prósten",
+          "audio": "data/audio/erw1_02_51.m4a"
+        },
+        {
+          "griechisch": "θαρσέω",
+          "umschrift": "tharséō",
+          "deutsch": "Mut haben, zuversichtlich sein, wagen",
+          "sprich": "tarséoh",
+          "audio": "data/audio/erw1_02_52.m4a"
+        },
+        {
+          "griechisch": "προσάγω",
+          "umschrift": "proságō",
+          "deutsch": "heranführen, hinbringen; (intr.) herankommen",
+          "sprich": "proságoh",
+          "audio": "data/audio/erw1_02_53.m4a"
+        },
+        {
+          "griechisch": "σύμπας",
+          "umschrift": "sýmpas",
+          "deutsch": "ganz, gesamt, all zusammen",
+          "sprich": "sümpas",
+          "audio": "data/audio/erw1_02_54.m4a"
+        },
+        {
+          "griechisch": "ἐπάγω",
+          "umschrift": "epágō",
+          "deutsch": "herbeiführen, heranführen; veranlassen",
+          "sprich": "epágoh",
+          "audio": "data/audio/erw1_02_55.m4a"
+        },
+        {
+          "griechisch": "ὁπότε",
+          "umschrift": "hopóte",
+          "deutsch": "wann; sooft, wann immer",
+          "sprich": "hopóte",
+          "audio": "data/audio/erw1_02_56.m4a"
+        },
+        {
+          "griechisch": "κτείνω",
+          "umschrift": "kteínō",
+          "deutsch": "töten, erschlagen",
+          "sprich": "kteinoh",
+          "audio": "data/audio/erw1_02_57.m4a"
+        },
+        {
+          "griechisch": "θαυμαστός",
+          "umschrift": "thaumastós",
+          "deutsch": "wunderbar, erstaunlich, bewundernswert",
+          "sprich": "taumastós",
+          "audio": "data/audio/erw1_02_58.m4a"
+        },
+        {
+          "griechisch": "ἕκτος",
+          "umschrift": "héktos",
+          "deutsch": "der sechste",
+          "sprich": "héktos",
+          "audio": "data/audio/erw1_02_59.m4a"
+        },
+        {
+          "griechisch": "ἐντεῦθεν",
+          "umschrift": "enteûthen",
+          "deutsch": "von hier, von da; daher, hierauf",
+          "sprich": "enteuten",
+          "audio": "data/audio/erw1_02_60.m4a"
+        },
+        {
+          "griechisch": "καταλύω",
+          "umschrift": "katalýō",
+          "deutsch": "auflösen, abschaffen, zerstören; (intr.) einkehren",
+          "sprich": "katalüoh",
+          "audio": "data/audio/erw1_02_61.m4a"
+        },
+        {
+          "griechisch": "ἐντός",
+          "umschrift": "entós",
+          "deutsch": "innerhalb, drinnen; innerhalb (+Gen.)",
+          "sprich": "entós",
+          "audio": "data/audio/erw1_02_62.m4a"
+        },
+        {
+          "griechisch": "παραπλήσιος",
+          "umschrift": "paraplḗsios",
+          "deutsch": "ähnlich, fast gleich, nahekommend",
+          "sprich": "paraplähsios",
+          "audio": "data/audio/erw1_02_63.m4a"
+        },
+        {
+          "griechisch": "ἡ ἡγεμονία",
+          "umschrift": "hē hēgemonía",
+          "deutsch": "Führung, Vorherrschaft, Hegemonie",
+          "sprich": "hä hähgemonía",
+          "audio": "data/audio/erw1_02_64.m4a"
+        },
+        {
+          "griechisch": "ἐνδέχομαι",
+          "umschrift": "endéchomai",
+          "deutsch": "annehmen; möglich sein (ἐνδέχεται)",
+          "sprich": "endéchomai",
+          "audio": "data/audio/erw1_02_65.m4a"
+        },
+        {
+          "griechisch": "ἀνάγω",
+          "umschrift": "anágō",
+          "deutsch": "hinaufführen; (Med.) in See stechen",
+          "sprich": "anágoh",
+          "audio": "data/audio/erw1_02_66.m4a"
+        },
+        {
+          "griechisch": "παντάπασι",
+          "umschrift": "pantápasi",
+          "deutsch": "gänzlich, völlig, durchaus",
+          "sprich": "pantápasi",
+          "audio": "data/audio/erw1_02_67.m4a"
+        },
+        {
+          "griechisch": "κοσμέω",
+          "umschrift": "kosméō",
+          "deutsch": "ordnen, schmücken, ausrüsten",
+          "sprich": "kosméoh",
+          "audio": "data/audio/erw1_02_68.m4a"
+        },
+        {
+          "griechisch": "πρόσω",
+          "umschrift": "prósō",
+          "deutsch": "vorwärts, weiter, fort; vorn",
+          "sprich": "prósoh",
+          "audio": "data/audio/erw1_02_69.m4a"
+        },
+        {
+          "griechisch": "τὸ κέρας",
+          "umschrift": "to kéras",
+          "deutsch": "Horn; Flügel (eines Heeres)",
+          "sprich": "to kéras",
+          "audio": "data/audio/erw1_02_70.m4a"
+        },
+        {
+          "griechisch": "ἐντυγχάνω",
+          "umschrift": "entynchánō",
+          "deutsch": "treffen, begegnen (+Dat.); stoßen auf",
+          "sprich": "entünchánoh",
+          "audio": "data/audio/erw1_02_71.m4a"
+        },
+        {
+          "griechisch": "συντίθημι",
+          "umschrift": "syntíthēmi",
+          "deutsch": "zusammensetzen; (Med.) vereinbaren",
+          "sprich": "süntítähmi",
+          "audio": "data/audio/erw1_02_72.m4a"
+        },
+        {
+          "griechisch": "ἀπάγω",
+          "umschrift": "apágō",
+          "deutsch": "wegführen, abführen, wegbringen",
+          "sprich": "apágoh",
+          "audio": "data/audio/erw1_02_73.m4a"
+        },
+        {
+          "griechisch": "μνημονεύω",
+          "umschrift": "mnēmoneúō",
+          "deutsch": "sich erinnern, gedenken; erwähnen",
+          "sprich": "mnähmoneuoh",
+          "audio": "data/audio/erw1_02_74.m4a"
+        },
+        {
+          "griechisch": "καθόλου",
+          "umschrift": "kathólou",
+          "deutsch": "im Allgemeinen, überhaupt, ganz",
+          "sprich": "katólu",
+          "audio": "data/audio/erw1_02_75.m4a"
+        },
+        {
+          "griechisch": "προάγω",
+          "umschrift": "proágō",
+          "deutsch": "vorwärtsführen; (intr.) vorrücken",
+          "sprich": "proágoh",
+          "audio": "data/audio/erw1_02_76.m4a"
+        },
+        {
+          "griechisch": "ἡ γωνία",
+          "umschrift": "hē gōnía",
+          "deutsch": "Winkel, Ecke",
+          "sprich": "hä gohnía",
+          "audio": "data/audio/erw1_02_77.m4a"
+        },
+        {
+          "griechisch": "εἰσάγω",
+          "umschrift": "eiságō",
+          "deutsch": "hineinführen, einführen",
+          "sprich": "eiságoh",
+          "audio": "data/audio/erw1_02_78.m4a"
+        },
+        {
+          "griechisch": "ἀνέχω",
+          "umschrift": "anéchō",
+          "deutsch": "emporhalten; (Med.) aushalten, ertragen",
+          "sprich": "anéchoh",
+          "audio": "data/audio/erw1_02_79.m4a"
+        },
+        {
+          "griechisch": "βασιλικός",
+          "umschrift": "basilikós",
+          "deutsch": "königlich",
+          "sprich": "basilikós",
+          "audio": "data/audio/erw1_02_80.m4a"
+        },
+        {
+          "griechisch": "ἡσσάομαι",
+          "umschrift": "hēssáomai",
+          "deutsch": "unterliegen, besiegt werden, geringer sein",
+          "sprich": "hähssáomai",
+          "audio": "data/audio/erw1_02_81.m4a"
+        },
+        {
+          "griechisch": "ἐπιστρέφω",
+          "umschrift": "epistréphō",
+          "deutsch": "umwenden, umdrehen; (Med.) sich umwenden, sich kümmern",
+          "sprich": "epistréfoh",
+          "audio": "data/audio/erw1_02_82.m4a"
+        },
+        {
+          "griechisch": "οὐδαμός",
+          "umschrift": "oudamós",
+          "deutsch": "keiner, nicht einer",
+          "sprich": "udamós",
+          "audio": "data/audio/erw1_02_83.m4a"
+        },
+        {
+          "griechisch": "ὁ λογισμός",
+          "umschrift": "ho logismós",
+          "deutsch": "Berechnung, Überlegung, Erwägung",
+          "sprich": "ho logismós",
+          "audio": "data/audio/erw1_02_84.m4a"
+        },
+        {
+          "griechisch": "τέταρτος",
+          "umschrift": "tétartos",
+          "deutsch": "der vierte",
+          "sprich": "tétartos",
+          "audio": "data/audio/erw1_02_85.m4a"
+        },
+        {
+          "griechisch": "ἡ γλῶσσα",
+          "umschrift": "hē glôssa",
+          "deutsch": "Zunge; Sprache",
+          "sprich": "hä glohssa",
+          "audio": "data/audio/erw1_02_86.m4a"
+        },
+        {
+          "griechisch": "πάντως",
+          "umschrift": "pántōs",
+          "deutsch": "gänzlich, durchaus, jedenfalls",
+          "sprich": "pántohs",
+          "audio": "data/audio/erw1_02_87.m4a"
+        },
+        {
+          "griechisch": "καταφρονέω",
+          "umschrift": "kataphronéō",
+          "deutsch": "verachten, geringschätzen (+Gen.)",
+          "sprich": "katafronéoh",
+          "audio": "data/audio/erw1_02_88.m4a"
+        },
+        {
+          "griechisch": "προέρχομαι",
+          "umschrift": "proérchomai",
+          "deutsch": "vorgehen, vorrücken, hervortreten",
+          "sprich": "proérchomai",
+          "audio": "data/audio/erw1_02_89.m4a"
+        },
+        {
+          "griechisch": "ἱστορέω",
+          "umschrift": "historéō",
+          "deutsch": "erforschen, erkunden; berichten",
+          "sprich": "historéoh",
+          "audio": "data/audio/erw1_02_90.m4a"
+        },
+        {
+          "griechisch": "ἐκλείπω",
+          "umschrift": "ekleípō",
+          "deutsch": "verlassen, im Stich lassen; ausgehen; (Sonne) sich verfinstern",
+          "sprich": "ekleipoh",
+          "audio": "data/audio/erw1_02_91.m4a"
+        },
+        {
+          "griechisch": "δημόσιος",
+          "umschrift": "dēmósios",
+          "deutsch": "öffentlich, staatlich",
+          "sprich": "dähmósios",
+          "audio": "data/audio/erw1_02_92.m4a"
+        },
+        {
+          "griechisch": "τάχα",
+          "umschrift": "tácha",
+          "deutsch": "schnell; vielleicht, wohl",
+          "sprich": "tácha",
+          "audio": "data/audio/erw1_02_93.m4a"
+        },
+        {
+          "griechisch": "πεντήκοντα",
+          "umschrift": "pentḗkonta",
+          "deutsch": "fünfzig",
+          "sprich": "pentähkonta",
+          "audio": "data/audio/erw1_02_94.m4a"
+        },
+        {
+          "griechisch": "ἡ πλευρά",
+          "umschrift": "hē pleurá",
+          "deutsch": "Rippe, Seite; Flanke",
+          "sprich": "hä pleurá",
+          "audio": "data/audio/erw1_02_95.m4a"
+        },
+        {
+          "griechisch": "ἡ ὁρμή",
+          "umschrift": "hē hormḗ",
+          "deutsch": "Andrang, Antrieb, Angriff, Impuls",
+          "sprich": "hä hormä",
+          "audio": "data/audio/erw1_02_96.m4a"
+        },
+        {
+          "griechisch": "ἐκπέμπω",
+          "umschrift": "ekpémpō",
+          "deutsch": "aussenden, wegschicken",
+          "sprich": "ekpémpoh",
+          "audio": "data/audio/erw1_02_97.m4a"
+        },
+        {
+          "griechisch": "ἡ ἐνέργεια",
+          "umschrift": "hē enérgeia",
+          "deutsch": "Tätigkeit, Wirksamkeit, Energie",
+          "sprich": "hä enérgeia",
+          "audio": "data/audio/erw1_02_98.m4a"
+        },
+        {
+          "griechisch": "ὁ ὄχλος",
+          "umschrift": "ho óchlos",
+          "deutsch": "Menge, Volksmenge, Pöbel",
+          "sprich": "ho óchlos",
+          "audio": "data/audio/erw1_02_99.m4a"
+        },
+        {
+          "griechisch": "ὑπόκειμαι",
+          "umschrift": "hypókeimai",
+          "deutsch": "darunterliegen; zugrunde liegen; vorausgesetzt sein",
+          "sprich": "hüpókeimai",
+          "audio": "data/audio/erw1_02_100.m4a"
+        },
+        {
+          "griechisch": "διαλύω",
+          "umschrift": "dialýō",
+          "deutsch": "auflösen, trennen, zerlegen; beilegen",
+          "sprich": "dialüoh",
+          "audio": "data/audio/erw1_02_101.m4a"
+        },
+        {
+          "griechisch": "ἡ στρατεία",
+          "umschrift": "hē strateía",
+          "deutsch": "Feldzug, Kriegszug",
+          "sprich": "hä ßtrateia",
+          "audio": "data/audio/erw1_02_102.m4a"
+        },
+        {
+          "griechisch": "ἐκεῖθεν",
+          "umschrift": "ekeîthen",
+          "deutsch": "von dort, von da",
+          "sprich": "ekeiten",
+          "audio": "data/audio/erw1_02_103.m4a"
+        },
+        {
+          "griechisch": "ἄτοπος",
+          "umschrift": "átopos",
+          "deutsch": "ungewöhnlich, seltsam, absurd",
+          "sprich": "átopos",
+          "audio": "data/audio/erw1_02_104.m4a"
+        },
+        {
+          "griechisch": "τετράγωνος",
+          "umschrift": "tetrágōnos",
+          "deutsch": "viereckig, quadratisch",
+          "sprich": "tetrágohnos",
+          "audio": "data/audio/erw1_02_105.m4a"
+        },
+        {
+          "griechisch": "ὁποῖος",
+          "umschrift": "hopoîos",
+          "deutsch": "von welcher Art, wie beschaffen",
+          "sprich": "hopoios",
+          "audio": "data/audio/erw1_02_106.m4a"
+        },
+        {
+          "griechisch": "τὸ ὀστοῦν",
+          "umschrift": "to ostoûn",
+          "deutsch": "Knochen",
+          "sprich": "to ostuhn",
+          "audio": "data/audio/erw1_02_107.m4a"
+        },
+        {
+          "griechisch": "πρέπω",
+          "umschrift": "prépō",
+          "deutsch": "sich ziemen, passen; auffallen (πρέπει)",
+          "sprich": "prépoh",
+          "audio": "data/audio/erw1_02_108.m4a"
+        },
+        {
+          "griechisch": "ἐξαιρέω",
+          "umschrift": "exairéō",
+          "deutsch": "herausnehmen, entfernen; (Med.) auswählen",
+          "sprich": "exairéoh",
+          "audio": "data/audio/erw1_02_109.m4a"
+        },
+        {
+          "griechisch": "κράτιστος",
+          "umschrift": "krátistos",
+          "deutsch": "der stärkste, mächtigste, beste",
+          "sprich": "krátistos",
+          "audio": "data/audio/erw1_02_110.m4a"
+        },
+        {
+          "griechisch": "βέλτιστος",
+          "umschrift": "béltistos",
+          "deutsch": "der beste",
+          "sprich": "béltistos",
+          "audio": "data/audio/erw1_02_111.m4a"
+        },
+        {
+          "griechisch": "ἁπλῶς",
+          "umschrift": "haplôs",
+          "deutsch": "einfach, schlechthin, geradeheraus",
+          "sprich": "haplohs",
+          "audio": "data/audio/erw1_02_112.m4a"
+        }
+      ]
     }
   ]
 }
