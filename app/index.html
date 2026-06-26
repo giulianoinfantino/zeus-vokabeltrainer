@@ -3679,9 +3679,9 @@ function zeigePaywall() {
 }
 function paywallSchliessen() { if (aboErzwingen && aboStatus() === 'abgelaufen') return; document.getElementById('paywall').classList.remove('on'); }
 const RC_KEY = 'appl_eIXEHleMpxHgeItwfAKglsckOLN';   // RevenueCat Public SDK Key (öffentlich, darf im Client stehen)
-const RC_ENTITLEMENT = 'voll';
 const rcPlugin = () => (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Purchases) || null;
-const rcAktiv = (ci) => !!(ci && ci.entitlements && ci.entitlements.active && ci.entitlements.active[RC_ENTITLEMENT]);
+// Abonnent = irgendein Entitlement aktiv (robust gegen Benamung; es gibt nur ein Abo)
+const rcAktiv = (ci) => !!(ci && ci.entitlements && ci.entitlements.active && Object.keys(ci.entitlements.active).length > 0);
 async function aboInit() {
   if (!NATIV) return; const P = rcPlugin(); if (!P) return;
   try {
