@@ -3693,14 +3693,19 @@ async function aboInit() {
 }
 async function aboKaufen() {
   const P = rcPlugin();
-  if (!NATIV || !P) { try { toast('Das Abo läuft über den App Store — bitte in der iOS-App abschließen.'); } catch (e) {} return; }
+  alert('① NATIV=' + NATIV + ' · Purchases-Plugin=' + (P ? 'gefunden' : 'FEHLT'));
+  if (!NATIV || !P) return;
   try {
     const off = await P.getOfferings();
-    const pkg = off && off.current && (off.current.monthly || (off.current.availablePackages || [])[0]);
-    if (!pkg) { try { toast('Kein Abo-Angebot gefunden. Bitte später erneut versuchen.'); } catch (e) {} return; }
+    const cur = off && off.current;
+    alert('② Offerings geladen · current=' + (cur ? cur.identifier : 'NULL') + ' · Packages=' + (cur && cur.availablePackages ? cur.availablePackages.length : 0));
+    const pkg = cur && (cur.monthly || (cur.availablePackages || [])[0]);
+    if (!pkg) { alert('③ Kein Package! all-Offerings=' + JSON.stringify(Object.keys((off && off.all) || {}))); return; }
     const res = await P.purchasePackage({ aPackage: pkg });
-    if (rcAktiv(res && res.customerInfo)) { meta.abo = true; speichere(); document.getElementById('paywall').classList.remove('on'); try { toast('Abo aktiv — danke!'); } catch (e) {} }
-  } catch (e) { if (!(e && e.userCancelled)) { try { toast('Kauf fehlgeschlagen.'); } catch (er) {} } }
+    const a = rcAktiv(res && res.customerInfo);
+    alert('④ Kauf zurück · aktiv=' + a);
+    if (a) { meta.abo = true; speichere(); document.getElementById('paywall').classList.remove('on'); }
+  } catch (e) { if (!(e && e.userCancelled)) alert('✗ Fehler: ' + (e && (e.message || e.code)) + ' · ' + JSON.stringify(e)); }
 }
 async function aboWiederherstellen() {
   const P = rcPlugin();
