@@ -8,6 +8,7 @@
     "@capacitor/core": "^8.4.0",
     "@capacitor/ios": "^8.4.0",
     "@capacitor/status-bar": "^8.0.2",
+    "@revenuecat/purchases-capacitor": "^13.2.0",
     "@vercel/blob": "^1.1.1"
   },
   "scripts": {

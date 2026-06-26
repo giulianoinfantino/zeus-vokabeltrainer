@@ -3678,16 +3678,39 @@ function zeigePaywall() {
   document.getElementById('paywall').classList.add('on');
 }
 function paywallSchliessen() { if (aboErzwingen && aboStatus() === 'abgelaufen') return; document.getElementById('paywall').classList.remove('on'); }
-function aboKaufen() {
-  // TODO: echten Apple-IAP-Kauf via StoreKit/RevenueCat auslösen; meta.abo NUR bei
-  // verifiziertem Kauf setzen. Bis dahin Platzhalter (simuliert das Abo zum Testen).
-  meta.abo = true; speichere();
-  document.getElementById('paywall').classList.remove('on');
-  try { toast('Abo aktiv — danke! (Platzhalter: echtes Apple-Abo folgt)'); } catch (e) {}
+const RC_KEY = 'appl_eIXEHleMpxHgeItwfAKglsckOLN';   // RevenueCat Public SDK Key (öffentlich, darf im Client stehen)
+const RC_ENTITLEMENT = 'voll';
+const rcPlugin = () => (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Purchases) || null;
+const rcAktiv = (ci) => !!(ci && ci.entitlements && ci.entitlements.active && ci.entitlements.active[RC_ENTITLEMENT]);
+async function aboInit() {
+  if (!NATIV) return; const P = rcPlugin(); if (!P) return;
+  try {
+    await P.configure({ apiKey: RC_KEY });
+    const { customerInfo } = await P.getCustomerInfo();
+    const a = rcAktiv(customerInfo);
+    if (a !== meta.abo) { meta.abo = a; speichere(); }
+  } catch (e) { console.warn('RevenueCat init', e); }
 }
-function aboWiederherstellen() {
-  // TODO: RevenueCat restorePurchases()
-  try { toast('Kauf-Wiederherstellung folgt mit der Apple-Anbindung.'); } catch (e) {}
+async function aboKaufen() {
+  const P = rcPlugin();
+  if (!NATIV || !P) { try { toast('Das Abo läuft über den App Store — bitte in der iOS-App abschließen.'); } catch (e) {} return; }
+  try {
+    const off = await P.getOfferings();
+    const pkg = off && off.current && (off.current.monthly || (off.current.availablePackages || [])[0]);
+    if (!pkg) { try { toast('Kein Abo-Angebot gefunden. Bitte später erneut versuchen.'); } catch (e) {} return; }
+    const res = await P.purchasePackage({ aPackage: pkg });
+    if (rcAktiv(res && res.customerInfo)) { meta.abo = true; speichere(); document.getElementById('paywall').classList.remove('on'); try { toast('Abo aktiv — danke!'); } catch (e) {} }
+  } catch (e) { if (!(e && e.userCancelled)) { try { toast('Kauf fehlgeschlagen.'); } catch (er) {} } }
+}
+async function aboWiederherstellen() {
+  const P = rcPlugin();
+  if (!NATIV || !P) { try { toast('Wiederherstellung nur in der iOS-App.'); } catch (e) {} return; }
+  try {
+    const { customerInfo } = await P.restorePurchases();
+    meta.abo = rcAktiv(customerInfo); speichere();
+    if (meta.abo) { document.getElementById('paywall').classList.remove('on'); try { toast('Abo wiederhergestellt.'); } catch (e) {} }
+    else { try { toast('Kein aktives Abo gefunden.'); } catch (e) {} }
+  } catch (e) { try { toast('Wiederherstellung fehlgeschlagen.'); } catch (er) {} }
 }
 
 /* ═══════════ GRAMMATIK (Nachschlagewerk) ═══════════ */
@@ -3945,6 +3968,7 @@ async function init() {
     homeAktualisieren();
     grammatikAufbauen();
     { const dm = new URLSearchParams(location.search).get('demo'); if (dm === 'paywall' || dm === 'trial') aboErzwingen = true; }
+    await aboInit();   // RevenueCat: echten Abo-Status holen (nur nativ/iOS)
     pruefeAbo();
     if (!localStorage.getItem('zeus_intro')) introZeigen();
     const h = location.hash.slice(1);
