@@ -931,6 +931,27 @@ body.hell .hz.futur { background: #ece8df; }
 .sw-bar { flex:1; height:6px; background:var(--bg2); border-radius:6px; overflow:hidden; }
 .sw-bar i { display:block; height:100%; border-radius:6px; transition:width .45s; }
 .sw-val { font-size:13px; font-weight:700; width:36px; text-align:right; }
+/* ═══ Paywall ═══ */
+.paywall { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 22px; background: rgba(6,8,13,.86); backdrop-filter: blur(6px); }
+.paywall.on { display: flex; }
+.pw-card { width: 100%; max-width: 380px; background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 26px 22px; text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+.pw-bolt { width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 14px; display: grid; place-items: center; background: var(--gold); color: #221a05; }
+.pw-bolt svg { width: 28px; height: 28px; }
+.pw-titel { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.pw-text { font-size: 14px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.pw-preis { margin-bottom: 14px; }
+.pw-betrag { font-size: 30px; font-weight: 800; color: var(--gold); }
+.pw-zyklus { font-size: 15px; color: var(--muted); }
+.pw-vorteile { list-style: none; padding: 0; margin: 0 0 18px; text-align: left; display: grid; gap: 9px; }
+.pw-vorteile li { font-size: 14px; padding-left: 26px; position: relative; }
+.pw-vorteile li::before { content: '✓'; position: absolute; left: 4px; color: var(--gold); font-weight: 800; }
+.pw-kauf { width: 100%; padding: 14px; border: none; border-radius: 13px; background: var(--gold); color: #221a05; font-size: 15.5px; font-weight: 800; cursor: pointer; }
+.pw-kauf:active { transform: scale(.98); }
+.pw-restore { width: 100%; margin-top: 10px; padding: 10px; border: none; background: none; color: var(--muted); font-size: 13.5px; font-weight: 600; cursor: pointer; }
+.pw-klein { font-size: 11.5px; color: var(--faint); margin-top: 12px; line-height: 1.4; }
+.trial-bar { display: none; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--muted); cursor: pointer; }
+.trial-bar.on { display: flex; }
+.trial-bar b { color: var(--gold); }
 /* ═══ Grammatik ═══ */
 #view-grammatik .gr-kap-t { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 800; margin: 22px 4px 8px; }
 .gr-d { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; overflow: hidden; }
@@ -1323,6 +1344,7 @@ body.hell .hz.futur { background: #ece8df; }
   <button class="drawer-item" onclick="drawerZu('import')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a2 2 0 0 1 2-2h2.2l1.3-1.9h6.6l1.3 1.9H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.3"/></svg></span>Import<span class="d-sub">Foto → Lektion</span></button>
   <button class="drawer-item" onclick="drawerZu('bibliothek')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h3.2v15H5z"/><path d="M9.7 4.5h3.2v15H9.7z"/><path d="M15.2 5.3l3 .5-2.2 14.4-3-.5z"/></svg></span>Bibliothek<span class="d-sub" id="drawer-lek-n"></span></button>
   <button class="drawer-item" onclick="drawerZu('grammatik')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h11a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 5.5h-3a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h3z"/></svg></span>Grammatik<span class="d-sub">Formenlehre &amp; Syntax</span></button>
+  <button class="drawer-item" onclick="drawerSchliessen(); zeigePaywall()"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>Zeus Abo<span class="d-sub" id="drawer-abo"></span></button>
   <div class="drawer-sektion">App</div>
   <button class="drawer-item" onclick="drawerZu('einstellungen')"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V20a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H4a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H10a1.6 1.6 0 0 0 1-1.5V4a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V10a1.6 1.6 0 0 0 1.5 1H20a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg></span>Einstellungen</button>
   <button class="drawer-item" onclick="themeUmschalten()"><span class="d-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" fill="currentColor" fill-opacity=".0"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor" stroke="none"/></svg></span>Design<span class="d-sub" id="drawer-theme">Dunkel</span></button>
@@ -1350,6 +1372,25 @@ body.hell .hz.futur { background: #ece8df; }
   </div>
   <div class="intro-dots" id="intro-dots"></div>
   <button class="btn-solid" id="intro-btn" onclick="introWeiter()">Weiter</button>
+</div>
+
+<!-- ═══ PAYWALL (3-Tage-Test → Abo) ═══ -->
+<div class="paywall" id="paywall" onclick="if(event.target===this)paywallSchliessen()">
+  <div class="pw-card">
+    <div class="pw-bolt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    <div class="pw-titel" id="pw-titel">Dein Gratis-Zugang ist vorbei</div>
+    <div class="pw-text" id="pw-text">Du hast Zeus 3 Tage kostenlos getestet. Mit dem Abo geht's unbegrenzt weiter.</div>
+    <div class="pw-preis"><span class="pw-betrag">1,99 €</span><span class="pw-zyklus"> / Monat</span></div>
+    <ul class="pw-vorteile">
+      <li>Alle 1.900+ Vokabeln &amp; Lektionen</li>
+      <li>Foto-Import eigener Vokabeln</li>
+      <li>Perfekte Aussprache mit Audio</li>
+      <li>Athen-Aufbauspiel &amp; Grammatik-Referenz</li>
+    </ul>
+    <button class="pw-kauf" onclick="aboKaufen()">Abo abschließen — 1,99 €/Monat</button>
+    <button class="pw-restore" onclick="aboWiederherstellen()">Kauf wiederherstellen</button>
+    <div class="pw-klein">Monatlich, jederzeit kündbar. Abrechnung über deinen App-Store-Account.</div>
+  </div>
 </div>
 
 <div id="flash"></div>
@@ -1502,6 +1543,8 @@ function lade() {
   if (!meta.schaetze) meta.schaetze = {};
   if (typeof meta.weihrauch !== 'number') meta.weihrauch = 0;
   if (typeof meta.opferPity !== 'number') meta.opferPity = 0;
+  if (!meta.trialStart) meta.trialStart = heuteStr();   // erster Start = Beginn des 3-Tage-Tests
+  if (typeof meta.abo !== 'boolean') meta.abo = false;
   try { aktive = JSON.parse(localStorage.getItem('zeus_aktive') || 'null') || []; } catch { aktive = []; }
   // Migration: früher war genau eine Lektion aktiv
   if (!aktive.length && localStorage.getItem('zeus_aktiv')) aktive = [localStorage.getItem('zeus_aktiv')];
@@ -1689,6 +1732,7 @@ function drawerOeffnen() {
     `${meta.drachmen} δρ · Serie ${meta.streak} · ×${multZeigen(gunstStufe(meta.streak).mult)}`;
   document.getElementById('drawer-lek-n').textContent = lektionen.length + (lektionen.length === 1 ? ' Lektion' : ' Lektionen');
   document.getElementById('drawer-theme').textContent = einstellungen.hell ? 'Hell' : 'Dunkel';
+  document.getElementById('drawer-abo').textContent = aboStatus() === 'abo' ? 'Aktiv ✦' : `noch ${trialTageUebrig()} Tage gratis`;
   document.getElementById('drawer').classList.add('on');
   document.getElementById('drawer-overlay').classList.add('on');
 }
@@ -3602,9 +3646,48 @@ function demoPruefen() {
     localStorage.setItem('zeus_meta', JSON.stringify(
       { xp: 0, level: 1, streak: 0, lastTag: null, stadt: 0, maxStadt: 0, drachmen: 999999, lastDecay: heute }
     ));
+  } else if (demo === 'paywall') {
+    // Trial abgelaufen (Test der Paywall, erzwungen)
+    const d = new Date(); d.setDate(d.getDate() - 4); const alt = d.toISOString().slice(0, 10);
+    localStorage.setItem('zeus_meta', JSON.stringify({ stadt: 6, maxStadt: 6, drachmen: 120, lastTag: heute, lastDecay: heute, trialStart: alt, abo: false }));
+  } else if (demo === 'trial') {
+    // Laufender Test (Paywall optional)
+    localStorage.setItem('zeus_meta', JSON.stringify({ stadt: 3, maxStadt: 3, drachmen: 60, lastTag: heute, lastDecay: heute, trialStart: heute, abo: false }));
+  } else if (demo === 'abo') {
+    localStorage.setItem('zeus_meta', JSON.stringify({ stadt: 6, maxStadt: 6, drachmen: 120, lastTag: heute, lastDecay: heute, abo: true }));
   } else if (demo === 'reset') {
     ['zeus_meta','zeus_srs','zeus_aktiv','zeus_aktive','greek_meta','greek_srs'].forEach(k => localStorage.removeItem(k));
   }
+}
+
+/* ═══════════ ABO / 3-TAGE-TEST ═══════════ */
+const TRIAL_TAGE = 3;
+let aboErzwingen = false;   // erst true, wenn Apple-IAP angebunden ist (live noch nicht scharf); ?demo=paywall/trial schaltet es zum Testen
+function trialTageUebrig() {
+  if (meta.abo) return Infinity;
+  if (!meta.trialStart) return TRIAL_TAGE;
+  const tage = Math.floor((Date.now() - new Date(meta.trialStart + 'T00:00:00').getTime()) / 86400000);
+  return Math.max(0, TRIAL_TAGE - tage);
+}
+function aboStatus() { return meta.abo ? 'abo' : (trialTageUebrig() > 0 ? 'trial' : 'abgelaufen'); }
+function pruefeAbo() { if (aboErzwingen && aboStatus() === 'abgelaufen') zeigePaywall(); }
+function zeigePaywall() {
+  const t = document.getElementById('pw-titel'), x = document.getElementById('pw-text');
+  if (aboStatus() === 'trial') { t.textContent = 'Zeus Vollzugang'; x.textContent = `Dein Gratis-Test läuft noch ${trialTageUebrig()} Tag(e). Sichere dir jetzt unbegrenzten Zugang.`; }
+  else { t.textContent = 'Dein Gratis-Zugang ist vorbei'; x.textContent = `Du hast Zeus ${TRIAL_TAGE} Tage kostenlos getestet. Mit dem Abo geht's unbegrenzt weiter.`; }
+  document.getElementById('paywall').classList.add('on');
+}
+function paywallSchliessen() { if (aboErzwingen && aboStatus() === 'abgelaufen') return; document.getElementById('paywall').classList.remove('on'); }
+function aboKaufen() {
+  // TODO: echten Apple-IAP-Kauf via StoreKit/RevenueCat auslösen; meta.abo NUR bei
+  // verifiziertem Kauf setzen. Bis dahin Platzhalter (simuliert das Abo zum Testen).
+  meta.abo = true; speichere();
+  document.getElementById('paywall').classList.remove('on');
+  try { toast('Abo aktiv — danke! (Platzhalter: echtes Apple-Abo folgt)'); } catch (e) {}
+}
+function aboWiederherstellen() {
+  // TODO: RevenueCat restorePurchases()
+  try { toast('Kauf-Wiederherstellung folgt mit der Apple-Anbindung.'); } catch (e) {}
 }
 
 /* ═══════════ GRAMMATIK (Nachschlagewerk) ═══════════ */
@@ -3861,6 +3944,8 @@ async function init() {
     if (schaden > 0) stadtOverride = Math.min(meta.stadt + schaden, MAX_BAU);
     homeAktualisieren();
     grammatikAufbauen();
+    { const dm = new URLSearchParams(location.search).get('demo'); if (dm === 'paywall' || dm === 'trial') aboErzwingen = true; }
+    pruefeAbo();
     if (!localStorage.getItem('zeus_intro')) introZeigen();
     const h = location.hash.slice(1);
     if (['athen','bibliothek','wortschatz','grammatik'].includes(h)) tabZu(h);
