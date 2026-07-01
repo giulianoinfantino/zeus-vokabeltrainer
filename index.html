@@ -6,7 +6,42 @@
 <title>Zeus – Altgriechisch, das süchtig macht</title>
 <meta name="description" content="Altgriechisch lernen mit 1650 vertonten Vokabeln in erasmischer Schulaussprache, Spaced Repetition und einem Athen, das mit dir wächst." />
 <meta name="theme-color" content="#0a0d15" />
-<link rel="icon" href="app/icon-180.png" />
+<link rel="icon" href="/icon-180.png" />
+<link rel="apple-touch-icon" href="/icon-180.png" />
+<!-- Domain ggf. anpassen, falls nicht zeusvokabeltrainer.online -->
+<link rel="canonical" href="https://zeusvokabeltrainer.online/" />
+<meta name="apple-itunes-app" content="app-id=6780129796" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Zeus – Altgriechisch Vokabeln" />
+<meta property="og:title" content="Zeus – Altgriechisch, das süchtig macht" />
+<meta property="og:description" content="Über 1650 vertonte Vokabeln in erasmischer Aussprache, Spaced Repetition und ein Athen, das du dir eroberst. Jetzt kostenlos im App Store." />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:url" content="https://zeusvokabeltrainer.online/" />
+<meta property="og:image" content="https://zeusvokabeltrainer.online/og-icon.png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Zeus – Altgriechisch, das süchtig macht" />
+<meta name="twitter:description" content="1650+ vertonte Vokabeln, Spaced Repetition und ein Athen, das du dir eroberst. Jetzt kostenlos im App Store fürs iPhone." />
+<meta name="twitter:image" content="https://zeusvokabeltrainer.online/og-icon.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Zeus – Altgriechisch Vokabeln",
+  "operatingSystem": "iOS",
+  "applicationCategory": "EducationalApplication",
+  "inLanguage": ["de", "grc"],
+  "url": "https://apps.apple.com/de/app/zeus-altgriechisch-vokabeln/id6780129796",
+  "downloadUrl": "https://apps.apple.com/de/app/zeus-altgriechisch-vokabeln/id6780129796",
+  "image": "https://zeusvokabeltrainer.online/og-icon.png",
+  "description": "Altgriechisch lernen mit über 1650 vertonten Vokabeln in erasmischer Schulaussprache, Spaced Repetition und einem Athen, das mit dir wächst und das du dir über die Ägäis eroberst.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "Ergon Solutions", "url": "https://ergon-solutions.net" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -50,6 +85,19 @@ nav {
   box-shadow:0 6px 22px rgba(227,182,79,.22); transition:transform .15s;
 }
 .cta:hover { transform:translateY(-1px); }
+.cta.ghost { background:var(--surface2); color:var(--text); box-shadow:none; border:1px solid var(--border2); }
+.cta.ghost:hover { border-color:var(--gold); }
+.cta-row { display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; }
+.appstore {
+  display:inline-flex; align-items:center; gap:11px;
+  background:#000; border:1px solid #3a3a3a; border-radius:13px;
+  padding:9px 18px 9px 15px; color:#fff; transition:transform .15s, border-color .2s;
+}
+.appstore:hover { transform:translateY(-1px); border-color:#777; }
+.appstore .apple { width:25px; height:25px; fill:#fff; flex-shrink:0; }
+.appstore .as-txt { display:flex; flex-direction:column; line-height:1.02; text-align:left; }
+.appstore .as-small { font-size:9.5px; font-weight:500; letter-spacing:.03em; color:#f0f0f0; }
+.appstore .as-big { font-size:18px; font-weight:600; letter-spacing:.01em; margin-top:1px; }
 @media (max-width:640px){ .nav-links a:not(.cta){ display:none; } }
 
 /* ── Hero ── */
@@ -132,9 +180,10 @@ footer .greek { color:var(--muted); }
     <div class="nav-name">Zeus</div>
     <div class="nav-links">
       <a href="#funktionen">Funktionen</a>
+      <a href="#spiel">Das Spiel</a>
       <a href="#aussprache">Aussprache</a>
       <a href="#methode">Methode</a>
-      <a class="cta" href="#aussprache">Hörprobe ⚡</a>
+      <a class="cta" href="https://apps.apple.com/de/app/zeus-altgriechisch-vokabeln/id6780129796" target="_blank" rel="noopener">App laden</a>
     </div>
   </div>
 </nav>
@@ -145,8 +194,14 @@ footer .greek { color:var(--muted); }
   <p>Über 1650 vertonte Vokabeln in erasmischer Schulaussprache,
      ein Lernsystem, das sich deinem Gedächtnis anpasst — und ein Athen,
      das nur so lange steht, wie du dranbleibst.</p>
-  <a class="cta" href="#aussprache">Hörprobe ⚡</a>
-  <div class="hinweis">Über 1.650 vertonte Vokabeln · bald im App Store</div>
+  <div class="cta-row">
+    <a class="appstore" href="https://apps.apple.com/de/app/zeus-altgriechisch-vokabeln/id6780129796" target="_blank" rel="noopener" aria-label="Zeus im App Store laden">
+      <svg class="apple" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      <span class="as-txt"><span class="as-small">Laden im</span><span class="as-big">App Store</span></span>
+    </a>
+    <a class="cta ghost" href="#aussprache">Hörprobe ⚡</a>
+  </div>
+  <div class="hinweis">Über 1.650 vertonte Vokabeln · kostenlos fürs iPhone im App Store</div>
 
   <div class="stadt-rahmen">
     <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
@@ -186,14 +241,14 @@ footer .greek { color:var(--muted); }
       <p>Jedes Wort eingesprochen von einer deutschen Muttersprachlerin — in der erasmischen Schulaussprache, wie sie an Gymnasien und Universitäten gelehrt wird, maschinell phonetisch verifiziert.</p></div>
     <div class="karte"><span class="ico">🧠</span><h3>Spaced Repetition</h3>
       <p>Fünf Lernstufen von „Neu" bis „Gemeistert". Was sitzt, kommt seltener — was wackelt, öfter. Sitzungen à 20 Karten, perfekt für zwischendurch.</p></div>
-    <div class="karte"><span class="ico">🏛️</span><h3>Baue dein Athen</h3>
-      <p>Richtige Antworten und Lernserien bringen Drachmen. Damit errichtest du zwölf Bauwerke — von der Hütte über das Dionysos-Theater bis zur Athena Promachos.</p></div>
+    <div class="karte"><span class="ico">🏛️</span><h3>Baue dein Athen — und ein Reich</h3>
+      <p>Richtige Antworten und Lernserien bringen Drachmen. Damit errichtest du zwölf Bauwerke, eroberst über die Ägäis Provinzen und sammelst Schätze der Götter. <a href="#spiel" style="color:var(--gold)">Mehr zum Spiel →</a></p></div>
     <div class="karte"><span class="ico">⚡</span><h3>Zeus wacht</h3>
       <p>Ein Tag Pause: ein Bauwerk fällt einer Katastrophe zum Opfer. Drei Tage: Zeus legt ganz Athen in Trümmer. Die ehrlichste Streak-Mechanik der Welt.</p></div>
     <div class="karte"><span class="ico">📚</span><h3>Grundwortschatz & eigene Lektionen</h3>
       <p>82 thematische Lektionen — Verben, Polis, Krieg, Götter, Homer, Koine. Dazu Foto-Import für eigene Lehrbuchseiten, organisiert in Sammlungen und Ordnern.</p></div>
-    <div class="karte"><span class="ico">📱</span><h3>Echte App, überall</h3>
-      <p>Aufs iPhone-Homescreen legen, einmal herunterladen, offline lernen — in der U-Bahn, im Hörsaal, am Strand von Naxos. Mit Sound, Haptik und Combo-System.</p></div>
+    <div class="karte"><span class="ico">📱</span><h3>Kostenlos im App Store</h3>
+      <p>Auf dem iPhone laden und sofort loslernen — offline, in der U-Bahn, im Hörsaal, am Strand von Naxos. Mit Sound, Haptik und Combo-System. Kein Tracking, keine Cookies.</p></div>
   </div>
 </section>
 
@@ -243,11 +298,37 @@ footer .greek { color:var(--muted); }
   </div>
 </section>
 
+<section id="spiel" class="shell">
+  <div class="sec-kicker">Das Spiel</div>
+  <h2>Ein Athen, das du dir eroberst</h2>
+  <p class="sec-sub">Lernen ist der Motor, nicht die Pflicht. Jede Vokabel verdient Drachmen — und die stecken in einer Stadt, einem Reich über die Ägäis und deinem Ruhm. So bleibst du dran, ohne es zu merken.</p>
+  <div class="grid">
+    <div class="karte"><span class="ico">🏛️</span><h3>Zwölf Bauwerke, drei Stufen</h3>
+      <p>Von der Hütte über Agora, Dionysos-Theater und Parthenon bis zur Athena Promachos. Jedes Bauwerk lässt sich zweimal ausbauen (Stufe I–III) und hebt einen deiner vier Stadtwerte — Prestige, Gunst, Heer und Wohlstand.</p></div>
+    <div class="karte"><span class="ico">⚔️</span><h3>Feldzüge über die Ägäis</h3>
+      <p>Eine handgezeichnete Pergamentkarte von Megara bis zum Perserreich. Erlerne Proviant durchs Lernen, wähle deine Strategie — Frontalangriff, List oder Belagerung — und erobere Provinzen, die dir täglich Tribut zahlen. Verlierst du, droht der Gegenangriff.</p></div>
+    <div class="karte"><span class="ico">🏺</span><h3>Altar & Schatzkammer</h3>
+      <p>Opfere Drachmen und die Götter gewähren Schätze in fünf Seltenheitsstufen — vom Tonkrug bis zur Aigis der Athene. Doppelte werden zu Weihrauch, mit dem du gezielt Fehlendes erwirbst.</p></div>
+    <div class="karte"><span class="ico">🎖️</span><h3>Ehrungen der Polis</h3>
+      <p>Vierzehn Meilensteine über Bauen, Erobern, Serien und Sammeln — vom „Feldherrn" bis zum „Herrn der Ägäis". Jede Ehrung wird dauerhaft verzeichnet und mit Drachmen belohnt.</p></div>
+    <div class="karte"><span class="ico">⚡</span><h3>Zeus wacht — ehrlich</h3>
+      <p>Ein versäumter Tag: Poseidon erschüttert die Erde, ein Bauwerk fällt. Drei Tage: Zeus legt ganz Athen in Trümmer. Wehranlagen — Staudamm, Mauer, Zeus-Tempel — mildern den Schaden. Keine falsche Gnade, nur echte Konsequenz.</p></div>
+    <div class="karte"><span class="ico">✦</span><h3>Göttliche Gunst</h3>
+      <p>Deine Lernserie wird zum Multiplikator: von der „Gunst der Musen" bis zum „Unsterblichen Heros" verdreifacht sich, was jede richtige Antwort einbringt. Tag für Tag wächst dein Reich schneller.</p></div>
+  </div>
+</section>
+
 <div class="schluss shell">
   <span class="greek">γνῶθι σεαυτόν</span>
-  <h2>Bald im App Store.</h2>
-  <p class="sec-sub" style="margin-bottom:30px">Zeus erscheint in Kürze als App fürs iPhone.<br>Bis dahin: hör dir an, wie Altgriechisch wirklich klingt.</p>
-  <a class="cta" href="#aussprache">Hörprobe ⚡</a>
+  <h2>Jetzt im App Store.</h2>
+  <p class="sec-sub" style="margin-bottom:30px">Zeus ist da — kostenlos fürs iPhone.<br>Lad dir die Götter auf den Homescreen und erobere dein erstes Wort.</p>
+  <div class="cta-row">
+    <a class="appstore" href="https://apps.apple.com/de/app/zeus-altgriechisch-vokabeln/id6780129796" target="_blank" rel="noopener" aria-label="Zeus im App Store laden">
+      <svg class="apple" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      <span class="as-txt"><span class="as-small">Laden im</span><span class="as-big">App Store</span></span>
+    </a>
+    <a class="cta ghost" href="#aussprache">Hörprobe ⚡</a>
+  </div>
 </div>
 
 <footer>

@@ -170,6 +170,77 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
 .city-svg-wrap canvas { display: block; width: 100% !important; height: 100% !important; touch-action: none; }
 .city-svg-wrap.voll { position: fixed; inset: 0; margin: 0; width: 100vw; height: 100vh; aspect-ratio: auto; border-radius: 0; z-index: 9999; }
 .city-svg-wrap svg { width: 100%; height: auto; display: block; }
+#city-svg-inner { position: absolute; inset: 0; line-height: 0; }
+#city-svg-inner svg { width: 100%; height: 100%; display: block; }
+#iso-cam { transition: transform .5s cubic-bezier(.22,1,.36,1); transform-origin: 0 0; }
+/* Atmosphäre-Animationen */
+@keyframes ambiWolke { from { transform: translateX(-70px); } to { transform: translateX(450px); } }
+.ambi-wolken .wlk { animation: ambiWolke linear infinite; }
+.ambi-wolken .w1 { animation-duration: 64s; }
+.ambi-wolken .w2 { animation-duration: 88s; animation-delay: -30s; }
+.ambi-wolken .w3 { animation-duration: 110s; animation-delay: -64s; }
+@keyframes vogFlug1 { from { transform: translate(-30px,64px); } to { transform: translate(430px,42px); } }
+@keyframes vogFlug2 { from { transform: translate(-30px,98px); } to { transform: translate(430px,122px); } }
+@keyframes vogFlug3 { from { transform: translate(-30px,132px); } to { transform: translate(430px,110px); } }
+.ambi-voegel .vg1 { animation: vogFlug1 24s linear infinite; }
+.ambi-voegel .vg2 { animation: vogFlug2 31s linear infinite -8s; }
+.ambi-voegel .vg3 { animation: vogFlug3 38s linear infinite -18s; }
+@keyframes shpFahrt1 { from { transform: translate(-44px,302px); } to { transform: translate(450px,302px); } }
+@keyframes shpFahrt2 { from { transform: translate(450px,156px); } to { transform: translate(-44px,156px); } }
+.ambi-schiffe .sh1 { animation: shpFahrt1 72s linear infinite; }
+.ambi-schiffe .sh2 { animation: shpFahrt2 98s linear infinite -40s; }
+@keyframes welleDrift { from { transform: translateX(0); } to { transform: translateX(-68px); } }
+.ambi-wellen .we1 { animation: welleDrift 7s linear infinite; }
+.ambi-wellen .we2 { animation: welleDrift 9s linear infinite; }
+.ambi-wellen .we3 { animation: welleDrift 11s linear infinite; }
+@keyframes sternBlink { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+.ambi-sterne .stern { animation: sternBlink 3.6s ease-in-out infinite; }
+.ambi-sterne .stern:nth-child(even) { animation-duration: 4.8s; animation-delay: -1.6s; }
+.b { pointer-events: none; }
+.b.on, .b.geist { pointer-events: auto; cursor: pointer; }
+.b.sel { filter: drop-shadow(0 0 2px #ffe9a8) drop-shadow(0 0 10px #e3b64f); }
+.b.on.lvl2 { transform: scale(1.09); }
+.b.on.lvl3 { transform: scale(1.2); }
+.b.on.lvl3:not(.sel) { filter: drop-shadow(0 0 4px rgba(227,182,79,.55)); }
+.wimpel { pointer-events: none; }
+.wimpel text { font-family: inherit; }
+.bi-stufe {
+  display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px;
+  font-size: 10.5px; font-weight: 800; vertical-align: middle;
+  background: rgba(227,182,79,.16); color: var(--gold);
+}
+.b.geist { opacity: .45 !important; transform: none !important; cursor: pointer; animation: geistPuls 1.9s ease-in-out infinite; }
+@keyframes geistPuls {
+  0%,100% { opacity: .3 !important; filter: drop-shadow(0 0 2px rgba(227,182,79,.45)); }
+  50%     { opacity: .62 !important; filter: drop-shadow(0 0 10px rgba(227,182,79,.95)); }
+}
+/* Info-Fenster für angeklicktes Bauwerk */
+.bau-info {
+  position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 5;
+  background: var(--surface);
+  border: 1px solid var(--border2); border-radius: 14px;
+  padding: 13px 14px; box-shadow: 0 12px 34px rgba(0,0,0,.45); backdrop-filter: blur(10px);
+  transform: translateY(140%); opacity: 0; pointer-events: none;
+  transition: transform .38s cubic-bezier(.22,1,.36,1), opacity .25s;
+}
+.bau-info.on { transform: none; opacity: 1; pointer-events: auto; }
+.bi-titel { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 3px; padding-right: 24px; }
+.bi-text { font-size: 12px; color: var(--muted); line-height: 1.45; display: flex; flex-direction: column; gap: 3px; }
+.bi-besch { color: var(--muted); }
+.bi-werte { font-weight: 800; }
+.bi-vorschau { font-size: 11px; color: var(--faint); }
+.bi-vorschau b { color: var(--muted); font-weight: 700; }
+.bi-btn {
+  margin-top: 11px; width: 100%; padding: 11px; border: none; border-radius: 11px;
+  background: linear-gradient(135deg, var(--gold), #c2922f); color: #131008;
+  font-size: 13.5px; font-weight: 800; cursor: pointer;
+}
+.bi-btn:active { transform: scale(.98); }
+.bi-btn:disabled { background: var(--surface2); color: var(--faint); cursor: default; transform: none; }
+.bi-close {
+  position: absolute; top: 9px; right: 10px; width: 24px; height: 24px; border: none; border-radius: 8px;
+  background: var(--surface2); color: var(--muted); font-size: 15px; line-height: 1; cursor: pointer;
+}
 .city-caption {
   padding: 10px 18px 14px;
   font-size: 11.5px; color: var(--muted);
@@ -188,6 +259,11 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   font-size: 12.5px;
 }
 .bau-item:last-child { border-bottom: none; }
+.bau-item.steht { cursor: pointer; }
+.bau-lvl {
+  flex-shrink: 0; padding: 1px 7px; border-radius: 999px; font-size: 10px; font-weight: 800;
+  background: rgba(227,182,79,.16); color: var(--gold);
+}
 .bau-item .nr {
   width: 23px; height: 23px; border-radius: 8px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
@@ -243,6 +319,33 @@ input, textarea, select { font-family: 'Inter', sans-serif; font-size: 16px; }
   color: #131008; box-shadow: 0 3px 12px rgba(227,182,79,.2);
 }
 .vert-item .kauf:disabled { background: var(--surface2); color: var(--faint); box-shadow: none; cursor: default; }
+
+/* ── Ehrungen der Polis (Errungenschaften) ── */
+.ehr-prog { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0; text-transform: none; margin-left: 8px; }
+.ehr-liste {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 4px 16px;
+}
+.ehr-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 0; border-bottom: 1px solid var(--border);
+}
+.ehr-item:last-child { border-bottom: none; }
+.ehr-ico {
+  width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface2); color: var(--faint);
+}
+.ehr-ico svg { width: 19px; height: 19px; }
+.ehr-item.erfuellt .ehr-ico { background: rgba(227,182,79,.16); color: var(--gold); }
+.ehr-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+.ehn { font-size: 13px; font-weight: 700; color: var(--faint); }
+.ehr-item.erfuellt .ehn { color: var(--text); }
+.ehb { font-size: 11px; color: var(--muted); line-height: 1.4; }
+.ehr-bar { height: 4px; border-radius: 3px; background: var(--surface2); overflow: hidden; margin-top: 1px; }
+.ehr-bar i { display: block; height: 100%; background: var(--gold); border-radius: 3px; transition: width .5s cubic-bezier(.22,1,.36,1); }
+.ehr-rechts { margin-left: auto; flex-shrink: 0; font-size: 11.5px; font-weight: 800; color: var(--faint); white-space: nowrap; }
+.ehr-item.erfuellt .ehr-rechts { color: var(--gold); }
 
 /* Gebäude-Animation */
 .b {
@@ -931,6 +1034,72 @@ body.hell .hz.futur { background: #ece8df; }
 .sw-bar { flex:1; height:6px; background:var(--bg2); border-radius:6px; overflow:hidden; }
 .sw-bar i { display:block; height:100%; border-radius:6px; transition:width .45s; }
 .sw-val { font-size:13px; font-weight:700; width:36px; text-align:right; }
+.sw-name { width:130px; display:flex; flex-direction:column; gap:1px; line-height:1.18; }
+.sw-zweck { font-size:9.5px; color:var(--faint); font-weight:500; }
+/* ═══ Feldzüge ═══ */
+.proviant-badge { font-size:11px; font-weight:800; color:var(--gold); letter-spacing:0; text-transform:none; }
+.feldzug-liste { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:4px 16px; }
+.fz-item { display:flex; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid var(--border); }
+.fz-item:last-child { border-bottom:none; }
+.fz-item.gesperrt { opacity:.5; }
+.fz-name { font-size:13px; font-weight:700; color:var(--text); }
+.fz-meta { font-size:11px; color:var(--muted); margin-left:auto; text-align:right; }
+.fz-item .kauf { margin-left:8px; flex-shrink:0; }
+.bedrohung { display:flex; align-items:center; gap:12px; background:rgba(224,86,107,.12); border:1px solid rgba(224,86,107,.4); border-radius:12px; padding:11px 13px; margin-bottom:12px; }
+.bedr-txt { display:flex; flex-direction:column; gap:2px; }
+.bedr-txt b { font-size:13px; color:#ff8d9b; }
+.bedr-txt span { font-size:11.5px; color:var(--muted); }
+.bedrohung .kauf { margin-left:auto; flex-shrink:0; }
+.feldzug { position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center; padding:22px; background:rgba(6,8,13,.88); backdrop-filter:blur(7px); }
+.feldzug.on { display:flex; }
+.fz-box { width:100%; max-width:360px; background:var(--surface); border:1px solid var(--border2); border-radius:20px; padding:24px 22px; text-align:center; box-shadow:0 24px 60px rgba(0,0,0,.55); animation:psPop .34s cubic-bezier(.22,1.18,.36,1); }
+.fz-ico { color:var(--gold); margin-bottom:10px; }
+.fz-ico svg { width:46px; height:46px; }
+.fz-titel { font-size:18px; font-weight:800; margin-bottom:6px; }
+.fz-sub { font-size:12.5px; color:var(--muted); line-height:1.5; margin-bottom:14px; }
+.fz-strategien { display:flex; flex-direction:column; gap:9px; }
+.fz-strat { text-align:left; border:1px solid var(--border2); background:var(--surface2); border-radius:12px; padding:11px 13px; cursor:pointer; display:flex; flex-direction:column; gap:2px; }
+.fz-strat:active { transform:scale(.99); }
+.fz-strat:disabled { opacity:.45; cursor:default; }
+.fz-strat-name { font-size:13.5px; font-weight:800; color:var(--text); }
+.fz-strat-name em { color:var(--gold); font-style:normal; font-weight:700; float:right; }
+.fz-strat-besch { font-size:11px; color:var(--muted); }
+.fz-ergebnis:empty { display:none; }
+.fz-res { padding:8px 0 2px; animation:psPop .3s ease; }
+.fz-res-t { font-size:22px; font-weight:800; }
+.fz-res.sieg .fz-res-t { color:#43c98a; }
+.fz-res.niederlage .fz-res-t { color:#e0566b; }
+.fz-res-s { font-size:12.5px; color:var(--muted); line-height:1.5; margin-top:4px; }
+.fz-close { margin-top:16px; width:100%; padding:12px; border:none; border-radius:12px; background:var(--gold); color:#221a05; font-size:14.5px; font-weight:800; cursor:pointer; }
+/* ═══ Karte der Ägäis (Bild + Marker) ═══ */
+.karte-wrap { position:relative; border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); }
+#karte { position:relative; line-height:0; }
+.karte-img { width:100%; height:auto; display:block; -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
+.kmark { position:absolute; width:0; height:0; padding:0; border:none; background:none; cursor:pointer; }
+.kmark .kdot {
+  position:absolute; left:0; top:0; transform:translate(-50%,-50%);
+  width:17px; height:17px; border-radius:50%; border:2px solid #11161f;
+  display:flex; align-items:center; justify-content:center;
+  font-size:9px; font-weight:800; color:#10131c; line-height:1;
+  box-shadow:0 1px 4px rgba(0,0,0,.55);
+}
+.kmark .klabel {
+  position:absolute; left:0; top:11px; transform:translate(-50%,0);
+  font-size:11px; font-weight:800; white-space:nowrap; color:#3a2a12;
+  font-family:Georgia,'Times New Roman',serif; letter-spacing:.02em;
+  text-shadow:0 1px 0 #ede0bb, 0 0 3px rgba(237,224,187,.95), 1px 0 0 rgba(237,224,187,.7), -1px 0 0 rgba(237,224,187,.7);
+}
+.kmark.up .klabel { top:-11px; transform:translate(-50%,-100%); }
+.kmark.feind .kdot { background:#e0566b; }
+.kmark.erobert .kdot { background:#43c98a; }
+.kmark.gesperrt .kdot { background:#9c9074; }
+.kmark.gesperrt .klabel { color:#7a6b4c; opacity:.9; }
+.kmark.heim .kdot { background:var(--gold); color:#5a4205; font-size:11px; }
+.karte-svg { width:100%; height:auto; display:block; border-radius:14px;
+  -webkit-user-select:none; user-select:none;
+  box-shadow:0 6px 22px rgba(0,0,0,.4), inset 0 0 0 1px rgba(58,38,12,.25); }
+.kmark:active .kdot { transform:translate(-50%,-50%) scale(1.18); }
+#karte-info .ki-z { display:block; margin-bottom:1px; }
 /* ═══ Paywall ═══ */
 .paywall { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 22px; background: rgba(6,8,13,.86); backdrop-filter: blur(6px); }
 .paywall.on { display: flex; }
@@ -947,8 +1116,31 @@ body.hell .hz.futur { background: #ece8df; }
 .pw-vorteile li::before { content: '✓'; position: absolute; left: 4px; color: var(--gold); font-weight: 800; }
 .pw-kauf { width: 100%; padding: 14px; border: none; border-radius: 13px; background: var(--gold); color: #221a05; font-size: 15.5px; font-weight: 800; cursor: pointer; }
 .pw-kauf:active { transform: scale(.98); }
-.pw-restore { width: 100%; margin-top: 10px; padding: 10px; border: none; background: none; color: var(--muted); font-size: 13.5px; font-weight: 600; cursor: pointer; }
+.pw-restore { width: 100%; margin-top: 6px; padding: 7px; border: none; background: none; color: var(--faint); font-size: 11.5px; font-weight: 500; cursor: pointer; opacity: .8; }
 .pw-klein { font-size: 11.5px; color: var(--faint); margin-top: 12px; line-height: 1.4; }
+/* ═══ Kauf-Status (Laden / Erfolg / Fehler) ═══ */
+.pw-status { position: fixed; inset: 0; z-index: 10001; display: none; align-items: center; justify-content: center; padding: 22px; background: rgba(6,8,13,.9); backdrop-filter: blur(8px); }
+.pw-status.on { display: flex; animation: psFade .22s ease; }
+@keyframes psFade { from { opacity: 0; } to { opacity: 1; } }
+.ps-card { width: 100%; max-width: 320px; background: var(--surface); border: 1px solid var(--border2); border-radius: 22px; padding: 36px 26px 28px; text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,.55); animation: psPop .34s cubic-bezier(.22,1.18,.36,1); }
+@keyframes psPop { from { transform: scale(.84); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.ps-titel { font-size: 19px; font-weight: 800; margin-bottom: 7px; color: var(--text); }
+.ps-text { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+.ps-btn { margin-top: 22px; width: 100%; padding: 13px; border: none; border-radius: 13px; background: var(--gold); color: #221a05; font-size: 15px; font-weight: 800; cursor: pointer; }
+.ps-btn:active { transform: scale(.98); }
+.ps-ico { width: 76px; height: 76px; margin: 0 auto 18px; }
+/* Laden — rotierender Ring */
+.ps-spin .ring { fill: none; stroke: var(--border2); stroke-width: 6; }
+.ps-spin .arc { fill: none; stroke: var(--gold); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 75 200; transform-origin: 50% 50%; animation: psSpin .95s linear infinite; }
+@keyframes psSpin { to { transform: rotate(360deg); } }
+/* Erfolg — gezeichneter Haken */
+.ps-check .c { fill: none; stroke: var(--gold); stroke-width: 5; stroke-dasharray: 220; stroke-dashoffset: 220; animation: psDraw .5s ease forwards; }
+.ps-check .m { fill: none; stroke: var(--gold); stroke-width: 6.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 48; stroke-dashoffset: 48; animation: psDraw .38s .42s ease forwards; }
+/* Fehler — gezeichnetes Kreuz */
+.ps-x .c { fill: none; stroke: #e0685f; stroke-width: 5; stroke-dasharray: 220; stroke-dashoffset: 220; animation: psDraw .5s ease forwards; }
+.ps-x .l { fill: none; stroke: #e0685f; stroke-width: 6.5; stroke-linecap: round; stroke-dasharray: 36; stroke-dashoffset: 36; animation: psDraw .3s .42s ease forwards; }
+.ps-x .l2 { animation-delay: .56s; }
+@keyframes psDraw { to { stroke-dashoffset: 0; } }
 .trial-bar { display: none; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--muted); cursor: pointer; }
 .trial-bar.on { display: flex; }
 .trial-bar b { color: var(--gold); }
@@ -1074,7 +1266,15 @@ body.hell .hz.futur { background: #ece8df; }
         <span class="city-title">Dein Athen</span>
         <span class="city-stage" id="city-stage">Stufe 1/12</span>
       </div>
-      <div class="city-svg-wrap" id="city-svg-wrap"></div>
+      <div class="city-svg-wrap" id="city-svg-wrap">
+        <div id="city-svg-inner"></div>
+        <div class="bau-info" id="bau-info">
+          <button class="bi-close" onclick="bauInfoSchliessen()" aria-label="Schließen">×</button>
+          <div class="bi-titel" id="bi-titel"></div>
+          <div class="bi-text" id="bi-text"></div>
+          <button class="bi-btn" id="bi-btn" style="display:none"></button>
+        </div>
+      </div>
       <div class="city-caption">
         <span id="city-last">—</span>
         <span id="city-next">—</span>
@@ -1082,6 +1282,19 @@ body.hell .hz.futur { background: #ece8df; }
     </div>
     <div class="section-title" style="margin:22px 0 12px">Stadt-Werte</div>
     <div class="stadt-werte" id="stadt-werte"></div>
+
+    <div class="section-title" style="margin:20px 0 12px">Karte der Ägäis <span class="proviant-badge" id="proviant-badge"></span></div>
+    <div class="vert-desc">Erobere fremde Städte und baue sie zu Provinzen aus. Jede abgeschlossene Lernsitzung gibt 1 Proviant für einen Feldzug.</div>
+    <div id="bedrohung-box"></div>
+    <div class="karte-wrap">
+      <div id="karte"></div>
+      <div class="bau-info" id="karte-info">
+        <button class="bi-close" onclick="karteInfoSchliessen()" aria-label="Schließen">×</button>
+        <div class="bi-titel" id="ki-titel"></div>
+        <div class="bi-text" id="ki-text"></div>
+        <button class="bi-btn" id="ki-btn" style="display:none"></button>
+      </div>
+    </div>
 
     <div class="section-title" style="margin:20px 0 12px">Verteidigung</div>
     <div class="vert-desc">Dauerhafte Anlagen, die Schaden durch versäumte Lerntage mildern.</div>
@@ -1099,6 +1312,9 @@ body.hell .hz.futur { background: #ece8df; }
 
     <div class="section-title" style="margin:26px 0 12px">Schatzkammer <span class="kammer-prog" id="kammer-fortschritt"></span></div>
     <div class="schatz-grid" id="kammer-grid"></div>
+
+    <div class="section-title" style="margin:26px 0 12px">Ehrungen der Polis <span class="ehr-prog" id="ehr-prog"></span></div>
+    <div class="ehr-liste" id="ehr-liste"></div>
   </div>
 
   <!-- ═══ LERNEN ═══ -->
@@ -1362,6 +1578,18 @@ body.hell .hz.futur { background: #ece8df; }
   </div>
 </div>
 
+<!-- ═══ FELDZUG (Kampf-Overlay) ═══ -->
+<div class="feldzug" id="feldzug">
+  <div class="fz-box">
+    <div class="fz-ico" id="fz-ico"></div>
+    <div class="fz-titel" id="fz-titel">—</div>
+    <div class="fz-sub" id="fz-sub">—</div>
+    <div class="fz-strategien" id="fz-strategien"></div>
+    <div class="fz-ergebnis" id="fz-ergebnis"></div>
+    <button class="fz-close" id="fz-close" onclick="feldzugSchliessen()" style="display:none">Weiter</button>
+  </div>
+</div>
+
 <!-- ═══ INTRO ═══ -->
 <div class="intro" id="intro">
   <button class="intro-skip" onclick="introFertig()">Überspringen</button>
@@ -1390,6 +1618,24 @@ body.hell .hz.futur { background: #ece8df; }
     <button class="pw-kauf" onclick="aboKaufen()">Abo abschließen — 1,99 €/Monat</button>
     <button class="pw-restore" onclick="aboWiederherstellen()">Kauf wiederherstellen</button>
     <div class="pw-klein">Monatlich, jederzeit kündbar. Abrechnung über deinen App-Store-Account.</div>
+  </div>
+</div>
+
+<!-- ═══ KAUF-STATUS (Laden / Erfolg / Fehler) ═══ -->
+<div class="pw-status" id="pw-status">
+  <div class="ps-card">
+    <div class="ps-ico ps-spin" id="ps-laden" style="display:none">
+      <svg viewBox="0 0 80 80"><circle class="ring" cx="40" cy="40" r="33"/><circle class="arc" cx="40" cy="40" r="33"/></svg>
+    </div>
+    <div class="ps-ico ps-check" id="ps-erfolg" style="display:none">
+      <svg viewBox="0 0 80 80"><circle class="c" cx="40" cy="40" r="35"/><path class="m" d="M24 41 l11 11 l21 -24"/></svg>
+    </div>
+    <div class="ps-ico ps-x" id="ps-fehler" style="display:none">
+      <svg viewBox="0 0 80 80"><circle class="c" cx="40" cy="40" r="35"/><path class="l" d="M29 29 L51 51"/><path class="l l2" d="M51 29 L29 51"/></svg>
+    </div>
+    <div class="ps-titel" id="ps-titel"></div>
+    <div class="ps-text" id="ps-text"></div>
+    <button class="ps-btn" id="ps-btn" style="display:none" onclick="kaufStatusSchliessen()">Weiter</button>
   </div>
 </div>
 
@@ -1457,6 +1703,32 @@ const MAX_BAU = 12;
 // Wiederaufbau eines schon einmal errichteten Bauwerks kostet die Hälfte
 const bauPreis = i => i <= meta.maxStadt ? Math.floor(PREISE[i] / 2) : PREISE[i];
 
+// Jedes Bauwerk liefert einen oder mehrere Stadt-Werte; Ausbau I→II→III vervielfacht sie (Wert = basis × Stufe)
+const BAU_WERT = {
+  1:  { besch: 'Einfacher Wohnraum am Fuß der Burg.',         werte: { wohlstand: 2 } },
+  2:  { besch: 'Bürgerhäuser — Athens wachsende Bevölkerung.', werte: { wohlstand: 3 } },
+  3:  { besch: 'Heiliger Hain der Athena — Öl und Handel.',    werte: { wohlstand: 3, gunst: 1 } },
+  4:  { besch: 'Versorgt die Stadt mit frischem Wasser.',      werte: { wohlstand: 3 } },
+  5:  { besch: 'Marktplatz und Herz des öffentlichen Lebens.', werte: { wohlstand: 6, prestige: 2 } },
+  6:  { besch: 'Wehrhafter Ring um die Unterstadt.',           werte: { heer: 7 } },
+  7:  { besch: 'Tempel des Schmiedegottes Hephaistos.',        werte: { gunst: 5, heer: 1 } },
+  8:  { besch: 'Bühne der großen Tragödien und Komödien.',     werte: { prestige: 5, gunst: 1 } },
+  9:  { besch: 'Wandelhalle für Handel und Gelehrte.',         werte: { prestige: 4, wohlstand: 1 } },
+  10: { besch: 'Prächtiger Aufgang zur Akropolis.',            werte: { prestige: 5 } },
+  11: { besch: 'Der Tempel der Athena Parthenos — Athens Krone.', werte: { prestige: 8, gunst: 3 } },
+  12: { besch: 'Die goldene Bronzestatue der Schutzgöttin.',   werte: { gunst: 8, prestige: 3 } },
+};
+const BAU_MAXSTUFE = 3;
+const bauStufe = i => (meta.bauStufen && meta.bauStufen[i]) || 0;   // 0 = nicht gegründet, sonst 1..3
+const roman = n => ['', 'I', 'II', 'III'][n] || ('' + n);
+// Ausbaukosten zur Zielstufe (II ≈ ¾, III ≈ 1½ des Gründungspreises)
+const ausbauPreis = (i, ziel) => Math.round(PREISE[i] * (ziel === 2 ? 0.75 : 1.5));
+// Werte eines Bauwerks auf gegebener Stufe (Map stat→Betrag)
+const bauWerteSumme = (i, lvl) => { const o = {}, w = (BAU_WERT[i] || {}).werte || {}; for (const k in w) o[k] = w[k] * lvl; return o; };
+// dominanter Wert (für Farbe/Wimpel)
+const bauHauptStat = i => { const w = (BAU_WERT[i] || {}).werte || {}; let best = 'wohlstand', bv = -1; for (const k in w) if (w[k] > bv) { bv = w[k]; best = k; } return best; };
+const werteText = o => Object.keys(o).map(k => `+${o[k]} ${STAT_DEF[k].name}`).join(' · ');
+
 /* ═══════════ STATE ═══════════ */
 let lektionen = [];        // [{id, titel, vokabeln:[{...,id}], eigene:bool}]
 let aktive = [];               // IDs der aktiven Lektionen (gemeinsamer Lernstapel)
@@ -1515,6 +1787,41 @@ const VERTEIDIGUNG = {
             schutztext: 'Besänftigt Zeus — nur halbe Zerstörung statt totaler' },
 };
 
+// ═══════════ FELDZÜGE — Karte der Ägäis (PvE, offline) ═══════════
+// mx,my = Position auf der Karte (viewBox 0 0 300 240). stat/statBasis = Stadt-Wert beim Erobern/Ausbauen. tribut = Drachmen/Tag/Stufe.
+const ZIELE = [
+  // mx,my = Prozent-Position auf dem Kartenbild (karte.png); up = Label oberhalb
+  { id:'megara',  name:'Megara',      staerke:18,  beute:120,  prestigeAb:0,   mx:41, my:56, up:true,  stat:'wohlstand', statBasis:3, tribut:12 },
+  { id:'theben',  name:'Theben',      staerke:40,  beute:240,  prestigeAb:25,  mx:44, my:49, up:true,  stat:'prestige',  statBasis:4, tribut:20 },
+  { id:'korinth', name:'Korinth',     staerke:70,  beute:420,  prestigeAb:55,  mx:35, my:55,            stat:'wohlstand', statBasis:5, tribut:30 },
+  { id:'argos',   name:'Argos',       staerke:105, beute:620,  prestigeAb:90,  mx:34, my:61,            stat:'heer',      statBasis:5, tribut:38 },
+  { id:'sparta',  name:'Sparta',      staerke:150, beute:900,  prestigeAb:140, mx:31, my:69,            stat:'heer',      statBasis:7, tribut:50 },
+  { id:'troja',   name:'Troja',       staerke:200, beute:1250, prestigeAb:200, mx:79, my:35,            stat:'prestige',  statBasis:7, tribut:65 },
+  { id:'persien', name:'Perserreich', staerke:280, beute:1900, prestigeAb:300, mx:88, my:46, up:true,  stat:'gunst',     statBasis:9, tribut:90 },
+];
+const ATHEN_POS = { mx:47, my:53 };   // Hauptstadt (Athen) auf dem Kartenbild
+const ziel = id => ZIELE.find(z => z.id === id);
+const STADT_MAXSTUFE = 3;
+const istErobert = id => !!(meta.erobert && meta.erobert[id]);
+const stadtStufe = id => (meta.erobert && meta.erobert[id] && meta.erobert[id].stufe) || 0;
+const stadtAusbauPreis = (z, zielStufe) => Math.round(z.beute * (zielStufe === 2 ? 0.4 : 0.8));
+const PROVIANT_BASIS = 3;
+const rangIndex = p => Math.max(0, STADT_RAENGE.filter(r => p >= r.ab).length - 1);
+const proviantMax = () => PROVIANT_BASIS + rangIndex(stadtWerte().prestige);
+const effektivesHeer = () => Math.max(0, stadtWerte().heer - (meta.heerMalus || 0));
+// Strategien: Kampfkraft aus gewichteten Werten
+const STRATEGIEN = {
+  front:    { name:'Frontalangriff', besch:'Volle Wucht des Heeres.',                 kraft:(w,eh)=> eh*1.25 + w.prestige*0.2,                kosten:()=>0 },
+  list:     { name:'List',           besch:'Klugheit & Götterglück gegen Starke.',    kraft:(w,eh)=> eh*0.5 + w.gunst*1.5 + w.bildung*0.8,    kosten:()=>0 },
+  belagern: { name:'Belagerung',     besch:'Ausgewogen & sicherer — kostet Sold.',    kraft:(w,eh)=> eh*1.0 + w.wohlstand*0.5 + w.prestige*0.3, kosten:z=>Math.round(z.beute*0.25) },
+};
+function feldzugChance(zielStaerke, kraft, gunst, bonus) {
+  let c = kraft / (kraft + Math.max(1, zielStaerke));
+  c += (gunst || 0) * 0.003 + (bonus || 0);
+  return Math.max(0.05, Math.min(0.95, c));
+}
+const zielFrei = z => !!meta.demo || stadtWerte().prestige >= z.prestigeAb;
+
 const aktiveLeks = () => lektionen.filter(l => aktive.includes(l.id));
 const KARTEN_PRO_SITZUNG = 20;
 function neueErlaubt() {
@@ -1541,9 +1848,26 @@ function lade() {
   if (!meta.verteidigung) meta.verteidigung = { damm: false, mauer: false, tempel: false };
   if (!meta.lastDecay) meta.lastDecay = heuteStr();
   if (!meta.schaetze) meta.schaetze = {};
+  if (!meta.ehrungen) { meta.ehrungen = {}; meta.ehrungenSeed = true; }   // Erststart: bestehenden Fortschritt still verbuchen
+  if (!meta.bauStufen) meta.bauStufen = {};
+  for (let i = 1; i <= (meta.stadt || 0); i++) if (!meta.bauStufen[i]) meta.bauStufen[i] = 1;   // Altbestand: gegründet = Stufe I
   if (typeof meta.weihrauch !== 'number') meta.weihrauch = 0;
   if (typeof meta.opferPity !== 'number') meta.opferPity = 0;
+  // Feldzüge / Eroberung / Verteidigung / Ertrag
+  if (typeof meta.proviant !== 'number') meta.proviant = 0;
+  if (typeof meta.heerMalus !== 'number') meta.heerMalus = 0;
+  if (!meta.erobert) meta.erobert = {};   // {zielId: {stufe}}
+  if (meta.bedrohung === undefined) meta.bedrohung = null;
+  if (!meta.tributTag) meta.tributTag = null;
+  if (!meta.aufstandTag) meta.aufstandTag = null;
   if (!meta.trialStart) meta.trialStart = heuteStr();   // erster Start = Beginn des 3-Tage-Tests
+  // ── DEMO-MODUS: ?demo in der URL → unbegrenzte Drachmen, viel Proviant, alle Städte angreifbar ──
+  if (/[?&]demo\b/.test(location.search)) meta.demo = true;
+  if (meta.demo) {
+    meta.abo = true;                                    // Paywall im Demo aus
+    if ((meta.drachmen || 0) < 9e6) meta.drachmen = 9999999;
+    if ((meta.proviant || 0) < 200) meta.proviant = 999;
+  }
   if (typeof meta.abo !== 'boolean') meta.abo = false;
   try { aktive = JSON.parse(localStorage.getItem('zeus_aktive') || 'null') || []; } catch { aktive = []; }
   // Migration: früher war genau eine Lektion aktiv
@@ -1573,15 +1897,18 @@ function pruefeKatastrophe() {
   if (versaeumt <= 0) return 0;
 
   const v = meta.verteidigung || {};
+  const wk = stadtWerte(), eh = Math.max(0, wk.heer - (meta.heerMalus || 0));
   let kat, basis, schaden;
   if (versaeumt >= 3) {
     kat = 'zeus';
     basis = meta.stadt;                                   // sonst totale Zerstörung
     schaden = v.tempel ? Math.ceil(meta.stadt / 2) : meta.stadt;
+    if (wk.gunst >= 40) schaden = Math.max(0, schaden - 1);   // hohe Gunst besänftigt Zeus zusätzlich
   } else if (versaeumt === 2) {
     kat = 'heer';
     basis = Math.min(2, meta.stadt);
     schaden = v.mauer ? Math.ceil(basis / 2) : basis;     // Mauer halbiert
+    if (eh >= 25) schaden = Math.max(0, schaden - 1);         // starkes Heer schlägt Plünderer zurück
   } else {
     kat = 'natur';
     basis = Math.min(1, meta.stadt);
@@ -1713,7 +2040,6 @@ function zeigeView(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.v === name));
   document.getElementById('tabbar').style.display = (name === 'lernen') ? 'none' : 'flex';
   window.scrollTo({ top: 0 });
-  if (window.Athen3D) window.Athen3D[name === 'athen' ? 'start' : 'stop']();
 }
 function tabZu(name) {
   zeigeView(name);
@@ -1961,27 +2287,35 @@ function stadtSvg(nacht = istNacht()) {
 
   const Z = 3.38;   // Höhe des Akropolis-Plateaus
 
-  /* — Himmel (Tag/Nacht) — */
-  const himmel = nacht
-    ? `<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-         <stop offset="0" stop-color="#0d1428"/><stop offset="1" stop-color="#16203a"/></linearGradient></defs>
-       <rect width="420" height="320" fill="url(#sky)" rx="12"/>
-       <circle cx="352" cy="40" r="14" fill="#e8e4d4" opacity=".9"/>
-       <circle cx="346" cy="36" r="13" fill="#0d1428"/>
-       <circle cx="60" cy="32" r="1.2" fill="#cfd6e8" opacity=".8"/><circle cx="120" cy="58" r="1" fill="#cfd6e8" opacity=".6"/>
-       <circle cx="212" cy="26" r="1.3" fill="#cfd6e8" opacity=".7"/><circle cx="288" cy="50" r="1" fill="#cfd6e8" opacity=".5"/>
-       <circle cx="390" cy="84" r="1.1" fill="#cfd6e8" opacity=".6"/><circle cx="34" cy="78" r="1" fill="#cfd6e8" opacity=".5"/>`
-    : `<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-         <stop offset="0" stop-color="#7db4e6"/><stop offset="1" stop-color="#cfe6f5"/></linearGradient>
-         <radialGradient id="sun"><stop offset="0" stop-color="#fff6d8"/><stop offset="1" stop-color="#ffe08a"/></radialGradient></defs>
-       <rect width="420" height="320" fill="url(#sky)" rx="12"/>
-       <circle cx="352" cy="42" r="30" fill="#ffe9a0" opacity=".35"/>
-       <circle cx="352" cy="42" r="17" fill="url(#sun)"/>
-       <ellipse cx="80" cy="40" rx="34" ry="11" fill="#ffffff" opacity=".75"/><ellipse cx="110" cy="34" rx="24" ry="9" fill="#ffffff" opacity=".7"/>
-       <ellipse cx="250" cy="30" rx="30" ry="10" fill="#ffffff" opacity=".65"/><ellipse cx="276" cy="36" rx="20" ry="8" fill="#ffffff" opacity=".6"/>`;
+  /* — Meer & Atmosphäre (voll ausgefüllt: Insel im Ozean, kein schwebendes Viereck) — */
+  const wellen = `<g class="ambi-wellen" stroke="${nacht ? '#2a4d80' : '#cfeafc'}" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="${nacht ? '.22' : '.5'}">
+       <path class="we we1" d="M-30 235 q34 -7 68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0"/>
+       <path class="we we2" d="M-30 285 q34 -7 68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0"/>
+       <path class="we we3" d="M-30 340 q34 -7 68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0"/></g>`;
+  const wolkenAtmo = `<g class="ambi-wolken" fill="#ffffff">
+       <g class="wlk w1"><ellipse cx="0" cy="48" rx="30" ry="8" opacity="${nacht ? '.18' : '.6'}"/><ellipse cx="20" cy="44" rx="20" ry="6" opacity="${nacht ? '.15' : '.5'}"/></g>
+       <g class="wlk w2"><ellipse cx="0" cy="96" rx="24" ry="7" opacity="${nacht ? '.12' : '.42'}"/></g>
+       <g class="wlk w3"><ellipse cx="0" cy="150" rx="26" ry="7" opacity="${nacht ? '.1' : '.34'}"/></g></g>`;
+  const voegel = `<g class="ambi-voegel" stroke="${nacht ? '#5a6a88' : '#33425d'}" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".75">
+       <g class="vog vg1"><path d="M0 0 q4 -4 8 0 q4 -4 8 0"/></g>
+       <g class="vog vg2"><path d="M0 0 q3 -3.4 6 0 q3 -3.4 6 0"/></g>
+       <g class="vog vg3"><path d="M0 0 q3.4 -3.6 7 0 q3.4 -3.6 7 0"/></g></g>`;
+  const schiffe = `<g class="ambi-schiffe" opacity="${nacht ? '.65' : '.95'}">
+       <g class="shp sh1"><path d="M0 0 h17 l-3.2 5.4 h-10.6 z" fill="#6b4a2e"/><path d="M8.5 0 v-14 l9.5 9.5 z" fill="${nacht ? '#cdd3e0' : '#f2ecdb'}"/><path d="M8.5 0.5 v-14.5" stroke="#5b3f27" stroke-width="1.1"/></g>
+       <g class="shp sh2"><path d="M0 0 h12 l-2.4 4 h-7.2 z" fill="#5b3f27"/><path d="M6 0 v-10 l7 7 z" fill="${nacht ? '#b9c0d2' : '#e7e0cf'}"/></g></g>`;
+  let sternHtml = '';
+  if (nacht) { const sp = [[50,44],[120,70],[210,30],[300,56],[362,96],[30,92],[170,52],[260,84],[150,112],[332,40],[90,120],[230,140]];
+    sternHtml = '<g class="ambi-sterne" fill="#dfe6f5">' + sp.map(([x,y]) => `<circle class="stern" cx="${x}" cy="${y}" r="1.3"/>`).join('') + '</g>'; }
+  const seaBg = `<defs>
+       <radialGradient id="sea" cx="0.5" cy="0.38" r="0.9"><stop offset="0" stop-color="${nacht ? '#1d3c69' : '#62a4df'}"/><stop offset="1" stop-color="${nacht ? '#091627' : '#2a5fa6'}"/></radialGradient>
+       <radialGradient id="sun"><stop offset="0" stop-color="${nacht ? '#f3f0e2' : '#fff6d8'}"/><stop offset="1" stop-color="${nacht ? '#c9cfe0' : '#ffe08a'}"/></radialGradient></defs>
+     <rect x="-40" y="-40" width="480" height="480" fill="url(#sea)"/>
+     <circle cx="332" cy="56" r="${nacht ? 22 : 34}" fill="${nacht ? '#e9ecf5' : '#ffe9a0'}" opacity="${nacht ? '.18' : '.3'}"/>
+     <circle cx="332" cy="56" r="${nacht ? 12 : 17}" fill="url(#sun)"/>${nacht ? '<circle cx="326" cy="51" r="10" fill="url(#sea)"/>' : ''}
+     ${sternHtml}${wellen}${wolkenAtmo}${voegel}${schiffe}`;
 
-  let s = `<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
-  ${himmel}
+  let s = `<svg viewBox="16 6 368 368" xmlns="http://www.w3.org/2000/svg">
+  ${seaBg}
   <g id="wolken" class="wolken">
     <ellipse cx="70" cy="18" rx="80" ry="18" fill="#070a12" opacity=".92"/>
     <ellipse cx="205" cy="10" rx="100" ry="20" fill="#080b15" opacity=".96"/>
@@ -1990,9 +2324,11 @@ function stadtSvg(nacht = istNacht()) {
     <ellipse cx="280" cy="32" rx="70" ry="14" fill="#10141f" opacity=".85"/>
     <ellipse cx="30" cy="34" rx="50" ry="11" fill="#131829" opacity=".75"/>
     <ellipse cx="395" cy="36" rx="55" ry="12" fill="#131829" opacity=".75"/>
-  </g>`;
+  </g>
+  <g id="iso-cam">`;
 
-  /* — Boden-Insel — */
+  /* — Strand-Saum + Boden-Insel — */
+  s += box(-1.6, -1.6, -1.35, 19.2, 19.2, 0.3, C.sand);   // Strand-Rand rund um die Insel
   s += box(0, 0, -1.1, 16, 16, 1.1, C.ground);
   // Weg von den Propyläen-Stufen zur Agora
   s += pg([ip(5.7, 8.8, 0), ip(6.9, 8.8, 0), ip(9.6, 10.3, 0), ip(8.4, 10.3, 0)], nacht ? '#283150' : '#a99e74');
@@ -2019,6 +2355,11 @@ function stadtSvg(nacht = istNacht()) {
   const plateau = nacht ? { t: '#4a5678', l: '#2c3550', r: '#3a4564' }
                         : { t: '#b0a785', l: '#837a5d', r: '#988f6f' };
   s += box(4.5, .2, 0, 7, 5.3, 3.2, C.rock);
+  // gestufte Terrassen am Felsen (mehr Ebenen)
+  s += box(4.15, -0.1, 1.05, 7.75, 5.85, .2, C.stone2);
+  s += box(4.3, .0, 2.1, 7.45, 5.6, .2, C.rock);
+  // Stützmauer-Pfeiler an der Vorderkante
+  for (let i = 0; i < 5; i++) s += box(4.4 + i * 1.5, 5.5, 0, .5, .4, 1.05, C.stone);
   s += box(4.4, .1, 3.2, 7.2, 5.5, .18, plateau);
 
   /* — b11: Parthenon (auf dem Plateau) — */
@@ -2163,105 +2504,55 @@ function stadtSvg(nacht = istNacht()) {
   for (let i = 0; i < 5; i++) s += box(9.95 + i * .8, 15.08, 0, .5, .4, 1.35, C.stone2);    // Strebepfeiler
   s += `</g>`;
 
-  return s + `</svg>`;
+  /* — Szenerie: Haine & Marktvolk (Vordergrund) — */
+  s += baum(2.0, 12.7, .9) + baum(0.7, 13.9, .8) + baum(11.4, 12.6, .85) + baum(13.4, 11.3, .8) + baum(3.6, 14.3, .7) + baum(9.6, 13.6, .75);
+  const mensch = (x, y, col) => { const [px, py] = ip(x, y, 0); return `<ellipse cx="${f1(px)}" cy="${f1(py)}" rx="1.7" ry="2.2" fill="${col}"/><circle cx="${f1(px)}" cy="${f1(py - 3)}" r="1.3" fill="${col}"/>`; };
+  [[7.2, 9.4], [8.1, 9.9], [6.6, 10.3], [9.0, 10.7], [7.7, 11.0]].forEach((c, i) => { s += mensch(c[0], c[1], i % 2 ? (nacht ? '#9aa3ba' : '#d8d2c4') : (nacht ? '#7e6a52' : '#c98b54')); });
+
+  return s + `</g></svg>`;
 }
 
 let stadtOverride = null;   // zeigt vorübergehend den Zustand VOR der Zerstörung
 
 let stadtPhase = null;   // 'tag' | 'nacht' — für Neu-Render bei Tageszeitwechsel
-/* ═══════════ ISO-STADT (PixiJS) — ersetzt das SVG ═══════════ */
-const ISO_TW=56, ISO_TH=28, ISO_COLS=9, ISO_ROWS=9, ISO_RAND=2;
-let isoApp=null, isoWelt, isoObj, isoBauten, isoSky;
-const isoP=(c,r)=>({x:(c-r)*ISO_TW/2,y:(c+r)*ISO_TH/2});
-function isoSh(h,f){const r=(h>>16)&255,g=(h>>8)&255,b=h&255,m=v=>Math.max(0,Math.min(255,Math.round(v*(1+f))));return(m(r)<<16)|(m(g)<<8)|m(b);}
-function isoMx(a,b,f){const ar=(a>>16)&255,ag=(a>>8)&255,ab=a&255,br=(b>>16)&255,bg=(b>>8)&255,bb=b&255;return((ar+(br-ar)*f|0)<<16)|((ag+(bg-ag)*f|0)<<8)|(ab+(bb-ab)*f|0);}
-function isoTile(c,r,col,cont){const p=isoP(c,r),g=new PIXI.Graphics();g.beginFill(col).lineStyle(1,0,0.05).moveTo(p.x,p.y-ISO_TH/2).lineTo(p.x+ISO_TW/2,p.y).lineTo(p.x,p.y+ISO_TH/2).lineTo(p.x-ISO_TW/2,p.y).closePath().endFill();cont.addChild(g);}
-function isoBox(g,hw,hh,base,H,col){g.beginFill(isoSh(col,-0.14)).moveTo(-hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();g.beginFill(isoSh(col,-0.32)).moveTo(hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(hw,base-H).closePath().endFill();g.beginFill(col).moveTo(0,base-hh-H).lineTo(hw,base-H).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();}
-function isoRoof(g,hw,hh,H,col){const ax=0,ay=-H-hh-7,bk=[0,-hh-H],rt=[hw,-H],fr=[0,hh-H],lf=[-hw,-H],t=(a,b,c)=>g.beginFill(c).moveTo(a[0],a[1]).lineTo(b[0],b[1]).lineTo(ax,ay).closePath().endFill();t(bk,lf,isoSh(col,-0.1));t(lf,fr,isoSh(col,0.02));t(bk,rt,isoSh(col,-0.26));t(rt,fr,isoSh(col,-0.16));}
-function isoColR(g,n,sp,H,col){const w=(n-1)*sp;for(let i=0;i<n;i++){const x=-w/2+i*sp;g.beginFill(col).drawRect(x-2.5,-H,5,H).endFill();g.beginFill(isoSh(col,-0.12)).drawRect(x+1.5,-H,1.5,H).endFill();}}
-function isoTempel(c,scl,col){const g=new PIXI.Graphics();isoBox(g,30*scl,15*scl,0,7,isoSh(col,-0.06));isoBox(g,26*scl,13*scl,-7,7,col);c.addChild(g);const s=new PIXI.Graphics();s.y=-14;isoColR(s,Math.round(4+scl*2),11*scl,30*scl,0xefe8d4);c.addChild(s);const t=new PIXI.Graphics(),w=27*scl,top=-14-30*scl-8;t.beginFill(isoSh(col,0.05)).drawRect(-w,top,w*2,8).endFill();t.beginFill(isoSh(col,0.08)).moveTo(-w,top).lineTo(0,top-18*scl).lineTo(w,top).closePath().endFill();c.addChild(t);}
-const ISO_MODELL={
-  1:c=>{const g=new PIXI.Graphics();isoBox(g,14,7,0,16,0xcfa06a);isoRoof(g,14,7,16,0x8a6b3a);c.addChild(g);},
-  2:c=>{[[-13,4],[12,-4],[1,11]].forEach(([dx,dy],i)=>{const g=new PIXI.Graphics();g.x=dx;g.y=dy;isoBox(g,12,6,0,15+i*3,[0xcfa06a,0xc18b54,0xd0975c][i]);isoRoof(g,12,6,15+i*3,0xa64d39);c.addChild(g);});},
-  3:c=>{for(let i=0;i<5;i++){const g=new PIXI.Graphics();g.x=(i%3-1)*12;g.y=Math.floor(i/3)*8-4;g.beginFill(0x6b4a2e).drawRect(-1.5,-8,3,8).endFill();g.beginFill(0x5c7d4a).drawEllipse(0,-12,9,7).endFill();g.beginFill(0x6b8f57).drawEllipse(-2,-13,5,4).endFill();c.addChild(g);}},
-  4:c=>{const g=new PIXI.Graphics();isoBox(g,16,8,0,5,0xc1c8d1);g.beginFill(0x3f7ab8).moveTo(0,-5).lineTo(10,0).lineTo(0,5).lineTo(-10,0).closePath().endFill();isoBox(g,5,2.5,-9,13,0xd6d0bf);c.addChild(g);},
-  5:c=>{[-14,0,14].forEach((dx,i)=>{const g=new PIXI.Graphics();g.x=dx;g.beginFill(0x8a6b3a).drawRect(-9,-22,2,22).endFill();g.beginFill(0x8a6b3a).drawRect(7,-22,2,22).endFill();g.beginFill([0xc0563f,0x4a7d9e,0xd0a24a][i]).moveTo(-12,-22).lineTo(12,-26).lineTo(12,-21).lineTo(-12,-17).closePath().endFill();c.addChild(g);});},
-  7:c=>isoTempel(c,1.0,0xe7dfc8),
-  8:c=>{const g=new PIXI.Graphics();for(let i=3;i>=0;i--){g.beginFill(isoSh(0xc9c2ad,-0.04*i)).moveTo(-28+i*6,i*5+2).lineTo(0,18+i*2).lineTo(28-i*6,i*5+2).lineTo(0,i*5-4).closePath().endFill();}c.addChild(g);},
-  9:c=>{const g=new PIXI.Graphics();isoBox(g,34,9,0,8,0xe2dac4);c.addChild(g);const s=new PIXI.Graphics();s.y=-8;isoColR(s,8,9,28,0xefe8d4);c.addChild(s);const t=new PIXI.Graphics();isoBox(t,34,9,-36,6,0xd0c7ad);c.addChild(t);},
-  10:c=>{const g=new PIXI.Graphics();isoBox(g,28,13,0,7,0xe2dac4);c.addChild(g);[-12,12].forEach(dx=>{const s=new PIXI.Graphics();s.x=dx;s.y=-7;isoColR(s,2,12,38,0xefe8d4);c.addChild(s);});const t=new PIXI.Graphics();isoBox(t,30,14,-45,7,0xddd3b8);c.addChild(t);},
-  11:c=>isoTempel(c,1.6,0xeee7d6),
-  12:c=>{const g=new PIXI.Graphics();isoBox(g,13,6.5,0,11,0xc9c2ad);g.beginFill(0xe3b64f).drawRect(-3,-44,6,33).endFill();g.beginFill(0xf0cf85).drawCircle(0,-48,5).endFill();g.beginFill(0xe3b64f).drawRect(-9,-38,18,3.5).endFill();c.addChild(g);},
-};
-const ISO_SLOT={1:[2,6.4],2:[6.4,6.2],3:[1.6,3],4:[2.6,1.8],5:[6.4,2.2],7:[2.4,4.6],8:[6.3,4.8],9:[4.3,1.3],10:[4.2,6.6],11:[4.2,3.9],12:[4.2,2.6]};
-
-function isoInit(el){
-  if(isoApp||!el||typeof PIXI==='undefined')return;
-  isoApp=new PIXI.Application({background:'#0e1320',resizeTo:el,antialias:true,resolution:Math.min(2,devicePixelRatio||1)});
-  el.innerHTML='';el.appendChild(isoApp.view);
-  isoSky=new PIXI.Graphics();const wolken=new PIXI.Container();isoWelt=new PIXI.Container();
-  isoApp.stage.addChild(isoSky,wolken,isoWelt);
-  const wasser=new PIXI.Container(),land=new PIXI.Container();isoObj=new PIXI.Container();isoObj.sortableChildren=true;isoBauten=new PIXI.Container();isoBauten.sortableChildren=true;
-  isoWelt.addChild(wasser,land,isoObj);isoObj.addChild(isoBauten);
-  const L=(c,r)=>c>=0&&c<ISO_COLS&&r>=0&&r<ISO_ROWS,R=(c,r)=>c===0||r===0||c===ISO_COLS-1||r===ISO_ROWS-1;
-  for(let r=-ISO_RAND;r<ISO_ROWS+ISO_RAND;r++)for(let c=-ISO_RAND;c<ISO_COLS+ISO_RAND;c++){L(c,r)?isoTile(c,r,R(c,r)?0xd8c9a0:((c+r)%2?0x4c805a:0x477a54),land):isoTile(c,r,0x2f6aa8,wasser);}
-  [[4,4],[4,3],[3,4],[5,4],[4,5]].forEach(([c,r])=>isoTile(c,r,0xc7c0ab,land));
-  isoApp.buerger=[];for(let i=0;i<12;i++){const g=new PIXI.Graphics();g.beginFill(0x2a2f3a).drawEllipse(0,0,2,2.6).endFill();g.beginFill(i%3?0xcdd2db:0xe3b64f).drawCircle(0,-3,1.3).endFill();g.c=1+Math.random()*7;g.r=1+Math.random()*7;g.tc=g.c;g.tr=g.r;g.spd=0.004+Math.random()*0.003;isoObj.addChild(g);isoApp.buerger.push(g);}
-  isoApp.wolken=wolken;isoApp.wolkenA=[];for(let i=0;i<3;i++){const g=new PIXI.Graphics();g.beginFill(0xffffff,0.15);[[0,0,22],[16,3,16],[-14,3,14]].forEach(([x,y,rad])=>g.drawCircle(x,y,rad));g.endFill();g.x=Math.random()*400;g.y=18+Math.random()*70;g.spd=0.1+Math.random()*0.2;wolken.addChild(g);isoApp.wolkenA.push(g);}
-  const boot=new PIXI.Graphics();boot.beginFill(0x6b4a2e).moveTo(-12,0).lineTo(12,0).lineTo(8,5).lineTo(-8,5).closePath().endFill();boot.beginFill(0xf2ecdb).moveTo(0,-1).lineTo(0,-18).lineTo(9,-3).closePath().endFill();boot.zIndex=99;isoObj.addChild(boot);isoApp.boot=boot;
-  isoApp.rauch=[];const rauchC=new PIXI.Container();isoWelt.addChild(rauchC);isoApp.rauchC=rauchC;
-  const zen=()=>{const w=isoApp.screen.width,h=isoApp.screen.height;if(w!==isoApp._sw||h!==isoApp._sh){isoApp._sw=w;isoApp._sh=h;if(isoApp._nacht!==undefined)isoSkyMalen(isoApp._nacht);}const cw=(ISO_COLS+ISO_ROWS)*ISO_TW/2+60,ch=(ISO_COLS+ISO_ROWS)*ISO_TH/2+150,s=Math.min(w/cw,h/ch);isoWelt.scale.set(s);const m=isoP((ISO_COLS-1)/2,(ISO_ROWS-1)/2);isoWelt.x=w/2-m.x*s;isoWelt.y=h/2-(m.y+24)*s;};
-  zen();isoApp.zen=zen;let bootT=0,rt=0;
-  isoApp.ticker.add((d)=>{
-    zen();
-    isoApp.wolkenA.forEach(w=>{w.x+=w.spd*d;if(w.x>isoApp.screen.width+50)w.x=-50;});
-    isoApp.buerger.forEach(b=>{if(Math.abs(b.c-b.tc)<0.05&&Math.abs(b.r-b.tr)<0.05){b.tc=1+Math.random()*7;b.tr=1+Math.random()*7;}b.c+=(b.tc-b.c)*b.spd*d;b.r+=(b.tr-b.r)*b.spd*d;const p=isoP(b.c,b.r);b.x=p.x;b.y=p.y;b.zIndex=b.c+b.r+0.4;});
-    bootT+=0.0016*d;const bc=ISO_COLS/2+Math.cos(bootT)*(ISO_COLS/2+1.2),br=ISO_ROWS+1.2+Math.sin(bootT);const bp=isoP(bc,br);isoApp.boot.x=bp.x;isoApp.boot.y=bp.y;isoApp.boot.zIndex=bc+br;
-    rt-=d;if(rt<=0){rt=26;const tp=isoP(4.2,3.9);const g=new PIXI.Graphics();g.beginFill(0xe6e9f0,0.4).drawCircle(0,0,3).endFill();g.x=tp.x+(Math.random()*6-3);g.y=tp.y-58;g.life=1;rauchC.addChild(g);isoApp.rauch.push(g);}
-    for(let i=isoApp.rauch.length-1;i>=0;i--){const s=isoApp.rauch[i];s.y-=0.3*d;s.life-=0.006*d;s.alpha=s.life*0.4;s.scale.set(1+(1-s.life)*1.4);if(s.life<=0){rauchC.removeChild(s);isoApp.rauch.splice(i,1);}}
-  });
-  addEventListener('resize',zen);
-}
-function isoSkyMalen(nacht){if(!isoApp)return;isoApp._nacht=nacht;const tag=nacht?0.08:1,o=isoMx(0x0b1024,0x2e63b8,tag),u=isoMx(0x16203a,0xa6cdee,tag),h=isoApp.screen.height,w=isoApp.screen.width;isoSky.clear();for(let i=0;i<14;i++)isoSky.beginFill(isoMx(o,u,i/14)).drawRect(0,h*i/14,w,h/14+1).endFill();isoSky.beginFill(nacht?0xe6ecf7:0xffe9a8,0.95).drawCircle(w*0.78,h*0.2,nacht?13:19).endFill();isoApp.wolken.alpha=0.35+tag*0.65;isoObj.alpha=0.74+tag*0.26;}
-function isoRender(stufe,nacht){
-  const el=document.getElementById('city-svg-wrap');
-  isoInit(el);
-  if(!isoApp){ if(el&&!el.querySelector('canvas')) el.innerHTML='<div style="position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:12px">Stadtansicht wird geladen…</div>'; return; }
-  isoApp.resize();   // Canvas an aktuelle Wrap-Größe anpassen (Tab war evtl. ausgeblendet → 0px bei Init)
-  isoApp.zen();isoSkyMalen(nacht);isoBauten.removeChildren();
-  if(stufe>=6){const ring=new PIXI.Graphics();for(let c=0;c<ISO_COLS;c++)for(let r=0;r<ISO_ROWS;r++)if(c===0||r===0||c===ISO_COLS-1||r===ISO_ROWS-1){const p=isoP(c,r);ring.beginFill(0xc3bca8).moveTo(p.x,p.y-7).lineTo(p.x+ISO_TW/2,p.y-10).lineTo(p.x+ISO_TW/2,p.y-3).lineTo(p.x,p.y).closePath().endFill();}ring.zIndex=0.3;isoBauten.addChild(ring);}
-  for(let i=1;i<=stufe;i++){const mk=ISO_MODELL[i];if(!mk||!ISO_SLOT[i])continue;const [c,r]=ISO_SLOT[i],cont=new PIXI.Container(),p=isoP(c,r);cont.x=p.x;cont.y=p.y;cont.zIndex=c+r+(i>=11?0.5:0.1);const sh=new PIXI.Graphics();sh.beginFill(0,0.16).drawEllipse(0,4,15,8).endFill();cont.addChild(sh);mk(cont);isoBauten.addChild(cont);}
-}
 
 function stadtAktualisieren(neuGebaut) {
   const wrap = document.getElementById('city-svg-wrap');
+  const inner = document.getElementById('city-svg-inner') || wrap;
   const stufe = Math.max(0, Math.min(stadtOverride ?? meta.stadt, MAX_BAU));
-  const w3d = (typeof stadtWerte === 'function') ? stadtWerte() : {};
-  const zustand = { stufe, nacht: istNacht(), heer: w3d.heer || 0, prestige: w3d.prestige || 0,
-                    gunst: w3d.gunst || 0, buerger: w3d.buerger || 40, vert: meta.verteidigung || {} };
-  window.__athenZustand = { wrap, zustand };
-  if (window.Athen3D) window.Athen3D.render(wrap, zustand);
-  else if (!wrap.querySelector('canvas')) wrap.innerHTML = '<div style="position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:12px">Stadt wird geladen…</div>';
+  const nacht = istNacht();
+  const phase = nacht ? 'nacht' : 'tag';
+  // SVG-Iso-Stadt einmal bauen bzw. bei Tag/Nacht-Wechsel neu rendern
+  if (!inner.querySelector('svg') || stadtPhase !== phase) {
+    inner.innerHTML = stadtSvg(nacht);
+    stadtPhase = phase;
+    isoKlicksVerdrahten(inner);
+    bauInfoSchliessen();   // Auswahl/Zoom nach Neuaufbau zurücksetzen
+  }
 
-  const ruinen = wrap.querySelector('#b0');
+  const ruinen = inner.querySelector('#b0');
   if (ruinen) ruinen.classList.toggle('on', stadtOverride === null && stufe === 0 && meta.maxStadt > 0);
 
   for (let i = 1; i <= MAX_BAU; i++) {
-    const g = wrap.querySelector('#b' + i);
+    const g = inner.querySelector('#b' + i);
     if (!g) continue;
-    g.classList.remove('zerstoert');
+    g.classList.remove('zerstoert', 'neu', 'geist', 'lvl2', 'lvl3');
     g.classList.toggle('on', i <= stufe);
-    g.classList.remove('neu');
+    // dezente Skalierung je Ausbaustufe
+    if (i <= stufe) { const l = bauStufe(i); if (l >= 3) g.classList.add('lvl3'); else if (l === 2) g.classList.add('lvl2'); }
+    // nächstes Bauwerk als anklickbarer, leuchtender „Geist"-Bauplatz
+    if (stadtOverride === null && i === stufe + 1 && i <= MAX_BAU) g.classList.add('geist');
     if (neuGebaut && i === stufe) {
       void g.getBoundingClientRect();
       g.classList.add('neu');
     }
   }
+  wimpelSetzen(inner, stufe);
 
   // Verteidigungsanlagen nach Besitz einblenden
   const v = meta.verteidigung || {};
   [['vDamm', v.damm], ['vMauer', v.mauer], ['vTempel', v.tempel]].forEach(([id, an]) => {
-    const g = wrap.querySelector('#' + id);
+    const g = inner.querySelector('#' + id);
     if (g) g.classList.toggle('on', !!an && stadtOverride === null);
   });
 
@@ -2282,20 +2573,149 @@ function stadtAktualisieren(neuGebaut) {
     div.className = 'bau-item' + (i <= stufe ? ' steht' : '');
     let rechts;
     if (i <= stufe) {
-      rechts = '<span class="bs">Errichtet ✓</span>';
+      const lvl = bauStufe(i);
+      if (lvl < BAU_MAXSTUFE) {
+        const ziel = lvl + 1, preis = ausbauPreis(i, ziel);
+        rechts = `<button class="kauf" onclick="event.stopPropagation();ausbauen(${i})" ${meta.drachmen < preis ? 'disabled' : ''}>Ausbau ${roman(ziel)} — ${preis} δρ</button>`;
+      } else {
+        rechts = '<span class="bs">Stufe III ✦</span>';
+      }
     } else if (i === stufe + 1) {
       const p = bauPreis(i);
       const wieder = i <= meta.maxStadt;
-      rechts = `<button class="kauf" onclick="kaufen(${i})" ${meta.drachmen < p ? 'disabled' : ''}>` +
+      rechts = `<button class="kauf" onclick="event.stopPropagation();kaufen(${i})" ${meta.drachmen < p ? 'disabled' : ''}>` +
         `${wieder ? 'Wiederaufbau' : 'Kaufen'} — ${p} δρ</button>`;
     } else {
       rechts = `<span class="bs">${bauPreis(i)} δρ</span>`;
     }
-    div.innerHTML = `<span class="nr">${i}</span><span class="bn">${BAUWERKE[i]}</span>` + rechts;
+    const lvlBadge = i <= stufe ? `<span class="bau-lvl">${roman(bauStufe(i))}</span>` : '';
+    div.innerHTML = `<span class="nr">${i}</span><span class="bn">${BAUWERKE[i]}</span>${lvlBadge}` + rechts;
+    if (i <= stufe + 1) div.onclick = () => gebaeudeWaehlen(i);
     liste.appendChild(div);
   }
 
   verteidigungAktualisieren();
+  feldzugAktualisieren();
+}
+
+/* ── Interaktive Bauwerke: Klick → Auswahl (Glow) + Zoom + Info-Fenster ── */
+let gewaehltesBauwerk = null;
+
+function isoKlicksVerdrahten(inner) {
+  const svg = inner.querySelector('svg');
+  if (!svg || svg.dataset.klick) return;
+  svg.dataset.klick = '1';
+  svg.addEventListener('click', (e) => {
+    let n = e.target;
+    while (n && n !== svg) {
+      const m = n.id && /^b(\d+)$/.exec(n.id);
+      if (m) { gebaeudeWaehlen(+m[1]); return; }
+      n = n.parentNode;
+    }
+    bauInfoSchliessen();   // ins Leere geklickt → schließen
+  });
+}
+
+function zoomAuf(svg, g) {
+  const cam = svg.querySelector('#iso-cam');
+  if (!cam || !g) return;
+  const bb = g.getBBox();
+  const cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
+  const Z = 2.15;   // Zoomfaktor; Bauwerk wird in die Bildmitte (210,160) gerückt
+  cam.style.transform = `translate(${(210 - Z * cx).toFixed(1)}px, ${(160 - Z * cy).toFixed(1)}px) scale(${Z})`;
+}
+
+// Stufen-Wimpel (I/II/III) über jedem gegründeten Bauwerk
+function wimpelSetzen(inner, stufe) {
+  const svg = inner.querySelector('svg'); if (!svg) return;
+  const cam = svg.querySelector('#iso-cam'); if (!cam) return;
+  cam.querySelectorAll('.wimpel').forEach(e => e.remove());
+  const NS = 'http://www.w3.org/2000/svg';
+  for (let i = 1; i <= stufe; i++) {
+    const g = svg.querySelector('#b' + i), bw = BAU_WERT[i];
+    if (!g || !bw) continue;
+    const lvl = bauStufe(i); if (lvl < 1) continue;
+    const bb = g.getBBox();
+    const x = bb.x + bb.width / 2, y = bb.y - 1;
+    const farbe = STAT_DEF[bauHauptStat(i)].farbe;
+    const grp = document.createElementNS(NS, 'g');
+    grp.setAttribute('class', 'wimpel');
+    grp.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('r', '5.4'); c.setAttribute('fill', farbe); c.setAttribute('stroke', '#10131c'); c.setAttribute('stroke-width', '.8');
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('y', '2.3');
+    t.setAttribute('font-size', '6.4'); t.setAttribute('font-weight', '800'); t.setAttribute('fill', '#10131c');
+    t.textContent = roman(lvl);
+    grp.appendChild(c); grp.appendChild(t);
+    cam.appendChild(grp);
+  }
+}
+
+function gebaeudeWaehlen(i) {
+  const inner = document.getElementById('city-svg-inner');
+  const svg = inner && inner.querySelector('svg');
+  if (!svg) return;
+  const stufe = Math.max(0, Math.min(stadtOverride ?? meta.stadt, MAX_BAU));
+  if (i < 1 || i > stufe + 1) { bauInfoSchliessen(); return; }   // nur gebaute + das nächste
+
+  gewaehltesBauwerk = i;
+  svg.querySelectorAll('.b.sel').forEach(e => e.classList.remove('sel'));
+  const g = svg.querySelector('#b' + i);
+  if (g) g.classList.add('sel');
+  zoomAuf(svg, g);
+
+  const titel = document.getElementById('bi-titel');
+  const text  = document.getElementById('bi-text');
+  const btn   = document.getElementById('bi-btn');
+  const def   = BAU_WERT[i] || { besch: '', werte: {} };
+  const farbe = STAT_DEF[bauHauptStat(i)].farbe;
+  titel.innerHTML = BAUWERKE[i] + (i <= stufe ? ` <span class="bi-stufe">Stufe ${roman(bauStufe(i))}</span>` : '');
+  if (i <= stufe) {
+    // gegründetes Bauwerk: aktuelle Werte + Ausbau-Vorschau
+    const lvl = bauStufe(i), jetzt = bauWerteSumme(i, lvl);
+    let html = `<span class="bi-besch">${def.besch}</span>` +
+               `<span class="bi-werte" style="color:${farbe}">${werteText(jetzt)}</span>`;
+    if (lvl < BAU_MAXSTUFE) {
+      const ziel = lvl + 1, naechst = bauWerteSumme(i, ziel);
+      const delta = {}; for (const k in naechst) { const d = naechst[k] - (jetzt[k] || 0); if (d) delta[k] = d; }
+      html += `<span class="bi-vorschau">Stufe ${roman(ziel)}: <b>${werteText(delta)}</b></span>`;
+    } else {
+      html += `<span class="bi-vorschau">Voll ausgebaut ✦</span>`;
+    }
+    text.innerHTML = html;
+    if (lvl < BAU_MAXSTUFE) {
+      const ziel = lvl + 1, preis = ausbauPreis(i, ziel), fehlt = preis - meta.drachmen;
+      btn.style.display = '';
+      if (fehlt > 0) { btn.disabled = true;  btn.textContent = `Ausbau ${roman(ziel)}: noch ${fehlt} δρ`; btn.onclick = null; }
+      else           { btn.disabled = false; btn.textContent = `Ausbau auf ${roman(ziel)} — ${preis} δρ`; btn.onclick = () => { ausbauen(i); gebaeudeWaehlen(i); }; }
+    } else {
+      btn.style.display = 'none'; btn.onclick = null;
+    }
+  } else {
+    // i === stufe+1: nächstes Bauwerk gründen
+    const p = bauPreis(i), wieder = i <= meta.maxStadt, fehlt = p - meta.drachmen;
+    text.innerHTML = `<span class="bi-besch">${def.besch}</span>` +
+      `<span class="bi-werte" style="color:${farbe}">Bringt ${werteText(bauWerteSumme(i, 1))}</span>` +
+      (wieder ? `<span class="bi-vorschau">Wiederaufbau zum halben Preis</span>` : '');
+    btn.style.display = '';
+    if (fehlt > 0) { btn.disabled = true;  btn.textContent = `Noch ${fehlt} δρ nötig`; btn.onclick = null; }
+    else           { btn.disabled = false; btn.textContent = `${wieder ? 'Wiederaufbau' : 'Errichten'} — ${p} δρ`; btn.onclick = () => { kaufen(i); gebaeudeWaehlen(i); }; }
+  }
+  document.getElementById('bau-info').classList.add('on');
+}
+
+function bauInfoSchliessen() {
+  gewaehltesBauwerk = null;
+  const inner = document.getElementById('city-svg-inner');
+  const svg = inner && inner.querySelector('svg');
+  if (svg) {
+    svg.querySelectorAll('.b.sel').forEach(e => e.classList.remove('sel'));
+    const cam = svg.querySelector('#iso-cam');
+    if (cam) cam.style.transform = '';
+  }
+  const info = document.getElementById('bau-info');
+  if (info) info.classList.remove('on');
 }
 
 function verteidigungAktualisieren() {
@@ -2337,6 +2757,8 @@ function kaufen(i) {
   meta.drachmen -= p;
   meta.stadt = i;
   meta.maxStadt = Math.max(meta.maxStadt, i);
+  meta.bauStufen = meta.bauStufen || {};
+  meta.bauStufen[i] = 1;   // gegründet auf Stufe I
   speichere();
   topbarAktualisieren();
   stadtAktualisieren(true);
@@ -2345,6 +2767,23 @@ function kaufen(i) {
   HAPTIK.erfolg();
   toast(`${BAUWERKE[i]} errichtet`);
   if (i === MAX_BAU) { partikel(); setTimeout(() => SFX.levelUp(), 500); }
+}
+
+// Ausbau eines gegründeten Bauwerks auf die nächste Stufe (erhöht seinen Stadt-Wert)
+function ausbauen(i) {
+  const lvl = bauStufe(i);
+  if (i > meta.stadt || lvl < 1 || lvl >= BAU_MAXSTUFE) return;
+  const ziel = lvl + 1, preis = ausbauPreis(i, ziel);
+  if (meta.drachmen < preis) return;
+  meta.drachmen -= preis;
+  meta.bauStufen[i] = ziel;
+  speichere();
+  topbarAktualisieren();
+  stadtAktualisieren(false);
+  stadtwerteAktualisieren();
+  SFX.kauf();
+  HAPTIK.erfolg();
+  toast(`${BAUWERKE[i]} auf Stufe ${roman(ziel)} ausgebaut`);
 }
 
 /* ═══════════ SCHÄTZE (Opfergaben) ═══════════ */
@@ -2387,14 +2826,38 @@ const SCHAETZE = [
   { id:'vlies',    name:'Goldenes Vlies',     rar:'goettlich',   ico:'vlies',   st:{p:16,g:6}, mythos:'Ziel der Argonauten — Sinnbild des unerreichbaren Schatzes.' },
 ];
 const STAT_DEF = {
-  prestige:  { name:'Prestige',     farbe:'#e3b64f' },
-  gunst:     { name:'Götter-Gunst', farbe:'#b06be0' },
-  heer:      { name:'Heeresstärke', farbe:'#e0566b' },
-  wohlstand: { name:'Wohlstand',    farbe:'#43c98a' },
-  bildung:   { name:'Bildung',      farbe:'#5d8fe8' },
+  prestige:  { name:'Prestige',     farbe:'#e3b64f', zweck:'Rang & schaltet Feldzug-Ziele frei' },
+  gunst:     { name:'Götter-Gunst', farbe:'#b06be0', zweck:'Kampfglück & wendet Gefahren ab' },
+  heer:      { name:'Heeresstärke', farbe:'#e0566b', zweck:'Angriff & Abwehr' },
+  wohlstand: { name:'Wohlstand',    farbe:'#43c98a', zweck:'Täglicher Tribut (Drachmen)' },
+  bildung:   { name:'Bildung',      farbe:'#5d8fe8', zweck:'Taktik-Bonus (List)' },
 };
 const STAT_KURZ = { p:'Prestige', g:'Gunst', h:'Heer', w:'Wohlstand' };
 const STADT_RAENGE = [ {ab:0,t:'Weiler'},{ab:25,t:'Dorf'},{ab:60,t:'Polis'},{ab:120,t:'Stadtstaat'},{ab:220,t:'Metropole'},{ab:360,t:'Hegemon'} ];
+
+/* ═══════════ EHRUNGEN DER POLIS (Errungenschaften) ═══════════
+   wert() = aktueller Fortschritt · ziel = Schwelle · lohn = einmalige Drachmen-Belohnung.
+   Bestehender Fortschritt wird beim ersten Lauf still verbucht (kein rückwirkender Lohn). */
+const lvl3Zahl   = () => { let n = 0; for (let i = 1; i <= (meta.stadt || 0); i++) if (bauStufe(i) >= BAU_MAXSTUFE) n++; return n; };
+const provinzZahl = () => Object.keys(meta.erobert || {}).length;
+const schatzZahl  = () => { const o = meta.schaetze || {}; return SCHAETZE.filter(s => o[s.id]).length; };
+const meisterZahl = () => Object.values(srs).filter(f => f.phase === 5).length;
+const EHRUNGEN = [
+  { id:'gruendung',    ico:'temple',     name:'Gründung',             besch:'Errichte dein erstes Bauwerk.',       ziel:1,               wert:()=>meta.stadt||0,             lohn:40  },
+  { id:'prunk',        ico:'temple',     name:'Prunk der Polis',      besch:'Baue ein Bauwerk auf Stufe III aus.', ziel:1,               wert:lvl3Zahl,                      lohn:120 },
+  { id:'baumeister',   ico:'temple',     name:'Baumeister von Athen', besch:'Vollende alle zwölf Bauwerke.',       ziel:MAX_BAU,         wert:()=>meta.stadt||0,             lohn:300 },
+  { id:'goldenzeit',   ico:'temple',     name:'Goldenes Zeitalter',   besch:'Baue jedes Bauwerk auf Stufe III.',   ziel:MAX_BAU,         wert:lvl3Zahl,                      lohn:800 },
+  { id:'feldherr',     ico:'sword',      name:'Feldherr',             besch:'Erobere deine erste Stadt.',          ziel:1,               wert:provinzZahl,                   lohn:80  },
+  { id:'hegemon',      ico:'sword',      name:'Hegemon der Ägäis',    besch:'Halte vier Provinzen zugleich.',      ziel:4,               wert:provinzZahl,                   lohn:300 },
+  { id:'reich',        ico:'sword',      name:'Herr der Ägäis',       besch:'Erobere alle Städte der Karte.',      ziel:ZIELE.length,    wert:provinzZahl,                   lohn:900 },
+  { id:'perser',       ico:'bolt',       name:'Bezwinger der Perser', besch:'Erobere das Perserreich.',            ziel:1,               wert:()=>istErobert('persien')?1:0, lohn:500 },
+  { id:'standhaft',    ico:'flame',      name:'Standhaft',            besch:'Halte eine Serie von sieben Tagen.',  ziel:7,               wert:()=>meta.streak||0,            lohn:120 },
+  { id:'unermuedlich', ico:'flame',      name:'Unermüdlich',          besch:'Erreiche eine Serie von 30 Tagen.',   ziel:30,              wert:()=>meta.streak||0,            lohn:500 },
+  { id:'sammler',      ico:'collection', name:'Sammler',              besch:'Sammle zwölf Schätze.',               ziel:12,              wert:schatzZahl,                    lohn:150 },
+  { id:'schatzmeister',ico:'collection', name:'Schatzmeister',        besch:'Vervollständige die Schatzkammer.',   ziel:SCHAETZE.length, wert:schatzZahl,                    lohn:700 },
+  { id:'gelehrter',    ico:'cards',      name:'Gelehrter',            besch:'Meistere 50 Vokabeln (Phase V).',     ziel:50,              wert:meisterZahl,                   lohn:200 },
+  { id:'weiser',       ico:'cards',      name:'Weiser der Akademie',  besch:'Meistere 200 Vokabeln.',              ziel:200,             wert:meisterZahl,                   lohn:600 },
+];
 
 function stadtWerte() {
   const owned = meta.schaetze || {};
@@ -2403,10 +2866,22 @@ function stadtWerte() {
   const stadt = meta.stadt || 0, vert = meta.verteidigung || {};
   const bildung = Object.values(srs).filter(f => f.phase === 5).length;
   const gg = gunstStufe(meta.streak || 0);
-  p += stadt*8 + Math.floor(bildung/4);
+  // Pro Gebäude: Stufe × Basiswerte auf die jeweiligen Stadt-Werte
+  for (let i = 1; i <= stadt; i++) {
+    const o = bauWerteSumme(i, bauStufe(i));
+    p += o.prestige || 0; g += o.gunst || 0; h += o.heer || 0; w += o.wohlstand || 0;
+  }
+  // Eroberte Städte: Stat-Bonus (statBasis × Stufe) auf den jeweiligen Wert
+  for (const id in (meta.erobert || {})) {
+    const z = ziel(id); if (!z) continue;
+    const add = z.statBasis * stadtStufe(id);
+    if (z.stat === 'prestige') p += add; else if (z.stat === 'gunst') g += add;
+    else if (z.stat === 'heer') h += add; else if (z.stat === 'wohlstand') w += add;
+  }
+  p += Math.floor(bildung/4);
   g += Math.round((gg.mult - 1) * 30) + (vert.tempel ? 6 : 0);
-  h += stadt*2 + (vert.mauer ? 6 : 0) + (vert.damm ? 3 : 0);
-  w += stadt*5 + Math.floor((meta.drachmen || 0) / 120);
+  h += (vert.mauer ? 6 : 0) + (vert.damm ? 3 : 0);
+  w += Math.floor((meta.drachmen || 0) / 120);
   return { prestige:p, gunst:g, heer:h, wohlstand:w, bildung, buerger: 40 + p*3 + w*4 + bildung*2 };
 }
 function stadtRang(p) { let r = STADT_RAENGE[0]; for (const x of STADT_RAENGE) if (p >= x.ab) r = x; return r.t; }
@@ -2420,12 +2895,393 @@ function stadtwerteAktualisieren() {
   let html = '<div class="sw-kopf"><span class="sw-rang">'+stadtRang(v.prestige)+'</span><span class="sw-buerger">'+v.buerger.toLocaleString('de-DE')+' Bürger</span></div>';
   for (const [k, val] of reihen) {
     const d = STAT_DEF[k], pct = Math.max(4, Math.round(val/max*100));
-    html += '<div class="sw-row"><span class="sw-name">'+d.name+'</span>'+
+    html += '<div class="sw-row"><span class="sw-name">'+d.name+'<span class="sw-zweck">'+d.zweck+'</span></span>'+
       '<span class="sw-bar"><i style="width:'+pct+'%;background:'+d.farbe+'"></i></span>'+
       '<span class="sw-val" style="color:'+d.farbe+'">'+val+'</span></div>';
   }
   box.innerHTML = html;
+  ehrungenAufbauen();
 }
+
+/* Ehrungen prüfen (neue verbuchen + belohnen) und rendern */
+function ehrungenAufbauen() {
+  if (!meta.ehrungen) meta.ehrungen = {};
+  const seed = meta.ehrungenSeed;
+  const neu = [];
+  for (const e of EHRUNGEN) {
+    if (meta.ehrungen[e.id]) continue;
+    if (e.wert() >= e.ziel) {
+      meta.ehrungen[e.id] = true;
+      if (!seed) { meta.drachmen += e.lohn; neu.push(e); }
+    }
+  }
+  if (seed) meta.ehrungenSeed = false;
+  if (seed || neu.length) speichere();
+  if (neu.length) topbarAktualisieren();
+
+  const box = document.getElementById('ehr-liste');
+  if (box) {
+    const erf = EHRUNGEN.filter(e => meta.ehrungen[e.id]).length;
+    const prog = document.getElementById('ehr-prog');
+    if (prog) prog.textContent = erf + ' / ' + EHRUNGEN.length;
+    let html = '';
+    for (const e of EHRUNGEN) {
+      const fertig = !!meta.ehrungen[e.id];
+      const cur = Math.min(e.wert(), e.ziel);
+      const pct = Math.max(6, Math.round(cur / e.ziel * 100));
+      const rechts = fertig ? '✦' : cur + ' / ' + e.ziel;
+      const bar = fertig ? '' : `<span class="ehr-bar"><i style="width:${pct}%"></i></span>`;
+      html += `<div class="ehr-item${fertig ? ' erfuellt' : ''}">`+
+        `<span class="ehr-ico">${ICON[e.ico] || ''}</span>`+
+        `<span class="ehr-text"><span class="ehn">${e.name}</span>`+
+        `<span class="ehb">${e.besch}${fertig ? '' : ` · Lohn ${e.lohn} δρ`}</span>${bar}</span>`+
+        `<span class="ehr-rechts">${rechts}</span></div>`;
+    }
+    box.innerHTML = html;
+  }
+  if (neu.length) neu.forEach((e, i) => setTimeout(() => {
+    toast(`Ehrung errungen: ${e.name} — +${e.lohn} δρ`);
+    SFX.glitzer && SFX.glitzer(); HAPTIK.erfolg && HAPTIK.erfolg();
+  }, 500 + i * 1500));
+}
+
+/* ═══════════ FELDZÜGE — KARTE & BEDROHUNGEN ═══════════ */
+// ── Antike Pergamentkarte der Ägäis (handgezeichnetes SVG, viewBox 0 0 300 240) ──
+const KARTE_W = 300, KARTE_H = 240;
+// Weiche, überschneidungsfreie Küstenlinie durch Stützpunkte (geschlossene Catmull-Rom-Kurve)
+function smoothClosed(p) {
+  const n = p.length; if (n < 3) return '';
+  let d = `M${p[0][0]},${p[0][1]}`;
+  for (let i = 0; i < n; i++) {
+    const a = p[(i-1+n)%n], b = p[i], c = p[(i+1)%n], e = p[(i+2)%n];
+    const c1x = b[0]+(c[0]-a[0])/6, c1y = b[1]+(c[1]-a[1])/6;
+    const c2x = c[0]-(e[0]-b[0])/6, c2y = c[1]-(e[1]-b[1])/6;
+    d += `C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${c[0]},${c[1]}`;
+  }
+  return d + 'Z';
+}
+// Landmassen als Stützpunkt-Umrisse (Golfe, Halbinseln). Marker-Punkte liegen im Inneren.
+const KARTE_SHAPES = [
+  // Mittelgriechenland / Attika — Euböischer & Korinthischer Golf, Attika-Vorsprung
+  [[70,80],[72,64],[82,56],[100,54],[120,55],[138,58],[150,66],[146,80],[150,96],[141,104],[150,116],[145,128],[138,136],[126,139],[112,138],[104,141],[100,128],[90,122],[80,116],[72,98]],
+  // Peloponnes — gefingerte Südküste (Mani)
+  [[104,139],[112,146],[114,158],[110,170],[112,181],[105,189],[100,181],[95,190],[89,182],[83,190],[77,180],[74,167],[77,153],[87,145],[96,141]],
+  // Kleinasien (Osten) — an den rechten Rand angebunden
+  [[300,52],[250,56],[242,66],[230,74],[234,88],[228,98],[242,106],[256,112],[266,120],[276,130],[280,146],[276,164],[272,182],[278,198],[300,206]],
+];
+const KARTE_LAND = KARTE_SHAPES.map(smoothClosed).concat([
+  // Euböa (Insel)
+  'M151,90 C158,94 165,103 169,115 C171,121 169,126 165,125 C161,123 157,115 154,106 C151,98 148,92 151,90 Z',
+  // Kreta
+  'M118,216 C138,209 164,207 190,210 C204,212 213,215 209,219 C198,223 178,222 158,221 C138,220 124,220 118,219 C115,218 116,217 118,216 Z',
+]);
+// Kykladen (kleine Inseln): [cx, cy, rx, ry]
+const KARTE_INSELN = [[170,150,4,3],[182,167,3.4,2.6],[196,158,3,2.4],[189,183,3.8,2.9],[210,152,3,2.3],[177,193,2.6,2],[204,177,3.3,2.5],[161,176,2.5,2.1],[219,169,2.7,2.1]];
+// Gebirgszüge (kleine Kammlinien) und Flüsse — Innendetail
+const KARTE_BERGE = [[108,78],[120,85],[131,93],[97,90],[114,101],[128,110],[92,160],[100,168],[85,170],[95,178],[252,82],[262,98],[257,120],[268,136],[274,152]];
+const KARTE_FLUESSE = ['M120,86 q4,10 8,14 q5,6 12,22', 'M92,160 q-4,6 -9,9 q-3,3 -5,9', 'M262,98 q-6,4 -10,10 q-3,4 -4,10'];
+
+// Mäander-Bordüre (griechischer Schlüssel) als goldenes Band
+function karteMaeander(B, P, gold, dunkel) {
+  const W = KARTE_W, H = KARTE_H;
+  let s = `<g fill="${gold}"><rect x="0" y="0" width="${W}" height="${B}"/><rect x="0" y="${H-B}" width="${W}" height="${B}"/>`+
+          `<rect x="0" y="0" width="${B}" height="${H}"/><rect x="${W-B}" y="0" width="${B}" height="${H}"/></g>`;
+  const glyph = 'M1.5,8 V2 H8 V8 H4.2 V5 H6';
+  let k = `<g fill="none" stroke="${dunkel}" stroke-width=".9" stroke-linejoin="round" stroke-linecap="round" opacity=".8">`;
+  for (let x = B; x <= W - B - P; x += P) { k += `<path d="${glyph}" transform="translate(${x+1},1)"/>`; k += `<path d="${glyph}" transform="translate(${x+1},${H-B+1})"/>`; }
+  for (let y = B; y <= H - B - P; y += P) { k += `<path d="${glyph}" transform="translate(${B+1},${y+1})"/>`; k += `<path d="${glyph}" transform="translate(${W-B+1},${y+1})"/>`; }
+  return s + k + '</g>';
+}
+// Windrose (Kompass)
+function karteKompass(cx, cy, R, gold, ink) {
+  const w = 2.6, s = R * 0.62;
+  return `<g>`+
+    `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${ink}" stroke-width=".9" opacity=".6"/>`+
+    `<circle cx="${cx}" cy="${cy}" r="${(R*0.6).toFixed(1)}" fill="none" stroke="${ink}" stroke-width=".6" opacity=".45"/>`+
+    `<g stroke="${ink}" stroke-width=".8" opacity=".5"><line x1="${cx-s}" y1="${cy-s}" x2="${cx+s}" y2="${cy+s}"/><line x1="${cx-s}" y1="${cy+s}" x2="${cx+s}" y2="${cy-s}"/></g>`+
+    `<path d="M${cx-R},${cy} L${cx},${cy-w} L${cx+R},${cy} L${cx},${cy+w} Z" fill="${gold}" stroke="${ink}" stroke-width=".4" opacity=".9"/>`+
+    `<path d="M${cx},${cy-R} L${cx+w},${cy} L${cx},${cy+R} L${cx-w},${cy} Z" fill="${gold}" stroke="${ink}" stroke-width=".4"/>`+
+    `<path d="M${cx},${cy-R} L${cx+w},${cy} L${cx-w},${cy} Z" fill="${ink}" opacity=".5"/>`+
+    `<circle cx="${cx}" cy="${cy}" r="1.5" fill="${ink}"/>`+
+    `<text x="${cx}" y="${cy-R-2.5}" text-anchor="middle" font-size="6" font-weight="700" fill="${ink}" font-family="Georgia,serif">Β</text>`+
+    `</g>`;
+}
+// Antike Triere (Segelschiff)
+function karteSchiff(x, y, ink, sail) {
+  return `<g transform="translate(${x},${y})" stroke="${ink}" stroke-linecap="round" stroke-linejoin="round">`+
+    `<g stroke-width=".7" opacity=".6"><path d="M-11,3 L-13,7"/><path d="M-7,3.5 L-9,7.5"/><path d="M-3,4 L-5,8"/><path d="M1,4 L-1,8"/><path d="M5,3.5 L3,7.5"/></g>`+
+    `<path d="M-14,1 C-11,5 12,5 15,0 C11,3 -10,3 -14,1 Z" fill="${ink}" opacity=".9" stroke="none"/>`+
+    `<path d="M-14,1 C-16,-2 -13,-4 -11,-1" fill="none" stroke-width="1.1"/>`+
+    `<path d="M15,0 L19,1" stroke-width="1.1"/>`+
+    `<line x1="1" y1="1" x2="1" y2="-12" stroke-width="1"/>`+
+    `<path d="M1,-11 C6,-9 8,-5 8,-2 L1,-2 Z" fill="${sail}" stroke-width=".7"/>`+
+    `<path d="M1,-11 C-4,-9 -6,-5 -6,-2 L1,-2 Z" fill="${sail}" opacity=".9" stroke-width=".7"/>`+
+    `</g>`;
+}
+function karteAntikSvg() {
+  const paper='#e6d8ad', paperEdge='#cdbc8a', land='#cbaa6b', landHi='#d9bd80',
+        ink='#5b4527', hatch='#6f5730', gold='#b8942f', goldDk='#6a4f1e', sail='#efe4c4';
+  const W = KARTE_W, H = KARTE_H, cx = 46, cy = 198;
+  const defs = `<defs>`+
+    `<radialGradient id="kSea" cx="50%" cy="42%" r="72%"><stop offset="0" stop-color="${paper}"/><stop offset="1" stop-color="${paperEdge}"/></radialGradient>`+
+    `<linearGradient id="kLand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${landHi}"/><stop offset="1" stop-color="${land}"/></linearGradient>`+
+    `<radialGradient id="kVig" cx="50%" cy="48%" r="70%"><stop offset="55%" stop-color="#3a2c12" stop-opacity="0"/><stop offset="100%" stop-color="#3a2c12" stop-opacity=".22"/></radialGradient>`+
+    `<filter id="kCoast" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0.6" stdDeviation="1.1" flood-color="${goldDk}" flood-opacity="0.35"/></filter>`+
+    `</defs>`;
+  const sea = `<rect x="0" y="0" width="${W}" height="${H}" fill="url(#kSea)"/>`;
+  // Rhumb-Linien (Portolan) von der Windrose
+  let rh = `<g stroke="${goldDk}" stroke-width=".4" opacity=".12">`;
+  for (let i = 0; i < 16; i++) { const a = i * 22.5 * Math.PI / 180; rh += `<line x1="${cx}" y1="${cy}" x2="${(cx+Math.cos(a)*350).toFixed(1)}" y2="${(cy+Math.sin(a)*350).toFixed(1)}"/>`; }
+  rh += `</g>`;
+  // Wellen-Glyphen im Meer
+  const waves = [[212,58],[250,72],[164,58],[232,150],[150,205],[70,214],[256,176],[128,176],[92,120]];
+  let wv = `<g fill="none" stroke="${ink}" stroke-width=".6" opacity=".2" stroke-linecap="round">`;
+  for (const [wx,wy] of waves) wv += `<path d="M${wx-5},${wy} q2.5,-2 5,0 q2.5,2 5,0"/>`;
+  wv += `</g>`;
+  // Landmassen (mit weichem Küstenschatten)
+  let landG = `<g filter="url(#kCoast)">`;
+  for (const d of KARTE_LAND) landG += `<path d="${d}" fill="url(#kLand)" stroke="${ink}" stroke-width="1.3" stroke-linejoin="round"/>`;
+  landG += `</g>`;
+  // Flüsse
+  let riv = `<g fill="none" stroke="${ink}" stroke-width=".7" stroke-linecap="round" opacity=".3">`;
+  for (const d of KARTE_FLUESSE) riv += `<path d="${d}"/>`;
+  riv += `</g>`;
+  // Berge als kleine Kammlinien auf dem Land
+  let hg = `<g stroke="${hatch}" stroke-width=".7" stroke-linecap="round" opacity=".55" fill="none">`;
+  for (const [bx,by] of KARTE_BERGE) hg += `<path d="M${bx-3.5},${by+2} L${bx},${by-3} L${bx+3.5},${by+2} M${bx-1.6},${by+2} L${bx},${by-.4} L${bx+1.6},${by+2}"/>`;
+  hg += `</g>`;
+  // Kykladen
+  let isl = `<g fill="url(#kLand)" stroke="${ink}" stroke-width="1" stroke-linejoin="round">`;
+  for (const [ix,iy,rx,ry] of KARTE_INSELN) isl += `<ellipse cx="${ix}" cy="${iy}" rx="${rx}" ry="${ry}"/>`;
+  isl += `</g>`;
+  const label = `<text x="203" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="9" letter-spacing="1.4" fill="${ink}" opacity=".32" transform="rotate(-6 203 62)">Αἰγαῖον Πέλαγος</text>`;
+  const deco = karteKompass(cx, cy, 17, gold, ink) + karteSchiff(150, 158, ink, sail);
+  const vig = `<rect x="0" y="0" width="${W}" height="${H}" fill="url(#kVig)" pointer-events="none"/>`;
+  const border = karteMaeander(9, 16, gold, goldDk);
+  return `<svg class="karte-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" onclick="karteInfoSchliessen()">`+
+    defs + sea + rh + wv + landG + riv + hg + isl + label + deco + vig + border + `</svg>`;
+}
+
+function feldzugAktualisieren() {
+  const wrap = document.getElementById('karte'); if (!wrap) return;
+  const w = stadtWerte(), eh = effektivesHeer();
+  const badge = document.getElementById('proviant-badge');
+  if (badge) badge.textContent = `Proviant ${meta.proviant}/${proviantMax()}`;
+
+  // Bedrohung / Aufstand
+  const bx = document.getElementById('bedrohung-box');
+  if (bx) {
+    if (meta.bedrohung) {
+      const b = meta.bedrohung;
+      const txt = b.stadtId ? `${b.name} begehrt auf!` : `${b.name} rückt an!`;
+      bx.innerHTML = `<div class="bedrohung"><div class="bedr-txt"><b>${txt}</b><span>${b.stadtId ? 'Schlage den Aufstand nieder' : 'Wehre den Gegenangriff ab'} (Stärke ${b.staerke}).</span></div>`+
+        `<button class="kauf" onclick="bedrohungVerteidigen()">Verteidigen</button></div>`;
+    } else bx.innerHTML = '';
+  }
+
+  // Marker als HTML über dem Kartenbild (Prozent-Positionen)
+  let mk = `<button class="kmark heim" style="left:${ATHEN_POS.mx}%;top:${ATHEN_POS.my}%" onclick="stadtAufKarte('athen')"><span class="kdot">★</span><span class="klabel">Athen</span></button>`;
+  for (const z of ZIELE) {
+    const frei = zielFrei(z), ero = istErobert(z.id);
+    const cls = ero ? 'erobert' : (frei ? 'feind' : 'gesperrt');
+    const inhalt = ero ? roman(stadtStufe(z.id)) : '';
+    mk += `<button class="kmark ${cls}${z.up ? ' up' : ''}" style="left:${z.mx}%;top:${z.my}%" onclick="stadtAufKarte('${z.id}')">`+
+      `<span class="kdot">${inhalt}</span><span class="klabel">${z.name}</span></button>`;
+  }
+  wrap.innerHTML = karteAntikSvg() + mk;
+}
+
+let kartenStadt = null;
+function stadtAufKarte(id) {
+  const info = document.getElementById('karte-info'); if (!info) return;
+  const titel = document.getElementById('ki-titel'), text = document.getElementById('ki-text'), btn = document.getElementById('ki-btn');
+  kartenStadt = id;
+  if (id === 'athen') {
+    titel.textContent = 'Athen'; text.innerHTML = '<span class="ki-z">Deine Hauptstadt — baue sie oben aus.</span>';
+    btn.style.display = 'none'; btn.onclick = null; info.classList.add('on'); return;
+  }
+  const z = ziel(id); if (!z) return;
+  const w = stadtWerte(), eh = effektivesHeer(), sd = STAT_DEF[z.stat];
+  titel.innerHTML = z.name + (istErobert(id) ? ` <span class="bi-stufe">Stufe ${roman(stadtStufe(id))}</span>` : '');
+  if (istErobert(id)) {
+    const lvl = stadtStufe(id);
+    text.innerHTML = `<span class="ki-z">Provinz · liefert <b style="color:${sd.farbe}">+${z.statBasis*lvl} ${sd.name}</b> & <b>${z.tribut*lvl} δρ</b>/Tag</span>`;
+    if (lvl < STADT_MAXSTUFE) {
+      const zl = lvl+1, preis = stadtAusbauPreis(z, zl), fehlt = preis - meta.drachmen;
+      text.innerHTML += `<span class="ki-z">Stufe ${roman(zl)}: +${z.statBasis*zl-z.statBasis*lvl} ${sd.name} · +${z.tribut} δρ/Tag</span>`;
+      btn.style.display = '';
+      if (fehlt > 0) { btn.disabled = true; btn.textContent = `Ausbau: noch ${fehlt} δρ`; btn.onclick = null; }
+      else { btn.disabled = false; btn.textContent = `Ausbauen auf ${roman(zl)} — ${preis} δρ`; btn.onclick = () => { ausbauenStadt(id); }; }
+    } else { text.innerHTML += `<span class="ki-z">Voll ausgebaut ✦</span>`; btn.style.display = 'none'; btn.onclick = null; }
+  } else if (!zielFrei(z)) {
+    text.innerHTML = `<span class="ki-z">Feindstadt · Stärke ${z.staerke}</span><span class="ki-z">Erst ab ${z.prestigeAb} Prestige angreifbar (du: ${w.prestige}).</span>`;
+    btn.style.display = 'none'; btn.onclick = null;
+  } else {
+    const ch = Math.round(feldzugChance(z.staerke, STRATEGIEN.front.kraft(w, eh), w.gunst) * 100);
+    text.innerHTML = `<span class="ki-z">Feindstadt · Stärke ${z.staerke} · Beute ${z.beute} δρ</span><span class="ki-z">Erobern bringt ${sd.name} + Tribut. Chance ~${ch}%.</span>`;
+    btn.style.display = '';
+    btn.disabled = meta.proviant < 1;
+    btn.textContent = meta.proviant < 1 ? 'Kein Proviant' : 'Angreifen';
+    btn.onclick = meta.proviant < 1 ? null : () => { karteInfoSchliessen(); feldzugStarten(id); };
+  }
+  info.classList.add('on');
+}
+function karteInfoSchliessen() { const i = document.getElementById('karte-info'); if (i) i.classList.remove('on'); kartenStadt = null; }
+
+function ausbauenStadt(id) {
+  const z = ziel(id), lvl = stadtStufe(id);
+  if (!z || lvl < 1 || lvl >= STADT_MAXSTUFE) return;
+  const zl = lvl+1, preis = stadtAusbauPreis(z, zl);
+  if (meta.drachmen < preis) return;
+  meta.drachmen -= preis; meta.erobert[id].stufe = zl;
+  speichere(); topbarAktualisieren(); feldzugAktualisieren(); stadtwerteAktualisieren();
+  SFX.kauf && SFX.kauf(); HAPTIK.erfolg && HAPTIK.erfolg();
+  toast(`${z.name} auf Stufe ${roman(zl)} ausgebaut`);
+  stadtAufKarte(id);
+}
+
+let fzAktiv = null;   // aktuelles Ziel im Kampf-Overlay
+function feldzugStarten(id) {
+  if (meta.proviant < 1) { toast('Kein Proviant — schließe eine Lernsitzung ab.'); return; }
+  const z = ziel(id); if (!z || !zielFrei(z) || istErobert(id)) return;
+  fzAktiv = z;
+  document.getElementById('fz-ico').innerHTML = ICON.sword || '';
+  document.getElementById('fz-titel').textContent = 'Feldzug gegen ' + z.name;
+  document.getElementById('fz-sub').textContent = `Gegnerstärke ${z.staerke} · Beute ${z.beute} δρ. Wähle deine Strategie:`;
+  document.getElementById('fz-ergebnis').innerHTML = '';
+  document.getElementById('fz-close').style.display = 'none';
+  const w = stadtWerte(), eh = effektivesHeer();
+  let sh = '';
+  for (const key in STRATEGIEN) {
+    const st = STRATEGIEN[key], kraft = st.kraft(w, eh), kosten = st.kosten(z);
+    const ch = Math.round(feldzugChance(z.staerke, kraft, w.gunst) * 100);
+    const teuer = kosten > meta.drachmen;
+    sh += `<button class="fz-strat" onclick="feldzugKaempfen('${key}')" ${teuer ? 'disabled' : ''}>`+
+      `<span class="fz-strat-name">${st.name} <em>~${ch}%</em></span>`+
+      `<span class="fz-strat-besch">${st.besch}${kosten ? ` (${kosten} δρ)` : ''}</span></button>`;
+  }
+  const strat = document.getElementById('fz-strategien');
+  strat.style.display = ''; strat.innerHTML = sh;
+  document.getElementById('feldzug').classList.add('on');
+}
+
+function feldzugKaempfen(stratKey) {
+  const z = fzAktiv; if (!z) return;
+  const st = STRATEGIEN[stratKey], w = stadtWerte(), eh = effektivesHeer();
+  const kosten = st.kosten(z);
+  if (kosten > meta.drachmen) return;
+  if (meta.proviant < 1) { feldzugSchliessen(); return; }
+  meta.proviant--; if (kosten) meta.drachmen -= kosten;
+  const ch = feldzugChance(z.staerke, st.kraft(w, eh), w.gunst);
+  const sieg = Math.random() < ch;
+  document.getElementById('fz-strategien').style.display = 'none';
+
+  let html;
+  if (sieg) {
+    const beute = Math.round(z.beute * (1 + Math.min(0.5, w.gunst * 0.004)));
+    meta.drachmen += beute;
+    meta.erobert[z.id] = { stufe: 1 };   // Stadt erobert (Stufe I)
+    const sd = STAT_DEF[z.stat];
+    // Chance auf einen Schatz als Plünder-Beute
+    let schatzTxt = '';
+    const item = beuteSchatz(z);
+    if (item) schatzTxt = `<br>Beute-Fund: <b>${item.name}</b>`;
+    html = `<div class="fz-res sieg"><div class="fz-res-t">Erobert!</div>`+
+      `<div class="fz-res-s">${z.name} ist nun deine Provinz. +${beute} δρ Beute · liefert ${sd.name} + Tribut.${schatzTxt}<br>Baue sie auf der Karte aus.</div></div>`;
+    SFX.kauf && SFX.kauf(); HAPTIK.erfolg && HAPTIK.erfolg();
+    if (typeof partikel === 'function') partikel();
+  } else {
+    meta.heerMalus += Math.max(4, Math.round(z.staerke * 0.18));   // Heer erschöpft
+    meta.bedrohung = { von: z.id, name: z.name, staerke: Math.round(z.staerke * 0.6), frist: naechsterTag(1) };
+    html = `<div class="fz-res niederlage"><div class="fz-res-t">Niederlage</div>`+
+      `<div class="fz-res-s">Dein Heer wurde zurückgeschlagen und ist erschöpft. ${z.name} sammelt sich zum Gegenangriff!</div></div>`;
+    SFX.schlecht && SFX.schlecht(); HAPTIK.tick && HAPTIK.tick();
+  }
+  document.getElementById('fz-ergebnis').innerHTML = html;
+  document.getElementById('fz-close').style.display = '';
+  speichere(); topbarAktualisieren();
+}
+
+function feldzugSchliessen() {
+  document.getElementById('feldzug').classList.remove('on');
+  fzAktiv = null;
+  feldzugAktualisieren();
+  if (document.getElementById('view-athen').classList.contains('on')) stadtwerteAktualisieren();
+}
+
+// Beute-Schatz: kleinere Chance als beim Opfern, gewichtet nach Zielstärke
+function beuteSchatz(z) {
+  const p = Math.min(0.6, 0.18 + z.staerke / 600);
+  if (Math.random() > p) return null;
+  meta.schaetze = meta.schaetze || {};
+  const rar = schatzRoll();
+  const pool = SCHAETZE.filter(s => s.rar === rar);
+  const item = pool[Math.floor(Math.random() * pool.length)];
+  if (!meta.schaetze[item.id]) meta.schaetze[item.id] = 1;
+  else { meta.schaetze[item.id]++; meta.weihrauch = (meta.weihrauch || 0) + RARITAET[rar].weihrauch; }
+  return item;
+}
+
+function bedrohungVerteidigen() {
+  const b = meta.bedrohung; if (!b) return;
+  const w = stadtWerte(), eh = effektivesHeer();
+  const kraft = eh * 1.2 + (meta.verteidigung && meta.verteidigung.mauer ? 25 : 0) + w.gunst * 0.6;
+  const sieg = Math.random() < feldzugChance(b.staerke, kraft, w.gunst, 0.05);
+  fzAktiv = null;
+  document.getElementById('fz-ico').innerHTML = ICON.sword || '';
+  document.getElementById('fz-titel').textContent = 'Abwehr: ' + b.name;
+  document.getElementById('fz-sub').textContent = '';
+  document.getElementById('fz-strategien').style.display = 'none';
+  document.getElementById('fz-strategien').innerHTML = '';
+  let html;
+  if (sieg) {
+    html = `<div class="fz-res sieg"><div class="fz-res-t">Abgewehrt!</div><div class="fz-res-s">${b.stadtId ? `Der Aufstand in ${b.name} wurde niedergeschlagen — die Provinz bleibt dein.` : `Athen hat den Gegenangriff von ${b.name} zurückgeschlagen.`}</div></div>`;
+    SFX.kauf && SFX.kauf(); HAPTIK.erfolg && HAPTIK.erfolg();
+  } else if (b.stadtId) {
+    delete meta.erobert[b.stadtId];   // Provinz verloren (wird wieder feindlich)
+    html = `<div class="fz-res niederlage"><div class="fz-res-t">Provinz verloren</div><div class="fz-res-s">${b.name} hat sich losgesagt und ist wieder feindlich.</div></div>`;
+    SFX.schlecht && SFX.schlecht(); HAPTIK.tick && HAPTIK.tick();
+  } else {
+    let verlust = 0;
+    if (meta.stadt > 0 && !(meta.verteidigung && meta.verteidigung.mauer && Math.random() < 0.5)) { meta.stadt -= 1; verlust = 1; }
+    html = `<div class="fz-res niederlage"><div class="fz-res-t">Durchbruch</div><div class="fz-res-s">${verlust ? 'Ein Bauwerk wurde zerstört.' : 'Deine Wehranlagen hielten stand — kein Verlust.'}</div></div>`;
+    SFX.schlecht && SFX.schlecht(); HAPTIK.tick && HAPTIK.tick();
+  }
+  meta.bedrohung = null;
+  speichere(); topbarAktualisieren();
+  document.getElementById('fz-ergebnis').innerHTML = html;
+  document.getElementById('fz-close').style.display = '';
+  document.getElementById('feldzug').classList.add('on');
+}
+
+// Bedrohung beim App-Start automatisch auflösen, wenn die Frist verstrichen ist
+function bedrohungPruefen() {
+  const b = meta.bedrohung;
+  if (!b || b.frist > heuteStr()) return;
+  const w = stadtWerte(), eh = effektivesHeer();
+  const kraft = eh * 1.0 + (meta.verteidigung && meta.verteidigung.mauer ? 25 : 0);
+  const verloren = Math.random() >= feldzugChance(b.staerke, kraft, w.gunst);
+  if (verloren) {
+    if (b.stadtId) delete meta.erobert[b.stadtId];
+    else if (meta.stadt > 0) meta.stadt -= 1;
+  }
+  meta.bedrohung = null;
+  speichere();
+}
+
+// Aufstand: kleine Tageschance, dass eine eroberte Stadt aufbegehrt (nur 1 Bedrohung zugleich)
+function aufstandPruefen() {
+  if (meta.bedrohung || meta.aufstandTag === heuteStr()) return;
+  meta.aufstandTag = heuteStr();
+  const ids = Object.keys(meta.erobert || {});
+  if (!ids.length) return;
+  if (Math.random() < 0.18) {
+    const id = ids[Math.floor(Math.random() * ids.length)], z = ziel(id);
+    if (z) meta.bedrohung = { stadtId: id, von: id, name: z.name, staerke: Math.round(z.staerke * 0.7), frist: naechsterTag(1) };
+    speichere();
+  }
+}
+const naechsterTag = n => { const d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
 
 function schatzRoll() {
   const t = Object.values(RARITAET).reduce((s, r) => s + r.gewicht, 0);
@@ -3093,6 +3949,17 @@ function bewerten(note, ev) {
     const vorStreak = meta.streak;
     meta.streak = (meta.lastTag === g.toISOString().slice(0,10)) ? meta.streak + 1 : 1;
     meta.lastTag = heuteStr();
+    // Tribut aus Wohlstand + Heer-Regeneration (einmal pro Tag)
+    if (meta.tributTag !== heuteStr()) {
+      meta.tributTag = heuteStr();
+      const trib = Math.floor(stadtWerte().wohlstand * 0.8);
+      if (trib > 0) { meta.drachmen += trib; sessStats.dr += trib; setTimeout(() => { toast(`Steuern aus Wohlstand — +${trib} δρ`); SFX.muenze(); }, 1600); }
+      // Tribut der eroberten Provinzen
+      let prov = 0;
+      for (const id in (meta.erobert || {})) { const z = ziel(id); if (z) prov += z.tribut * stadtStufe(id); }
+      if (prov > 0) { meta.drachmen += prov; sessStats.dr += prov; setTimeout(() => { toast(`Tribut der Provinzen — +${prov} δρ`); SFX.muenze(); }, 2600); }
+      if (meta.heerMalus > 0) meta.heerMalus = Math.max(0, meta.heerMalus - 3);
+    }
     // Täglicher Streak-Bonus: wächst mit der Serie
     const bonus = 10 + 5 * Math.min(meta.streak, 10);
     meta.drachmen += bonus;
@@ -3143,6 +4010,9 @@ function sitzungFertig() {
     sessStats.dr += 10;
     setTimeout(() => { toast('Fehlerfreie Sitzung! +10 δρ'); SFX.glitzer(); }, 900);
   }
+  // Proviant für Feldzüge (Antrieb durchs Lernen)
+  let proviantNeu = false;
+  if (meta.proviant < proviantMax()) { meta.proviant++; proviantNeu = true; }
   speichere();
   topbarAktualisieren();
 
@@ -3150,7 +4020,8 @@ function sitzungFertig() {
   const g = gunstStufe(meta.streak);
   const finBau = document.getElementById('fin-bau');
   finBau.innerHTML = `Schatzkammer: <b>${meta.drachmen} δρ</b>` +
-    (g.mult > 1 ? ` · Gunst ×${multZeigen(g.mult)}` : '');
+    (g.mult > 1 ? ` · Gunst ×${multZeigen(g.mult)}` : '') +
+    (proviantNeu ? ` · +1 Proviant (Feldzüge)` : '');
   finBau.style.display = 'block';
 
   zeigeView('fertig');
@@ -3642,9 +4513,11 @@ function demoPruefen() {
       { xp: 40, level: 12, streak: 7, lastTag: heute, stadt: 12, maxStadt: 12, drachmen: 340, lastDecay: heute }
     ));
   } else if (demo === 'reich') {
-    // Frischer Spieler mit voller Schatzkammer (zum Testen der Käufe)
+    // Voll ausgebaute Stadt + Schatzkammer + Proviant (zum Testen von Bau, Werten & Feldzügen)
     localStorage.setItem('zeus_meta', JSON.stringify(
-      { xp: 0, level: 1, streak: 0, lastTag: null, stadt: 0, maxStadt: 0, drachmen: 999999, lastDecay: heute }
+      { xp: 0, level: 12, streak: 7, lastTag: heute, stadt: 12, maxStadt: 12,
+        bauStufen: { 1:3,2:3,3:3,4:3,5:3,6:3,7:3,8:3,9:3,10:3,11:3,12:3 },
+        drachmen: 999999, proviant: 9, lastDecay: heute }
     ));
   } else if (demo === 'paywall') {
     // Trial abgelaufen (Test der Paywall, erzwungen)
@@ -3672,6 +4545,8 @@ function trialTageUebrig() {
 function aboStatus() { return meta.abo ? 'abo' : (trialTageUebrig() > 0 ? 'trial' : 'abgelaufen'); }
 function pruefeAbo() { if (aboErzwingen && aboStatus() === 'abgelaufen') zeigePaywall(); }
 function zeigePaywall() {
+  // Bereits abonniert: nur Status zeigen, keine Kauf-Paywall
+  if (aboStatus() === 'abo') { kaufStatusZeigen('erfolg', 'Abo aktiv', 'Du hast Zeus-Vollzugang. Danke für deine Unterstützung!'); return; }
   const t = document.getElementById('pw-titel'), x = document.getElementById('pw-text');
   if (aboStatus() === 'trial') { t.textContent = 'Zeus Vollzugang'; x.textContent = `Dein Gratis-Test läuft noch ${trialTageUebrig()} Tag(e). Sichere dir jetzt unbegrenzten Zugang.`; }
   else { t.textContent = 'Dein Gratis-Zugang ist vorbei'; x.textContent = `Du hast Zeus ${TRIAL_TAGE} Tage kostenlos getestet. Mit dem Abo geht's unbegrenzt weiter.`; }
@@ -3691,31 +4566,55 @@ async function aboInit() {
     if (a !== meta.abo) { meta.abo = a; speichere(); }
   } catch (e) { console.warn('RevenueCat init', e); }
 }
+// Animiertes Status-Fenster für den Kauf-Flow (ersetzt die grauen alert()-Fenster)
+function kaufStatusZeigen(zustand, titel, text) {
+  // display none→block startet die SVG-Animationen jedes Mal neu
+  document.getElementById('ps-laden').style.display  = zustand === 'laden'  ? 'block' : 'none';
+  document.getElementById('ps-erfolg').style.display = zustand === 'erfolg' ? 'block' : 'none';
+  document.getElementById('ps-fehler').style.display = zustand === 'fehler' ? 'block' : 'none';
+  document.getElementById('ps-titel').textContent = titel;
+  document.getElementById('ps-text').textContent  = text || '';
+  const btn = document.getElementById('ps-btn');
+  btn.style.display = zustand === 'laden' ? 'none' : 'block';
+  btn.textContent = zustand === 'erfolg' ? 'Weiter' : 'Schließen';
+  document.getElementById('pw-status').classList.add('on');
+}
+function kaufStatusSchliessen() { document.getElementById('pw-status').classList.remove('on'); }
 async function aboKaufen() {
   const P = rcPlugin();
-  alert('① NATIV=' + NATIV + ' · Purchases-Plugin=' + (P ? 'gefunden' : 'FEHLT'));
-  if (!NATIV || !P) return;
+  if (!NATIV || !P) { try { toast('Das Abo läuft über den App Store — bitte in der iOS-App abschließen.'); } catch (e) {} return; }
+  kaufStatusZeigen('laden', 'Verbindung zum App Store …', 'Einen Moment — dein Abo wird vorbereitet.');
   try {
     const off = await P.getOfferings();
-    const cur = off && off.current;
-    alert('② Offerings geladen · current=' + (cur ? cur.identifier : 'NULL') + ' · Packages=' + (cur && cur.availablePackages ? cur.availablePackages.length : 0));
-    const pkg = cur && (cur.monthly || (cur.availablePackages || [])[0]);
-    if (!pkg) { alert('③ Kein Package! all-Offerings=' + JSON.stringify(Object.keys((off && off.all) || {}))); return; }
+    const pkg = off && off.current && (off.current.monthly || (off.current.availablePackages || [])[0]);
+    if (!pkg) { kaufStatusZeigen('fehler', 'Kein Angebot gefunden', 'Bitte versuche es in ein paar Minuten erneut.'); return; }
     const res = await P.purchasePackage({ aPackage: pkg });
-    const a = rcAktiv(res && res.customerInfo);
-    alert('④ Kauf zurück · aktiv=' + a);
-    if (a) { meta.abo = true; speichere(); document.getElementById('paywall').classList.remove('on'); }
-  } catch (e) { if (!(e && e.userCancelled)) alert('✗ Fehler: ' + (e && (e.message || e.code)) + ' · ' + JSON.stringify(e)); }
+    if (rcAktiv(res && res.customerInfo)) {
+      meta.abo = true; speichere(); document.getElementById('paywall').classList.remove('on');
+      kaufStatusZeigen('erfolg', 'Kauf erfolgreich', 'Willkommen! Dein Zeus-Vollzugang ist jetzt aktiv.');
+    } else {
+      kaufStatusZeigen('fehler', 'Kauf nicht abgeschlossen', 'Es wurde kein aktives Abo gefunden. Bitte versuche es erneut.');
+    }
+  } catch (e) {
+    const abgebrochen = e && (e.userCancelled || e.code === 'PURCHASE_CANCELLED' || e.code === 1 || e.code === '1' || /cancel/i.test(String((e && e.message) || '')));
+    if (abgebrochen) { kaufStatusSchliessen(); }   // Abbruch: kein Fenster, einfach schließen
+    else { kaufStatusZeigen('fehler', 'Fehler beim Kauf', 'Der Kauf konnte nicht abgeschlossen werden. Bitte versuche es erneut.'); }
+  }
 }
 async function aboWiederherstellen() {
   const P = rcPlugin();
   if (!NATIV || !P) { try { toast('Wiederherstellung nur in der iOS-App.'); } catch (e) {} return; }
+  kaufStatusZeigen('laden', 'Käufe werden geprüft …', 'Einen Moment bitte.');
   try {
     const { customerInfo } = await P.restorePurchases();
     meta.abo = rcAktiv(customerInfo); speichere();
-    if (meta.abo) { document.getElementById('paywall').classList.remove('on'); try { toast('Abo wiederhergestellt.'); } catch (e) {} }
-    else { try { toast('Kein aktives Abo gefunden.'); } catch (e) {} }
-  } catch (e) { try { toast('Wiederherstellung fehlgeschlagen.'); } catch (er) {} }
+    if (meta.abo) {
+      document.getElementById('paywall').classList.remove('on');
+      kaufStatusZeigen('erfolg', 'Abo wiederhergestellt', 'Dein Vollzugang ist wieder aktiv.');
+    } else {
+      kaufStatusZeigen('fehler', 'Kein Abo gefunden', 'Auf diesem Apple-Konto wurde kein aktives Abo gefunden.');
+    }
+  } catch (e) { kaufStatusZeigen('fehler', 'Wiederherstellung fehlgeschlagen', 'Bitte versuche es später erneut.'); }
 }
 
 /* ═══════════ GRAMMATIK (Nachschlagewerk) ═══════════ */
@@ -3968,6 +4867,8 @@ async function init() {
     aktive = aktive.filter(id => lektionen.find(l => l.id === id));
     if (!aktive.length && lektionen.length) aktive = [lektionen[0].id];
     const schaden = pruefeKatastrophe();
+    bedrohungPruefen();   // ausstehenden Gegenangriff bei abgelaufener Frist auflösen
+    aufstandPruefen();    // evtl. neuen Aufstand in einer Provinz auslösen
     speichere();
     if (schaden > 0) stadtOverride = Math.min(meta.stadt + schaden, MAX_BAU);
     homeAktualisieren();
@@ -4014,293 +4915,6 @@ document.getElementById('splash').addEventListener('pointerdown', () => {
   SFX.init();
   setTimeout(() => { SFX.start(); HAPTIK.tick(); }, 30);
 });
-</script>
-<script type="module">
-/* ═══════════ ATHEN 3D (three.js) ═══════════ */
-(async () => {
-  const LOCAL='./lib/three.module.js', CDN='https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
-  let THREE;
-  try { THREE = await import(LOCAL); if(!THREE.Scene) throw 0; }
-  catch(e){ try { THREE = await import(CDN); } catch(e2){ console.warn('three.js nicht ladbar', e2); return; } }
-
-  const TOWN=1.1, ACRO=13.6, HILLBASE=25;
-  let renderer, scene, camera, ctl, raf=null, gemountet=false, stadtGruppe, el0, himmelMat;
-  let wasserGeo, wBasis, sonne, hemi, wolken, stadtBg, stadtFog={tag:0xa6cdee,nacht:0x10182e};
-  let leute=[], booteArr=[], routen=[], tt=0;
-  const dummy = ()=>0; let dummyObj;
-
-  // ── Material ──
-  const M=(c,o={})=>new THREE.MeshStandardMaterial({color:c,roughness:o.r??0.9,metalness:o.m??0,flatShading:o.flat??true,side:o.side,transparent:o.t,opacity:o.o,emissive:o.e||0x000000,emissiveIntensity:o.ei||0,envMapIntensity:o.env??0.5});
-  const mat={ gras:M(0x6f9355,{r:0.97}), gras2:M(0x789c5c,{r:0.97}), sand:M(0xd8c49a,{r:1}), fels:M(0x837866,{r:1}),
-    marmor:M(0xece7da,{r:0.62,env:0.55}), saeule:M(0xf2eee2,{r:0.55,env:0.55}), dachZ:M(0xb1462f,{r:0.85,side:THREE.DoubleSide}),
-    gold:M(0xe7bd57,{r:0.25,m:0.9,env:1.0}), stamm:M(0x6b4a2e,{r:1}), laub:M(0x47633a,{r:0.95}), laub2:M(0x6a8a50,{r:0.95}),
-    stein:M(0xb8b0a0,{r:1}), steinD:M(0x9a9384,{r:1}), holz:M(0x6e4a2c,{r:1}), fenster:M(0x2c3a44,{r:0.5}),
-    plaza:M(0xcfc7b3,{r:0.95}), weg:M(0xc6b690,{r:1}), bronze:M(0xb5872f,{r:0.5,m:0.4}),
-    wasser:new THREE.MeshStandardMaterial({color:0x1f5f95,roughness:0.22,metalness:0.18,envMapIntensity:0.6}) };
-  const hausWand=[0xddc09a,0xd2b083,0xe2c6a0,0xcab189].map(c=>M(c,{r:0.95}));
-  const hausDach=[0xb24a35,0x9c4230,0xc0563f,0xa84a38].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
-  const awnings=[0xc0563f,0x4a7d9e,0xd0a24a,0x6a9a6a,0xb06be0].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
-  Object.assign(mat.weg, { polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-4 });   // gegen Z-Fighting auf dem Boden
-
-  const box=(w,h,d)=>new THREE.BoxGeometry(w,h,d), zyl=(rt,rb,h,s=14)=>new THREE.CylinderGeometry(rt,rb,h,s);
-  function giebel(w,h,d){ const hw=w/2,hd=d/2,g=new THREE.BufferGeometry();
-    g.setAttribute('position',new THREE.BufferAttribute(new Float32Array([-hw,0,-hd,hw,0,-hd,hw,0,hd,-hw,0,hd,0,h,-hd,0,h,hd]),3));
-    g.setIndex([1,2,5,1,5,4,3,0,4,3,4,5,0,1,4,2,3,5,0,3,2,0,2,1]); g.computeVertexNormals(); return g; }
-  function mesh(geo,m,cast=true,rec=true){ const x=new THREE.Mesh(geo,m); x.castShadow=cast; x.receiveShadow=rec; return x; }
-  const at=(m,x,y,z)=>{ m.position.set(x,y,z); return m; };
-  // ── Menschen: artikulierte Low-Poly-Figuren (Körper als Vertex-Color-Mesh + Gelenk-Gliedmaßen) ──
-  function figurGeo(parts){ const gs=parts.map(p=>{ const g=p.g.index?p.g.toNonIndexed():p.g.clone(); const m=new THREE.Matrix4().makeScale(p.sx||1,p.sy||1,p.sz||1); m.setPosition(p.x||0,p.y||0,p.z||0); g.applyMatrix4(m); const c=new THREE.Color(p.c),nn=g.attributes.position.count,ca=new Float32Array(nn*3); for(let i=0;i<nn;i++){ ca[i*3]=c.r; ca[i*3+1]=c.g; ca[i*3+2]=c.b; } g.setAttribute('color',new THREE.BufferAttribute(ca,3)); return g; });
-    let n=0; gs.forEach(g=>n+=g.attributes.position.count); const P=new Float32Array(n*3),N=new Float32Array(n*3),C=new Float32Array(n*3); let o=0;
-    gs.forEach(g=>{ P.set(g.attributes.position.array,o*3); if(g.attributes.normal)N.set(g.attributes.normal.array,o*3); C.set(g.attributes.color.array,o*3); o+=g.attributes.position.count; g.dispose(); });
-    const out=new THREE.BufferGeometry(); out.setAttribute('position',new THREE.BufferAttribute(P,3)); out.setAttribute('normal',new THREE.BufferAttribute(N,3)); out.setAttribute('color',new THREE.BufferAttribute(C,3)); out.userData.keep=true; return out; }
-  const _keep=g=>{ g.userData.keep=true; return g; };
-  const HG_leg=_keep(new THREE.BoxGeometry(0.1,0.44,0.13)); HG_leg.translate(0,-0.22,0);
-  const HG_arm=_keep(new THREE.BoxGeometry(0.08,0.34,0.09)); HG_arm.translate(0,-0.17,0);
-  const _head=new THREE.SphereGeometry(0.12,10,8), _hair=new THREE.SphereGeometry(0.138,10,8,0,6.3,0,1.9), _torso=new THREE.BoxGeometry(0.27,0.38,0.17), _robe=new THREE.ConeGeometry(0.29,0.98,10), _bart=new THREE.ConeGeometry(0.1,0.2,6), _helm=new THREE.SphereGeometry(0.135,10,8), _crest=new THREE.BoxGeometry(0.05,0.16,0.27);
-  const bodyMat=M(0xffffff,{r:0.85,env:0.4}); bodyMat.vertexColors=true;
-  const skinMat=M(0xd8a878,{r:0.85,env:0.3});
-  const KO={
-    buerger: figurGeo([{g:_torso,c:0xccbb98,y:0.62},{g:_head,c:0xd8a878,y:0.93},{g:_hair,c:0x3a2a1c,y:0.93}]),
-    gymnast: figurGeo([{g:_torso,c:0xd8a878,sx:0.82,sz:0.82,y:0.6},{g:_head,c:0xd8a878,y:0.9},{g:_hair,c:0x2c2016,y:0.9}]),
-    priester:figurGeo([{g:_robe,c:0xf2efe6,y:0.49},{g:_head,c:0xd8a878,y:1.02},{g:_hair,c:0xc8c2b5,y:1.02},{g:_bart,c:0xdad4c8,sy:1,y:0.9}]),
-    adel:    figurGeo([{g:_robe,c:0x8c4fb0,y:0.49},{g:_head,c:0xd8a878,y:1.02},{g:_hair,c:0x2c2016,y:1.02}]),
-    gelehrt: figurGeo([{g:_robe,c:0x4a72b0,y:0.49},{g:_head,c:0xd8a878,y:1.02},{g:_hair,c:0x4a3522,y:1.02}]),
-    krieger: figurGeo([{g:_torso,c:0xb5872f,y:0.62},{g:_head,c:0xd8a878,y:0.92},{g:_helm,c:0xa06f24,y:0.95},{g:_crest,c:0xb1462f,y:1.06}]),
-  };
-  function mensch(t){ const g=new THREE.Group(); const body=new THREE.Mesh(KO[t.k],bodyMat); body.castShadow=true; g.add(body); const legs=[],arms=[];
-    if(t.beine) [-0.08,0.08].forEach(x=>{ const pv=new THREE.Group(); pv.position.set(x,0.44,0); const m=new THREE.Mesh(HG_leg,skinMat); pv.add(m); g.add(pv); legs.push(pv); });
-    if(t.arme) [-0.18,0.18].forEach(x=>{ const pv=new THREE.Group(); pv.position.set(x,0.8,0); const m=new THREE.Mesh(HG_arm,skinMat); pv.add(m); g.add(pv); arms.push(pv); });
-    if(t.schild){ const sh=new THREE.Mesh(_keep(new THREE.CylinderGeometry(0.16,0.16,0.04,16)),mat.bronze); sh.rotation.z=Math.PI/2; sh.position.set(0.21,0.62,0.06); g.add(sh); }
-    if(t.speer){ const sp=new THREE.Mesh(_keep(new THREE.CylinderGeometry(0.018,0.018,1.0,6)),mat.holz); sp.position.set(-0.21,0.72,0); g.add(sp); }
-    return {g,legs,arms,robe:!t.beine}; }
-
-  function saeulen(n,sp,h,g,x0,z,y0=0){ for(let i=0;i<n;i++){ const s=mesh(zyl(0.34,0.42,h,12),mat.saeule); s.position.set(x0+i*sp,y0+h/2,z); g.add(s);
-    const k=mesh(box(0.95,0.25,0.95),mat.saeule); k.position.set(x0+i*sp,y0+h,z); g.add(k);} }
-  function tempel(scl=1){ const g=new THREE.Group(); const bw=7*scl,bd=4.6*scl,colH=3.6*scl;
-    for(let i=2;i>=0;i--){ const s=mesh(box(bw+0.5+i*0.7,0.45,bd+0.5+i*0.7),mat.marmor); s.position.y=0.22+(2-i)*0.42; g.add(s);}
-    const platte=mesh(box(bw,0.5,bd),mat.marmor); platte.position.y=1.3; g.add(platte);
-    const n=Math.max(4,Math.round(5*scl)),sp=(bw-1.2)/(n-1);
-    saeulen(n,sp,colH,g,-(bw-1.2)/2,(bd-0.9)/2,1.55); saeulen(n,sp,colH,g,-(bw-1.2)/2,-(bd-0.9)/2,1.55);
-    const arch=mesh(box(bw,0.7,bd),mat.marmor); arch.position.y=1.55+colH+0.35; g.add(arch);
-    const dach=mesh(giebel(bw+0.5,1.8*scl,bd+0.5),mat.dachZ); dach.position.y=1.55+colH+0.7; g.add(dach); return g; }
-  function propylaeen(){ const g=new THREE.Group(),w=9,d=3.5,h=4; saeulen(5,(w-1)/4,h,g,-(w-1)/2,d/2); saeulen(5,(w-1)/4,h,g,-(w-1)/2,-d/2);
-    const arch=mesh(box(w+0.6,0.9,d+0.6),mat.marmor); arch.position.y=h+0.45; g.add(arch);
-    const dach=mesh(giebel(w+1,1.4,d+1),mat.marmor); dach.position.y=h+0.9; g.add(dach); return g; }
-  function stoa(len=18){ const g=new THREE.Group(),d=4; const sock=mesh(box(len,0.6,d),mat.marmor); sock.position.y=0.3; g.add(sock);
-    const n=Math.round(len/2.2); saeulen(n,(len-1)/(n-1),3.2,g,-(len-1)/2,d/2-0.5);
-    const back=mesh(box(len,3.4,0.5),mat.marmor); back.position.set(0,1.7,-d/2+0.2); g.add(back);
-    const roof=mesh(box(len+0.8,0.7,d+0.8),mat.dachZ); roof.position.y=3.9; g.add(roof); return g; }
-  function haus(vi){ const g=new THREE.Group(); const w=2.0+(vi%3)*0.7,d=1.7+((vi+1)%3)*0.6,bh=1.7+(vi%4)*0.5;
-    g.add(at(mesh(box(w+0.2,0.3,d+0.2),mat.stein),0,0.15,0));
-    const wand=mesh(box(w,bh,d),hausWand[vi%4]); wand.position.y=0.3+bh/2; g.add(wand);
-    const dach=mesh(giebel(w+0.35,0.9+(vi%2)*0.4,d+0.35),hausDach[vi%4]); dach.position.y=0.3+bh; g.add(dach);
-    const tuer=mesh(new THREE.PlaneGeometry(0.5,0.95),mat.holz,false,false); tuer.position.set(0,0.3+0.5,d/2+0.02); g.add(tuer);
-    [-1,1].forEach(sx=>{ const f=mesh(new THREE.PlaneGeometry(0.42,0.42),mat.fenster,false,false); f.position.set(sx*w*0.27,0.3+bh*0.6,d/2+0.02); g.add(f);}); return g; }
-  function zypresse(){ const g=new THREE.Group(); g.add(at(mesh(zyl(0.13,0.2,0.9,6),mat.stamm),0,0.45,0));
-    const k=mesh(new THREE.ConeGeometry(1.0,4.0,8),mat.laub); k.position.y=2.8; g.add(k); return g; }
-  function olive(){ const g=new THREE.Group(); g.add(at(mesh(zyl(0.16,0.24,0.8,6),mat.stamm),0,0.4,0));
-    const k=mesh(new THREE.IcosahedronGeometry(1.25,0),mat.laub2); k.position.y=1.7; k.scale.y=0.78; g.add(k); return g; }
-  function statue(scl=1){ const g=new THREE.Group(); const so=mesh(box(2*scl,1.4*scl,2*scl),mat.marmor); so.position.y=0.7*scl; g.add(so);
-    const fig=mesh(zyl(0.32*scl,0.46*scl,3.2*scl,8),mat.gold); fig.position.y=1.4*scl+1.6*scl; g.add(fig);
-    const kopf=mesh(new THREE.SphereGeometry(0.4*scl,12,12),mat.gold); kopf.position.y=1.4*scl+3.3*scl; g.add(kopf);
-    const sp=mesh(zyl(0.05*scl,0.05*scl,4*scl,6),mat.gold); sp.position.set(0.6*scl,1.4*scl+1.8*scl,0); g.add(sp); return g; }
-  function brunnen(){ const g=new THREE.Group(); const b=mesh(zyl(1.3,1.4,0.7,16),mat.stein); b.position.y=0.35; g.add(b);
-    const w=mesh(zyl(1.05,1.05,0.5,16),mat.wasser,false); w.position.y=0.55; g.add(w);
-    const s=mesh(zyl(0.18,0.22,1.2,8),mat.steinD); s.position.y=1.1; g.add(s); return g; }
-  function stall(i){ const g=new THREE.Group(); [[-0.8,-0.8],[0.8,-0.8],[-0.8,0.8],[0.8,0.8]].forEach(([x,z])=>{const p=mesh(zyl(0.06,0.06,1.4,6),mat.holz);p.position.set(x,0.7,z);g.add(p);});
-    const dach=mesh(box(2.2,0.12,2.2),awnings[i%awnings.length]); dach.position.y=1.45; dach.rotation.x=0.12; g.add(dach);
-    const t=mesh(box(1.8,0.1,0.9),mat.holz); t.position.set(0,0.75,0.4); g.add(t);
-    [[-0.5,0xd0a24a],[0,0xc0563f],[0.5,0x6a9a6a]].forEach(([x,c])=>{const o=mesh(new THREE.SphereGeometry(0.16,6,6),M(c,{r:1}));o.position.set(x,0.88,0.4);g.add(o);}); return g; }
-  function theater(){ const g=new THREE.Group();
-    for(let i=0;i<9;i++){ const r=5+i*1.25; const seg=mesh(new THREE.CylinderGeometry(r+1.1,r+1.1,0.7,40,1,false,Math.PI*1.15,Math.PI*0.7),mat.stein); seg.position.y=0.35+i*0.75; g.add(seg);
-      const inner=mesh(new THREE.CylinderGeometry(r,r,0.9,40,1,false,Math.PI*1.15,Math.PI*0.7),mat.gras2); inner.position.y=0.35+i*0.75; inner.castShadow=false; g.add(inner); }
-    const orch=mesh(zyl(4.5,4.5,0.3,32),mat.plaza); orch.position.y=0.15; g.add(orch);
-    const b=mesh(box(10,2.4,1.6),mat.marmor); b.position.set(0,1.2,5.5); g.add(b); return g; }
-  function turm(h=7,banner){ const g=new THREE.Group(); const b=mesh(zyl(1.8,2.0,h,12),mat.stein); b.position.y=h/2; g.add(b);
-    for(let i=0;i<10;i++){const a=i/10*Math.PI*2; const m=mesh(box(0.6,0.7,0.6),mat.steinD); m.position.set(Math.cos(a)*1.9,h+0.35,Math.sin(a)*1.9); g.add(m);}
-    if(banner){ const pole=mesh(zyl(0.07,0.07,2.4,6),mat.holz); pole.position.y=h+1.6; g.add(pole); const fl=mesh(new THREE.PlaneGeometry(1.4,0.9),M(0xb84a32,{r:0.9,side:THREE.DoubleSide})); fl.position.set(0.75,h+2.1,0); g.add(fl);} return g; }
-  function schiff(){ const g=new THREE.Group(); const h=mesh(box(4.5,1.2,1.6),mat.holz); h.position.y=0.4; g.add(h);
-    const m=mesh(zyl(0.1,0.1,4,6),mat.holz); m.position.y=2.2; g.add(m);
-    const se=mesh(new THREE.PlaneGeometry(2.6,2.6),M(0xf2ecdb,{r:1,side:THREE.DoubleSide})); se.position.set(0,2.4,0); se.rotation.y=Math.PI/2; g.add(se); return g; }
-  function tholos(){ const g=new THREE.Group(); const base=mesh(zyl(3.2,3.6,0.6,20),mat.marmor); base.position.y=0.3; g.add(base);
-    for(let i=0;i<12;i++){ const a=i/12*Math.PI*2; const s=mesh(zyl(0.26,0.3,3,10),mat.saeule); s.position.set(Math.cos(a)*2.7,1.8,Math.sin(a)*2.7); g.add(s);}
-    const dach=mesh(new THREE.ConeGeometry(3.5,1.8,20),mat.dachZ); dach.position.y=4.2; g.add(dach); return g; }
-  function altar(gunst){ const g=new THREE.Group(); for(let i=0;i<2;i++){ const s=mesh(box(2.4-i*0.6,0.4,1.8-i*0.5),mat.marmor); s.position.y=0.2+i*0.4; g.add(s);}
-    const feuer=mesh(new THREE.ConeGeometry(0.4,0.9,6),M(0xff8a3c,{e:0xff6a1a,ei:0.4+Math.min(1,gunst/30)}),false,false); feuer.position.y=1.3; g.add(feuer); return g; }
-  function gymnasion(){ const g=new THREE.Group(),sz=7; const hof=mesh(box(sz,0.2,sz),mat.sand); hof.position.y=0.1; g.add(hof);
-    [[0,sz/2],[0,-sz/2],[sz/2,0],[-sz/2,0]].forEach(([x,z],k)=>{ const along=k<2; for(let i=0;i<4;i++){ const off=-(sz-1)/2+i*(sz-1)/3; const s=mesh(zyl(0.22,0.26,2.4,8),mat.saeule); s.position.set(along?off:x,1.2,along?z:off); g.add(s);} });
-    [[0,sz/2,0],[0,-sz/2,0],[sz/2,0,Math.PI/2],[-sz/2,0,Math.PI/2]].forEach(([x,z,ry])=>{ const e=mesh(box(sz+1.4,0.4,1.6),mat.dachZ); e.position.set(x,2.5,z); e.rotation.y=ry; g.add(e);}); return g; }
-  function lager(){ const g=new THREE.Group(); const b=mesh(box(5,2.8,3.4),hausWand[2]); b.position.y=1.4; g.add(b);
-    const d=mesh(box(5.4,0.4,3.8),mat.steinD); d.position.y=2.9; g.add(d);
-    [-1.6,-0.8,0,0.8,1.6].forEach(x=>{const a=mesh(zyl(0.18,0.12,0.7,8),mat.dachZ);a.position.set(x,0.35,2.1);g.add(a);}); return g; }
-  function soldat(){ const g=new THREE.Group(); const k=mesh(zyl(0.18,0.2,0.6,8),mat.bronze); k.position.y=0.4; g.add(k);
-    const sch=mesh(zyl(0.02,0.02,0.5,16),mat.bronze); sch.rotation.x=Math.PI/2; sch.position.set(0.22,0.4,0.08); g.add(sch);
-    const sp=mesh(zyl(0.02,0.02,1.5,6),mat.holz); sp.position.set(-0.2,0.72,0); g.add(sp);
-    const helm=mesh(new THREE.SphereGeometry(0.16,8,8),mat.bronze); helm.position.y=0.8; g.add(helm);
-    const cr=mesh(box(0.05,0.18,0.3),mat.dachZ); cr.position.y=0.95; g.add(cr); return g; }
-
-  // ── Straßennetz / Routen ──
-  function kreis(r,n){ const p=[]; for(let i=0;i<n;i++){const a=i/n*Math.PI*2;p.push([Math.cos(a)*r,Math.sin(a)*r]);} return p; }
-  function strasse(pts,w,closed,yo){ const n=pts.length, y=TOWN+(yo??0.2); for(let i=0;i<(closed?n:n-1);i++){ const a=pts[i],b=pts[(i+1)%n],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz); const seg=mesh(box(len+w*0.5,0.06,w),mat.weg,false,true); seg.position.set((a[0]+b[0])/2,y,(a[1]+b[1])/2); seg.rotation.y=-Math.atan2(dz,dx); stadtGruppe.add(seg);} }
-  function route(pts,closed){ const p=closed?pts:pts.concat(pts.slice(1,-1).reverse()); const segs=[]; let tot=0; for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],d=Math.hypot(b[0]-a[0],b[1]-a[1]);segs.push(d);tot+=d;} const rm={p,segs,tot}; routen.push(rm); return rm; }
-  function routePos(rm,u){ u=((u%rm.tot)+rm.tot)%rm.tot; let i=0; while(i<rm.segs.length&&u>rm.segs[i]){u-=rm.segs[i];i++;} const a=rm.p[i%rm.p.length],b=rm.p[(i+1)%rm.p.length],t=rm.segs[i]?u/rm.segs[i]:0; return {x:a[0]+(b[0]-a[0])*t,z:a[1]+(b[1]-a[1])*t,ang:Math.atan2(b[1]-a[1],b[0]-a[0])}; }
-
-  function add(obj,x,z,y,ry=0,s=1){ obj.position.set(x,y,z); obj.rotation.y=ry; obj.scale.setScalar(s); stadtGruppe.add(obj); return obj; }
-
-  function leere(g){ for(let i=g.children.length-1;i>=0;i--){ const c=g.children[i]; c.traverse(o=>{ if(o.geometry && !o.geometry.userData.keep) o.geometry.dispose(); }); g.remove(c); } }
-  // Menschen eines Typs setzen (stehend in der Agora oder laufend auf Straßen, mit Geh-Animation)
-  function spawnLeute(t, anzahl, modus){ anzahl=Math.max(0,Math.min(22,anzahl|0)); if(!anzahl) return; if(modus==='lauf' && !routen.length) return;
-    for(let i=0;i<anzahl;i++){ const fig=mensch(t); stadtGruppe.add(fig.g);
-      if(modus==='agora'){ fig.g.position.set(-6+Math.random()*20,TOWN+0.22,24+Math.random()*12); fig.g.rotation.y=Math.random()*6.28; }
-      else { const rm=routen[Math.floor(Math.random()*routen.length)]; leute.push({fig,rm,u:Math.random()*rm.tot,spd:1.3+Math.random()*1.5,ph:Math.random()*6.28}); } } }
-
-  // ── Stadt aus Spielstand bauen ──
-  function baue(z){
-    leere(stadtGruppe); routen=[]; leute=[]; booteArr=[];
-    const s=z.stufe||0, vert=z.vert||{}, hatMauer=s>=6||vert.mauer;
-    // Straßen (ab Stufe 2)
-    if(s>=2){ const ringIn=kreis(34,40), ringOut=kreis(54,46);
-      strasse(ringIn,2.6,true); route(ringIn,true);
-      if(s>=5){ strasse(ringOut,3,true); route(ringOut,true); }
-      const weg1=[[4,62],[5,52],[6,42],[7,34],[8,27]]; strasse(weg1,3.2,false,0.16);   // Aufweg zum Hügelfuß (Leute laufen NICHT hoch)
-      for(let k=0;k<5;k++){ const a=k/5*Math.PI*2+0.4, rad=[[Math.cos(a)*34,Math.sin(a)*34],[Math.cos(a)*54,Math.sin(a)*54]]; strasse(rad,2.2,false,0.16); route(rad,false);} }
-    if(!routen.length) route([[0,16],[0,-16]],false);  // Notroute
-    // Akropolis-Bauten
-    if(s>=11) add(tempel(1.8),1,-3,ACRO,0);              // Parthenon (Mitte)
-    if(s>=7)  add(tempel(0.95),-10,3,ACRO,0.5);          // Hephaistos/Tempel
-    if(s>=12) add(statue(1.3),-4,9,ACRO,0);
-    if(s>=10) add(propylaeen(),6,12,ACRO,0);             // Tor vorne am Rand
-    if(s>=11) add(altar(z.gunst||0),3,4,ACRO,0);
-    if(vert.tempel){ add(tempel(1.0),-9,-7,ACRO,0.3); const glow=mesh(new THREE.SphereGeometry(5,16,16),M(0xffe9a8,{t:true,o:0.12}),false,false); glow.position.set(-9,ACRO+3.5,-7); stadtGruppe.add(glow); }
-    // Stadtmauer + Türme + Tor
-    if(hatMauer){ const RW=60, seg=28;
-      for(let i=0;i<seg;i++){ if(i===14||i===15) continue; const a=i/seg*Math.PI*2,a2=(i+1)/seg*Math.PI*2; const mx=Math.cos((a+a2)/2)*RW,mz=Math.sin((a+a2)/2)*RW,len=RW*(a2-a)+0.6; const w=mesh(box(len,4.5,1.4),mat.stein); w.position.set(mx,TOWN+2.2,mz); w.rotation.y=-(a+a2)/2+Math.PI/2; stadtGruppe.add(w);}
-      for(let i=0;i<8;i++){ const a=i/8*Math.PI*2; add(turm(7,vert.mauer),Math.cos(a)*RW,Math.sin(a)*RW,TOWN);} }
-    // Agora + Stoa + Stände + Brunnen
-    if(s>=5){ add(mesh(box(28,0.3,20),mat.plaza),4,42,TOWN+0.12,0);
-      for(let i=0;i<8;i++) add(stall(i),-6+(i%4)*5,37+Math.floor(i/4)*5,TOWN,(i%2)*0.3);
-      add(brunnen(),4,43,TOWN); add(statue(0.7),-9,46,TOWN); add(tholos(),-22,32,TOWN,0);
-      // Hafen
-      add(mesh(box(7,0.7,32),mat.holz),4,86,0.1,0);
-      booteArr.push(add(schiff(),-8,78,-0.4,0), add(schiff(),16,88,-0.4,0.6), add(schiff(),14,72,-0.4,1.2));
-      add(lager(),14,70,TOWN,0); add(lager(),-4,70,TOWN,0.3); }
-    if(s>=9) add(stoa(26),4,53,TOWN,0);
-    if(s>=8) add(theater(),48,-8,TOWN,-Math.PI*0.5);
-    if(s>=7) add(gymnasion(),31,25,TOWN,0.2);
-    // Häuser — Anzahl wächst mit Stadt
-    const hCount = s>=1 ? Math.min(80, 6+s*7) : 0; let hi=0;
-    outer: for(let ring=0;ring<4;ring++){ const r=34+ring*6, cnt=16+ring*6;
-      for(let k=0;k<cnt;k++){ if(hi>=hCount) break outer; const a=k/cnt*Math.PI*2+ring*0.3, x=Math.cos(a)*r+Math.sin(k*12.9)*1.8, zz=Math.sin(a)*r+Math.cos(k*7.7)*1.8;
-        if(zz>30&&Math.abs(x-4)<17) continue; if(x>36&&zz<4&&zz>-24) continue; if(Math.hypot(x,zz)<HILLBASE+2) continue;
-        add(haus(hi),x,zz,TOWN,Math.atan2(-zz,-x)+Math.PI/2); hi++; } }
-    // Bäume (außerhalb des Bergfußes)
-    if(s>=3){ for(let g=0;g<5;g++){ const ga=g/5*Math.PI*2+0.6,gr=46,cx=Math.cos(ga)*gr,cz=Math.sin(ga)*gr; for(let k=0;k<4;k++) add(olive(),cx+Math.sin(k*5)*2.5,cz+Math.cos(k*3)*2.5,TOWN);} }
-    if(s>=6){ for(let i=0;i<28;i++){ const a=i/28*Math.PI*2,r=25.5+(i%3)*1.2; add(zypresse(),Math.cos(a)*r,Math.sin(a)*r,TOWN);} }
-    // Bevölkerung — verschiedene Typen, erscheinen mit den Upgrades (mit Geh-Animation)
-    const pop=z.buerger||40;
-    spawnLeute({k:'buerger',beine:1,arme:1}, Math.min(16,Math.round(pop/12)), 'lauf');    // Bürger
-    if(s>=5) spawnLeute({k:'buerger',beine:1,arme:1}, 6, 'agora');                        // Markt-Bürger (Agora)
-    if(s>=7||vert.tempel) spawnLeute({k:'priester'}, 2+Math.floor((z.gunst||0)/12), 'lauf');   // Priester
-    if(s>=11) spawnLeute({k:'adel'}, 2+Math.floor((z.prestige||0)/60), 'lauf');           // Adlige
-    if(s>=9)  spawnLeute({k:'gelehrt',arme:1}, 2+Math.floor((z.bildung||0)/4), 'lauf');   // Gelehrte
-    if(s>=7)  spawnLeute({k:'gymnast',beine:1,arme:1}, 4, 'lauf');                        // Gymnasten
-    // Krieger (Heer): Torwachen + Patrouille
-    if(hatMauer){ const RW=60; [13,16].forEach(i=>{const a=i/28*Math.PI*2; const w=mensch({k:'krieger',beine:1,arme:1,schild:1,speer:1}); w.g.position.set(Math.cos(a)*(RW-2),TOWN+0.22,Math.sin(a)*(RW-2)); w.g.rotation.y=-a; stadtGruppe.add(w.g);}); }
-    spawnLeute({k:'krieger',beine:1,arme:1,schild:1,speer:1}, Math.min(10,Math.floor((z.heer||0)/9)), 'lauf');
-  }
-
-  function tagNacht(nacht){ if(!scene)return;
-    if(himmelMat){ himmelMat.uniforms.top.value.setHex(nacht?0x0b1633:0x2a6fc0); himmelMat.uniforms.bot.value.setHex(nacht?0x1a2440:0xcfe6f5); }
-    scene.fog.color.setHex(nacht?0x141d33:0xa8cdeb);
-    sonne.intensity = nacht?0.4:1.75; sonne.color.setHex(nacht?0x9fb4e6:0xfff1d4);
-    hemi.intensity = nacht?0.22:0.4; hemi.color.setHex(nacht?0x35406b:0xbfd6f0);
-  }
-
-  // ── eigene Kamera-Steuerung (Touch + Maus): drehen/zoomen/schieben ──
-  function makeControls(cam,dom){
-    const tgt=new THREE.Vector3(0,7,0); let r=170, th=0.9, ph=0.92, tr=r,tth=th,tph=ph;
-    const ptr=new Map(); let pinch=0;
-    const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
-    function apply(){ r+=(tr-r)*0.18; th+=(tth-th)*0.18; ph+=(tph-ph)*0.18;
-      cam.position.set(tgt.x+r*Math.sin(ph)*Math.cos(th), tgt.y+r*Math.cos(ph), tgt.z+r*Math.sin(ph)*Math.sin(th)); cam.lookAt(tgt); }
-    function pan(dx,dy){ const f=r*0.0014; const right=new THREE.Vector3().setFromMatrixColumn(cam.matrix,0); const fwd=new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0),right).normalize(); tgt.addScaledVector(right,-dx*f); tgt.addScaledVector(fwd,-dy*f); tgt.x=cl(tgt.x,-58,58); tgt.z=cl(tgt.z,-58,58); }
-    dom.addEventListener('pointerdown',e=>{ dom.setPointerCapture(e.pointerId); ptr.set(e.pointerId,{x:e.clientX,y:e.clientY}); });
-    dom.addEventListener('pointerup',e=>{ ptr.delete(e.pointerId); pinch=0; });
-    dom.addEventListener('pointercancel',e=>{ ptr.delete(e.pointerId); pinch=0; });
-    dom.addEventListener('pointermove',e=>{ const p=ptr.get(e.pointerId); if(!p)return; const dx=e.clientX-p.x,dy=e.clientY-p.y; p.x=e.clientX; p.y=e.clientY;
-      if(ptr.size>=2){ const a=[...ptr.values()]; const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y); if(pinch) tr=cl(tr*(pinch/d),40,320); pinch=d; pan(dx*0.5,dy*0.5); }
-      else if(e.pointerType!=='touch' && (e.buttons&2)){ pan(dx,dy); }
-      else { tth-=dx*0.005; tph=cl(tph-dy*0.005,0.16,1.32); } });
-    dom.addEventListener('wheel',e=>{ tr=cl(tr*(1+Math.sign(e.deltaY)*0.12),40,320); e.preventDefault(); },{passive:false});
-    dom.addEventListener('contextmenu',e=>e.preventDefault());
-    apply();
-    return { update:apply, setTarget:(x,y,z)=>tgt.set(x,y,z), set:(R,T,P,tx,tz)=>{ tr=R; tth=T; tph=P; if(tx!=null)tgt.x=tx; if(tz!=null)tgt.z=tz; apply(); } };
-  }
-
-  function doResize(){ if(!renderer||!el0)return; const w=el0.clientWidth||300,h=el0.clientHeight||300; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
-
-  function mount(el){
-    if(gemountet)return; gemountet=true; el0=el; el.innerHTML='';
-    renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setPixelRatio(Math.min(1.8,devicePixelRatio||1));
-    renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.outputColorSpace=THREE.SRGBColorSpace;
-    renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=0.92; el.appendChild(renderer.domElement);
-    scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0xa8cdeb,0.0022);
-    camera=new THREE.PerspectiveCamera(40,1,0.5,900);
-    hemi=new THREE.HemisphereLight(0xbfd6f0,0x6b5b42,0.4); scene.add(hemi);
-    sonne=new THREE.DirectionalLight(0xfff1d4,1.75); { const sd=new THREE.Vector3().setFromSphericalCoords(1,THREE.MathUtils.degToRad(57),THREE.MathUtils.degToRad(135)); sonne.position.copy(sd).multiplyScalar(140); } sonne.castShadow=true;
-    sonne.shadow.mapSize.set(1536,1536); sonne.shadow.camera.near=1; sonne.shadow.camera.far=320;
-    const S=70; sonne.shadow.camera.left=-S; sonne.shadow.camera.right=S; sonne.shadow.camera.top=S; sonne.shadow.camera.bottom=-S; sonne.shadow.bias=-0.0004; sonne.shadow.normalBias=0.03;
-    scene.add(sonne); scene.add(sonne.target);
-    // Gradient-Himmel (Dome) + IBL ohne Addon
-    himmelMat=new THREE.ShaderMaterial({ side:THREE.BackSide, depthWrite:false, fog:false,
-      uniforms:{ top:{value:new THREE.Color(0x2a6fc0)}, bot:{value:new THREE.Color(0xcfe6f5)}, exph:{value:0.85} },
-      vertexShader:'varying vec3 vp; void main(){ vp=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
-      fragmentShader:'varying vec3 vp; uniform vec3 top; uniform vec3 bot; uniform float exph; void main(){ float hh=normalize(vp).y*0.5+0.5; float k=pow(clamp(hh,0.0,1.0),exph); gl_FragColor=vec4(mix(bot,top,k),1.0); }' });
-    scene.add(new THREE.Mesh(new THREE.SphereGeometry(500,24,12), himmelMat));
-    { const pm=new THREE.PMREMGenerator(renderer); const es=new THREE.Scene(); es.add(new THREE.Mesh(new THREE.SphereGeometry(50,16,8), himmelMat)); scene.environment=pm.fromScene(es,0.0).texture; }
-    const welt=new THREE.Group(); scene.add(welt);
-    wasserGeo=new THREE.PlaneGeometry(600,600,40,40); wasserGeo.rotateX(-Math.PI/2);
-    const wm=mesh(wasserGeo,mat.wasser,false,true); wm.position.y=-1.6; scene.add(wm); wBasis=wasserGeo.attributes.position.array.slice();
-    // Unregelmäßige Küste (nur nach außen → Mauer bleibt an Land) + felsige Akropolis
-    const coast=a=>1+0.075*(Math.sin(a*3+0.6)*0.5+0.5)+0.06*(Math.sin(a*5+2.1)*0.5+0.5)+0.04*(Math.sin(a*8+4)*0.5+0.5);
-    const verzerre=(geo,amp)=>{ const p=geo.attributes.position; for(let i=0;i<p.count;i++){ const x=p.getX(i),zz=p.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+(coast(a)-1)*amp; p.setX(i,x*f); p.setZ(i,zz*f);} p.needsUpdate=true; geo.computeVertexNormals(); };
-    const gf=zyl(66,73,7,72); verzerre(gf,1); welt.add(at(mesh(gf,mat.fels),0,-3.2,0));
-    const gs=zyl(65,67,2,72); verzerre(gs,1); welt.add(at(mesh(gs,mat.sand),0,-0.3,0));
-    const gg=zyl(64,65,1.4,72); verzerre(gg,1); welt.add(at(mesh(gg,mat.gras),0,0.5,0));
-    const hg=zyl(18,23,12,22); { const hp=hg.attributes.position; for(let i=0;i<hp.count;i++){ const x=hp.getX(i),y=hp.getY(i),zz=hp.getZ(i),rr=Math.hypot(x,zz); if(rr<0.5)continue; const a=Math.atan2(zz,x),f=1+0.13*(0.4+0.6*Math.sin(a*4+1.1))+0.06*Math.sin(a*9); hp.setX(i,x*f); hp.setZ(i,zz*f); hp.setY(i,y+Math.sin(a*7)*0.5); } hp.needsUpdate=true; hg.computeVertexNormals(); } welt.add(at(mesh(hg,mat.fels),0,TOWN+6,0));
-    const hc=zyl(17.5,18.3,1.0,22); verzerre(hc,0.9); welt.add(at(mesh(hc,mat.gras2),0,TOWN+12,0));
-    for(let i=0;i<14;i++){ const a=i*2.3, fuss=i%2===0, rr=fuss?(24+(i%3)):(62+(i%4)); const rk=mesh(new THREE.IcosahedronGeometry(0.8+(i%3)*0.6,0),mat.fels); rk.position.set(Math.cos(a)*rr, fuss?TOWN+1+(i%2):0.2, Math.sin(a)*rr); rk.rotation.set(i,a,i*0.7); rk.scale.set(1,0.7,1.2); welt.add(rk); }
-    stadtGruppe=new THREE.Group(); welt.add(stadtGruppe); dummyObj=new THREE.Object3D();
-    wolken=new THREE.Group(); for(let i=0;i<6;i++){ const c=new THREE.Group(); for(let j=0;j<3;j++){const p=mesh(new THREE.SphereGeometry(2.2+Math.random(),8,8),M(0xffffff,{t:true,o:0.9}),false,false);p.position.set(j*3-3,Math.random(),Math.random()*2.4);c.add(p);} c.position.set(-90+i*32,46+Math.random()*8,-60+Math.random()*40); c.scale.set(1,0.6,1); wolken.add(c);} scene.add(wolken);
-    ctl=makeControls(camera,renderer.domElement);
-    { const sp=new URLSearchParams(location.search); if(sp.has('cam')){ const v=sp.get('cam').split(',').map(Number); ctl.set(v[0]||40,v[1]||0.9,v[2]||0.95,v[3]||0,v[4]||0); } }
-    // Vollbild-Umschalter (gefälschtes Fullscreen-Overlay → läuft auch auf iOS)
-    const fsBtn=document.createElement('button'); fsBtn.textContent='⤢'; fsBtn.title='Vollbild';
-    fsBtn.style.cssText='position:absolute;top:8px;right:8px;z-index:6;width:34px;height:34px;border:none;border-radius:9px;background:rgba(10,13,21,.5);color:#fff;font-size:17px;line-height:1;cursor:pointer';
-    fsBtn.onclick=()=>{ const v=el0.classList.toggle('voll'); fsBtn.textContent=v?'✕':'⤢'; doResize(); };
-    el.appendChild(fsBtn);
-    doResize(); addEventListener('resize',doResize);
-  }
-
-  function animiere(){ tt+=0.016;
-    const p=wasserGeo.attributes.position.array; for(let i=0;i<p.length;i+=3){ p[i+1]=Math.sin((wBasis[i]+tt*6)*0.06)*0.4+Math.cos((wBasis[i+2]-tt*5)*0.07)*0.35; } wasserGeo.attributes.position.needsUpdate=true;
-    wolken.children.forEach((c,i)=>{ c.position.x+=0.02+i*0.004; if(c.position.x>100)c.position.x=-100; });
-    for(const w of leute){ w.u+=w.spd*0.016; w.ph+=w.spd*0.14; const q=routePos(w.rm,w.u); const g=w.fig.g;
-      const bob=w.robe?Math.abs(Math.sin(w.ph*0.5))*0.02:Math.abs(Math.sin(w.ph))*0.045;
-      g.position.set(q.x,TOWN+0.22+bob,q.z); g.rotation.y=-q.ang+Math.PI/2;
-      const sw=Math.sin(w.ph)*0.5; if(w.fig.legs.length){ w.fig.legs[0].rotation.x=sw; w.fig.legs[1].rotation.x=-sw; } if(w.fig.arms.length){ w.fig.arms[0].rotation.x=-sw*0.8; w.fig.arms[1].rotation.x=sw*0.8; } }
-    booteArr.forEach((b,i)=>{ b.position.y=-0.4+Math.sin(tt*0.8+i)*0.12; b.rotation.z=Math.sin(tt*0.6+i)*0.04; });
-    ctl && ctl.update();
-  }
-
-  window.Athen3D = {
-    render(el,z){ try{ mount(el); tagNacht(z.nacht); baue(z); doResize(); this.start(); }catch(e){ console.warn('Athen3D render', e); } },
-    start(){ if(renderer && raf===null){ const loop=()=>{ raf=requestAnimationFrame(loop); animiere(); renderer.render(scene,camera); }; raf=requestAnimationFrame(loop); } },
-    stop(){ if(raf!==null){ cancelAnimationFrame(raf); raf=null; } },
-    resize(){ doResize(); },
-  };
-  if(window.__athenZustand) window.Athen3D.render(window.__athenZustand.wrap, window.__athenZustand.zustand);
-})();
 </script>
 </body>
 </html>
