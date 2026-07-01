@@ -5,3 +5,6 @@ __pycache__/
 .vercel
 .env*
 node_modules/
+
+# Große Rohdaten (Diorisis-Korpus, Middle Liddell) — nicht versionieren
+data_src/

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Athen 3D — große Polis</title>
+<style>
+  html,body{margin:0;height:100%;background:#0e1320;overflow:hidden;touch-action:none}
+  #bühne{width:100vw;height:100vh;display:block}
+  #hint{position:fixed;left:12px;bottom:12px;font:12px/1.4 system-ui;color:#fff;opacity:.6;pointer-events:none}
+</style>
+</head>
+<body>
+<canvas id="bühne"></canvas>
+<div id="hint">1 Finger / Linksklick: drehen · 2 Finger / Rechtsklick: schieben · Pinch / Rad: zoomen</div>
+<script>
+  addEventListener('error', e=>{ const h=document.getElementById('hint'); h.textContent='FEHLER: '+(e.message||e.error)+'  @'+((e.filename||'').split('/').pop())+':'+e.lineno; h.style.cssText='position:fixed;left:12px;top:12px;color:#ffd24a;font:13px monospace;max-width:96vw'; });
+  addEventListener('unhandledrejection', e=>{ const h=document.getElementById('hint'); h.textContent='REJECT: '+(e.reason&&e.reason.message||e.reason); h.style.cssText='position:fixed;left:12px;top:12px;color:#ffd24a;font:13px monospace;max-width:96vw'; });
+</script>
+<script type="importmap">
+{ "imports": { "three": "./lib/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from './lib/OrbitControls.js';
+import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/objects/Sky.js';
+import { RoundedBoxGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/geometries/RoundedBoxGeometry.js';
+
+const canvas = document.getElementById('bühne');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(1.5, devicePixelRatio||1));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.92;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0xa8cdeb, 0.0022);
+
+// ── Kamera: perspektivisch für Erkundung, leicht erhöht ──
+const camera = new THREE.PerspectiveCamera(38, 1, 0.5, 600);
+camera.position.set(70, 56, 70);
+
+const controls = new OrbitControls(camera, canvas);
+controls.target.set(0, 6, 0);
+controls.enableDamping = true; controls.dampingFactor = 0.07;
+controls.minDistance = 12; controls.maxDistance = 180;
+controls.maxPolarAngle = Math.PI * 0.46;
+controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
+controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
+{ const sp=new URLSearchParams(location.search); if(sp.has('cam')){ const v=sp.get('cam').split(',').map(Number); camera.position.set(v[0],v[1],v[2]); controls.target.set(v[3]||0,v[4]||6,v[5]||0); } }
+
+// ── Licht ──
+scene.add(new THREE.HemisphereLight(0xbfd6f0, 0x6b5b42, 0.35));
+const sonne = new THREE.DirectionalLight(0xfff1d4, 1.75);
+sonne.position.set(60, 90, 38);
+sonne.castShadow = true;
+sonne.shadow.mapSize.set(2048, 2048);
+sonne.shadow.camera.near = 1; sonne.shadow.camera.far = 260;
+const S = 70;
+sonne.shadow.camera.left=-S; sonne.shadow.camera.right=S; sonne.shadow.camera.top=S; sonne.shadow.camera.bottom=-S;
+sonne.shadow.bias = -0.0004; sonne.shadow.normalBias = 0.03;
+scene.add(sonne); scene.add(sonne.target);
+
+// ── Atmosphären-Himmel + Sonne ausrichten ──
+const sky = new Sky(); sky.scale.setScalar(10000); scene.add(sky);
+const su = sky.material.uniforms;
+su['turbidity'].value=3.2; su['rayleigh'].value=2.7; su['mieCoefficient'].value=0.003; su['mieDirectionalG'].value=0.82;
+const sonnenRichtung = new THREE.Vector3();
+(function(){ const elev=33, az=135, phi=THREE.MathUtils.degToRad(90-elev), th=THREE.MathUtils.degToRad(az); sonnenRichtung.setFromSphericalCoords(1,phi,th); su['sunPosition'].value.copy(sonnenRichtung); sonne.position.copy(sonnenRichtung).multiplyScalar(140); })();
+
+// ── IBL: Himmel-basierter Umgebungs-Reflektor (blau, nicht grell) ──
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new THREE.Scene(); const skyEnv = new Sky(); skyEnv.scale.setScalar(100);
+const seu = skyEnv.material.uniforms; seu['turbidity'].value=3.2; seu['rayleigh'].value=2.7; seu['mieCoefficient'].value=0.003; seu['mieDirectionalG'].value=0.82; seu['sunPosition'].value.copy(sonnenRichtung);
+envScene.add(skyEnv);
+scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+
+// ── Material ──
+const M = (col, opt={}) => new THREE.MeshStandardMaterial({ color:col, roughness:opt.r??0.9, metalness:opt.m??0, flatShading:opt.flat??true, side:opt.side, transparent:opt.t, opacity:opt.o, envMapIntensity:opt.env??0.5 });
+const mat = {
+  gras:M(0x6f9355,{r:0.97}), gras2:M(0x789c5c,{r:0.97}), sand:M(0xd8c49a,{r:1}), fels:M(0x837866,{r:1}),
+  marmor:M(0xece7da,{r:0.62,env:0.55}), saeule:M(0xf2eee2,{r:0.55,env:0.55}), dachZ:M(0xb1462f,{r:0.85,side:THREE.DoubleSide}),
+  gold:M(0xe7bd57,{r:0.25,m:0.9,env:1.0}), stamm:M(0x6b4a2e,{r:1}), laub:M(0x47633a,{r:0.95}), laub2:M(0x6a8a50,{r:0.95}),
+  stein:M(0xb8b0a0,{r:1}), steinD:M(0x9a9384,{r:1}), holz:M(0x6e4a2c,{r:1}), fenster:M(0x2c3a44,{r:0.5}),
+  plaza:M(0xcfc7b3,{r:0.95}), weg:M(0xc6b690,{r:1}), wasser:new THREE.MeshStandardMaterial({color:0x2f6fb0,roughness:0.32,metalness:0.28}),
+};
+const awnings=[0xc0563f,0x4a7d9e,0xd0a24a,0x6a9a6a,0xb06be0].map(c=>M(c,{r:0.9,side:THREE.DoubleSide}));
+
+function giebel(w,h,d){ const hw=w/2,hd=d/2,g=new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(new Float32Array([-hw,0,-hd,hw,0,-hd,hw,0,hd,-hw,0,hd,0,h,-hd,0,h,hd]),3));
+  g.setIndex([1,2,5,1,5,4, 3,0,4,3,4,5, 0,1,4, 2,3,5, 0,3,2,0,2,1]); g.computeVertexNormals(); return g; }
+const box=(w,h,d)=>new RoundedBoxGeometry(w,h,d,2,Math.max(0.04,Math.min(w,h,d)*0.12));
+const zyl=(rt,rb,h,s=14)=>new THREE.CylinderGeometry(rt,rb,h,s);
+function mesh(geo,m,cast=true,rec=true){ const x=new THREE.Mesh(geo,m); x.castShadow=cast; x.receiveShadow=rec; return x; }
+const at=(m,x,y,z)=>{ m.position.set(x,y,z); return m; };
+
+const welt = new THREE.Group(); scene.add(welt);
+const routen = [];   // Geh-Routen fürs Straßennetz
+
+// ── Wasser (env-reflektierend, mit Wellen + Sonnenglitzer) + Insel ──
+const wasserGeo = new THREE.PlaneGeometry(700,700,48,48); wasserGeo.rotateX(-Math.PI/2);
+const water = mesh(wasserGeo, new THREE.MeshStandardMaterial({ color:0x1f5f95, roughness:0.22, metalness:0.18, envMapIntensity:0.6 }), false, true);
+water.position.y=-1.55; scene.add(water);
+const wBasis = wasserGeo.attributes.position.array.slice();
+
+const fels = mesh(zyl(48,54,7,64), mat.fels); fels.position.y=-3.2; welt.add(fels);
+const sand = mesh(zyl(47.5,49,2,64), mat.sand); sand.position.y=-0.3; welt.add(sand);
+const grasT = mesh(zyl(46.5,47.5,1.4,64), mat.gras); grasT.position.y=0.5; welt.add(grasT);
+const TOWN = 1.1; // Bodenhöhe Stadt
+
+// Akropolis-Hügel
+const huegel = mesh(zyl(15,24,9,48), mat.fels); huegel.position.y=TOWN+3.4; welt.add(huegel);
+const huegelGras = mesh(zyl(15,15.6,1.2,48), mat.gras2); huegelGras.position.y=TOWN+8; welt.add(huegelGras);
+const ACRO = TOWN+8.5; // Plateau-Oberkante
+
+function setze(obj,x,z,y,ry=0,s=1){ obj.position.set(x,y,z); obj.rotation.y=ry; obj.scale.setScalar(s); welt.add(obj); return obj; }
+
+// ── Bau-Fabriken ──
+function saeulen(n,sp,h,g,x0,z){ for(let i=0;i<n;i++){ const s=mesh(zyl(0.34,0.42,h,12),mat.saeule); s.position.set(x0+i*sp,h/2,z); g.add(s);
+  const kap=mesh(box(0.95,0.25,0.95),mat.saeule); kap.position.set(x0+i*sp,h,z); g.add(kap);} }
+function tempel(scl=1){ const g=new THREE.Group(); const bw=7*scl,bd=4.6*scl,colH=3.6*scl;
+  for(let i=2;i>=0;i--) { const s=mesh(box(bw+0.5+i*0.7,0.45,bd+0.5+i*0.7),mat.marmor); s.position.y=0.22+ (2-i)*0.42; g.add(s);}
+  const platte=mesh(box(bw,0.5,bd),mat.marmor); platte.position.y=1.3; g.add(platte);
+  const n=Math.max(4,Math.round(5*scl)),sp=(bw-1.2)/(n-1);
+  saeulen(n,sp,colH,g,-(bw-1.2)/2,(bd-0.9)/2); saeulen(n,sp,colH,g,-(bw-1.2)/2,-(bd-0.9)/2);
+  const arch=mesh(box(bw,0.7,bd),mat.marmor); arch.position.y=1.55+colH+0.35; g.add(arch);
+  const dach=mesh(giebel(bw+0.5,1.8*scl,bd+0.5),mat.dachZ); dach.position.y=1.55+colH+0.7; g.add(dach);
+  return g; }
+function propylaeen(){ const g=new THREE.Group(); const w=9,d=3.5,h=4;
+  saeulen(5,(w-1)/4,h,g,-(w-1)/2,d/2); saeulen(5,(w-1)/4,h,g,-(w-1)/2,-d/2);
+  const arch=mesh(box(w+0.6,0.9,d+0.6),mat.marmor); arch.position.y=h+0.45; g.add(arch);
+  const dach=mesh(giebel(w+1,1.4,d+1),mat.marmor); dach.position.y=h+0.9; g.add(dach); return g; }
+function stoa(len=18){ const g=new THREE.Group(); const d=4;
+  const sock=mesh(box(len,0.6,d),mat.marmor); sock.position.y=0.3; g.add(sock);
+  const n=Math.round(len/2.2); saeulen(n,(len-1)/(n-1),3.2,g,-(len-1)/2,d/2-0.5);
+  const back=mesh(box(len,3.4,0.5),mat.marmor); back.position.set(0,1.7,-d/2+0.2); g.add(back);
+  const roof=mesh(box(len+0.8,0.7,d+0.8),mat.dachZ); roof.position.y=3.9; g.add(roof); return g; }
+function haus(vi){ const g=new THREE.Group();
+  const cols=[0xddc09a,0xd2b083,0xe2c6a0,0xcab189], dch=[0xb24a35,0x9c4230,0xc0563f,0xa84a38];
+  const w=2.0+(vi%3)*0.7,d=1.7+((vi+1)%3)*0.6,bh=1.7+(vi%4)*0.5;
+  g.add(at(mesh(box(w+0.2,0.3,d+0.2),mat.stein),0,0.15,0));
+  const wand=mesh(box(w,bh,d),M(cols[vi%4],{r:0.95})); wand.position.y=0.3+bh/2; g.add(wand);
+  const dach=mesh(giebel(w+0.35,0.9+(vi%2)*0.4,d+0.35),M(dch[vi%4],{r:0.9,side:THREE.DoubleSide})); dach.position.y=0.3+bh; g.add(dach);
+  const tuer=mesh(new THREE.PlaneGeometry(0.5,0.95),mat.holz,false,false); tuer.position.set(0,0.3+0.5,d/2+0.02); g.add(tuer);
+  [-1,1].forEach(s=>{ const f=mesh(new THREE.PlaneGeometry(0.42,0.42),mat.fenster,false,false); f.position.set(s*w*0.27,0.3+bh*0.6,d/2+0.02); g.add(f);} );
+  return g; }
+function zypresse(){ const g=new THREE.Group(); g.add(at(mesh(zyl(0.13,0.2,0.9,6),mat.stamm),0,0.45,0));
+  const k=mesh(new THREE.ConeGeometry(1.0,4.0,8),mat.laub); k.position.y=2.8; g.add(k); return g; }
+function olive(){ const g=new THREE.Group(); g.add(at(mesh(zyl(0.16,0.24,0.8,6),mat.stamm),0,0.4,0));
+  const k=mesh(new THREE.IcosahedronGeometry(1.25,0),mat.laub2); k.position.y=1.7; k.scale.y=0.78; g.add(k); return g; }
+function statue(scl=1){ const g=new THREE.Group(); const sock=mesh(box(2*scl,1.4*scl,2*scl),mat.marmor); sock.position.y=0.7*scl; g.add(sock);
+  const fig=mesh(zyl(0.32*scl,0.46*scl,3.2*scl,8),mat.gold); fig.position.y=1.4*scl+1.6*scl; g.add(fig);
+  const kopf=mesh(new THREE.SphereGeometry(0.4*scl,12,12),mat.gold); kopf.position.y=1.4*scl+3.3*scl; g.add(kopf);
+  const speer=mesh(zyl(0.05*scl,0.05*scl,4*scl,6),mat.gold); speer.position.set(0.6*scl,1.4*scl+1.8*scl,0); g.add(speer); return g; }
+function brunnen(){ const g=new THREE.Group(); const b=mesh(zyl(1.3,1.4,0.7,16),mat.stein); b.position.y=0.35; g.add(b);
+  const w=mesh(zyl(1.05,1.05,0.5,16),mat.wasser,false); w.position.y=0.55; g.add(w);
+  const s=mesh(zyl(0.18,0.22,1.2,8),mat.steinD); s.position.y=1.1; g.add(s); return g; }
+function stall(i){ const g=new THREE.Group(); [[-0.8,-0.8],[0.8,-0.8],[-0.8,0.8],[0.8,0.8]].forEach(([x,z])=>{const p=mesh(zyl(0.06,0.06,1.4,6),mat.holz);p.position.set(x,0.7,z);g.add(p);});
+  const dach=mesh(box(2.2,0.12,2.2),awnings[i%awnings.length]); dach.position.y=1.45; dach.rotation.x=0.12; g.add(dach);
+  const tisch=mesh(box(1.8,0.1,0.9),mat.holz); tisch.position.set(0,0.75,0.4); g.add(tisch);
+  [[-0.5,0xd0a24a],[0,0xc0563f],[0.5,0x6a9a6a]].forEach(([x,c])=>{const o=mesh(new THREE.SphereGeometry(0.16,6,6),M(c,{r:1}));o.position.set(x,0.88,0.4);g.add(o);}); return g; }
+function theater(){ const g=new THREE.Group(); const t=9;
+  for(let i=0;i<t;i++){ const r=5+i*1.25; const seg=mesh(new THREE.CylinderGeometry(r+1.1,r+1.1,0.7,40,1,false,Math.PI*1.15,Math.PI*0.7),mat.stein);
+    seg.position.y=0.35+i*0.75; g.add(seg);
+    const inner=mesh(new THREE.CylinderGeometry(r,r,0.9,40,1,false,Math.PI*1.15,Math.PI*0.7),mat.gras2); inner.position.y=0.35+i*0.75; inner.castShadow=false; g.add(inner); }
+  const orch=mesh(zyl(4.5,4.5,0.3,32),mat.plaza); orch.position.y=0.15; g.add(orch);
+  const buehne=mesh(box(10,2.4,1.6),mat.marmor); buehne.position.set(0,1.2,5.5); g.add(buehne); return g; }
+function turm(h=7){ const g=new THREE.Group(); const b=mesh(zyl(1.8,2.0,h,12),mat.stein); b.position.y=h/2; g.add(b);
+  for(let i=0;i<10;i++){const a=i/10*Math.PI*2; const m=mesh(box(0.6,0.7,0.6),mat.steinD); m.position.set(Math.cos(a)*1.9,h+0.35,Math.sin(a)*1.9); g.add(m);} return g; }
+function schiff(){ const g=new THREE.Group(); const h=mesh(box(4.5,1.2,1.6),mat.holz); h.position.y=0.4; g.add(h);
+  const m=mesh(zyl(0.1,0.1,4,6),mat.holz); m.position.y=2.2; g.add(m);
+  const segel=mesh(new THREE.PlaneGeometry(2.6,2.6),M(0xf2ecdb,{r:1,side:THREE.DoubleSide})); segel.position.set(0,2.4,0); segel.rotation.y=Math.PI/2; g.add(segel); return g; }
+function tholos(){ const g=new THREE.Group(); const base=mesh(zyl(3.2,3.6,0.6,20),mat.marmor); base.position.y=0.3; g.add(base);
+  const n=12; for(let i=0;i<n;i++){ const a=i/n*Math.PI*2; const s=mesh(zyl(0.26,0.3,3,10),mat.saeule); s.position.set(Math.cos(a)*2.7,1.8,Math.sin(a)*2.7); g.add(s);}
+  const dach=mesh(new THREE.ConeGeometry(3.5,1.8,20),mat.dachZ); dach.position.y=4.2; g.add(dach); return g; }
+function altar(){ const g=new THREE.Group(); for(let i=0;i<2;i++){ const s=mesh(box(2.4-i*0.6,0.4,1.8-i*0.5),mat.marmor); s.position.y=0.2+i*0.4; g.add(s);}
+  const feuer=mesh(new THREE.ConeGeometry(0.4,0.9,6),new THREE.MeshStandardMaterial({color:0xff8a3c,emissive:0xff6a1a,emissiveIntensity:0.8,flatShading:true}),false,false); feuer.position.y=1.3; g.add(feuer); return g; }
+function gymnasion(){ const g=new THREE.Group(); const sz=7; const hof=mesh(box(sz,0.2,sz),mat.sand); hof.position.y=0.1; g.add(hof);
+  [[0,sz/2],[0,-sz/2],[sz/2,0],[-sz/2,0]].forEach(([x,z],k)=>{ const along=k<2,n=4; for(let i=0;i<n;i++){ const off=-(sz-1)/2+i*(sz-1)/(n-1); const s=mesh(zyl(0.22,0.26,2.4,8),mat.saeule); s.position.set(along?off:x,1.2,along?z:off); g.add(s);} });
+  [[0,sz/2,0],[0,-sz/2,0],[sz/2,0,Math.PI/2],[-sz/2,0,Math.PI/2]].forEach(([x,z,ry])=>{ const e=mesh(box(sz+1.4,0.4,1.6),mat.dachZ); e.position.set(x,2.5,z); e.rotation.y=ry; g.add(e);}); return g; }
+function lager(){ const g=new THREE.Group(); const b=mesh(box(5,2.8,3.4),M(0xcdb487,{r:0.95})); b.position.y=1.4; g.add(b);
+  const d=mesh(box(5.4,0.4,3.8),mat.steinD); d.position.y=2.9; g.add(d);
+  [-1.6,-0.8,0,0.8,1.6].forEach(x=>{ const a=mesh(zyl(0.18,0.12,0.7,8),mat.dachZ); a.position.set(x,0.35,2.1); g.add(a);}); return g; }
+
+// ── AKROPOLIS ──
+setze(tempel(2.0), 2, -2, ACRO, 0);                   // Parthenon
+setze(tempel(1.0), -8, 4, ACRO, 0.5);                 // Erechtheion
+setze(statue(1.3), -2, 9, ACRO, 0);                   // Athena Promachos
+setze(propylaeen(), 6, 13, ACRO, Math.PI);            // Tor zur Akropolis (vorne)
+
+// ── STADTMAUER + Türme + Tor (Ring radius ~44) ──
+const RW=44, seg=28;
+const mauer=new THREE.Group();
+for(let i=0;i<seg;i++){ const a=i/seg*Math.PI*2; const a2=(i+1)/seg*Math.PI*2;
+  // Tor-Lücke vorne
+  if(i===Math.floor(seg*0.5)||i===Math.floor(seg*0.5)+1) continue;
+  const mx=Math.cos((a+a2)/2)*RW, mz=Math.sin((a+a2)/2)*RW, len=RW*(a2-a)+0.6;
+  const w=mesh(box(len,4.5,1.4),mat.stein); w.position.set(mx,TOWN+2.2,mz); w.rotation.y=-(a+a2)/2+Math.PI/2; w.castShadow=true; w.receiveShadow=true; mauer.add(w);
+}
+welt.add(mauer);
+for(let i=0;i<8;i++){ const a=i/8*Math.PI*2; setze(turm(7), Math.cos(a)*RW, Math.sin(a)*RW, TOWN); }
+
+// ── STRASSENNETZ (sichtbar + Geh-Routen) ──
+function kreis(r,n){ const p=[]; for(let i=0;i<n;i++){ const a=i/n*Math.PI*2; p.push([Math.cos(a)*r, Math.sin(a)*r]); } return p; }
+function strasse(pts,w,closed){ const n=pts.length; for(let i=0;i<(closed?n:n-1);i++){ const a=pts[i],b=pts[(i+1)%n]; const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz); const seg=mesh(box(len+w*0.5,0.08,w),mat.weg,false,true); seg.position.set((a[0]+b[0])/2,TOWN+0.06,(a[1]+b[1])/2); seg.rotation.y=-Math.atan2(dz,dx); welt.add(seg);} }
+function route(pts,closed){ const p=closed?pts:pts.concat(pts.slice(1,-1).reverse()); const segs=[]; let tot=0; for(let i=0;i<p.length;i++){ const a=p[i],b=p[(i+1)%p.length]; const d=Math.hypot(b[0]-a[0],b[1]-a[1]); segs.push(d); tot+=d; } const rm={p,segs,tot}; routen.push(rm); return rm; }
+const ringIn=kreis(18,28), ringOut=kreis(38,40);
+strasse(ringIn,2.6,true); strasse(ringOut,3,true); route(ringIn,true); route(ringOut,true);
+const weg1=[[3,46],[3,38],[4,30],[5,24],[6,18],[6,14.5]]; strasse(weg1,3.4,false); route(weg1,false);  // Panathenäische Hauptstraße
+for(let k=0;k<6;k++){ const a=k/6*Math.PI*2+0.3, rad=[[Math.cos(a)*18,Math.sin(a)*18],[Math.cos(a)*38,Math.sin(a)*38]]; strasse(rad,2.2,false); route(rad,false); }
+
+// ── AGORA (Marktplatz) vorne, mit Stoa + Ständen + Brunnen ──
+const agora = setze(mesh(box(22,0.25,16),mat.plaza), 4, 30, TOWN+0.12, 0);
+setze(stoa(20), 4, 38, TOWN, 0);
+for(let i=0;i<8;i++) setze(stall(i), -4+ (i%4)*4, 26+Math.floor(i/4)*4, TOWN, (i%2)*0.3);
+setze(brunnen(), 4, 31, TOWN);
+setze(statue(0.7), -6, 33, TOWN);
+
+// ── THEATER (rechts am Hang) ──
+setze(theater(), 34, -6, TOWN, -Math.PI*0.5);
+
+// ── WEITERE GEBÄUDE ──
+setze(altar(), 2, 5.5, ACRO, 0);              // Altar vor dem Parthenon
+setze(tholos(), -15, 22, TOWN, 0);            // Tholos
+setze(gymnasion(), 22, 18, TOWN, 0.2);        // Gymnasion
+setze(lager(), 10, 50, TOWN, 0); setze(lager(), -3, 50, TOWN, 0.3);   // Lagerhäuser am Hafen
+
+// ── HAFEN (vorne, ins Wasser) ──
+const pier = setze(mesh(box(6,0.6,26),mat.holz), 4, 60, 0.1, 0);
+const boote=[[-6,56],[12,62],[10,52]].map(([x,z],i)=> setze(schiff(), x, z, -0.4, i*0.6));
+
+// ── HÄUSER: dichte Unterstadt (Ring zwischen Hügel und Mauer) ──
+let hi=0;
+for(let ring=0; ring<4; ring++){
+  const r = 20 + ring*6.5;
+  const cnt = 10 + ring*4;
+  for(let k=0;k<cnt;k++){
+    const a = k/cnt*Math.PI*2 + ring*0.3;
+    const jx=(Math.sin(k*12.9)*2), jz=(Math.cos(k*7.7)*2);
+    const x=Math.cos(a)*r+jx, z=Math.sin(a)*r+jz;
+    if(z>22 && Math.abs(x-4)<13) continue;   // Agora freihalten
+    if(x>24 && z<2 && z>-16) continue;        // Theater freihalten
+    if(Math.hypot(x,z) < 17) continue;        // Hügelfuß frei
+    setze(haus(hi), x, z, TOWN, Math.atan2(-z,-x)+Math.PI/2); hi++;
+  }
+}
+
+// ── BÄUME: Haine + Alleen ──
+for(let i=0;i<26;i++){ const a=i/26*Math.PI*2; const r=18+ (i%3)*1.4; setze(zypresse(), Math.cos(a)*r, Math.sin(a)*r, TOWN); } // Allee am Hügelfuß
+for(let g=0; g<5; g++){ const ga=g/5*Math.PI*2+0.6, gr=33; const cx=Math.cos(ga)*gr, cz=Math.sin(ga)*gr;
+  for(let k=0;k<5;k++) setze(olive(), cx+Math.sin(k*5)*2.5, cz+Math.cos(k*3)*2.5, TOWN); }
+
+// ── LEUTE: stehend (Agora) + laufend (Straßen) ──
+const personGeo=new THREE.CapsuleGeometry(0.16,0.5,4,8);
+const farben=[0xddd2c2,0xc9bca8,0xb5a890,0x9a8f7c,0xe3b64f,0x9e6b52];
+const dummy=new THREE.Object3D();
+const STAT=46, WALK=84;
+const stehende=new THREE.InstancedMesh(personGeo, M(0xddd2c2,{r:1}), STAT); stehende.castShadow=true;
+for(let i=0;i<STAT;i++){ dummy.position.set(-6+Math.random()*20, TOWN+0.55, 24+Math.random()*12); dummy.rotation.y=Math.random()*6; dummy.updateMatrix(); stehende.setMatrixAt(i,dummy.matrix); stehende.setColorAt(i,new THREE.Color(farben[i%farben.length])); }
+stehende.instanceMatrix.needsUpdate=true; if(stehende.instanceColor)stehende.instanceColor.needsUpdate=true; welt.add(stehende);
+
+const laeufer=new THREE.InstancedMesh(personGeo, M(0xddd2c2,{r:1}), WALK); laeufer.castShadow=true; welt.add(laeufer);
+const walkers=[];
+for(let i=0;i<WALK;i++){ const rm=routen[i%routen.length]; walkers.push({rm,u:Math.random()*rm.tot,spd:1.6+Math.random()*1.8}); laeufer.setColorAt(i,new THREE.Color(farben[i%farben.length])); }
+if(laeufer.instanceColor)laeufer.instanceColor.needsUpdate=true;
+function routePos(rm,u){ u=((u%rm.tot)+rm.tot)%rm.tot; let i=0; while(i<rm.segs.length&&u>rm.segs[i]){u-=rm.segs[i];i++;} const a=rm.p[i%rm.p.length],b=rm.p[(i+1)%rm.p.length],t=rm.segs[i]?u/rm.segs[i]:0; return {x:a[0]+(b[0]-a[0])*t, z:a[1]+(b[1]-a[1])*t, ang:Math.atan2(b[1]-a[1],b[0]-a[0])}; }
+
+// ── Wolken ──
+const wolken=new THREE.Group();
+for(let i=0;i<6;i++){ const c=new THREE.Group(); for(let j=0;j<3;j++){const p=mesh(new THREE.SphereGeometry(2.2+Math.random(),8,8),M(0xffffff,{r:1,t:true,o:0.9}),false,false);p.position.set(j*3-3,Math.random(),Math.random()*2.4);c.add(p);} c.position.set(-90+i*32,46+Math.random()*8,-60+Math.random()*40); c.scale.set(1,0.6,1); wolken.add(c);}
+scene.add(wolken);
+
+// ── Resize + Loop ──
+function resize(){ const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+let t=0;
+function tick(){ t+=0.016;
+  const wp=wasserGeo.attributes.position.array; for(let i=0;i<wp.length;i+=3){ wp[i+1]=Math.sin((wBasis[i]+t*5)*0.05)*0.5+Math.cos((wBasis[i+2]-t*4)*0.06)*0.4; } wasserGeo.attributes.position.needsUpdate=true; wasserGeo.computeVertexNormals();
+  wolken.children.forEach((c,i)=>{ c.position.x+=0.02+i*0.004; if(c.position.x>100)c.position.x=-100; });
+  for(let i=0;i<WALK;i++){ const wk=walkers[i]; wk.u+=wk.spd*0.016; const q=routePos(wk.rm,wk.u); dummy.position.set(q.x, TOWN+0.55+Math.abs(Math.sin(wk.u*3))*0.07, q.z); dummy.rotation.set(0,-q.ang+Math.PI/2,0); dummy.scale.setScalar(1); dummy.updateMatrix(); laeufer.setMatrixAt(i,dummy.matrix); }
+  laeufer.instanceMatrix.needsUpdate=true;
+  boote.forEach((b,i)=>{ b.position.y=-0.4+Math.sin(t*0.8+i)*0.12; b.rotation.z=Math.sin(t*0.6+i)*0.04; b.rotation.y+=0.0006; });
+  controls.update(); renderer.render(scene, camera); requestAnimationFrame(tick);
+}
+tick();
+window.__bereit = true;
+</script>
+</body>
+</html>

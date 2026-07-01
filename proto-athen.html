@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Athen — Iso-Prototyp v2</title>
+<style>html,body{margin:0;height:100%;background:#0a0d15;overflow:hidden}#buehne{width:100%;height:100%}</style>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
+</head>
+<body>
+<div id="buehne"></div>
+<script>
+const TW=64, TH=32, COLS=9, ROWS=9, RAND=2;
+const app=new PIXI.Application({background:'#0e1320',resizeTo:document.getElementById('buehne'),antialias:true,resolution:Math.min(2,devicePixelRatio)});
+document.getElementById('buehne').appendChild(app.view);
+
+const himmel=new PIXI.Graphics(), wolken=new PIXI.Container(), welt=new PIXI.Container();
+app.stage.addChild(himmel,wolken,welt);
+const wasser=new PIXI.Container(), glints=new PIXI.Container(), land=new PIXI.Container(),
+      obj=new PIXI.Container(); obj.sortableChildren=true;
+welt.addChild(wasser,glints,land,obj);
+
+const iso=(c,r)=>({x:(c-r)*TW/2, y:(c+r)*TH/2});
+const istLand=(c,r)=>c>=0&&c<COLS&&r>=0&&r<ROWS;
+const istRand=(c,r)=>c===0||r===0||c===COLS-1||r===ROWS-1;
+function shade(hex,f){const r=(hex>>16)&255,g=(hex>>8)&255,b=hex&255,m=v=>Math.max(0,Math.min(255,Math.round(v*(1+f))));return(m(r)<<16)|(m(g)<<8)|m(b);}
+function mix(a,b,f){const ar=(a>>16)&255,ag=(a>>8)&255,ab=a&255,br=(b>>16)&255,bg=(b>>8)&255,bb=b&255;return((ar+(br-ar)*f|0)<<16)|((ag+(bg-ag)*f|0)<<8)|(ab+(bb-ab)*f|0);}
+
+function tile(c,r,col,cont){const p=iso(c,r),g=new PIXI.Graphics();g.beginFill(col).lineStyle(1,0x000,0.05).moveTo(p.x,p.y-TH/2).lineTo(p.x+TW/2,p.y).lineTo(p.x,p.y+TH/2).lineTo(p.x-TW/2,p.y).closePath().endFill();cont.addChild(g);return g;}
+
+// Wasser + Land
+const wasserTiles=[];
+for(let r=-RAND;r<ROWS+RAND;r++)for(let c=-RAND;c<COLS+RAND;c++){
+  if(istLand(c,r)){ tile(c,r, istRand(c,r)?0xd8c9a0:((c+r)%2?0x4c805a:0x477a54), land); }
+  else { wasserTiles.push(tile(c,r,0x2f6aa8,wasser)); }
+}
+// Steinplatz in der Mitte
+[[4,4],[4,3],[3,4],[5,4],[4,5],[5,5],[3,3]].forEach(([c,r])=>tile(c,r,0xc7c0ab,land));
+
+function schatten(c,r,w){const p=iso(c,r),g=new PIXI.Graphics();g.beginFill(0x000,0.16).drawEllipse(p.x,p.y+4,w*TW*0.46,w*TH*0.46).endFill();g.zIndex=c+r-0.1;obj.addChild(g);}
+
+// Haus mit Walmdach
+function haus(c,r,b,H,wand,dach){
+  schatten(c,r,b*1.05);
+  const cont=new PIXI.Container(),p=iso(c,r);cont.x=p.x;cont.y=p.y;cont.zIndex=c+r;
+  const hw=b*TW/2,hh=b*TH/2,g=new PIXI.Graphics();
+  g.beginFill(shade(wand,-0.14)).moveTo(-hw,0).lineTo(0,hh).lineTo(0,hh-H).lineTo(-hw,-H).closePath().endFill();
+  g.beginFill(shade(wand,-0.32)).moveTo(hw,0).lineTo(0,hh).lineTo(0,hh-H).lineTo(hw,-H).closePath().endFill();
+  const rH=hh+8, ax=0, ay=-H-rH;
+  const bk=[0,-hh-H], rt=[hw,-H], fr=[0,hh-H], lf=[-hw,-H];
+  const tri=(a,b2,col)=>g.beginFill(col).moveTo(a[0],a[1]).lineTo(b2[0],b2[1]).lineTo(ax,ay).closePath().endFill();
+  tri(bk,lf,shade(dach,-0.10)); tri(lf,fr,shade(dach,0.02));
+  tri(bk,rt,shade(dach,-0.26)); tri(rt,fr,shade(dach,-0.16));
+  cont.addChild(g);obj.addChild(cont);return cont;
+}
+
+// Tempel: Stufen + Säulen + Gebälk + Giebel
+function tempel(c,r){
+  schatten(c,r,2.2);
+  const cont=new PIXI.Container(),p=iso(c,r);cont.x=p.x;cont.y=p.y;cont.zIndex=c+r+0.2;
+  const g=new PIXI.Graphics();
+  function box(hw,hh,base,H,col){g.beginFill(shade(col,-0.16)).moveTo(-hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();
+    g.beginFill(shade(col,-0.32)).moveTo(hw,base).lineTo(0,base+hh).lineTo(0,base+hh-H).lineTo(hw,base-H).closePath().endFill();
+    g.beginFill(col).moveTo(0,base-hh-H).lineTo(hw,base-H).lineTo(0,base+hh-H).lineTo(-hw,base-H).closePath().endFill();}
+  box(1.9*TW/2,1.9*TH/2,0,8,0xddd5bf);          // Stufe 1
+  box(1.7*TW/2,1.7*TH/2,-8,8,0xe7dfc8);         // Stufe 2
+  let H=-16;
+  // Säulen entlang der zwei Vorderkanten
+  const cols=[];for(let i=-3;i<=3;i++){cols.push([i*9,(3-Math.abs(i))*2]);}
+  cont.addChild(g);
+  const saeulen=new PIXI.Graphics();
+  for(let i=-3;i<=3;i++){const sx=i*9, sy=H-2+ (Math.abs(i))*0;
+    saeulen.beginFill(0xefe8d4).drawRect(sx-3, H-44, 6, 44).endFill();
+    saeulen.beginFill(0xdcd3bb).drawRect(sx+1, H-44, 2, 44).endFill();
+  }
+  cont.addChild(saeulen);
+  const ob=new PIXI.Graphics();
+  ob.beginFill(0xe7dfc8).drawRect(-1.55*TW/2, H-52, 1.55*TW, 9).endFill();   // Gebälk
+  // Giebel (Dreieck)
+  ob.beginFill(0xeae2cc).moveTo(-1.55*TW/2, H-52).lineTo(0, H-74).lineTo(1.55*TW/2, H-52).closePath().endFill();
+  ob.beginFill(0x000,0.05).moveTo(-1.2*TW/2,H-54).lineTo(0,H-70).lineTo(1.2*TW/2,H-54).closePath().endFill();
+  cont.addChild(ob);
+  obj.addChild(cont);return cont;
+}
+
+// Zypresse
+function baum(c,r){
+  schatten(c,r,0.5);
+  const cont=new PIXI.Container(),p=iso(c,r);cont.x=p.x;cont.y=p.y;cont.zIndex=c+r;
+  const g=new PIXI.Graphics();
+  g.beginFill(0x6b4a2e).drawRect(-2,-10,4,10).endFill();
+  g.beginFill(0x2f5d3f).moveTo(0,-44).lineTo(8,-8).lineTo(-8,-8).closePath().endFill();
+  g.beginFill(0x37694a).moveTo(0,-44).lineTo(4,-8).lineTo(-8,-8).closePath().endFill();
+  cont.addChild(g);obj.addChild(cont);return cont;
+}
+
+// Platzierung
+[[2,2,0.9,34,0xcfa06a,0xa64d39],[3,2,0.8,28,0xc18b54,0xb35a44],[2,3,0.85,32,0xd0975c,0x9e4b3a],
+ [6,6,0.9,36,0xc88f57,0xa84f3a],[5,6,0.8,28,0xbf8048,0xb35a44],[6,5,0.85,32,0xcfa06a,0x9e4b3a],
+ [3,6,0.8,26,0xc18b54,0xa84f3a],[6,3,0.85,30,0xd0975c,0xb35a44],[2,6,0.8,26,0xcfa06a,0x9e4b3a],[6,2,0.8,28,0xc18b54,0xa84f3a]
+].forEach(h=>haus(...h));
+[[1.2,4],[4,1.2],[7.6,4.6],[4.6,7.6],[1.4,1.4],[7.5,7.5]].forEach(([c,r])=>baum(c,r));
+tempel(4.2,4.2);
+
+// Rauch
+const rauch=[],rauchC=new PIXI.Container();welt.addChild(rauchC);
+function spawnRauch(x,y){const g=new PIXI.Graphics();g.beginFill(0xe6e9f0,0.45).drawCircle(0,0,4).endFill();g.x=x;g.y=y;g.vy=-0.32;g.life=1;rauchC.addChild(g);rauch.push(g);}
+
+// Bürger
+const buerger=[],bC=new PIXI.Container();bC.sortableChildren=true;obj.addChild(bC);bC.zIndex=999;
+for(let i=0;i<16;i++){const g=new PIXI.Graphics();g.beginFill(0x2a2f3a).drawEllipse(0,0,2.2,3).endFill();g.beginFill(i%3?0xcdd2db:0xe3b64f).drawCircle(0,-3.4,1.5).endFill();g.c=1+Math.random()*(COLS-2);g.r=1+Math.random()*(ROWS-2);g.tc=g.c;g.tr=g.r;g.spd=0.004+Math.random()*0.004;bC.addChild(g);buerger.push(g);}
+
+// Boot
+const boot=new PIXI.Graphics();boot.beginFill(0x6b4a2e).moveTo(-14,0).lineTo(14,0).lineTo(9,6).lineTo(-9,6).closePath().endFill();boot.beginFill(0xf2ecdb).moveTo(0,-2).lineTo(0,-22).lineTo(11,-4).closePath().endFill();boot.zIndex=99;obj.addChild(boot);let bootT=0;
+
+// Wolken + Vögel + Glints
+function wolke(){const g=new PIXI.Graphics();g.beginFill(0xffffff,0.16);[[0,0,26],[20,4,20],[-18,4,18],[6,-8,16]].forEach(([x,y,r])=>g.drawCircle(x,y,r));g.endFill();g.x=Math.random()*app.screen.width;g.y=30+Math.random()*120;g.spd=0.12+Math.random()*0.22;wolken.addChild(g);return g;}
+const wolkenA=[wolke(),wolke(),wolke()];
+const voegel=[];for(let i=0;i<3;i++){const g=new PIXI.Graphics();g.x=Math.random()*app.screen.width;g.y=60+Math.random()*80;g.spd=0.4+Math.random()*0.3;wolken.addChild(g);voegel.push(g);}
+const glintsA=[];for(let i=0;i<5;i++){const g=new PIXI.Graphics();g.beginFill(0xffffff,0.18).drawEllipse(0,0,10,4).endFill();g.gx=Math.random()*COLS;g.gy=ROWS+0.5+Math.random()*1.5;glints.addChild(g);glintsA.push(g);}
+
+function zentriere(){const m=iso((COLS-1)/2,(ROWS-1)/2);welt.x=app.screen.width/2-m.x;welt.y=app.screen.height/2-m.y-30;}
+zentriere();addEventListener('resize',zentriere);
+
+function himmelMalen(t){
+  const tag=(Math.sin(t*Math.PI*2-Math.PI/2)+1)/2;
+  const oben=mix(0x0b1024,0x2e63b8,tag),unten=mix(0x16203a,0xa6cdee,tag);
+  himmel.clear();const h=app.screen.height,w=app.screen.width,n=20;
+  for(let i=0;i<n;i++)himmel.beginFill(mix(oben,unten,i/n)).drawRect(0,h*i/n,w,h/n+1).endFill();
+  const ang=t*Math.PI*2-Math.PI/2,sx=w/2+Math.cos(ang)*w*0.42,sy=h*0.5+Math.sin(ang)*h*0.5;
+  himmel.beginFill(tag>0.4?0xffe9a8:0xe6ecf7,0.95).drawCircle(sx,sy,tag>0.4?22:15).endFill();
+  wolken.alpha=0.35+tag*0.65; obj.alpha=0.72+tag*0.28; land.alpha=0.74+tag*0.26;
+  return tag;
+}
+
+let zeit=0.5,rt=0,tag=1;
+app.ticker.add((d)=>{
+  zeit=(zeit+0.00035*d)%1; tag=himmelMalen(zeit);
+  wolkenA.forEach(w=>{w.x+=w.spd*d;if(w.x>app.screen.width+60)w.x=-60;});
+  voegel.forEach(v=>{v.x+=v.spd*d;if(v.x>app.screen.width+20){v.x=-20;v.y=60+Math.random()*80;}v.clear();const f=Math.sin(performance.now()/120+v.x)*3;v.lineStyle(1.5,0x33384a,0.7).moveTo(-5,0).lineTo(0,-f-2).lineTo(5,0);});
+  glintsA.forEach(g=>{g.gx-=0.01*d;if(g.gx<-RAND)g.gx=COLS+RAND;const p=iso(g.gx,g.gy);g.x=p.x;g.y=p.y;g.alpha=(0.1+0.12*(0.5+0.5*Math.sin(performance.now()/400+g.gx)))*tag;});
+  buerger.forEach(b=>{if(Math.abs(b.c-b.tc)<0.05&&Math.abs(b.r-b.tr)<0.05){b.tc=1+Math.random()*(COLS-2);b.tr=1+Math.random()*(ROWS-2);}b.c+=(b.tc-b.c)*b.spd*d;b.r+=(b.tr-b.r)*b.spd*d;const p=iso(b.c,b.r);b.x=p.x;b.y=p.y;b.zIndex=b.c+b.r;});
+  bootT+=0.0016*d;const bc=COLS/2+Math.cos(bootT)*(COLS/2+1.5),br=ROWS+1.4+Math.sin(bootT)*1.2;const bp=iso(bc,br);boot.x=bp.x;boot.y=bp.y;boot.zIndex=bc+br;
+  rt-=d;if(rt<=0){rt=24;const tp=iso(4.2,4.2);spawnRauch(tp.x+(Math.random()*8-4),tp.y-92);}
+  for(let i=rauch.length-1;i>=0;i--){const s=rauch[i];s.y+=s.vy*d;s.life-=0.006*d;s.alpha=s.life*0.45;s.scale.set(1+(1-s.life)*1.6);if(s.life<=0){rauchC.removeChild(s);rauch.splice(i,1);}}
+});
+</script>
+</body>
+</html>
